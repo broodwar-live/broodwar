@@ -4,7 +4,8 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="csrf-token" content={get_csrf_token()} />
-    <.live_title default="Broodwar" suffix=" · Phoenix Framework">
+    <meta name="description" content="The community platform for StarCraft: Brood War competitive play — match stats, replay analysis, build orders, and live streams." />
+    <.live_title default="broodwar.live — StarCraft: Brood War Community Hub" suffix=" — broodwar.live">
       {assigns[:page_title]}
     </.live_title>
     <link phx-track-static rel="stylesheet" href={~p"/assets/css/app.css"} />
@@ -25,12 +26,11 @@
           setTheme(localStorage.getItem("phx:theme") || "system");
         }
         window.addEventListener("storage", (e) => e.key === "phx:theme" && setTheme(e.newValue || "system"));
-        
         window.addEventListener("phx:set-theme", (e) => setTheme(e.target.dataset.phxTheme));
       })();
     </script>
   </head>
-  <body>
+  <body class="bg-base-200 min-h-screen">
     {@inner_content}
   </body>
 </html>

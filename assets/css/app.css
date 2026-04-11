@@ -17,76 +17,86 @@
   themes: false;
 }
 
-/* daisyUI theme plugin. You can update this file by fetching the latest version with:
-  curl -sLO https://github.com/saadeghi/daisyui/releases/latest/download/daisyui-theme.js
-  We ship with two themes, a light one inspired on Phoenix colors and a dark one inspired
-  on Elixir colors. Build your own at: https://daisyui.com/theme-generator/ */
+/* === broodwar.live Dark Theme ===
+   Inspired by ASL/Korean StarCraft broadcasts:
+   deep navy backgrounds, steel blue primary, StarCraft gold accents */
 @plugin "../vendor/daisyui-theme" {
   name: "dark";
-  default: false;
+  default: true;
   prefersdark: true;
   color-scheme: "dark";
-  --color-base-100: oklch(30.33% 0.016 252.42);
-  --color-base-200: oklch(25.26% 0.014 253.1);
-  --color-base-300: oklch(20.15% 0.012 254.09);
-  --color-base-content: oklch(97.807% 0.029 256.847);
-  --color-primary: oklch(58% 0.233 277.117);
-  --color-primary-content: oklch(96% 0.018 272.314);
-  --color-secondary: oklch(58% 0.233 277.117);
-  --color-secondary-content: oklch(96% 0.018 272.314);
-  --color-accent: oklch(60% 0.25 292.717);
-  --color-accent-content: oklch(96% 0.016 293.756);
-  --color-neutral: oklch(37% 0.044 257.287);
-  --color-neutral-content: oklch(98% 0.003 247.858);
-  --color-info: oklch(58% 0.158 241.966);
-  --color-info-content: oklch(97% 0.013 236.62);
-  --color-success: oklch(60% 0.118 184.704);
-  --color-success-content: oklch(98% 0.014 180.72);
-  --color-warning: oklch(66% 0.179 58.318);
-  --color-warning-content: oklch(98% 0.022 95.277);
-  --color-error: oklch(58% 0.253 17.585);
-  --color-error-content: oklch(96% 0.015 12.422);
+  /* Deep navy backgrounds — the ASL broadcast look */
+  --color-base-100: oklch(16% 0.025 260);
+  --color-base-200: oklch(13% 0.022 260);
+  --color-base-300: oklch(10% 0.020 260);
+  --color-base-content: oklch(92% 0.008 250);
+  /* Steel blue — StarCraft's light steel blue #587EA2 / SOOP blue */
+  --color-primary: oklch(62% 0.12 245);
+  --color-primary-content: oklch(98% 0.005 245);
+  /* StarCraft gold/orange — warm accent from SC brand #C2641A */
+  --color-secondary: oklch(72% 0.15 70);
+  --color-secondary-content: oklch(15% 0.03 70);
+  /* Bright electric blue — for highlighted/active elements */
+  --color-accent: oklch(65% 0.2 255);
+  --color-accent-content: oklch(98% 0.005 255);
+  /* Neutral — darker blue-gray for cards, borders */
+  --color-neutral: oklch(22% 0.025 255);
+  --color-neutral-content: oklch(88% 0.01 250);
+  /* Live/online indicator green */
+  --color-success: oklch(72% 0.19 155);
+  --color-success-content: oklch(15% 0.04 155);
+  /* Info — lighter steel blue */
+  --color-info: oklch(65% 0.12 240);
+  --color-info-content: oklch(98% 0.005 240);
+  /* Warning — gold */
+  --color-warning: oklch(78% 0.15 80);
+  --color-warning-content: oklch(15% 0.03 80);
+  /* Error/Terran red */
+  --color-error: oklch(60% 0.22 25);
+  --color-error-content: oklch(96% 0.01 25);
   --radius-selector: 0.25rem;
   --radius-field: 0.25rem;
   --radius-box: 0.5rem;
   --size-selector: 0.21875rem;
   --size-field: 0.21875rem;
-  --border: 1.5px;
+  --border: 1px;
   --depth: 1;
   --noise: 0;
 }
 
+/* === broodwar.live Light Theme ===
+   Cool gray-white with the same accent colors */
 @plugin "../vendor/daisyui-theme" {
   name: "light";
-  default: true;
+  default: false;
   prefersdark: false;
   color-scheme: "light";
-  --color-base-100: oklch(98% 0 0);
-  --color-base-200: oklch(96% 0.001 286.375);
-  --color-base-300: oklch(92% 0.004 286.32);
-  --color-base-content: oklch(21% 0.006 285.885);
-  --color-primary: oklch(70% 0.213 47.604);
-  --color-primary-content: oklch(98% 0.016 73.684);
-  --color-secondary: oklch(55% 0.027 264.364);
-  --color-secondary-content: oklch(98% 0.002 247.839);
-  --color-accent: oklch(0% 0 0);
-  --color-accent-content: oklch(100% 0 0);
-  --color-neutral: oklch(44% 0.017 285.786);
-  --color-neutral-content: oklch(98% 0 0);
-  --color-info: oklch(62% 0.214 259.815);
-  --color-info-content: oklch(97% 0.014 254.604);
-  --color-success: oklch(70% 0.14 182.503);
-  --color-success-content: oklch(98% 0.014 180.72);
-  --color-warning: oklch(66% 0.179 58.318);
-  --color-warning-content: oklch(98% 0.022 95.277);
-  --color-error: oklch(58% 0.253 17.585);
-  --color-error-content: oklch(96% 0.015 12.422);
+  --color-base-100: oklch(97% 0.005 250);
+  --color-base-200: oklch(94% 0.008 250);
+  --color-base-300: oklch(90% 0.012 250);
+  --color-base-content: oklch(20% 0.02 255);
+  --color-primary: oklch(50% 0.14 245);
+  --color-primary-content: oklch(98% 0.005 245);
+  --color-secondary: oklch(58% 0.16 65);
+  --color-secondary-content: oklch(98% 0.01 65);
+  --color-accent: oklch(52% 0.2 255);
+  --color-accent-content: oklch(98% 0.005 255);
+  --color-neutral: oklch(40% 0.02 255);
+  --color-neutral-content: oklch(98% 0.005 255);
+  --color-success: oklch(55% 0.17 155);
+  --color-success-content: oklch(98% 0.005 155);
+  --color-info: oklch(55% 0.14 240);
+  --color-info-content: oklch(98% 0.005 240);
+  --color-warning: oklch(65% 0.16 75);
+  --color-warning-content: oklch(15% 0.03 75);
+  --color-error: oklch(55% 0.22 25);
+  --color-error-content: oklch(96% 0.01 25);
   --radius-selector: 0.25rem;
   --radius-field: 0.25rem;
   --radius-box: 0.5rem;
   --size-selector: 0.21875rem;
   --size-field: 0.21875rem;
-  --border: 1.5px;
+  --border: 1px;
   --depth: 1;
   --noise: 0;
 }
@@ -96,10 +106,54 @@
 @custom-variant phx-submit-loading (.phx-submit-loading&, .phx-submit-loading &);
 @custom-variant phx-change-loading (.phx-change-loading&, .phx-change-loading &);
 
-/* Use the data attribute for dark mode  */
+/* Use the data attribute for dark mode */
 @custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
 
 /* Make LiveView wrapper divs transparent for layout */
 [data-phx-session], [data-phx-teleported-src] { display: contents }
 
-/* This file is for your main application CSS */
+/* === StarCraft Race Colors === */
+@theme {
+  --color-race-terran: oklch(62% 0.22 25);
+  --color-race-protoss: oklch(80% 0.16 90);
+  --color-race-zerg: oklch(58% 0.2 310);
+}
+
+/* === Custom Styles === */
+
+/* Subtle animated glow for "live" indicators */
+@keyframes live-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+.animate-live-pulse {
+  animation: live-pulse 2s ease-in-out infinite;
+}
+
+/* Match card hover lift */
+.match-card {
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+.match-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px -5px oklch(62% 0.12 245 / 0.2);
+}
+
+/* Gradient text utility for headings */
+.text-gradient-blue {
+  background: linear-gradient(135deg, oklch(62% 0.12 245), oklch(65% 0.2 255));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.text-gradient-gold {
+  background: linear-gradient(135deg, oklch(72% 0.15 70), oklch(80% 0.16 90));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Subtle top border accent for cards */
+.card-accent-top {
+  border-top: 2px solid oklch(62% 0.12 245 / 0.5);
+}
