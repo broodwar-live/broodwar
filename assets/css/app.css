@@ -120,19 +120,13 @@
   --color-race-zerg: oklch(58% 0.2 310);
 }
 
-/* === Typography === */
-
-/* Pretendard — body/UI font, matches SOOP/AfreecaTV platform */
-@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css');
-
-/* Black Han Sans — display/heading font, Korean esports broadcast style */
-@import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap');
-
-/* Orbitron — futuristic sci-fi display font for brandmark */
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@900&display=swap');
-
-/* JetBrains Mono — monospace for scores, ratings, stats */
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+/* === Typography ===
+   Fonts loaded via <link> in root.html.heex:
+   - Pretendard Variable (body/UI)
+   - Black Han Sans (display headings)
+   - Orbitron 900 (brandmark)
+   - JetBrains Mono (stats/mono)
+*/
 
 html {
   font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", system-ui, sans-serif;
@@ -158,19 +152,25 @@ html {
 .brandmark-live-box {
   display: inline-flex;
   align-items: center;
+  align-self: stretch;
   background: white;
   color: oklch(14% 0.03 255);
   font-family: "Orbitron", sans-serif;
   font-weight: 900;
   letter-spacing: 0.06em;
-  padding: 0.12em 0.35em 0.12em 0.4em;
-  transform: skewX(-8deg);
+  padding: 0 0.35em 0 0.4em;
   line-height: 1;
+  font-size: 0.55em;
 }
 
 .brandmark-live-box span {
   display: inline-block;
-  transform: skewX(8deg);
+  transform: skewX(-8deg);
+  -webkit-text-stroke: 0.03em oklch(14% 0.03 255);
+}
+
+[data-theme=light] .brandmark-live-box span {
+  -webkit-text-stroke: 0.03em white;
 }
 
 [data-theme=light] .brandmark-live-box {

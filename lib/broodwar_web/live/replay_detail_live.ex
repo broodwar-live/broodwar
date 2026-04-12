@@ -7,7 +7,15 @@ defmodule BroodwarWeb.ReplayDetailLive do
     pd = replay.parsed_data || %{}
     header = pd["header"] || %{}
     timeline = pd["timeline"] || []
+    build_order = pd["build_order"] || []
     max_idx = max(length(timeline) - 1, 0)
+
+    # Only show players who actually issued build commands (not observers)
+    active_player_ids =
+      build_order
+      |> Enum.map(& &1["player_id"])
+      |> Enum.uniq()
+      |> MapSet.new()
 
     {:ok,
      socket
@@ -16,7 +24,8 @@ defmodule BroodwarWeb.ReplayDetailLive do
      |> assign(:parsed, pd)
      |> assign(:timeline, timeline)
      |> assign(:timeline_idx, max_idx)
-     |> assign(:max_idx, max_idx)}
+     |> assign(:max_idx, max_idx)
+     |> assign(:active_player_ids, active_player_ids)}
   end
 
   @impl true
@@ -48,7 +57,7 @@ defmodule BroodwarWeb.ReplayDetailLive do
               </p>
             </div>
             <div class="flex gap-2">
-              <%= for {player, apm} <- players_with_apm(players, player_apm) do %>
+              <%= for {player, apm} <- players_with_apm(players, player_apm), MapSet.member?(@active_player_ids, player["player_id"]) do %>
                 <div class="bg-base-200/50 rounded-lg px-3 py-2 text-center">
                   <span class={["text-xs font-bold", race_color(player["race_code"])]}>{player["race_code"]}</span>
                   <span class="text-sm font-medium ml-1">{player["name"]}</span>
@@ -90,7 +99,7 @@ defmodule BroodwarWeb.ReplayDetailLive do
           <%!-- State at current position --%>
           <%= if snap do %>
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 mb-4">
-              <%= for ps <- snap["players"] || [] do %>
+              <%= for ps <- snap["players"] || [], MapSet.member?(@active_player_ids, ps["player_id"]) do %>
                 <% player = Enum.find(players, fn p -> p["player_id"] == ps["player_id"] end) %>
                 <div class="bg-base-100 rounded-box border border-base-content/5 p-5">
                   <%!-- Player header --%>
