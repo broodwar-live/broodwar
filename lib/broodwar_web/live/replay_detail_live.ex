@@ -172,7 +172,7 @@ defmodule BroodwarWeb.ReplayDetailLive do
             <%= for ps <- snap["players"] || [], MapSet.member?(@active_player_ids, ps["player_id"]) do %>
               <% player = Enum.find(players, fn p -> p["player_id"] == ps["player_id"] end) %>
               <% pcolor = @player_colors[ps["player_id"]] || "#CCC" %>
-              <div class="pointer-events-auto rounded-lg p-2 text-[10px] shadow-lg backdrop-blur-md" style={"background: color-mix(in oklch, #{pcolor} 6%, oklch(14% 0.03 255) 94%); border: 1px solid #{pcolor}30"}>
+              <div class="pointer-events-auto rounded-lg p-2 text-[10px] shadow-lg backdrop-blur-md bg-base-100/90 border border-base-content/10" style={"border-left: 2px solid #{pcolor}"}>
                 <div class="flex items-center justify-between mb-1">
                   <div class="flex items-center gap-1">
                     <span class="font-bold" style={"color: #{pcolor}"}>{player && player["race_code"]}</span>
