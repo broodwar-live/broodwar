@@ -70,18 +70,23 @@ fn encode_replay<'a>(env: Env<'a>, replay: &replay_core::Replay) -> Term<'a> {
         .map(|apm| encode_player_apm(env, apm))
         .collect();
 
-    let map = rustler::Term::map_from_pairs(
+    let timeline: Vec<Term> = replay
+        .timeline
+        .iter()
+        .map(|snap| encode_timeline_snapshot(env, snap))
+        .collect();
+
+    rustler::Term::map_from_pairs(
         env,
         &[
             ("header", header),
             ("build_order", build_order.encode(env)),
             ("player_apm", player_apm.encode(env)),
             ("command_count", replay.commands.len().encode(env)),
+            ("timeline", timeline.encode(env)),
         ],
     )
-    .unwrap();
-
-    map
+    .unwrap()
 }
 
 fn encode_header<'a>(env: Env<'a>, header: &replay_core::header::Header) -> Term<'a> {
@@ -192,6 +197,113 @@ fn encode_player_apm<'a>(env: Env<'a>, apm: &replay_core::analysis::PlayerApm) -
             ("player_id", apm.player_id.encode(env)),
             ("apm", (apm.apm.round() as u32).encode(env)),
             ("eapm", (apm.eapm.round() as u32).encode(env)),
+        ],
+    )
+    .unwrap()
+}
+
+fn encode_timeline_snapshot<'a>(
+    env: Env<'a>,
+    snap: &replay_core::timeline::TimelineSnapshot,
+) -> Term<'a> {
+    let players: Vec<Term> = snap
+        .players
+        .iter()
+        .map(|ps| encode_player_state(env, ps))
+        .collect();
+
+    rustler::Term::map_from_pairs(
+        env,
+        &[
+            ("frame", snap.frame.encode(env)),
+            ("real_seconds", snap.real_seconds.encode(env)),
+            ("players", players.encode(env)),
+        ],
+    )
+    .unwrap()
+}
+
+fn encode_player_state<'a>(
+    env: Env<'a>,
+    ps: &replay_core::timeline::PlayerState,
+) -> Term<'a> {
+    // Encode units/buildings as list of {name, count} pairs
+    let units: Vec<Term> = ps
+        .units
+        .iter()
+        .map(|(&id, &count)| {
+            let name = replay_core::gamedata::unit_name(id);
+            rustler::Term::map_from_pairs(
+                env,
+                &[
+                    ("id", id.encode(env)),
+                    ("name", name.encode(env)),
+                    ("count", count.encode(env)),
+                ],
+            )
+            .unwrap()
+        })
+        .collect();
+
+    let buildings: Vec<Term> = ps
+        .buildings
+        .iter()
+        .map(|(&id, &count)| {
+            let name = replay_core::gamedata::unit_name(id);
+            rustler::Term::map_from_pairs(
+                env,
+                &[
+                    ("id", id.encode(env)),
+                    ("name", name.encode(env)),
+                    ("count", count.encode(env)),
+                ],
+            )
+            .unwrap()
+        })
+        .collect();
+
+    let techs: Vec<Term> = ps
+        .techs
+        .iter()
+        .map(|&id| {
+            let name = replay_core::gamedata::tech_name(id);
+            rustler::Term::map_from_pairs(
+                env,
+                &[("id", (id as u16).encode(env)), ("name", name.encode(env))],
+            )
+            .unwrap()
+        })
+        .collect();
+
+    let upgrades: Vec<Term> = ps
+        .upgrades
+        .iter()
+        .map(|(&id, &level)| {
+            let name = replay_core::gamedata::upgrade_name(id);
+            rustler::Term::map_from_pairs(
+                env,
+                &[
+                    ("id", (id as u16).encode(env)),
+                    ("name", name.encode(env)),
+                    ("level", level.encode(env)),
+                ],
+            )
+            .unwrap()
+        })
+        .collect();
+
+    rustler::Term::map_from_pairs(
+        env,
+        &[
+            ("player_id", ps.player_id.encode(env)),
+            ("minerals_invested", ps.minerals_invested.encode(env)),
+            ("gas_invested", ps.gas_invested.encode(env)),
+            ("supply_used", ps.supply_used.encode(env)),
+            ("supply_max", ps.supply_max.encode(env)),
+            ("units", units.encode(env)),
+            ("buildings", buildings.encode(env)),
+            ("techs", techs.encode(env)),
+            ("upgrades", upgrades.encode(env)),
         ],
     )
     .unwrap()

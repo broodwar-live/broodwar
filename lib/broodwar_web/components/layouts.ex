@@ -22,13 +22,8 @@ defmodule BroodwarWeb.Layouts do
         <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div class="flex items-center justify-between h-16">
             <%!-- Logo / Brand --%>
-            <a href="/" class="flex items-center gap-3 group">
-              <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-primary to-secondary flex items-center justify-center shadow-lg shadow-primary/20 group-hover:shadow-primary/30 transition-shadow">
-                <span class="text-white font-black text-xs tracking-tighter">BW</span>
-              </div>
-              <span class="font-bold text-base-content tracking-tight text-sm">
-                broodwar<span class="text-gradient-asl">.live</span>
-              </span>
+            <a href="/" class="group hover:opacity-80 transition-opacity">
+              <.brandmark size="sm" />
             </a>
 
             <%!-- Navigation Links --%>
@@ -58,14 +53,7 @@ defmodule BroodwarWeb.Layouts do
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
           <div class="flex flex-col sm:flex-row items-center justify-between gap-6">
             <div class="flex flex-col sm:flex-row items-center gap-3">
-              <div class="flex items-center gap-2.5">
-                <div class="w-6 h-6 rounded bg-gradient-to-br from-primary to-secondary flex items-center justify-center">
-                  <span class="text-white font-black text-[8px] tracking-tighter">BW</span>
-                </div>
-                <span class="font-semibold text-sm text-base-content/50">
-                  broodwar<span class="text-primary/40">.live</span>
-                </span>
-              </div>
+              <.brandmark size="xs" muted />
               <span class="text-base-content/20 hidden sm:inline">&middot;</span>
               <span class="text-xs text-base-content/30">{gettext("Open source community project")}</span>
             </div>
@@ -78,6 +66,32 @@ defmodule BroodwarWeb.Layouts do
     </div>
 
     <.flash_group flash={@flash} />
+    """
+  end
+
+  @doc """
+  Renders the broodwar.live typographic brandmark.
+  """
+  attr :size, :string, default: "sm", values: ~w(xs sm md lg xl)
+  attr :muted, :boolean, default: false
+
+  def brandmark(assigns) do
+    size_class =
+      case assigns.size do
+        "xs" -> "text-xs"
+        "sm" -> "text-sm"
+        "md" -> "text-lg"
+        "lg" -> "text-2xl"
+        "xl" -> "text-4xl"
+      end
+
+    assigns = assign(assigns, :size_class, size_class)
+
+    ~H"""
+    <span class={["brandmark", @size_class, @muted && "brandmark-muted"]}>
+      <span class="brandmark-word">BROODWAR</span>
+      <span class="brandmark-live-box"><span>LIVE</span></span>
+    </span>
     """
   end
 
@@ -142,6 +156,8 @@ defmodule BroodwarWeb.Layouts do
     <div class="flex items-center border border-primary/10 bg-base-300/60 rounded-lg p-0.5 gap-0.5">
       <a
         href={"?locale=en"}
+        data-phx-link="redirect"
+        data-phx-link-state="push"
         class={[
           "relative px-2.5 py-1 text-xs font-medium rounded-md transition-all duration-150",
           @locale == "en" && "bg-primary/15 text-primary shadow-sm",
@@ -152,6 +168,8 @@ defmodule BroodwarWeb.Layouts do
       </a>
       <a
         href={"?locale=ko"}
+        data-phx-link="redirect"
+        data-phx-link-state="push"
         class={[
           "relative px-2.5 py-1 text-xs font-medium rounded-md transition-all duration-150",
           @locale == "ko" && "bg-primary/15 text-primary shadow-sm",

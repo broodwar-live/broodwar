@@ -119,7 +119,7 @@ checksum = "cab834c73d247e67f4fae452806d17d3c7501756d98c8808d7c9c7aa7d18f973"
 [[package]]
 name = "replay-core"
 version = "0.1.0"
-source = "git+https://github.com/broodwar-live/replay-parser.git?branch=main#2e74bb1e070f3177f2961ebebfa2ea15009d0174"
+source = "git+https://github.com/broodwar-live/replay-parser.git?branch=main#d58db9f636f381f314b716045fd30fe144640d6f"
 dependencies = [
  "encoding_rs",
  "explode",

@@ -128,11 +128,62 @@
 /* Black Han Sans — display/heading font, Korean esports broadcast style */
 @import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap');
 
+/* Orbitron — futuristic sci-fi display font for brandmark */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@900&display=swap');
+
 /* JetBrains Mono — monospace for scores, ratings, stats */
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap');
 
 html {
   font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", system-ui, sans-serif;
+}
+
+/* === Brandmark === */
+
+.brandmark {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3em;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.brandmark-word {
+  font-family: "Orbitron", sans-serif;
+  font-weight: 900;
+  letter-spacing: 0.04em;
+  color: var(--color-base-content);
+}
+
+.brandmark-live-box {
+  display: inline-flex;
+  align-items: center;
+  background: white;
+  color: oklch(14% 0.03 255);
+  font-family: "Orbitron", sans-serif;
+  font-weight: 900;
+  letter-spacing: 0.06em;
+  padding: 0.12em 0.35em 0.12em 0.4em;
+  transform: skewX(-8deg);
+  line-height: 1;
+}
+
+.brandmark-live-box span {
+  display: inline-block;
+  transform: skewX(8deg);
+}
+
+[data-theme=light] .brandmark-live-box {
+  background: oklch(14% 0.03 255);
+  color: white;
+}
+
+/* Muted variant for footer */
+.brandmark-muted .brandmark-word {
+  opacity: 0.4;
+}
+.brandmark-muted .brandmark-live-box {
+  opacity: 0.3;
 }
 
 /* Display heading class — use for hero text, section titles, player callouts */
