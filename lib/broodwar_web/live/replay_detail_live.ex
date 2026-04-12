@@ -20,8 +20,15 @@ defmodule BroodwarWeb.ReplayDetailLive do
     # Build APM waveform data: group samples by time, pick the two active players
     apm_samples = pd["apm_timeline"] || []
     duration_secs = header["duration_secs"] || 1
+    all_players = header["players"] || []
     active_list = MapSet.to_list(active_player_ids) |> Enum.sort() |> Enum.take(2)
     waveform = build_waveform(apm_samples, active_list, duration_secs)
+
+    # Map player_id → color_hex for active players
+    player_colors =
+      all_players
+      |> Enum.filter(fn p -> MapSet.member?(active_player_ids, p["player_id"]) end)
+      |> Enum.into(%{}, fn p -> {p["player_id"], p["color_hex"] || "#CCCCCC"} end)
 
     {:ok,
      socket
@@ -33,7 +40,8 @@ defmodule BroodwarWeb.ReplayDetailLive do
      |> assign(:max_idx, max_idx)
      |> assign(:active_player_ids, active_player_ids)
      |> assign(:waveform, waveform)
-     |> assign(:duration_secs, duration_secs)}
+     |> assign(:duration_secs, duration_secs)
+     |> assign(:player_colors, player_colors)}
   end
 
   @impl true
@@ -74,8 +82,8 @@ defmodule BroodwarWeb.ReplayDetailLive do
             </div>
             <div class="flex gap-2">
               <%= for {player, apm} <- players_with_apm(players, player_apm), MapSet.member?(@active_player_ids, player["player_id"]) do %>
-                <div class="bg-base-200/50 rounded-lg px-3 py-2 text-center">
-                  <span class={["text-xs font-bold", race_color(player["race_code"])]}>{player["race_code"]}</span>
+                <div class="rounded-lg px-3 py-2 text-center" style={"background: #{player["color_hex"]}15; border-left: 3px solid #{player["color_hex"]}"}>
+                  <span class="text-xs font-bold" style={"color: #{player["color_hex"]}"}>{player["race_code"]}</span>
                   <span class="text-sm font-medium ml-1">{player["name"]}</span>
                   <%= if apm do %>
                     <div class="text-xs text-base-content/40 font-mono">{apm["apm"]} APM</div>
@@ -98,12 +106,13 @@ defmodule BroodwarWeb.ReplayDetailLive do
                 {format_game_time(snap && snap["real_seconds"])}
               </span>
               <div class="flex items-center gap-4 text-xs">
-                <%= for {pid, _idx} <- Enum.with_index(MapSet.to_list(@active_player_ids) |> Enum.sort() |> Enum.take(2)) do %>
+                <%= for pid <- MapSet.to_list(@active_player_ids) |> Enum.sort() |> Enum.take(2) do %>
                   <% player = Enum.find(players, fn p -> p["player_id"] == pid end) %>
+                  <% color = @player_colors[pid] || "#CCC" %>
                   <%= if player do %>
                     <span class="flex items-center gap-1.5">
-                      <span class={["w-2 h-2 rounded-sm", if(pid == List.first(MapSet.to_list(@active_player_ids) |> Enum.sort()), do: "bg-primary", else: "bg-secondary")]}></span>
-                      <span class={["font-bold", race_color(player["race_code"])]}>{player["race_code"]}</span>
+                      <span class="w-2 h-2 rounded-sm" style={"background: #{color}"}></span>
+                      <span class="font-bold" style={"color: #{color}"}>{player["race_code"]}</span>
                       <span class="text-base-content/50">{player["name"]}</span>
                     </span>
                   <% end %>
@@ -128,6 +137,10 @@ defmodule BroodwarWeb.ReplayDetailLive do
                 class="w-full h-full"
                 style="display: block;"
               >
+                <% sorted_active = MapSet.to_list(@active_player_ids) |> Enum.sort() |> Enum.take(2) %>
+                <% p1_color = @player_colors[Enum.at(sorted_active, 0)] || "#0C48CC" %>
+                <% p2_color = @player_colors[Enum.at(sorted_active, 1)] || "#F40404" %>
+
                 <%!-- Player 1 bars (upward from center) --%>
                 <%= for {bar, i} <- Enum.with_index(@waveform) do %>
                   <% played = (i / max(bar_count - 1, 1) * 100) <= current_pct %>
@@ -137,7 +150,8 @@ defmodule BroodwarWeb.ReplayDetailLive do
                     width="0.8"
                     height={bar.p1_height}
                     rx="0.2"
-                    class={if(played, do: "fill-primary", else: "fill-primary/25")}
+                    fill={p1_color}
+                    opacity={if(played, do: "1", else: "0.25")}
                   />
                 <% end %>
 
@@ -150,7 +164,8 @@ defmodule BroodwarWeb.ReplayDetailLive do
                     width="0.8"
                     height={bar.p2_height}
                     rx="0.2"
-                    class={if(played, do: "fill-secondary", else: "fill-secondary/25")}
+                    fill={p2_color}
+                    opacity={if(played, do: "1", else: "0.25")}
                   />
                 <% end %>
 
@@ -183,10 +198,11 @@ defmodule BroodwarWeb.ReplayDetailLive do
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 mb-4">
               <%= for ps <- snap["players"] || [], MapSet.member?(@active_player_ids, ps["player_id"]) do %>
                 <% player = Enum.find(players, fn p -> p["player_id"] == ps["player_id"] end) %>
-                <div class="bg-base-100 rounded-box border border-base-content/5 p-5">
+                <% pcolor = @player_colors[ps["player_id"]] || "#CCC" %>
+                <div class="bg-base-100 rounded-box border border-base-content/5 p-5" style={"border-top: 3px solid #{pcolor}"}>
                   <%!-- Player header --%>
                   <div class="flex items-center gap-2 mb-4">
-                    <span class={["text-sm font-bold", race_color(player && player["race_code"])]}>
+                    <span class="text-sm font-bold" style={"color: #{pcolor}"}>
                       {player && player["race_code"]}
                     </span>
                     <span class="font-medium text-sm">{player && player["name"]}</span>
@@ -212,11 +228,8 @@ defmodule BroodwarWeb.ReplayDetailLive do
                     </div>
                     <div class="h-1.5 bg-base-300 rounded-full overflow-hidden">
                       <div
-                        class={[
-                          "h-full rounded-full transition-all",
-                          supply_pct(ps) > 90 && "bg-error" || "bg-primary/70"
-                        ]}
-                        style={"width: #{supply_pct(ps)}%"}
+                        class="h-full rounded-full transition-all"
+                        style={"width: #{supply_pct(ps)}%; background: #{if supply_pct(ps) > 90, do: "#F40404", else: pcolor}"}
                       ></div>
                     </div>
                   </div>

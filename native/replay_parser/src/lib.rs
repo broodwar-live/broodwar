@@ -177,6 +177,8 @@ fn encode_player<'a>(env: Env<'a>, player: &replay_core::header::Player) -> Term
         _ => atoms::inactive().encode(env),
     };
 
+    let color_hex = bw_color_hex(player.color);
+
     rustler::Term::map_from_pairs(
         env,
         &[
@@ -188,9 +190,41 @@ fn encode_player<'a>(env: Env<'a>, player: &replay_core::header::Player) -> Term
             ("player_type", player_type),
             ("team", player.team.encode(env)),
             ("color", player.color.encode(env)),
+            ("color_hex", color_hex.encode(env)),
         ],
     )
     .unwrap()
+}
+
+/// Map BW color index to hex color string.
+fn bw_color_hex(idx: u32) -> &'static str {
+    match idx {
+        0 => "#F40404",  // Red
+        1 => "#0C48CC",  // Blue
+        2 => "#2CB494",  // Teal
+        3 => "#88409C",  // Purple
+        4 => "#F88C14",  // Orange
+        5 => "#703014",  // Brown
+        6 => "#CCE0D0",  // White
+        7 => "#FCFC38",  // Yellow
+        8 => "#088008",  // Green
+        9 => "#FCFC7C",  // Pale Yellow
+        10 => "#ECC4B0", // Tan
+        11 => "#4068D4", // Aqua
+        12 => "#74A47C", // Pale Green
+        13 => "#9090B8", // Bluish Grey
+        14 => "#FCE4AC", // Pale Yellow 2
+        15 => "#00E4FC", // Cyan
+        16 => "#FCA0E0", // Pink
+        17 => "#787800", // Olive
+        18 => "#D2F53C", // Lime
+        19 => "#0000E6", // Navy
+        20 => "#006464", // Dark Aqua
+        21 => "#B800B8", // Magenta
+        22 => "#B8B8E8", // Grey
+        23 => "#3C3C3C", // Black
+        _ => "#CCCCCC",
+    }
 }
 
 fn encode_build_order_entry<'a>(

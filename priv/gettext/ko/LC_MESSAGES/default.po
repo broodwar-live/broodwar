@@ -228,6 +228,31 @@ msgstr "시작점"
 msgid "Era"
 msgstr "시대"
 
+## Footer
+msgid "Platform"
+msgstr "플랫폼"
+
+msgid "Tournaments"
+msgstr "토너먼트"
+
+msgid "Rankings"
+msgstr "랭킹"
+
+msgid "Community"
+msgstr "커뮤니티"
+
+msgid "Report a Bug"
+msgstr "버그 신고"
+
+msgid "Terran"
+msgstr "테란"
+
+msgid "Protoss"
+msgstr "프로토스"
+
+msgid "Zerg"
+msgstr "저그"
+
 ## Connection errors
 msgid "We can't find the internet"
 msgstr "인터넷 연결을 찾을 수 없습니다"
