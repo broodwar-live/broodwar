@@ -30,6 +30,9 @@ defmodule BroodwarWeb.Router do
     live "/builds/:id", BuildDetailLive
     live "/balance", BalanceLive
 
+    get "/tournaments", TournamentController, :index
+    get "/tournaments/:slug", TournamentController, :show
+
     get "/wiki", WikiController, :index
     get "/wiki/races/:slug", WikiController, :race
     get "/wiki/units/:slug", WikiController, :unit

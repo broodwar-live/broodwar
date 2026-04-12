@@ -234,6 +234,76 @@ msgstr "시작점"
 msgid "Era"
 msgstr "시대"
 
+## Tournaments page
+msgid "The complete history of competitive Brood War leagues — from the golden era Starleagues to the modern ASL."
+msgstr "황금기 스타리그부터 현대 ASL까지, 경쟁 브루드 워 리그의 완전한 역사."
+
+msgid "Active"
+msgstr "활성"
+
+msgid "Retired"
+msgstr "종료"
+
+msgid "Most Titles"
+msgstr "최다 우승"
+
+msgid "Active Leagues"
+msgstr "현재 진행 중인 리그"
+
+msgid "Legacy Leagues"
+msgstr "레거시 리그"
+
+msgid "The historic Starleagues that defined competitive Brood War."
+msgstr "경쟁 브루드 워를 정의한 역사적인 스타리그."
+
+msgid "Recent"
+msgstr "최근"
+
+msgid "In Progress"
+msgstr "진행 중"
+
+msgid "View"
+msgstr "보기"
+
+msgid "Season History"
+msgstr "시즌 기록"
+
+msgid "Season"
+msgstr "시즌"
+
+msgid "Year"
+msgstr "연도"
+
+msgid "Champion"
+msgstr "우승자"
+
+msgid "Runner-up"
+msgstr "준우승"
+
+msgid "Prize Pool"
+msgstr "상금"
+
+msgid "Seasons"
+msgstr "시즌"
+
+msgid "Format"
+msgstr "형식"
+
+msgid "Region"
+msgstr "지역"
+
+msgid "Organizer"
+msgstr "주최"
+
+msgid "Status"
+msgstr "상태"
+
+msgid "Top Champions"
+msgstr "최다 우승자"
+
+msgid "No season data available."
+msgstr "시즌 데이터가 없습니다."
+
 ## Footer
 msgid "Platform"
 msgstr "플랫폼"

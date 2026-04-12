@@ -132,23 +132,30 @@ defmodule BroodwarWeb.ReplayDetailLive do
 
       <%!-- Main content area — fills remaining space --%>
       <div class="flex-1 flex overflow-hidden">
-        <%!-- Left: Build Order (scrollable) --%>
-        <div class="w-80 shrink-0 border-r border-base-content/5 bg-base-100 flex flex-col overflow-hidden">
-          <div class="shrink-0 px-3 py-2 border-b border-base-content/5 flex items-center justify-between">
-            <span class="text-xs font-semibold text-base-content/60">Build Order</span>
-            <span class="text-[10px] text-base-content/30">{length(build_order)}</span>
+        <%!-- Center: Build Order (wide, scrollable) --%>
+        <div class="flex-1 border-r border-base-content/5 bg-base-100 flex flex-col overflow-hidden">
+          <div class="shrink-0 px-3 py-1.5 border-b border-base-content/5 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+              <span class="text-xs font-semibold text-base-content/60">Build Order</span>
+              <span class="text-[10px] text-base-content/30">{length(build_order)} actions</span>
+            </div>
+            <span class="text-[10px] font-mono text-base-content/30">{format_game_time(snap && snap["real_seconds"])}</span>
           </div>
-          <div id="bo-scroll" phx-hook="BoScroll" class="flex-1 overflow-y-auto px-2 py-1" style="scrollbar-width: thin;">
+          <div id="bo-scroll" phx-hook="BoScroll" class="flex-1 overflow-y-auto px-3 py-1" style="scrollbar-width: thin;">
             <%= for {block_time, entries} <- group_by_time(build_order, 30) do %>
-              <div id={"bo-t-#{trunc(block_time)}"} class="mb-0.5">
-                <div class="text-[10px] font-mono text-base-content/20 px-1 pt-1">{format_game_time(block_time)}</div>
-                <div class="grid grid-cols-2 gap-x-1">
-                  <div class="flex flex-col">
+              <div id={"bo-t-#{trunc(block_time)}"} class="flex gap-0 mb-px">
+                <%!-- Time gutter --%>
+                <div class="w-10 shrink-0 pt-1">
+                  <span class="text-[10px] font-mono text-base-content/20">{format_game_time(block_time)}</span>
+                </div>
+                <%!-- Two-column entries --%>
+                <div class="flex-1 grid grid-cols-2 gap-x-2">
+                  <div class="flex flex-col border-r border-base-content/5 pr-2">
                     <%= for entry <- Enum.filter(entries, fn e -> e["player_id"] == Enum.at(sorted_active, 0) end) do %>
                       <.bo_entry entry={entry} color={@player_colors[entry["player_id"]] || "#CCC"} current={entry_is_current?(entry, @timeline_idx, build_order)} />
                     <% end %>
                   </div>
-                  <div class="flex flex-col">
+                  <div class="flex flex-col pl-1">
                     <%= for entry <- Enum.filter(entries, fn e -> e["player_id"] == Enum.at(sorted_active, 1) end) do %>
                       <.bo_entry entry={entry} color={@player_colors[entry["player_id"]] || "#CCC"} current={entry_is_current?(entry, @timeline_idx, build_order)} />
                     <% end %>
@@ -159,83 +166,66 @@ defmodule BroodwarWeb.ReplayDetailLive do
           </div>
         </div>
 
-        <%!-- Right: State panels (scrollable) --%>
-        <div class="flex-1 overflow-y-auto p-4" style="scrollbar-width: thin;">
+        <%!-- Right: Compact state panels --%>
+        <div class="w-64 shrink-0 overflow-y-auto bg-base-200 p-2 flex flex-col gap-2" style="scrollbar-width: thin;">
           <%= if snap do %>
-            <div class="grid grid-cols-1 xl:grid-cols-2 gap-3">
-              <%= for ps <- snap["players"] || [], MapSet.member?(@active_player_ids, ps["player_id"]) do %>
-                <% player = Enum.find(players, fn p -> p["player_id"] == ps["player_id"] end) %>
-                <% pcolor = @player_colors[ps["player_id"]] || "#CCC" %>
-                <div class="bg-base-100 rounded-lg border border-base-content/5 p-4" style={"border-top: 2px solid #{pcolor}"}>
-                  <div class="flex items-center justify-between mb-3">
-                    <div class="flex items-center gap-1.5">
-                      <span class="text-xs font-bold" style={"color: #{pcolor}"}>{player && player["race_code"]}</span>
-                      <span class="font-medium text-sm">{player && player["name"]}</span>
-                    </div>
-                    <span class="text-[10px] font-mono text-base-content/30">{format_game_time(snap["real_seconds"])}</span>
-                  </div>
-
-                  <%!-- Resources + Supply compact row --%>
-                  <div class="flex items-center gap-3 mb-3">
-                    <div class="flex items-center gap-1">
-                      <span class="text-[10px] text-blue-400/60">MIN</span>
-                      <span class="text-sm font-mono font-bold text-blue-400">{ps["minerals_invested"]}</span>
-                    </div>
-                    <div class="flex items-center gap-1">
-                      <span class="text-[10px] text-green-400/60">GAS</span>
-                      <span class="text-sm font-mono font-bold text-green-400">{ps["gas_invested"]}</span>
-                    </div>
-                    <div class="flex items-center gap-1 ml-auto">
-                      <span class="text-[10px] text-base-content/40">SUP</span>
-                      <span class="text-sm font-mono">{ps["supply_used"]}/{ps["supply_max"]}</span>
-                    </div>
-                  </div>
-
-                  <%!-- Units --%>
-                  <%= if ps["units"] != [] do %>
-                    <div class="mb-2">
-                      <div class="text-[9px] text-base-content/30 uppercase tracking-wide mb-1">Units</div>
-                      <div class="flex flex-wrap gap-1">
-                        <%= for u <- ps["units"] do %>
-                          <span class="text-[10px] bg-base-200/80 rounded px-1.5 py-0.5 font-mono">
-                            {u["name"]} <span style={"color: #{pcolor}"}>x{u["count"]}</span>
-                          </span>
-                        <% end %>
-                      </div>
-                    </div>
-                  <% end %>
-
-                  <%!-- Buildings --%>
-                  <%= if ps["buildings"] != [] do %>
-                    <div class="mb-2">
-                      <div class="text-[9px] text-base-content/30 uppercase tracking-wide mb-1">Buildings</div>
-                      <div class="flex flex-wrap gap-1">
-                        <%= for b <- ps["buildings"] do %>
-                          <span class="text-[10px] bg-base-200/80 rounded px-1.5 py-0.5 font-mono">
-                            {b["name"]} <span style={"color: #{pcolor}"}>x{b["count"]}</span>
-                          </span>
-                        <% end %>
-                      </div>
-                    </div>
-                  <% end %>
-
-                  <%!-- Tech & Upgrades --%>
-                  <%= if ps["techs"] != [] or ps["upgrades"] != [] do %>
-                    <div>
-                      <div class="text-[9px] text-base-content/30 uppercase tracking-wide mb-1">Tech</div>
-                      <div class="flex flex-wrap gap-1">
-                        <%= for t <- ps["techs"] do %>
-                          <span class="text-[10px] rounded px-1.5 py-0.5 font-mono border border-accent/30 text-accent">{t["name"]}</span>
-                        <% end %>
-                        <%= for u <- ps["upgrades"] do %>
-                          <span class="text-[10px] rounded px-1.5 py-0.5 font-mono border border-warning/30 text-warning">{u["name"]} {u["level"]}</span>
-                        <% end %>
-                      </div>
-                    </div>
-                  <% end %>
+            <%= for ps <- snap["players"] || [], MapSet.member?(@active_player_ids, ps["player_id"]) do %>
+              <% player = Enum.find(players, fn p -> p["player_id"] == ps["player_id"] end) %>
+              <% pcolor = @player_colors[ps["player_id"]] || "#CCC" %>
+              <div class="bg-base-100 rounded-lg p-2.5 text-[10px]" style={"border-left: 2px solid #{pcolor}"}>
+                <%!-- Name + resources inline --%>
+                <div class="flex items-center gap-1.5 mb-1.5">
+                  <span class="font-bold" style={"color: #{pcolor}"}>{player && player["race_code"]}</span>
+                  <span class="font-medium text-xs">{player && player["name"]}</span>
                 </div>
-              <% end %>
-            </div>
+                <div class="flex items-center gap-2 mb-1.5 font-mono">
+                  <span class="text-blue-400">{ps["minerals_invested"]}<span class="text-blue-400/40 ml-px">m</span></span>
+                  <span class="text-green-400">{ps["gas_invested"]}<span class="text-green-400/40 ml-px">g</span></span>
+                  <span class="ml-auto text-base-content/50">{ps["supply_used"]}/{ps["supply_max"]}</span>
+                </div>
+
+                <%!-- Units (produced) --%>
+                <%= if ps["units"] != [] do %>
+                  <div class="mb-1">
+                    <div class="flex flex-wrap gap-0.5">
+                      <%= for u <- ps["units"] do %>
+                        <span class="bg-base-200/80 rounded px-1 py-px font-mono">
+                          {u["name"]} <span style={"color: #{pcolor}"}>x{u["count"]}</span>
+                        </span>
+                      <% end %>
+                    </div>
+                  </div>
+                <% end %>
+
+                <%!-- Buildings --%>
+                <%= if ps["buildings"] != [] do %>
+                  <div class="mb-1">
+                    <div class="flex flex-wrap gap-0.5">
+                      <%= for b <- ps["buildings"] do %>
+                        <span class="bg-base-200/80 rounded px-1 py-px font-mono opacity-70">
+                          {b["name"]} <span style={"color: #{pcolor}"}>x{b["count"]}</span>
+                        </span>
+                      <% end %>
+                    </div>
+                  </div>
+                <% end %>
+
+                <%!-- Tech --%>
+                <%= if ps["techs"] != [] or ps["upgrades"] != [] do %>
+                  <div class="flex flex-wrap gap-0.5">
+                    <%= for t <- ps["techs"] do %>
+                      <span class="rounded px-1 py-px font-mono border border-accent/30 text-accent">{t["name"]}</span>
+                    <% end %>
+                    <%= for u <- ps["upgrades"] do %>
+                      <span class="rounded px-1 py-px font-mono border border-warning/30 text-warning">{u["name"]} {u["level"]}</span>
+                    <% end %>
+                  </div>
+                <% end %>
+
+                <%!-- Note: counts are produced, not alive --%>
+                <div class="text-base-content/15 mt-1 italic">produced (losses unknown)</div>
+              </div>
+            <% end %>
           <% end %>
         </div>
       </div>
