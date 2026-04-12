@@ -18,6 +18,15 @@ defmodule BroodwarWeb.Router do
     pipe_through :browser
 
     get "/", PageController, :home
+
+    get "/wiki", WikiController, :index
+    get "/wiki/races/:slug", WikiController, :race
+    get "/wiki/units/:slug", WikiController, :unit
+    get "/wiki/buildings/:slug", WikiController, :building
+    get "/wiki/abilities", WikiController, :abilities
+    get "/wiki/abilities/:slug", WikiController, :ability
+    get "/wiki/maps", WikiController, :maps
+    get "/wiki/maps/:slug", WikiController, :map
   end
 
   # Other scopes may use custom stacks.

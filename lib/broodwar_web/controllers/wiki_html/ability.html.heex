@@ -1,0 +1,80 @@
+<Layouts.app flash={@flash}>
+  <%!-- Breadcrumb --%>
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8">
+    <nav class="text-sm text-base-content/40">
+      <a href="/wiki" class="hover:text-base-content transition-colors">Wiki</a>
+      <span class="mx-1.5">/</span>
+      <a href="/wiki/abilities" class="hover:text-base-content transition-colors">Abilities</a>
+      <span class="mx-1.5">/</span>
+      <span class="text-base-content/70">{@ability.name}</span>
+    </nav>
+  </section>
+
+  <%!-- Ability Header --%>
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 pb-8">
+    <div class="flex items-start gap-4">
+      <img
+        src={"/images/wiki/abilities/#{@ability.slug}.gif"}
+        alt={@ability.name}
+        class="w-20 h-20 rounded-xl bg-base-300 border border-base-content/10 shrink-0"
+        onerror="this.src='/images/wiki/abilities/#{@ability.slug}.png'"
+      />
+      <div>
+        <h1 class="text-3xl font-bold tracking-tight">{@ability.name}</h1>
+        <div class="mt-1 flex items-center gap-2 text-sm text-base-content/50">
+          <span class={race_color(@race.slug)}>{@race.name}</span>
+          <span>&middot;</span>
+          <span>Ability</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+      <%!-- Description --%>
+      <div class="lg:col-span-2">
+        <div class="bg-base-100 rounded-box border border-base-content/5 p-6">
+          <p class="text-sm text-base-content/70 leading-relaxed">{@ability.description}</p>
+        </div>
+      </div>
+
+      <%!-- Info Sidebar --%>
+      <div class="space-y-4">
+        <div class={[
+          "rounded-box border p-5",
+          race_border(@race.slug),
+          race_bg_subtle(@race.slug)
+        ]}>
+          <h3 class="text-sm font-semibold mb-4">Details</h3>
+          <dl class="space-y-2.5">
+            <.stat_row :if={Map.get(@ability, :energy, 0) > 0} stat="energy" value={@ability.energy} />
+            <div :if={Map.get(@ability, :hp_cost)} class="flex items-center justify-between text-sm">
+              <dt class="flex items-center gap-1.5 text-base-content/50">
+                <img src="/images/wiki/stats/hp.png" alt="HP" class="w-4 h-4 inline-block" />
+                <span>HP Cost</span>
+              </dt>
+              <dd class="font-mono">{@ability.hp_cost}</dd>
+            </div>
+          </dl>
+        </div>
+
+        <%!-- Caster --%>
+        <div :if={@caster} class="bg-base-100 rounded-box border border-base-content/5 p-5">
+          <h3 class="text-sm font-semibold mb-3">Cast by</h3>
+          <a
+            href={"/wiki/units/#{@caster.slug}"}
+            class="flex items-center gap-2.5 group"
+          >
+            <img
+              src={"/images/wiki/units/#{@caster.slug}.jpg"}
+              alt={@caster.name}
+              class="w-10 h-10 rounded-lg object-cover bg-base-300 border border-base-content/5"
+            />
+            <span class="text-sm font-medium text-primary group-hover:text-primary/80 transition-colors">{@caster.name}</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layouts.app>

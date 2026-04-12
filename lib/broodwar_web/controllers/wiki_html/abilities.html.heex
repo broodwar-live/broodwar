@@ -1,0 +1,50 @@
+<Layouts.app flash={@flash}>
+  <%!-- Breadcrumb --%>
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8">
+    <nav class="text-sm text-base-content/40">
+      <a href="/wiki" class="hover:text-base-content transition-colors">Wiki</a>
+      <span class="mx-1.5">/</span>
+      <span class="text-base-content/70">Abilities</span>
+    </nav>
+  </section>
+
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 pb-16">
+    <h1 class="text-3xl font-bold tracking-tight mb-2">Abilities & Spells</h1>
+    <p class="text-base-content/60 mb-8">
+      Active abilities, spells, and special actions available to units across all three races.
+    </p>
+
+    <div :for={{race, abilities} <- @abilities_by_race} class="mb-10">
+      <h2 class="text-lg font-semibold mb-4 flex items-center gap-2">
+        <div class={[
+          "w-7 h-7 rounded flex items-center justify-center text-sm font-bold text-base-100",
+          race_bg(race.slug)
+        ]}>
+          {race.letter}
+        </div>
+        {race.name}
+      </h2>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+        <a
+          :for={ability <- abilities}
+          href={"/wiki/abilities/#{ability.slug}"}
+          class="group rounded-box border bg-base-100 border-base-content/5 p-4 transition-colors hover:border-primary/30"
+        >
+          <div class="flex items-center gap-3 mb-2">
+            <img
+              src={"/images/wiki/abilities/#{ability.slug}.gif"}
+              alt={ability.name}
+              class="w-10 h-10 rounded-lg bg-base-300 border border-base-content/5"
+              onerror="this.src='/images/wiki/abilities/#{ability.slug}.png'"
+            />
+            <div>
+              <span class="font-medium text-sm group-hover:text-primary transition-colors block">{ability.name}</span>
+              <span class="text-xs text-base-content/40">{ability.caster |> String.replace("-", " ") |> String.capitalize()}</span>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+</Layouts.app>

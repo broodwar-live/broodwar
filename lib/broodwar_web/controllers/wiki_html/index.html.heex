@@ -1,0 +1,80 @@
+<Layouts.app flash={@flash}>
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-6">
+    <div class="max-w-3xl">
+      <h1 class="text-3xl font-bold tracking-tight">Wiki</h1>
+      <p class="mt-2 text-base-content/60">
+        Reference guide to StarCraft: Brood War races, units, and buildings.
+      </p>
+    </div>
+  </section>
+
+  <%!-- Races --%>
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <h2 class="text-lg font-semibold mb-4">Races</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+      <.race_card :for={race <- @races} race={race} />
+    </div>
+  </section>
+
+  <%!-- Quick Links --%>
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 pb-16">
+    <h2 class="text-lg font-semibold mb-4">Browse by Category</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+      <div class="bg-base-100 rounded-box border border-base-content/5 p-5">
+        <h3 class="font-medium mb-3 flex items-center gap-2">
+          <.icon name="hero-shield-check-micro" class="size-4 text-primary" />
+          Units
+        </h3>
+        <p class="text-sm text-base-content/50 mb-4">
+          All combat and support units across all three races — stats, abilities, and roles.
+        </p>
+        <div class="flex flex-wrap gap-2">
+          <a :for={race <- @races} href={"/wiki/races/#{race.slug}#units"} class="badge badge-ghost text-xs">
+            <span class={race_color(race.slug)}>{race.letter}</span>&nbsp;{race.name} units
+          </a>
+        </div>
+      </div>
+
+      <div class="bg-base-100 rounded-box border border-base-content/5 p-5">
+        <h3 class="font-medium mb-3 flex items-center gap-2">
+          <.icon name="hero-building-office-2-micro" class="size-4 text-primary" />
+          Buildings
+        </h3>
+        <p class="text-sm text-base-content/50 mb-4">
+          Production facilities, tech structures, and defenses for each race.
+        </p>
+        <div class="flex flex-wrap gap-2">
+          <a :for={race <- @races} href={"/wiki/races/#{race.slug}#buildings"} class="badge badge-ghost text-xs">
+            <span class={race_color(race.slug)}>{race.letter}</span>&nbsp;{race.name} buildings
+          </a>
+        </div>
+      </div>
+
+      <div class="bg-base-100 rounded-box border border-base-content/5 p-5">
+        <h3 class="font-medium mb-3 flex items-center gap-2">
+          <.icon name="hero-bolt-micro" class="size-4 text-primary" />
+          Abilities & Spells
+        </h3>
+        <p class="text-sm text-base-content/50 mb-4">
+          Active abilities, spells, and special actions — from Psionic Storm to Dark Swarm.
+        </p>
+        <a href="/wiki/abilities" class="badge badge-ghost text-xs">
+          Browse all abilities &rarr;
+        </a>
+      </div>
+
+      <div class="bg-base-100 rounded-box border border-base-content/5 p-5">
+        <h3 class="font-medium mb-3 flex items-center gap-2">
+          <.icon name="hero-map-micro" class="size-4 text-primary" />
+          Maps
+        </h3>
+        <p class="text-sm text-base-content/50 mb-4">
+          Competitive maps from Lost Temple to the modern ASL pool.
+        </p>
+        <a href="/wiki/maps" class="badge badge-ghost text-xs">
+          Browse all maps &rarr;
+        </a>
+      </div>
+    </div>
+  </section>
+</Layouts.app>

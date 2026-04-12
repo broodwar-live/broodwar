@@ -1,0 +1,167 @@
+<Layouts.app flash={@flash}>
+  <%!-- Breadcrumb --%>
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8">
+    <nav class="text-sm text-base-content/40">
+      <a href="/wiki" class="hover:text-base-content transition-colors">Wiki</a>
+      <span class="mx-1.5">/</span>
+      <span class="text-base-content/70">{@race.name}</span>
+    </nav>
+  </section>
+
+  <%!-- Race Header --%>
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 pb-8">
+    <div class="flex items-start gap-4">
+      <div class={[
+        "w-14 h-14 rounded-xl flex items-center justify-center text-2xl font-bold text-base-100 shrink-0",
+        race_bg(@race.slug)
+      ]}>
+        {@race.letter}
+      </div>
+      <div>
+        <h1 class="text-3xl font-bold tracking-tight">{@race.name}</h1>
+        <p class="mt-1 text-base-content/60">{@race.tagline}</p>
+      </div>
+    </div>
+  </section>
+
+  <%!-- Overview --%>
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-8">
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+      <%!-- Description --%>
+      <div class="lg:col-span-2">
+        <div class="bg-base-100 rounded-box border border-base-content/5 p-6">
+          <h2 class="text-lg font-semibold mb-3">Overview</h2>
+          <p class="text-sm text-base-content/70 leading-relaxed">{@race.description}</p>
+          <h3 class="text-sm font-semibold mt-5 mb-2">Playstyle</h3>
+          <p class="text-sm text-base-content/70 leading-relaxed">{@race.playstyle}</p>
+        </div>
+      </div>
+
+      <%!-- Strengths & Weaknesses --%>
+      <div class="space-y-4">
+        <div class={[
+          "rounded-box border p-5",
+          race_border(@race.slug),
+          race_bg_subtle(@race.slug)
+        ]}>
+          <h3 class="text-sm font-semibold mb-3 flex items-center gap-1.5">
+            <.icon name="hero-arrow-trending-up-micro" class="size-3.5 text-success" />
+            Strengths
+          </h3>
+          <ul class="space-y-2">
+            <li :for={strength <- @race.strengths} class="flex items-start gap-2 text-xs text-base-content/70">
+              <span class="text-success mt-0.5 shrink-0">+</span>
+              <span>{strength}</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="bg-base-100 rounded-box border border-base-content/5 p-5">
+          <h3 class="text-sm font-semibold mb-3 flex items-center gap-1.5">
+            <.icon name="hero-arrow-trending-down-micro" class="size-3.5 text-error" />
+            Weaknesses
+          </h3>
+          <ul class="space-y-2">
+            <li :for={weakness <- @race.weaknesses} class="flex items-start gap-2 text-xs text-base-content/70">
+              <span class="text-error mt-0.5 shrink-0">&minus;</span>
+              <span>{weakness}</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <%!-- Units --%>
+  <section id="units" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <h2 class="text-lg font-semibold mb-4">Units</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+      <a
+        :for={unit <- @units}
+        href={"/wiki/units/#{unit.slug}"}
+        class={[
+          "group rounded-box border p-4 transition-colors hover:border-primary/30",
+          "bg-base-100 border-base-content/5"
+        ]}
+      >
+        <div class="flex items-center justify-between mb-2">
+          <div class="flex items-center gap-2.5">
+            <img
+              src={"/images/wiki/units/#{unit.slug}.jpg"}
+              alt={unit.name}
+              class="w-10 h-10 rounded-lg object-cover bg-base-300 border border-base-content/5"
+            />
+            <div>
+              <span class="font-medium text-sm group-hover:text-primary transition-colors block">{unit.name}</span>
+              <div class="flex items-center gap-2 text-xs text-base-content/40 mt-0.5">
+                <span>{unit.minerals}m</span>
+                <span :if={unit.gas > 0}>{unit.gas}g</span>
+                <span>{unit.supply}s</span>
+              </div>
+            </div>
+          </div>
+          <span class="badge badge-ghost text-[10px]">{unit_type_label(unit.type)}</span>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <%!-- Abilities --%>
+  <section :if={@abilities != []} id="abilities" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <h2 class="text-lg font-semibold mb-4">Abilities & Spells</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+      <a
+        :for={ability <- @abilities}
+        href={"/wiki/abilities/#{ability.slug}"}
+        class={[
+          "group rounded-box border p-4 transition-colors hover:border-primary/30",
+          "bg-base-100 border-base-content/5"
+        ]}
+      >
+        <div class="flex items-center gap-2.5">
+          <img
+            src={"/images/wiki/abilities/#{ability.slug}.gif"}
+            alt={ability.name}
+            class="w-10 h-10 rounded-lg bg-base-300 border border-base-content/5"
+            onerror="this.src='/images/wiki/abilities/#{ability.slug}.png'"
+          />
+          <div>
+            <span class="font-medium text-sm group-hover:text-primary transition-colors block">{ability.name}</span>
+            <span class="text-xs text-base-content/40">{ability.caster |> String.replace("-", " ") |> String.capitalize()}</span>
+          </div>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <%!-- Buildings --%>
+  <section id="buildings" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 pb-16">
+    <h2 class="text-lg font-semibold mb-4">Buildings</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+      <a
+        :for={building <- @buildings}
+        href={"/wiki/buildings/#{building.slug}"}
+        class={[
+          "group rounded-box border p-4 transition-colors hover:border-primary/30",
+          "bg-base-100 border-base-content/5"
+        ]}
+      >
+        <div class="flex items-center gap-2.5 mb-2">
+          <img
+            src={"/images/wiki/buildings/#{building.slug}.jpg"}
+            alt={building.name}
+            class="w-10 h-10 rounded-lg object-cover bg-base-300 border border-base-content/5"
+          />
+          <div>
+            <span class="font-medium text-sm group-hover:text-primary transition-colors block">{building.name}</span>
+            <div class="flex items-center gap-2 text-xs text-base-content/40 mt-0.5">
+              <span>{building.minerals}m</span>
+              <span :if={building.gas > 0}>{building.gas}g</span>
+              <span :if={building.produces != []}>{length(building.produces)} units</span>
+            </div>
+          </div>
+        </div>
+      </a>
+    </div>
+  </section>
+</Layouts.app>

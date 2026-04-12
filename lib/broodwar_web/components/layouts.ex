@@ -39,6 +39,7 @@ defmodule BroodwarWeb.Layouts do
               <.nav_link href="/replays" label="Replays" icon="hero-play-circle-micro" />
               <.nav_link href="/builds" label="Builds" icon="hero-queue-list-micro" />
               <.nav_link href="/balance" label="Balance" icon="hero-chart-bar-micro" />
+              <.nav_link href="/wiki" label="Wiki" icon="hero-book-open-micro" />
             </div>
 
             <%!-- Right side --%>
