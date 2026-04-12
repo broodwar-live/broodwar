@@ -29,26 +29,26 @@ defmodule BroodwarWeb.PageHTML do
 
   defp stream_card(assigns) do
     ~H"""
-    <div class="match-card bg-base-100 rounded-box border border-base-content/5 overflow-hidden group cursor-pointer">
+    <div class="glass-card rounded-box overflow-hidden group cursor-pointer glow-blue">
       <%!-- Thumbnail placeholder --%>
-      <div class="aspect-video bg-base-300 relative">
+      <div class="aspect-video bg-base-300/50 relative">
         <div class="absolute inset-0 flex items-center justify-center">
-          <.icon name="hero-play-micro" class="size-8 text-base-content/20 group-hover:text-primary/40 transition-colors" />
+          <.icon name="hero-play-micro" class="size-8 text-base-content/10 group-hover:text-primary/30 transition-colors" />
         </div>
-        <div class="absolute top-2 left-2 flex items-center gap-1.5 px-2 py-0.5 rounded bg-error/90 text-error-content text-xs font-medium">
-          <span class="w-1.5 h-1.5 rounded-full bg-error-content animate-live-pulse"></span>
+        <div class="absolute top-2.5 left-2.5 badge-live flex items-center gap-1.5 px-2 py-0.5 rounded text-[10px]">
+          <span class="w-1.5 h-1.5 rounded-full bg-white animate-live-pulse"></span>
           {gettext("LIVE")}
         </div>
-        <div class="absolute bottom-2 right-2 px-2 py-0.5 rounded bg-base-300/80 text-xs text-base-content/70">
+        <div class="absolute bottom-2 right-2 px-2 py-0.5 rounded bg-base-300/80 backdrop-blur-sm text-[10px] text-base-content/60 font-medium">
           {@viewers} {gettext("viewers")}
         </div>
       </div>
       <div class="p-3">
         <div class="flex items-center gap-2">
-          <span class={["text-xs font-bold", race_color(@race)]}>{@race}</span>
-          <span class="font-medium text-sm">{@name}</span>
+          <span class={["text-xs font-bold badge-race", race_color(@race)]}>{@race}</span>
+          <span class="font-semibold text-sm">{@name}</span>
         </div>
-        <p class="text-xs text-base-content/50 mt-0.5 truncate">{@title}</p>
+        <p class="text-xs text-base-content/40 mt-0.5 truncate">{@title}</p>
       </div>
     </div>
     """
@@ -70,10 +70,10 @@ defmodule BroodwarWeb.PageHTML do
     assigns = assign(assigns, :winner, if(assigns.score_a > assigns.score_b, do: :a, else: :b))
 
     ~H"""
-    <div class="match-card bg-base-100 rounded-box border border-base-content/5 px-4 py-3 flex items-center gap-4 cursor-pointer">
+    <div class="glass-card rounded-box px-4 py-3 flex items-center gap-4 cursor-pointer glow-blue">
       <%!-- Tournament --%>
       <div class="hidden sm:block w-32 shrink-0">
-        <span class="text-xs text-base-content/40">{@tournament}</span>
+        <span class="text-[11px] text-primary/50 font-medium">{@tournament}</span>
       </div>
 
       <%!-- Match result --%>
@@ -81,29 +81,29 @@ defmodule BroodwarWeb.PageHTML do
         <%!-- Player A --%>
         <div class="flex items-center gap-2 flex-1 justify-end min-w-0">
           <span class={[
-            "font-medium text-sm truncate",
+            "font-semibold text-sm truncate",
             @winner == :a && "text-base-content",
-            @winner != :a && "text-base-content/50"
+            @winner != :a && "text-base-content/40"
           ]}>
             {@player_a}
           </span>
-          <span class={["text-xs font-bold shrink-0", race_color(@race_a)]}>{@race_a}</span>
+          <span class={["text-[10px] font-bold badge-race shrink-0", race_color(@race_a)]}>{@race_a}</span>
         </div>
 
         <%!-- Score --%>
-        <div class="flex items-center gap-1.5 shrink-0 font-mono text-sm">
+        <div class="flex items-center gap-1.5 shrink-0 font-stats text-sm">
           <span class={[
             "font-bold",
-            @winner == :a && "text-secondary",
-            @winner != :a && "text-base-content/40"
+            @winner == :a && "text-primary",
+            @winner != :a && "text-base-content/30"
           ]}>
             {@score_a}
           </span>
-          <span class="text-base-content/20">:</span>
+          <span class="text-base-content/15">:</span>
           <span class={[
             "font-bold",
-            @winner == :b && "text-secondary",
-            @winner != :b && "text-base-content/40"
+            @winner == :b && "text-primary",
+            @winner != :b && "text-base-content/30"
           ]}>
             {@score_b}
           </span>
@@ -111,11 +111,11 @@ defmodule BroodwarWeb.PageHTML do
 
         <%!-- Player B --%>
         <div class="flex items-center gap-2 flex-1 min-w-0">
-          <span class={["text-xs font-bold shrink-0", race_color(@race_b)]}>{@race_b}</span>
+          <span class={["text-[10px] font-bold badge-race shrink-0", race_color(@race_b)]}>{@race_b}</span>
           <span class={[
-            "font-medium text-sm truncate",
+            "font-semibold text-sm truncate",
             @winner == :b && "text-base-content",
-            @winner != :b && "text-base-content/50"
+            @winner != :b && "text-base-content/40"
           ]}>
             {@player_b}
           </span>
@@ -124,8 +124,8 @@ defmodule BroodwarWeb.PageHTML do
 
       <%!-- Map + Date --%>
       <div class="hidden sm:flex items-center gap-4 shrink-0">
-        <span class="text-xs text-base-content/30 w-20 text-right">{@map}</span>
-        <span class="text-xs text-base-content/30 w-12 text-right">{@date}</span>
+        <span class="text-[11px] text-base-content/25 w-20 text-right">{@map}</span>
+        <span class="text-[11px] text-base-content/20 w-12 text-right">{@date}</span>
       </div>
     </div>
     """
@@ -140,13 +140,13 @@ defmodule BroodwarWeb.PageHTML do
   defp balance_bar(assigns) do
     ~H"""
     <div>
-      <div class="flex items-center justify-between text-xs mb-1">
-        <span class="text-base-content/70">{@matchup}</span>
-        <span class="text-base-content/40">{@left}% — {@right}%</span>
+      <div class="flex items-center justify-between text-xs mb-1.5">
+        <span class="text-base-content/60 font-semibold text-[11px]">{@matchup}</span>
+        <span class="text-base-content/30 font-stats text-[11px]">{@left}% — {@right}%</span>
       </div>
-      <div class="flex h-1.5 rounded-full overflow-hidden bg-base-300">
-        <div class="bg-primary/70 rounded-l-full" style={"width: #{@left}%"}></div>
-        <div class="bg-secondary/70 rounded-r-full" style={"width: #{@right}%"}></div>
+      <div class="flex h-1.5 rounded-full overflow-hidden bg-base-content/5">
+        <div class="bg-gradient-to-r from-primary to-primary/70 rounded-l-full" style={"width: #{@left}%"}></div>
+        <div class="bg-gradient-to-r from-secondary/70 to-secondary rounded-r-full" style={"width: #{@right}%"}></div>
       </div>
     </div>
     """
@@ -165,15 +165,15 @@ defmodule BroodwarWeb.PageHTML do
       <span class={[
         "w-5 text-center text-xs font-bold",
         @rank == 1 && "text-secondary",
-        @rank == 2 && "text-base-content/60",
-        @rank == 3 && "text-base-content/40",
-        @rank > 3 && "text-base-content/30"
+        @rank == 2 && "text-base-content/50",
+        @rank == 3 && "text-base-content/35",
+        @rank > 3 && "text-base-content/20"
       ]}>
         {@rank}
       </span>
-      <span class={["text-xs font-bold w-4", race_color(@race)]}>{@race}</span>
-      <span class="flex-1 text-sm font-medium">{@name}</span>
-      <span class="text-xs text-base-content/40 font-mono">{@rating}</span>
+      <span class={["text-[10px] font-bold w-4 badge-race", race_color(@race)]}>{@race}</span>
+      <span class="flex-1 text-sm font-semibold">{@name}</span>
+      <span class="text-[11px] text-base-content/30 font-mono">{@rating}</span>
     </div>
     """
   end
@@ -190,18 +190,16 @@ defmodule BroodwarWeb.PageHTML do
 
   defp upcoming_match(assigns) do
     ~H"""
-    <div class="flex flex-col gap-1">
-      <div class="flex items-center gap-2">
-        <span class="text-[10px] text-base-content/30 uppercase tracking-wide">{@tournament} {@round}</span>
-      </div>
+    <div class="flex flex-col gap-1.5">
+      <span class="text-[10px] text-primary/40 uppercase tracking-widest font-semibold">{@tournament} {@round}</span>
       <div class="flex items-center gap-2 text-sm">
-        <span class={["text-xs font-bold", race_color(@race_a)]}>{@race_a}</span>
-        <span class="font-medium">{@player_a}</span>
-        <span class="text-base-content/20 text-xs">{gettext("vs")}</span>
-        <span class="font-medium">{@player_b}</span>
-        <span class={["text-xs font-bold", race_color(@race_b)]}>{@race_b}</span>
+        <span class={["text-[10px] font-bold badge-race", race_color(@race_a)]}>{@race_a}</span>
+        <span class="font-semibold">{@player_a}</span>
+        <span class="text-base-content/15 text-xs">{gettext("vs")}</span>
+        <span class="font-semibold">{@player_b}</span>
+        <span class={["text-[10px] font-bold badge-race", race_color(@race_b)]}>{@race_b}</span>
       </div>
-      <span class="text-xs text-base-content/40">{@time}</span>
+      <span class="text-[11px] text-base-content/30">{@time}</span>
     </div>
     """
   end
@@ -217,26 +215,26 @@ defmodule BroodwarWeb.PageHTML do
 
   defp build_card(assigns) do
     ~H"""
-    <div class="match-card bg-base-100 rounded-box border border-base-content/5 p-4 cursor-pointer">
-      <div class="flex items-center justify-between mb-2">
-        <div class="flex items-center gap-2">
+    <div class="glass-card rounded-box p-5 cursor-pointer glow-blue">
+      <div class="flex items-center justify-between mb-3">
+        <div class="flex items-center gap-2.5">
           <span class={[
-            "w-6 h-6 rounded flex items-center justify-center text-xs font-bold text-base-100",
+            "w-7 h-7 rounded-lg flex items-center justify-center text-xs font-black text-base-100",
             race_bg(@race)
           ]}>
             {@race}
           </span>
-          <span class="font-medium text-sm">{@name}</span>
+          <span class="font-semibold text-sm">{@name}</span>
         </div>
-        <span class="badge badge-sm badge-ghost text-xs">{@matchup}</span>
+        <span class="px-2 py-0.5 rounded text-[10px] font-semibold bg-primary/10 text-primary/70">{@matchup}</span>
       </div>
-      <p class="text-xs text-base-content/50 leading-relaxed mb-3">{@description}</p>
-      <div class="flex items-center gap-4 text-xs text-base-content/40">
-        <span>{@games} {gettext("games")}</span>
+      <p class="text-xs text-base-content/40 leading-relaxed mb-4">{@description}</p>
+      <div class="flex items-center gap-4 text-[11px] text-base-content/30">
+        <span class="font-medium">{@games} {gettext("games")}</span>
         <span class={[
-          "font-medium",
+          "font-semibold",
           @winrate >= 55 && "text-success",
-          @winrate < 55 && @winrate >= 50 && "text-base-content/60",
+          @winrate < 55 && @winrate >= 50 && "text-base-content/50",
           @winrate < 50 && "text-error"
         ]}>
           {@winrate}% {gettext("winrate")}

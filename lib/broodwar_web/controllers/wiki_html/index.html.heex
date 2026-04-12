@@ -1,7 +1,7 @@
 <Layouts.app flash={@flash}>
   <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-6">
     <div class="max-w-3xl">
-      <h1 class="text-3xl font-bold tracking-tight">{gettext("Wiki")}</h1>
+      <h1 class="font-display text-3xl tracking-tight">{gettext("Wiki")}</h1>
       <p class="mt-2 text-base-content/60">
         {gettext("Reference guide to StarCraft: Brood War races, units, and buildings.")}
       </p>
@@ -10,7 +10,7 @@
 
   <%!-- Races --%>
   <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-    <h2 class="text-lg font-semibold mb-4">{gettext("Races")}</h2>
+    <h2 class="font-display text-lg mb-4">{gettext("Races")}</h2>
     <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
       <.race_card :for={race <- @races} race={race} />
     </div>
@@ -18,7 +18,7 @@
 
   <%!-- Quick Links --%>
   <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 pb-16">
-    <h2 class="text-lg font-semibold mb-4">{gettext("Browse by Category")}</h2>
+    <h2 class="font-display text-lg mb-4">{gettext("Browse by Category")}</h2>
     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
       <div class="bg-base-100 rounded-box border border-base-content/5 p-5">
         <h3 class="font-medium mb-3 flex items-center gap-2">

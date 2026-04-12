@@ -18,45 +18,46 @@
 }
 
 /* === broodwar.live Dark Theme ===
-   Inspired by ASL/Korean StarCraft broadcasts:
-   deep navy backgrounds, steel blue primary, StarCraft gold accents */
+   Inspired by ASL Season 21 / SOOP broadcast aesthetic:
+   deep navy backgrounds, bright blue primary, blue-to-teal gradients,
+   premium cinematic esports feel */
 @plugin "../vendor/daisyui-theme" {
   name: "dark";
   default: true;
   prefersdark: true;
   color-scheme: "dark";
-  /* Deep navy backgrounds — the ASL broadcast look */
-  --color-base-100: oklch(16% 0.025 260);
-  --color-base-200: oklch(13% 0.022 260);
-  --color-base-300: oklch(10% 0.020 260);
-  --color-base-content: oklch(92% 0.008 250);
-  /* Steel blue — StarCraft's light steel blue #587EA2 / SOOP blue */
-  --color-primary: oklch(62% 0.12 245);
-  --color-primary-content: oklch(98% 0.005 245);
-  /* StarCraft gold/orange — warm accent from SC brand #C2641A */
-  --color-secondary: oklch(72% 0.15 70);
-  --color-secondary-content: oklch(15% 0.03 70);
-  /* Bright electric blue — for highlighted/active elements */
-  --color-accent: oklch(65% 0.2 255);
-  --color-accent-content: oklch(98% 0.005 255);
-  /* Neutral — darker blue-gray for cards, borders */
-  --color-neutral: oklch(22% 0.025 255);
-  --color-neutral-content: oklch(88% 0.01 250);
-  /* Live/online indicator green */
+  /* Deep navy — ASL broadcast dark (#0A1628 → #0c0d0e range) */
+  --color-base-100: oklch(14% 0.03 255);
+  --color-base-200: oklch(11% 0.025 255);
+  --color-base-300: oklch(8% 0.02 255);
+  --color-base-content: oklch(94% 0.006 250);
+  /* SOOP/ASL broadcast blue — #0182ff */
+  --color-primary: oklch(60% 0.2 250);
+  --color-primary-content: oklch(98% 0.005 250);
+  /* Teal/cyan accent — ASL gradient endpoint #32f6e0 */
+  --color-secondary: oklch(78% 0.14 180);
+  --color-secondary-content: oklch(12% 0.03 180);
+  /* Electric purple — SOOP award purple #925aff */
+  --color-accent: oklch(55% 0.25 290);
+  --color-accent-content: oklch(98% 0.005 290);
+  /* Neutral — blue-gray surfaces */
+  --color-neutral: oklch(20% 0.02 255);
+  --color-neutral-content: oklch(88% 0.008 250);
+  /* Live/online indicator — vivid green */
   --color-success: oklch(72% 0.19 155);
   --color-success-content: oklch(15% 0.04 155);
-  /* Info — lighter steel blue */
-  --color-info: oklch(65% 0.12 240);
+  /* Info — lighter broadcast blue */
+  --color-info: oklch(65% 0.15 240);
   --color-info-content: oklch(98% 0.005 240);
-  /* Warning — gold */
+  /* Warning — amber/gold */
   --color-warning: oklch(78% 0.15 80);
   --color-warning-content: oklch(15% 0.03 80);
-  /* Error/Terran red */
-  --color-error: oklch(60% 0.22 25);
-  --color-error-content: oklch(96% 0.01 25);
-  --radius-selector: 0.25rem;
-  --radius-field: 0.25rem;
-  --radius-box: 0.5rem;
+  /* Error — live/urgent red #ff2f00 */
+  --color-error: oklch(60% 0.24 28);
+  --color-error-content: oklch(96% 0.01 28);
+  --radius-selector: 0.375rem;
+  --radius-field: 0.375rem;
+  --radius-box: 0.75rem;
   --size-selector: 0.21875rem;
   --size-field: 0.21875rem;
   --border: 1px;
@@ -65,22 +66,22 @@
 }
 
 /* === broodwar.live Light Theme ===
-   Cool gray-white with the same accent colors */
+   Clean light variant with the same accent system */
 @plugin "../vendor/daisyui-theme" {
   name: "light";
   default: false;
   prefersdark: false;
   color-scheme: "light";
-  --color-base-100: oklch(97% 0.005 250);
-  --color-base-200: oklch(94% 0.008 250);
-  --color-base-300: oklch(90% 0.012 250);
-  --color-base-content: oklch(20% 0.02 255);
-  --color-primary: oklch(50% 0.14 245);
-  --color-primary-content: oklch(98% 0.005 245);
-  --color-secondary: oklch(58% 0.16 65);
-  --color-secondary-content: oklch(98% 0.01 65);
-  --color-accent: oklch(52% 0.2 255);
-  --color-accent-content: oklch(98% 0.005 255);
+  --color-base-100: oklch(98% 0.004 250);
+  --color-base-200: oklch(95% 0.006 250);
+  --color-base-300: oklch(91% 0.01 250);
+  --color-base-content: oklch(18% 0.02 255);
+  --color-primary: oklch(50% 0.18 250);
+  --color-primary-content: oklch(98% 0.005 250);
+  --color-secondary: oklch(55% 0.12 180);
+  --color-secondary-content: oklch(98% 0.01 180);
+  --color-accent: oklch(45% 0.22 290);
+  --color-accent-content: oklch(98% 0.005 290);
   --color-neutral: oklch(40% 0.02 255);
   --color-neutral-content: oklch(98% 0.005 255);
   --color-success: oklch(55% 0.17 155);
@@ -89,11 +90,11 @@
   --color-info-content: oklch(98% 0.005 240);
   --color-warning: oklch(65% 0.16 75);
   --color-warning-content: oklch(15% 0.03 75);
-  --color-error: oklch(55% 0.22 25);
-  --color-error-content: oklch(96% 0.01 25);
-  --radius-selector: 0.25rem;
-  --radius-field: 0.25rem;
-  --radius-box: 0.5rem;
+  --color-error: oklch(55% 0.22 28);
+  --color-error-content: oklch(96% 0.01 28);
+  --radius-selector: 0.375rem;
+  --radius-field: 0.375rem;
+  --radius-box: 0.75rem;
   --size-selector: 0.21875rem;
   --size-field: 0.21875rem;
   --border: 1px;
@@ -119,41 +120,286 @@
   --color-race-zerg: oklch(58% 0.2 310);
 }
 
-/* === Custom Styles === */
+/* === Typography === */
 
-/* Subtle animated glow for "live" indicators */
-@keyframes live-pulse {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.5; }
-}
-.animate-live-pulse {
-  animation: live-pulse 2s ease-in-out infinite;
-}
+/* Pretendard — body/UI font, matches SOOP/AfreecaTV platform */
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css');
 
-/* Match card hover lift */
-.match-card {
-  transition: transform 0.15s ease, box-shadow 0.15s ease;
-}
-.match-card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 25px -5px oklch(62% 0.12 245 / 0.2);
+/* Black Han Sans — display/heading font, Korean esports broadcast style */
+@import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap');
+
+/* JetBrains Mono — monospace for scores, ratings, stats */
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+
+html {
+  font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", system-ui, sans-serif;
 }
 
-/* Gradient text utility for headings */
-.text-gradient-blue {
-  background: linear-gradient(135deg, oklch(62% 0.12 245), oklch(65% 0.2 255));
+/* Display heading class — use for hero text, section titles, player callouts */
+.font-display {
+  font-family: "Black Han Sans", "Pretendard Variable", sans-serif;
+}
+
+/* Mono/stats class — use for scores, ELO, APM, timestamps */
+.font-stats {
+  font-family: "JetBrains Mono", "Fira Code", monospace;
+  font-variant-numeric: tabular-nums;
+}
+
+/* === ASL Broadcast Gradients === */
+
+/* Primary hero gradient — dark: deep navy, light: soft blue-white */
+.asl-gradient-bg {
+  background: linear-gradient(160deg, oklch(8% 0.03 255) 0%, oklch(22% 0.08 250) 40%, oklch(14% 0.06 260) 100%);
+}
+[data-theme=light] .asl-gradient-bg {
+  background: linear-gradient(160deg, oklch(95% 0.01 250) 0%, oklch(90% 0.03 245) 40%, oklch(96% 0.008 260) 100%);
+}
+
+/* Blue-to-teal gradient text — works on both themes */
+.text-gradient-asl {
+  background: linear-gradient(135deg, oklch(60% 0.2 250), oklch(78% 0.14 180));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
+[data-theme=light] .text-gradient-asl {
+  background: linear-gradient(135deg, oklch(45% 0.2 250), oklch(50% 0.14 180));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Blue gradient text */
+.text-gradient-blue {
+  background: linear-gradient(135deg, oklch(60% 0.2 250), oklch(65% 0.22 240));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+[data-theme=light] .text-gradient-blue {
+  background: linear-gradient(135deg, oklch(45% 0.2 250), oklch(50% 0.22 240));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Teal/cyan gradient text */
+.text-gradient-teal {
+  background: linear-gradient(135deg, oklch(60% 0.2 250), oklch(78% 0.14 180));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+[data-theme=light] .text-gradient-teal {
+  background: linear-gradient(135deg, oklch(42% 0.2 250), oklch(45% 0.16 180));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Gold/amber gradient text */
 .text-gradient-gold {
   background: linear-gradient(135deg, oklch(72% 0.15 70), oklch(80% 0.16 90));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
+[data-theme=light] .text-gradient-gold {
+  background: linear-gradient(135deg, oklch(55% 0.16 70), oklch(60% 0.16 90));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
 
-/* Subtle top border accent for cards */
+/* === Glass Card Effects === */
+
+/* Dark: semi-transparent dark navy. Light: white with subtle blue tint */
+.glass-card {
+  background: oklch(14% 0.03 255 / 0.6);
+  border: 1px solid oklch(60% 0.2 250 / 0.1);
+  backdrop-filter: blur(12px);
+}
+.glass-card:hover {
+  border-color: oklch(60% 0.2 250 / 0.25);
+  background: oklch(14% 0.03 255 / 0.75);
+}
+[data-theme=light] .glass-card {
+  background: oklch(100% 0 0 / 0.7);
+  border: 1px solid oklch(50% 0.18 250 / 0.1);
+}
+[data-theme=light] .glass-card:hover {
+  border-color: oklch(50% 0.18 250 / 0.2);
+  background: oklch(100% 0 0 / 0.85);
+}
+
+/* Elevated glass card */
+.glass-card-elevated {
+  background: oklch(16% 0.035 255 / 0.7);
+  border: 1px solid oklch(60% 0.2 250 / 0.12);
+  backdrop-filter: blur(16px);
+  box-shadow: 0 4px 24px -4px oklch(60% 0.2 250 / 0.08);
+}
+[data-theme=light] .glass-card-elevated {
+  background: oklch(100% 0 0 / 0.8);
+  border: 1px solid oklch(50% 0.18 250 / 0.1);
+  box-shadow: 0 4px 24px -4px oklch(50% 0.18 250 / 0.06);
+}
+
+/* === Glow Effects === */
+
+.glow-blue {
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+.glow-blue:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 32px -4px oklch(60% 0.2 250 / 0.25),
+              0 0 0 1px oklch(60% 0.2 250 / 0.1);
+}
+[data-theme=light] .glow-blue:hover {
+  box-shadow: 0 8px 32px -4px oklch(50% 0.18 250 / 0.12),
+              0 0 0 1px oklch(50% 0.18 250 / 0.08);
+}
+
+.glow-teal:hover {
+  box-shadow: 0 8px 32px -4px oklch(78% 0.14 180 / 0.2);
+}
+[data-theme=light] .glow-teal:hover {
+  box-shadow: 0 8px 32px -4px oklch(50% 0.14 180 / 0.1);
+}
+
+/* === Custom Animations === */
+
+@keyframes live-pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(0.85); }
+}
+.animate-live-pulse {
+  animation: live-pulse 2s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+.animate-shimmer {
+  background-size: 200% 100%;
+  animation: shimmer 8s linear infinite;
+}
+
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-up {
+  animation: fade-up 0.5s ease-out;
+}
+
+/* === Match/Content Cards === */
+
+.match-card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+.match-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 32px -4px oklch(60% 0.2 250 / 0.2);
+  border-color: oklch(60% 0.2 250 / 0.2);
+}
+[data-theme=light] .match-card:hover {
+  box-shadow: 0 8px 32px -4px oklch(50% 0.18 250 / 0.1);
+  border-color: oklch(50% 0.18 250 / 0.15);
+}
+
 .card-accent-top {
-  border-top: 2px solid oklch(62% 0.12 245 / 0.5);
+  border-top: 2px solid oklch(60% 0.2 250 / 0.4);
+}
+[data-theme=light] .card-accent-top {
+  border-top: 2px solid oklch(50% 0.18 250 / 0.3);
+}
+
+.card-accent-left {
+  border-left: 2px solid oklch(60% 0.2 250 / 0.4);
+}
+[data-theme=light] .card-accent-left {
+  border-left: 2px solid oklch(50% 0.18 250 / 0.3);
+}
+
+/* === Hero Background Effects === */
+
+.hero-streaks::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(125deg, transparent 30%, oklch(60% 0.2 250 / 0.04) 45%, transparent 55%),
+    linear-gradient(135deg, transparent 50%, oklch(78% 0.14 180 / 0.03) 65%, transparent 75%);
+  pointer-events: none;
+}
+[data-theme=light] .hero-streaks::before {
+  background:
+    linear-gradient(125deg, transparent 30%, oklch(50% 0.18 250 / 0.06) 45%, transparent 55%),
+    linear-gradient(135deg, transparent 50%, oklch(50% 0.14 180 / 0.04) 65%, transparent 75%);
+}
+
+.hero-glow::after {
+  content: '';
+  position: absolute;
+  top: -20%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  height: 60%;
+  background: radial-gradient(ellipse at center, oklch(60% 0.2 250 / 0.08) 0%, transparent 70%);
+  pointer-events: none;
+}
+[data-theme=light] .hero-glow::after {
+  background: radial-gradient(ellipse at center, oklch(50% 0.18 250 / 0.06) 0%, transparent 70%);
+}
+
+/* === Section Dividers === */
+
+.section-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, oklch(60% 0.2 250 / 0.15), transparent);
+}
+[data-theme=light] .section-divider {
+  background: linear-gradient(90deg, transparent, oklch(50% 0.18 250 / 0.12), transparent);
+}
+
+/* === Badge Styles === */
+
+.badge-live {
+  background: oklch(60% 0.24 28 / 0.9);
+  color: white;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+}
+
+.badge-race {
+  font-weight: 700;
+  font-size: 0.65rem;
+  letter-spacing: 0.02em;
+}
+
+/* === Scrollbar Styling (Chromium) === */
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: oklch(30% 0.02 255);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: oklch(40% 0.02 255);
+}
+[data-theme=light] ::-webkit-scrollbar-thumb {
+  background: oklch(80% 0.01 255);
+}
+[data-theme=light] ::-webkit-scrollbar-thumb:hover {
+  background: oklch(70% 0.01 255);
 }

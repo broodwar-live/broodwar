@@ -52,7 +52,7 @@ defmodule BroodwarWeb.WikiHTML do
         <img src={stat_icon(@stat)} alt={@stat} class="w-4 h-4 inline-block" />
         <span>{stat_label(@stat)}</span>
       </dt>
-      <dd class="font-mono">{@value}</dd>
+      <dd class="font-stats">{@value}</dd>
     </div>
     """
   end

@@ -18,32 +18,31 @@ defmodule BroodwarWeb.Layouts do
   def app(assigns) do
     ~H"""
     <div class="min-h-screen flex flex-col">
-      <header class="bg-base-300/80 backdrop-blur-md border-b border-base-content/5 sticky top-0 z-50">
+      <header class="bg-base-300/60 backdrop-blur-xl border-b border-primary/5 sticky top-0 z-50">
         <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div class="flex items-center justify-between h-14">
+          <div class="flex items-center justify-between h-16">
             <%!-- Logo / Brand --%>
-            <a href="/" class="flex items-center gap-2.5 group">
-              <div class="w-7 h-7 rounded bg-primary/15 border border-primary/30 flex items-center justify-center group-hover:bg-primary/25 transition-colors">
-                <span class="text-primary font-bold text-xs">BW</span>
+            <a href="/" class="flex items-center gap-3 group">
+              <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-primary to-secondary flex items-center justify-center shadow-lg shadow-primary/20 group-hover:shadow-primary/30 transition-shadow">
+                <span class="text-white font-black text-xs tracking-tighter">BW</span>
               </div>
-              <span class="font-semibold text-base-content tracking-tight text-sm">
-                broodwar<span class="text-primary">.live</span>
+              <span class="font-bold text-base-content tracking-tight text-sm">
+                broodwar<span class="text-gradient-asl">.live</span>
               </span>
             </a>
 
             <%!-- Navigation Links --%>
-            <div class="hidden md:flex items-center gap-1">
-              <.nav_link href="/" label={gettext("Home")} icon="hero-home-micro" />
-              <.nav_link href="/players" label={gettext("Players")} icon="hero-user-group-micro" />
-              <.nav_link href="/matches" label={gettext("Matches")} icon="hero-trophy-micro" />
-              <.nav_link href="/replays" label={gettext("Replays")} icon="hero-play-circle-micro" />
-              <.nav_link href="/builds" label={gettext("Builds")} icon="hero-queue-list-micro" />
-              <.nav_link href="/balance" label={gettext("Balance")} icon="hero-chart-bar-micro" />
-              <.nav_link href="/wiki" label={gettext("Wiki")} icon="hero-book-open-micro" />
+            <div class="hidden lg:flex items-center gap-0.5">
+              <.nav_link href="/" label={gettext("Home")} />
+              <.nav_link href="/players" label={gettext("Players")} />
+              <.nav_link href="/matches" label={gettext("Matches")} />
+              <.nav_link href="/replays" label={gettext("Replays")} />
+              <.nav_link href="/builds" label={gettext("Builds")} />
+              <.nav_link href="/wiki" label={gettext("Wiki")} />
             </div>
 
             <%!-- Right side --%>
-            <div class="flex items-center gap-3">
+            <div class="flex items-center gap-2">
               <.locale_toggle />
               <.theme_toggle />
             </div>
@@ -55,15 +54,22 @@ defmodule BroodwarWeb.Layouts do
         {render_slot(@inner_block)}
       </main>
 
-      <footer class="border-t border-base-content/5 bg-base-300/50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-          <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
-            <div class="flex items-center gap-2 text-sm text-base-content/40">
-              <span class="font-medium">broodwar<span class="text-primary/60">.live</span></span>
-              <span>&middot;</span>
-              <span>{gettext("Open source community project")}</span>
+      <footer class="border-t border-primary/5 bg-base-300/40">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+          <div class="flex flex-col sm:flex-row items-center justify-between gap-6">
+            <div class="flex flex-col sm:flex-row items-center gap-3">
+              <div class="flex items-center gap-2.5">
+                <div class="w-6 h-6 rounded bg-gradient-to-br from-primary to-secondary flex items-center justify-center">
+                  <span class="text-white font-black text-[8px] tracking-tighter">BW</span>
+                </div>
+                <span class="font-semibold text-sm text-base-content/50">
+                  broodwar<span class="text-primary/40">.live</span>
+                </span>
+              </div>
+              <span class="text-base-content/20 hidden sm:inline">&middot;</span>
+              <span class="text-xs text-base-content/30">{gettext("Open source community project")}</span>
             </div>
-            <p class="text-xs text-base-content/30 text-center sm:text-right max-w-md">
+            <p class="text-[11px] text-base-content/20 text-center sm:text-right max-w-md leading-relaxed">
               {gettext("Not affiliated with Blizzard Entertainment or Microsoft. StarCraft and Brood War are trademarks of Blizzard Entertainment, Inc.")}
             </p>
           </div>
@@ -77,15 +83,13 @@ defmodule BroodwarWeb.Layouts do
 
   attr :href, :string, required: true
   attr :label, :string, required: true
-  attr :icon, :string, required: true
 
   defp nav_link(assigns) do
     ~H"""
     <a
       href={@href}
-      class="flex items-center gap-1.5 px-3 py-1.5 text-sm text-base-content/60 hover:text-base-content hover:bg-base-content/5 rounded-lg transition-colors"
+      class="px-3 py-1.5 text-[13px] font-medium text-base-content/50 hover:text-base-content rounded-lg hover:bg-primary/5 transition-all duration-150"
     >
-      <.icon name={@icon} class="size-3.5" />
       {@label}
     </a>
     """
@@ -135,23 +139,23 @@ defmodule BroodwarWeb.Layouts do
     assigns = assign(assigns, :locale, locale)
 
     ~H"""
-    <div class="flex items-center border border-base-content/10 bg-base-200 rounded-full p-0.5">
+    <div class="flex items-center border border-primary/10 bg-base-300/60 rounded-lg p-0.5 gap-0.5">
       <a
         href={"?locale=en"}
         class={[
-          "relative px-2 py-1 text-xs font-medium rounded-full transition-colors",
-          @locale == "en" && "bg-base-content/10 text-base-content",
-          @locale != "en" && "text-base-content/40 hover:text-base-content/70"
+          "relative px-2.5 py-1 text-xs font-medium rounded-md transition-all duration-150",
+          @locale == "en" && "bg-primary/15 text-primary shadow-sm",
+          @locale != "en" && "text-base-content/35 hover:text-base-content/60"
         ]}
       >
-        EN
+        English
       </a>
       <a
         href={"?locale=ko"}
         class={[
-          "relative px-2 py-1 text-xs font-medium rounded-full transition-colors",
-          @locale == "ko" && "bg-base-content/10 text-base-content",
-          @locale != "ko" && "text-base-content/40 hover:text-base-content/70"
+          "relative px-2.5 py-1 text-xs font-medium rounded-md transition-all duration-150",
+          @locale == "ko" && "bg-primary/15 text-primary shadow-sm",
+          @locale != "ko" && "text-base-content/35 hover:text-base-content/60"
         ]}
       >
         한국어
@@ -165,31 +169,29 @@ defmodule BroodwarWeb.Layouts do
   """
   def theme_toggle(assigns) do
     ~H"""
-    <div class="flex items-center border border-base-content/10 bg-base-200 rounded-full p-0.5 relative">
-      <div class="absolute w-1/3 h-[calc(100%-4px)] rounded-full bg-base-content/10 left-0.5 [[data-theme=light]_&]:left-1/3 [[data-theme=dark]_&]:left-[calc(66.66%-2px)] transition-[left] duration-200" />
-
+    <div class="flex items-center border border-primary/10 bg-base-300/60 rounded-lg p-0.5 relative gap-0.5">
       <button
-        class="relative flex p-1.5 cursor-pointer"
+        class="relative flex p-1.5 cursor-pointer rounded-md hover:bg-primary/10 transition-colors"
         phx-click={JS.dispatch("phx:set-theme")}
         data-phx-theme="system"
       >
-        <.icon name="hero-computer-desktop-micro" class="size-3.5 opacity-60 hover:opacity-100" />
+        <.icon name="hero-computer-desktop-micro" class="size-3.5 opacity-50 hover:opacity-90" />
       </button>
 
       <button
-        class="relative flex p-1.5 cursor-pointer"
+        class="relative flex p-1.5 cursor-pointer rounded-md hover:bg-primary/10 transition-colors"
         phx-click={JS.dispatch("phx:set-theme")}
         data-phx-theme="light"
       >
-        <.icon name="hero-sun-micro" class="size-3.5 opacity-60 hover:opacity-100" />
+        <.icon name="hero-sun-micro" class="size-3.5 opacity-50 hover:opacity-90" />
       </button>
 
       <button
-        class="relative flex p-1.5 cursor-pointer"
+        class="relative flex p-1.5 cursor-pointer rounded-md hover:bg-primary/10 transition-colors"
         phx-click={JS.dispatch("phx:set-theme")}
         data-phx-theme="dark"
       >
-        <.icon name="hero-moon-micro" class="size-3.5 opacity-60 hover:opacity-100" />
+        <.icon name="hero-moon-micro" class="size-3.5 opacity-50 hover:opacity-90" />
       </button>
     </div>
     """

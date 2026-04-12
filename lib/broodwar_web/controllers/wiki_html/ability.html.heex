@@ -20,7 +20,7 @@
         onerror="this.src='/images/wiki/abilities/#{@ability.slug}.png'"
       />
       <div>
-        <h1 class="text-3xl font-bold tracking-tight">{t(@ability, :name)}</h1>
+        <h1 class="font-display text-3xl tracking-tight">{t(@ability, :name)}</h1>
         <div class="mt-1 flex items-center gap-2 text-sm text-base-content/50">
           <span class={race_color(@race.slug)}>{t(@race, :name)}</span>
           <span>&middot;</span>
@@ -54,7 +54,7 @@
                 <img src="/images/wiki/stats/hp.png" alt="HP" class="w-4 h-4 inline-block" />
                 <span>{gettext("HP Cost")}</span>
               </dt>
-              <dd class="font-mono">{@ability.hp_cost}</dd>
+              <dd class="font-stats">{@ability.hp_cost}</dd>
             </div>
           </dl>
         </div>

@@ -5,12 +5,15 @@ defmodule BroodwarWeb.ReplayLive do
 
   @impl true
   def mount(_params, _session, socket) do
+    saved_replays = Broodwar.Replays.list_replays()
+
     {:ok,
      socket
-     |> assign(:page_title, "Replay Analyzer")
+     |> assign(:page_title, "Replays")
      |> assign(:replay, nil)
      |> assign(:error, nil)
      |> assign(:parsing, false)
+     |> assign(:saved_replays, saved_replays)
      |> allow_upload(:replay_file,
        accept: :any,
        max_entries: 1,
@@ -125,6 +128,40 @@ defmodule BroodwarWeb.ReplayLive do
         <%!-- Results --%>
         <%= if @replay do %>
           <.replay_results replay={@replay} />
+        <% end %>
+
+        <%!-- Saved Replays --%>
+        <%= if @saved_replays != [] do %>
+          <div class="mt-10">
+            <h2 class="text-lg font-semibold mb-4">Saved Replays ({length(@saved_replays)})</h2>
+            <div class="space-y-2">
+              <%= for replay <- @saved_replays do %>
+                <% pd = replay.parsed_data || %{} %>
+                <% header = pd["header"] || %{} %>
+                <% players = header["players"] || [] %>
+                <.link navigate={~p"/replays/#{replay.id}"} class="match-card bg-base-100 rounded-box border border-base-content/5 px-4 py-3 flex items-center gap-4 cursor-pointer block">
+                  <div class="flex-1 min-w-0">
+                    <div class="flex items-center gap-2">
+                      <span class="font-medium text-sm">{header["map_name"] || "Unknown Map"}</span>
+                      <span class="text-xs text-base-content/30">{format_duration(header["duration_secs"])}</span>
+                    </div>
+                    <div class="flex items-center gap-2 mt-0.5">
+                      <%= for p <- Enum.take(players, 2) do %>
+                        <span class="text-xs">
+                          <span class={["font-bold", race_color(p["race_code"])]}>{p["race_code"]}</span>
+                          <span class="text-base-content/50">{p["name"]}</span>
+                        </span>
+                        <span :if={p != List.last(Enum.take(players, 2))} class="text-xs text-base-content/20">vs</span>
+                      <% end %>
+                    </div>
+                  </div>
+                  <div class="text-xs text-base-content/30 shrink-0">
+                    {format_duration(replay.duration)}
+                  </div>
+                </.link>
+              <% end %>
+            </div>
+          </div>
         <% end %>
       </div>
     </Layouts.app>

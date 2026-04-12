@@ -1,49 +1,50 @@
 <Layouts.app flash={@flash}>
-  <%!-- Hero Section --%>
-  <section class="relative overflow-hidden">
-    <%!-- Subtle grid background --%>
-    <div class="absolute inset-0 opacity-[0.03]" style="background-image: radial-gradient(circle at 1px 1px, currentColor 1px, transparent 0); background-size: 40px 40px;"></div>
-
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-12">
-      <div class="text-center max-w-3xl mx-auto">
-        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-success/10 border border-success/20 text-success text-xs font-medium mb-6">
-          <span class="w-1.5 h-1.5 rounded-full bg-success animate-live-pulse"></span>
-          {gettext("ASL Season 21 — Live Now")}
+  <%!-- Hero Section — ASL broadcast style --%>
+  <section class="relative overflow-hidden asl-gradient-bg hero-streaks hero-glow">
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-16">
+      <div class="text-center max-w-3xl mx-auto animate-fade-up">
+        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass-card text-xs font-semibold mb-8 tracking-wide">
+          <span class="w-2 h-2 rounded-full bg-error animate-live-pulse"></span>
+          <span class="text-base-content/80">{gettext("ASL Season 21 — Live Now")}</span>
         </div>
 
-        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight">
-          <span class="text-gradient-blue">StarCraft:</span>
-          <span class="text-base-content"> Brood War</span>
+        <h1 class="font-display text-5xl sm:text-6xl lg:text-7xl tracking-tight leading-[1.05]">
+          <span class="text-base-content">StarCraft</span>
           <br />
-          <span class="text-gradient-gold">{gettext("Community Hub")}</span>
+          <span class="text-gradient-teal">Brood War</span>
         </h1>
 
-        <p class="mt-6 text-lg text-base-content/60 leading-relaxed max-w-2xl mx-auto">
+        <p class="mt-6 text-lg text-base-content/45 leading-relaxed max-w-xl mx-auto">
           {gettext("Match stats, replay analysis, build orders, and live stream tracking for the competitive Brood War scene. From ASL to Fish ladder.")}
         </p>
 
-        <div class="mt-8 flex flex-wrap items-center justify-center gap-3">
-          <a href="/replays" class="btn btn-primary">
+        <div class="mt-10 flex flex-wrap items-center justify-center gap-4">
+          <a href="/replays" class="btn btn-primary btn-md shadow-lg shadow-primary/25 hover:shadow-primary/40 transition-shadow">
             <.icon name="hero-play-circle-micro" class="size-4" />
             {gettext("Analyze a Replay")}
           </a>
-          <a href="/players" class="btn btn-ghost border border-base-content/10">
-            <.icon name="hero-user-group-micro" class="size-4" />
+          <a href="/players" class="btn btn-ghost border border-primary/15 hover:bg-primary/5 hover:border-primary/25">
             {gettext("Browse Players")}
           </a>
         </div>
       </div>
     </div>
+
+    <%!-- Bottom gradient fade --%>
+    <div class="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-base-200 to-transparent"></div>
   </section>
 
-  <%!-- Live Streams Section --%>
-  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
-    <div class="flex items-center justify-between mb-5">
-      <h2 class="flex items-center gap-2 text-lg font-semibold">
-        <span class="w-2 h-2 rounded-full bg-error animate-live-pulse"></span>
-        {gettext("Live Streams")}
+  <%!-- Live Streams --%>
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="flex items-center justify-between mb-6">
+      <h2 class="font-display flex items-center gap-2.5 text-lg tracking-tight">
+        <span class="flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-error/10 text-error text-xs font-semibold">
+          <span class="w-1.5 h-1.5 rounded-full bg-error animate-live-pulse"></span>
+          {gettext("LIVE")}
+        </span>
+        <span>{gettext("Live Streams")}</span>
       </h2>
-      <a href="/streams" class="text-sm text-primary hover:text-primary/80 transition-colors">
+      <a href="/streams" class="text-xs font-medium text-primary/70 hover:text-primary transition-colors">
         {gettext("View all")} &rarr;
       </a>
     </div>
@@ -56,11 +57,13 @@
     </div>
   </section>
 
-  <%!-- Recent Matches Section --%>
-  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
-    <div class="flex items-center justify-between mb-5">
-      <h2 class="text-lg font-semibold">{gettext("Recent Matches")}</h2>
-      <a href="/matches" class="text-sm text-primary hover:text-primary/80 transition-colors">
+  <div class="section-divider max-w-7xl mx-auto"></div>
+
+  <%!-- Recent Matches --%>
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="flex items-center justify-between mb-6">
+      <h2 class="font-display text-lg tracking-tight">{gettext("Recent Matches")}</h2>
+      <a href="/matches" class="text-xs font-medium text-primary/70 hover:text-primary transition-colors">
         {gettext("View all")} &rarr;
       </a>
     </div>
@@ -124,16 +127,17 @@
     </div>
   </section>
 
-  <%!-- Stats Cards Section --%>
-  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+  <div class="section-divider max-w-7xl mx-auto"></div>
+
+  <%!-- Stats Cards --%>
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
     <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
       <%!-- Matchup Balance --%>
-      <div class="bg-base-100 rounded-box border border-base-content/5 p-5 card-accent-top">
-        <h3 class="text-sm font-medium text-base-content/50 mb-4">
-          <.icon name="hero-chart-bar-micro" class="size-3.5 inline mr-1" />
+      <div class="glass-card-elevated rounded-box p-5">
+        <h3 class="text-xs font-semibold text-base-content/40 uppercase tracking-wider mb-4">
           {gettext("Matchup Balance (30d)")}
         </h3>
-        <div class="space-y-3">
+        <div class="space-y-3.5">
           <.balance_bar matchup="TvZ" left={52} right={48} />
           <.balance_bar matchup="PvT" left={47} right={53} />
           <.balance_bar matchup="ZvP" left={51} right={49} />
@@ -141,9 +145,8 @@
       </div>
 
       <%!-- Top Players --%>
-      <div class="bg-base-100 rounded-box border border-base-content/5 p-5 card-accent-top">
-        <h3 class="text-sm font-medium text-base-content/50 mb-4">
-          <.icon name="hero-trophy-micro" class="size-3.5 inline mr-1" />
+      <div class="glass-card-elevated rounded-box p-5">
+        <h3 class="text-xs font-semibold text-base-content/40 uppercase tracking-wider mb-4">
           {gettext("Top Rated")}
         </h3>
         <div class="space-y-2.5">
@@ -156,12 +159,11 @@
       </div>
 
       <%!-- Upcoming Matches --%>
-      <div class="bg-base-100 rounded-box border border-base-content/5 p-5 card-accent-top">
-        <h3 class="text-sm font-medium text-base-content/50 mb-4">
-          <.icon name="hero-calendar-micro" class="size-3.5 inline mr-1" />
+      <div class="glass-card-elevated rounded-box p-5">
+        <h3 class="text-xs font-semibold text-base-content/40 uppercase tracking-wider mb-4">
           {gettext("Upcoming")}
         </h3>
-        <div class="space-y-3">
+        <div class="space-y-4">
           <.upcoming_match
             tournament="ASL S21"
             round="Ro8"
@@ -194,11 +196,13 @@
     </div>
   </section>
 
-  <%!-- Popular Builds Section --%>
-  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 pb-16">
-    <div class="flex items-center justify-between mb-5">
-      <h2 class="text-lg font-semibold">{gettext("Popular Builds")}</h2>
-      <a href="/builds" class="text-sm text-primary hover:text-primary/80 transition-colors">
+  <div class="section-divider max-w-7xl mx-auto"></div>
+
+  <%!-- Popular Builds --%>
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 pb-20">
+    <div class="flex items-center justify-between mb-6">
+      <h2 class="font-display text-lg tracking-tight">{gettext("Popular Builds")}</h2>
+      <a href="/builds" class="text-xs font-medium text-primary/70 hover:text-primary transition-colors">
         {gettext("Browse all")} &rarr;
       </a>
     </div>

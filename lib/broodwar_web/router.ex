@@ -21,6 +21,7 @@ defmodule BroodwarWeb.Router do
     get "/", PageController, :home
 
     live "/replays", ReplayLive
+    live "/replays/:id", ReplayDetailLive
     live "/players", PlayersLive
     live "/players/:id", PlayerDetailLive
     live "/matches", MatchesLive
