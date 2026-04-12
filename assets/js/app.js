@@ -49,11 +49,22 @@ const WaveformClick = {
   }
 }
 
+const BoScroll = {
+  mounted() {
+    this.handleEvent("scroll_bo", ({block_id}) => {
+      const target = document.getElementById(block_id)
+      if (target) {
+        target.scrollIntoView({behavior: "smooth", block: "start"})
+      }
+    })
+  }
+}
+
 const csrfToken = document.querySelector("meta[name='csrf-token']").getAttribute("content")
 const liveSocket = new LiveSocket("/live", Socket, {
   longPollFallbackMs: 2500,
   params: {_csrf_token: csrfToken},
-  hooks: {...colocatedHooks, WaveformClick},
+  hooks: {...colocatedHooks, WaveformClick, BoScroll},
 })
 
 // Show progress bar on live navigation and form submits

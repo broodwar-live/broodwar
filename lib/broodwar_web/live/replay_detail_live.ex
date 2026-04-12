@@ -47,15 +47,14 @@ defmodule BroodwarWeb.ReplayDetailLive do
   @impl true
   def handle_event("seek", %{"position" => pos}, socket) do
     idx = pos |> String.to_integer() |> max(0) |> min(socket.assigns.max_idx)
-    {:noreply, assign(socket, :timeline_idx, idx)}
+    {:noreply, socket |> assign(:timeline_idx, idx) |> push_bo_scroll(idx)}
   end
 
   @impl true
   def handle_event("seek_time", %{"pct" => pct_str}, socket) do
     pct = String.to_float(pct_str) |> max(0.0) |> min(1.0)
-    # Find the timeline index closest to this percentage of the game
     target_idx = round(pct * socket.assigns.max_idx) |> max(0) |> min(socket.assigns.max_idx)
-    {:noreply, assign(socket, :timeline_idx, target_idx)}
+    {:noreply, socket |> assign(:timeline_idx, target_idx) |> push_bo_scroll(target_idx)}
   end
 
   @impl true
@@ -203,10 +202,10 @@ defmodule BroodwarWeb.ReplayDetailLive do
                 <span class="text-xs text-base-content/40">{length(build_order)} actions</span>
               </div>
 
-              <div class="overflow-y-auto max-h-[500px] pr-2" style="scrollbar-width: thin;">
+              <div id="bo-scroll" phx-hook="BoScroll" class="overflow-y-auto max-h-[500px] pr-2" style="scrollbar-width: thin;">
                 <%!-- Group build order into 30-second time blocks --%>
                 <%= for {block_time, entries} <- group_by_time(build_order, 30) do %>
-                  <div class="flex gap-0 mb-0.5">
+                  <div id={"bo-t-#{trunc(block_time)}"} class="flex gap-0 mb-0.5">
                     <%!-- Time label --%>
                     <div class="w-12 shrink-0 pt-1">
                       <span class="text-[10px] font-mono text-base-content/30">{format_game_time(block_time)}</span>
@@ -335,6 +334,17 @@ defmodule BroodwarWeb.ReplayDetailLive do
       </div>
     </Layouts.app>
     """
+  end
+
+  defp push_bo_scroll(socket, idx) do
+    timeline = socket.assigns.timeline
+    case Enum.at(timeline, idx) do
+      %{"real_seconds" => secs} ->
+        block_time = Float.floor(secs / 30) * 30 |> trunc()
+        push_event(socket, "scroll_bo", %{block_id: "bo-t-#{block_time}"})
+      _ ->
+        socket
+    end
   end
 
   defp players_with_apm(players, apms) do
