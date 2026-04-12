@@ -10,31 +10,6 @@
     <div class="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-base-200 to-transparent"></div>
   </section>
 
-  <%!-- Live Now Banner --%>
-  <%= if @live_seasons != [] do %>
-    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-4 mb-8 relative z-10">
-      <div :for={live <- @live_seasons} class="glass-card-elevated rounded-box p-5 border-l-4 border-error">
-        <div class="flex items-center justify-between flex-wrap gap-4">
-          <div class="flex items-center gap-3">
-            <span class="flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-error/10 text-error text-xs font-semibold">
-              <span class="w-1.5 h-1.5 rounded-full bg-error animate-live-pulse"></span>
-              {gettext("LIVE")}
-            </span>
-            <div>
-              <a href={"/tournaments/#{live.series.slug}"} class="font-display text-lg hover:text-primary transition-colors">
-                {t(live.series, :name)} — {season_label(live)}
-              </a>
-              <p class="text-xs text-base-content/40 mt-0.5">{live.prize_pool} &middot; {live.year}</p>
-            </div>
-          </div>
-          <a href={"/tournaments/#{live.series.slug}"} class="btn btn-sm btn-primary">
-            {gettext("View")} &rarr;
-          </a>
-        </div>
-      </div>
-    </section>
-  <% end %>
-
   <%!-- Most Titles Leaderboard --%>
   <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
     <h2 class="font-display text-lg tracking-tight mb-5">{gettext("Most Titles")}</h2>
@@ -65,24 +40,23 @@
 
   <div class="section-divider max-w-7xl mx-auto"></div>
 
-  <%!-- Active Leagues --%>
-  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
-    <h2 class="font-display text-lg tracking-tight mb-5">{gettext("Active Leagues")}</h2>
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
-      <.series_card :for={series <- @active_series} series={series} />
-    </div>
-  </section>
-
-  <div class="section-divider max-w-7xl mx-auto"></div>
-
-  <%!-- Legacy Leagues --%>
+  <%!-- Tournament Series --%>
   <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 pb-20">
-    <h2 class="font-display text-lg tracking-tight mb-2">{gettext("Legacy Leagues")}</h2>
-    <p class="text-sm text-base-content/30 mb-5">
-      {gettext("The historic Starleagues that defined competitive Brood War.")}
-    </p>
+    <h2 class="font-display text-lg tracking-tight mb-5">{gettext("Leagues")}</h2>
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
-      <.series_card :for={series <- @retired_series} series={series} />
+      <a
+        :for={series <- @series_list}
+        href={"/tournaments/#{String.downcase(series.short_name)}"}
+        class="glass-card rounded-box p-5 glow-blue block group"
+      >
+        <div class="flex items-center justify-between mb-2">
+          <span class="font-display text-lg group-hover:text-primary transition-colors">{series.short_name}</span>
+          <span class="text-xs text-base-content/25 font-stats">{series.count} {ngettext("season", "seasons", series.count)}</span>
+        </div>
+        <div class="text-xs text-base-content/30">
+          {series.min_year} — {series.max_year || gettext("present")}
+        </div>
+      </a>
     </div>
   </section>
 </Layouts.app>

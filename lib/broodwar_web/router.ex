@@ -32,6 +32,7 @@ defmodule BroodwarWeb.Router do
 
     get "/tournaments", TournamentController, :index
     get "/tournaments/:slug", TournamentController, :show
+    get "/tournaments/:slug/:season", TournamentController, :season
 
     get "/wiki", WikiController, :index
     get "/wiki/races/:slug", WikiController, :race

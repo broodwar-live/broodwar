@@ -1,0 +1,164 @@
+<Layouts.app flash={@flash}>
+  <% data = @tournament.liquipedia_data %>
+  <% matches = data["matches"] || [] %>
+
+  <%!-- Breadcrumb --%>
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8">
+    <nav class="text-sm text-base-content/40">
+      <a href="/tournaments" class="hover:text-base-content transition-colors">{gettext("Tournaments")}</a>
+      <span class="mx-1.5">/</span>
+      <a href={"/tournaments/#{String.downcase(@tournament.short_name)}"} class="hover:text-base-content transition-colors">{@tournament.short_name}</a>
+      <span class="mx-1.5">/</span>
+      <span class="text-base-content/70">S{@tournament.season}</span>
+    </nav>
+  </section>
+
+  <%!-- Header --%>
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 pb-8">
+    <h1 class="font-display text-3xl tracking-tight">{@tournament.name}</h1>
+    <div class="mt-2 flex items-center flex-wrap gap-x-4 gap-y-1 text-sm text-base-content/40">
+      <span :if={data["start_date"]}>{data["start_date"]} — {data["end_date"] || "?"}</span>
+      <span :if={data["organizer"]}>&middot; {data["organizer"]}</span>
+      <span :if={data["country"]}>&middot; {data["country"]}</span>
+    </div>
+  </section>
+
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+      <%!-- Main content --%>
+      <div class="lg:col-span-2 space-y-6">
+        <%!-- Finals result --%>
+        <div :if={data["first_place"]} class="glass-card-elevated rounded-box p-6 card-accent-top">
+          <div class="text-[10px] text-base-content/25 uppercase tracking-widest font-semibold mb-3">{gettext("Champion")}</div>
+          <div class="flex items-center justify-center gap-6">
+            <div class="text-center">
+              <div class="text-2xl font-display">{data["first_place"]}</div>
+              <div class="text-xs text-secondary mt-1">1st</div>
+            </div>
+            <span class="text-base-content/15 text-lg">vs</span>
+            <div class="text-center">
+              <div class="text-xl font-display text-base-content/50">{data["second_place"] || "—"}</div>
+              <div class="text-xs text-base-content/30 mt-1">2nd</div>
+            </div>
+          </div>
+        </div>
+
+        <%!-- Bracket --%>
+        <% bracket_rounds = extract_bracket(matches) %>
+        <div :if={bracket_rounds != []} class="glass-card-elevated rounded-box p-6">
+          <h2 class="text-sm font-semibold mb-2">{gettext("Bracket")}</h2>
+          <.bracket rounds={bracket_rounds} />
+        </div>
+
+        <%!-- Match Results --%>
+        <div class="glass-card-elevated rounded-box p-6">
+          <h2 class="text-sm font-semibold mb-4">{gettext("Matches")} <span class="text-base-content/30 font-stats">({length(matches)})</span></h2>
+
+          <% grouped = Enum.group_by(matches, fn m -> m["context"] || "Other" end) %>
+          <div :for={{context, group_matches} <- grouped} class="mb-6 last:mb-0">
+            <h3 class="text-xs text-base-content/30 uppercase tracking-wider font-semibold mb-2.5 border-b border-base-content/5 pb-2">{context}</h3>
+            <div class="space-y-1.5">
+              <div :for={m <- group_matches} class="flex items-center gap-3 py-1.5 text-sm">
+                <%!-- Date --%>
+                <span class="text-[10px] font-stats text-base-content/20 w-20 shrink-0">{m["date"]}</span>
+
+                <%!-- Players + Score --%>
+                <div class="flex-1 flex items-center justify-center gap-2 min-w-0">
+                  <span class={[
+                    "truncate text-right flex-1",
+                    m["winner"] == m["opponent1"] && "font-semibold text-base-content",
+                    m["winner"] != m["opponent1"] && "text-base-content/40"
+                  ]}>
+                    {m["opponent1"]}
+                  </span>
+                  <span class="font-stats text-xs text-primary/70 shrink-0 w-10 text-center">{m["score"]}</span>
+                  <span class={[
+                    "truncate flex-1",
+                    m["winner"] == m["opponent2"] && "font-semibold text-base-content",
+                    m["winner"] != m["opponent2"] && "text-base-content/40"
+                  ]}>
+                    {m["opponent2"]}
+                  </span>
+                </div>
+
+                <%!-- Maps played --%>
+                <div class="hidden sm:flex items-center gap-0.5 shrink-0">
+                  <span
+                    :for={map <- m["maps"] || []}
+                    class={[
+                      "w-1.5 h-1.5 rounded-full",
+                      map["winner"] == 1 && "bg-primary/60",
+                      map["winner"] == 2 && "bg-secondary/60"
+                    ]}
+                    title={"#{map["map"]} — P#{map["winner"]}"}
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <%!-- Sidebar --%>
+      <div class="space-y-4">
+        <%!-- Quick Stats --%>
+        <div class="glass-card-elevated rounded-box p-5">
+          <h3 class="text-sm font-semibold mb-4">{gettext("Details")}</h3>
+          <dl class="space-y-3">
+            <div :if={data["prize_pool"]} class="flex justify-between text-sm">
+              <dt class="text-base-content/40">{gettext("Prize Pool")}</dt>
+              <dd class="font-stats">{format_prize(data["prize_pool"])}</dd>
+            </div>
+            <div :if={data["player_count"]} class="flex justify-between text-sm">
+              <dt class="text-base-content/40">{gettext("Players")}</dt>
+              <dd class="font-stats">{data["player_count"]}</dd>
+            </div>
+            <div :if={data["format"]} class="flex justify-between text-sm gap-4">
+              <dt class="text-base-content/40 shrink-0">{gettext("Format")}</dt>
+              <dd class="text-right text-xs text-base-content/50">{data["format"]}</dd>
+            </div>
+            <div class="flex justify-between text-sm">
+              <dt class="text-base-content/40">{gettext("Matches")}</dt>
+              <dd class="font-stats">{length(matches)}</dd>
+            </div>
+          </dl>
+        </div>
+
+        <%!-- Race Distribution --%>
+        <div :if={data["terran_count"] || data["protoss_count"] || data["zerg_count"]} class="glass-card-elevated rounded-box p-5">
+          <h3 class="text-sm font-semibold mb-4">{gettext("Race Distribution")}</h3>
+          <div class="space-y-2">
+            <div :if={data["terran_count"]} class="flex items-center justify-between text-sm">
+              <span class="text-race-terran font-semibold text-xs">T</span>
+              <span class="font-stats text-base-content/40">{data["terran_count"]}</span>
+            </div>
+            <div :if={data["protoss_count"]} class="flex items-center justify-between text-sm">
+              <span class="text-race-protoss font-semibold text-xs">P</span>
+              <span class="font-stats text-base-content/40">{data["protoss_count"]}</span>
+            </div>
+            <div :if={data["zerg_count"]} class="flex items-center justify-between text-sm">
+              <span class="text-race-zerg font-semibold text-xs">Z</span>
+              <span class="font-stats text-base-content/40">{data["zerg_count"]}</span>
+            </div>
+          </div>
+        </div>
+
+        <%!-- Map Pool --%>
+        <div :if={data["maps"] && data["maps"] != []} class="glass-card-elevated rounded-box p-5">
+          <h3 class="text-sm font-semibold mb-4">{gettext("Map Pool")}</h3>
+          <ul class="space-y-1.5">
+            <li :for={map <- data["maps"]} class="text-sm text-base-content/40">{map}</li>
+          </ul>
+        </div>
+
+        <%!-- Participants --%>
+        <div :if={data["participants"] && data["participants"] != []} class="glass-card-elevated rounded-box p-5">
+          <h3 class="text-sm font-semibold mb-4">{gettext("Players")} <span class="text-base-content/30 font-stats">({length(data["participants"])})</span></h3>
+          <div class="flex flex-wrap gap-1.5">
+            <span :for={name <- data["participants"]} class="text-xs text-base-content/40 px-2 py-0.5 rounded bg-base-content/3">{name}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layouts.app>

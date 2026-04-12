@@ -34,51 +34,88 @@ defmodule BroodwarWeb.TournamentHTML do
     "S#{season.season}"
   end
 
-  attr :series, :map, required: true
+  def format_prize(nil), do: "—"
+  def format_prize(""), do: "—"
 
-  def series_card(assigns) do
-    recent = assigns.series.seasons |> Enum.take(3)
-    assigns = assign(assigns, :recent, recent)
+  def format_prize(amount) when is_binary(amount) do
+    digits = String.replace(amount, ~r/[^\d]/, "")
 
+    formatted =
+      digits
+      |> String.reverse()
+      |> String.replace(~r/(\d{3})(?=\d)/, "\\1,")
+      |> String.reverse()
+
+    "₩#{formatted}"
+  end
+
+  def format_prize(amount), do: "#{amount}"
+
+  @doc """
+  Extracts bracket matches from the full match list and organizes them
+  into rounds for visualization. Assumes standard 8-player single elimination.
+  """
+  def extract_bracket(matches) do
+    bracket_matches =
+      matches
+      |> Enum.filter(fn m ->
+        ctx = m["context"] || ""
+        String.contains?(ctx, "Playoffs") or String.contains?(ctx, "Bracket") or
+          String.contains?(ctx, "Quarterfinal") or String.contains?(ctx, "Semifinal") or
+          String.contains?(ctx, "Finals (Bo")
+      end)
+
+    # For ASL-style brackets: first 4 = QF, next 2 = SF, last 1 = Finals
+    case length(bracket_matches) do
+      n when n >= 7 ->
+        [
+          %{name: "Quarterfinals", matches: Enum.slice(bracket_matches, 0, 4)},
+          %{name: "Semifinals", matches: Enum.slice(bracket_matches, 4, 2)},
+          %{name: "Finals", matches: Enum.slice(bracket_matches, 6, 1)}
+        ]
+
+      n when n >= 3 ->
+        [
+          %{name: "Semifinals", matches: Enum.slice(bracket_matches, 0, n - 1)},
+          %{name: "Finals", matches: Enum.slice(bracket_matches, n - 1, 1)}
+        ]
+
+      n when n >= 1 ->
+        [%{name: "Finals", matches: bracket_matches}]
+
+      _ ->
+        []
+    end
+  end
+
+  attr :rounds, :list, required: true
+
+  def bracket(assigns) do
     ~H"""
-    <a
-      href={"/tournaments/#{@series.slug}"}
-      class="glass-card rounded-box p-5 glow-blue block group"
-    >
-      <div class="flex items-start justify-between mb-3">
-        <div>
-          <div class="flex items-center gap-2.5 mb-1">
-            <span class="font-display text-base group-hover:text-primary transition-colors">{@series.short_name}</span>
-            <% {badge_class, badge_label} = status_badge(@series.status) %>
-            <span :if={badge_label != ""} class={["px-2 py-0.5 rounded text-[10px] font-semibold border", badge_class]}>
-              {badge_label}
-            </span>
-          </div>
-          <p class="text-xs text-base-content/35">{t(@series, :name)}</p>
-        </div>
-        <span class="text-[10px] text-base-content/25 font-medium">{@series.region}</span>
-      </div>
+    <div class="bracket">
+      <div :for={{round, round_idx} <- Enum.with_index(@rounds)} class="bracket-round">
+        <div class="bracket-round-title">{round.name}</div>
+        <div class="flex-1 flex flex-col justify-around">
+          <div :for={match <- round.matches} class="bracket-match relative">
+            <% p1_won = match["winner"] == match["opponent1"] %>
+            <% p2_won = match["winner"] == match["opponent2"] %>
+            <% [s1, s2] = String.split(match["score"] || "0-0", "-") %>
 
-      <p class="text-xs text-base-content/30 leading-relaxed mb-4 line-clamp-2">{t(@series, :description)}</p>
+            <div class={["bracket-player", p1_won && "winner"]}>
+              <span class="bracket-name">{match["opponent1"]}</span>
+              <span class="bracket-score">{s1}</span>
+            </div>
+            <div class={["bracket-player", p2_won && "winner"]}>
+              <span class="bracket-name">{match["opponent2"]}</span>
+              <span class="bracket-score">{s2}</span>
+            </div>
 
-      <%!-- Recent seasons --%>
-      <div :if={@recent != []} class="space-y-1.5">
-        <div class="text-[10px] text-base-content/25 uppercase tracking-wider font-semibold mb-2">{gettext("Recent")}</div>
-        <div :for={season <- @recent} class="flex items-center justify-between text-xs">
-          <div class="flex items-center gap-2">
-            <span class="font-stats text-base-content/40">{season_label(season)}</span>
-            <span class="text-base-content/25">{season.year}</span>
-            <span :if={season.status == :live} class="w-1.5 h-1.5 rounded-full bg-error animate-live-pulse"></span>
-          </div>
-          <div class="flex items-center gap-2">
-            <span :if={season.winner} class="font-semibold text-base-content/60">{season.winner}</span>
-            <span :if={season.winner} class="text-base-content/20">def.</span>
-            <span :if={season.runner_up} class="text-base-content/30">{season.runner_up}</span>
-            <span :if={season.status == :live} class="text-error font-semibold">{gettext("In Progress")}</span>
+            <%!-- Connector line to next round --%>
+            <div :if={round_idx < length(@rounds) - 1} class="bracket-connector bracket-connector-line absolute right-[-16px] top-1/2 w-4 border-t border-primary/15"></div>
           </div>
         </div>
       </div>
-    </a>
+    </div>
     """
   end
 end

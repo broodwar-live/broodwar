@@ -4,144 +4,48 @@
     <nav class="text-sm text-base-content/40">
       <a href="/tournaments" class="hover:text-base-content transition-colors">{gettext("Tournaments")}</a>
       <span class="mx-1.5">/</span>
-      <span class="text-base-content/70">{@series.short_name}</span>
+      <span class="text-base-content/70">{@short_name}</span>
     </nav>
   </section>
 
-  <%!-- Series Header --%>
+  <%!-- Header --%>
   <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 pb-8">
-    <div class="flex items-start justify-between flex-wrap gap-4">
-      <div>
-        <div class="flex items-center gap-3 mb-1">
-          <h1 class="font-display text-3xl tracking-tight">{@series.short_name}</h1>
-          <% {badge_class, badge_label} = status_badge(@series.status) %>
-          <span :if={badge_label != ""} class={["px-2.5 py-1 rounded text-xs font-semibold border", badge_class]}>
-            {badge_label}
-          </span>
-        </div>
-        <p class="text-base-content/50">{t(@series, :name)}</p>
-      </div>
-      <div class="flex items-center gap-4 text-sm text-base-content/40">
-        <span>{@series.format}</span>
-        <span>&middot;</span>
-        <span>{@series.region}</span>
-        <span>&middot;</span>
-        <span>{@series.organizer}</span>
-      </div>
-    </div>
+    <h1 class="font-display text-3xl tracking-tight">{@short_name}</h1>
+    <p class="text-base-content/40 mt-1">{length(@seasons)} {ngettext("season", "seasons", length(@seasons))}</p>
   </section>
 
+  <%!-- Season List --%>
   <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
-    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
-      <%!-- Description + Season History --%>
-      <div class="lg:col-span-2 space-y-6">
-        <%!-- About --%>
-        <div class="glass-card-elevated rounded-box p-6">
-          <h2 class="text-sm font-semibold mb-3">{gettext("Overview")}</h2>
-          <p class="text-sm text-base-content/50 leading-relaxed">{t(@series, :description)}</p>
-        </div>
-
-        <%!-- Season History Table --%>
-        <div class="glass-card-elevated rounded-box p-6">
-          <h2 class="text-sm font-semibold mb-4">{gettext("Season History")}</h2>
-
-          <%= if @series.seasons != [] do %>
-            <div class="overflow-x-auto">
-              <table class="w-full">
-                <thead>
-                  <tr class="border-b border-base-content/5">
-                    <th class="text-left text-[11px] text-base-content/30 uppercase tracking-wider font-semibold pb-2.5 pr-4">{gettext("Season")}</th>
-                    <th class="text-left text-[11px] text-base-content/30 uppercase tracking-wider font-semibold pb-2.5 pr-4">{gettext("Year")}</th>
-                    <th class="text-left text-[11px] text-base-content/30 uppercase tracking-wider font-semibold pb-2.5 pr-4">{gettext("Champion")}</th>
-                    <th class="text-left text-[11px] text-base-content/30 uppercase tracking-wider font-semibold pb-2.5 pr-4">{gettext("Runner-up")}</th>
-                    <th class="text-right text-[11px] text-base-content/30 uppercase tracking-wider font-semibold pb-2.5">{gettext("Prize Pool")}</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr :for={season <- @series.seasons} class="border-b border-base-content/3 last:border-0">
-                    <td class="py-2.5 pr-4">
-                      <div class="flex items-center gap-2">
-                        <span class="font-stats text-sm text-base-content/60">{season_label(season)}</span>
-                        <span :if={season.status == :live} class="w-1.5 h-1.5 rounded-full bg-error animate-live-pulse"></span>
-                      </div>
-                    </td>
-                    <td class="py-2.5 pr-4 text-sm text-base-content/40">{season.year}</td>
-                    <td class="py-2.5 pr-4">
-                      <span :if={season.winner} class="text-sm font-semibold">{season.winner}</span>
-                      <span :if={season.status == :live} class="text-xs text-error font-semibold">{gettext("In Progress")}</span>
-                    </td>
-                    <td class="py-2.5 pr-4 text-sm text-base-content/40">{season.runner_up}</td>
-                    <td class="py-2.5 text-right text-sm font-stats text-base-content/30">{season.prize_pool}</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          <% else %>
-            <p class="text-sm text-base-content/30">{gettext("No season data available.")}</p>
-          <% end %>
-        </div>
-      </div>
-
-      <%!-- Sidebar --%>
-      <div class="space-y-4">
-        <%!-- Quick Stats --%>
-        <div class="glass-card-elevated rounded-box p-5">
-          <h3 class="text-sm font-semibold mb-4">{gettext("Stats")}</h3>
-          <dl class="space-y-3">
-            <div class="flex justify-between text-sm">
-              <dt class="text-base-content/40">{gettext("Seasons")}</dt>
-              <dd class="font-stats font-semibold">{length(@series.seasons)}</dd>
-            </div>
-            <div class="flex justify-between text-sm">
-              <dt class="text-base-content/40">{gettext("Format")}</dt>
-              <dd>{@series.format}</dd>
-            </div>
-            <div class="flex justify-between text-sm">
-              <dt class="text-base-content/40">{gettext("Region")}</dt>
-              <dd>{@series.region}</dd>
-            </div>
-            <div class="flex justify-between text-sm">
-              <dt class="text-base-content/40">{gettext("Organizer")}</dt>
-              <dd>{@series.organizer}</dd>
-            </div>
-            <div class="flex justify-between text-sm">
-              <dt class="text-base-content/40">{gettext("Status")}</dt>
-              <dd>
-                <% {badge_class, badge_label} = status_badge(@series.status) %>
-                <span class={["px-2 py-0.5 rounded text-[10px] font-semibold border", badge_class]}>
-                  {badge_label}
-                </span>
-              </dd>
-            </div>
-          </dl>
-        </div>
-
-        <%!-- Top Champions --%>
-        <% champs =
-          @series.seasons
-          |> Enum.filter(fn s -> s.winner end)
-          |> Enum.group_by(fn s -> s.winner end)
-          |> Enum.map(fn {name, wins} -> %{name: name, count: length(wins)} end)
-          |> Enum.sort_by(fn c -> -c.count end)
-          |> Enum.take(5) %>
-        <div :if={champs != []} class="glass-card-elevated rounded-box p-5">
-          <h3 class="text-sm font-semibold mb-4">{gettext("Top Champions")}</h3>
-          <div class="space-y-2.5">
-            <div :for={{champ, idx} <- Enum.with_index(champs)} class="flex items-center gap-3">
-              <span class={[
-                "w-5 text-center text-xs font-bold",
-                idx == 0 && "text-secondary",
-                idx == 1 && "text-base-content/50",
-                idx > 1 && "text-base-content/25"
-              ]}>
-                {idx + 1}
-              </span>
-              <span class="flex-1 text-sm font-semibold">{champ.name}</span>
-              <span class="font-stats text-xs text-base-content/40">{champ.count}x</span>
-            </div>
-          </div>
-        </div>
-      </div>
+    <div class="glass-card-elevated rounded-box overflow-hidden">
+      <table class="w-full">
+        <thead>
+          <tr class="border-b border-base-content/5">
+            <th class="text-left text-[11px] text-base-content/30 uppercase tracking-wider font-semibold p-4 pb-2.5">{gettext("Season")}</th>
+            <th class="text-left text-[11px] text-base-content/30 uppercase tracking-wider font-semibold p-4 pb-2.5">{gettext("Year")}</th>
+            <th class="text-left text-[11px] text-base-content/30 uppercase tracking-wider font-semibold p-4 pb-2.5">{gettext("Champion")}</th>
+            <th class="text-left text-[11px] text-base-content/30 uppercase tracking-wider font-semibold p-4 pb-2.5">{gettext("Runner-up")}</th>
+            <th class="text-center text-[11px] text-base-content/30 uppercase tracking-wider font-semibold p-4 pb-2.5">{gettext("Matches")}</th>
+            <th class="text-right text-[11px] text-base-content/30 uppercase tracking-wider font-semibold p-4 pb-2.5">{gettext("Prize Pool")}</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr :for={t <- @seasons} class="border-b border-base-content/3 last:border-0 hover:bg-primary/3 transition-colors">
+            <td class="p-4">
+              <a href={"/tournaments/#{String.downcase(@short_name)}/#{t.season}"} class="font-stats text-sm text-primary hover:text-primary/80 transition-colors">
+                S{t.season}
+              </a>
+            </td>
+            <td class="p-4 text-sm text-base-content/40">{t.year}</td>
+            <td class="p-4">
+              <span :if={t.liquipedia_data["first_place"]} class="text-sm font-semibold">{t.liquipedia_data["first_place"]}</span>
+              <span :if={!t.liquipedia_data["first_place"]} class="text-xs text-base-content/25">—</span>
+            </td>
+            <td class="p-4 text-sm text-base-content/40">{t.liquipedia_data["second_place"] || "—"}</td>
+            <td class="p-4 text-center text-sm font-stats text-base-content/30">{length(t.liquipedia_data["matches"] || [])}</td>
+            <td class="p-4 text-right text-sm font-stats text-base-content/30">{format_prize(t.liquipedia_data["prize_pool"])}</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   </section>
 </Layouts.app>

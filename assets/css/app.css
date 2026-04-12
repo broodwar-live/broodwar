@@ -454,3 +454,129 @@ html {
 [data-theme=light] ::-webkit-scrollbar-thumb:hover {
   background: oklch(70% 0.01 255);
 }
+
+/* === Tournament Bracket === */
+
+.bracket {
+  display: flex;
+  gap: 0;
+  overflow-x: auto;
+  padding: 1rem 0;
+}
+
+.bracket-round {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  min-width: 200px;
+  position: relative;
+}
+
+.bracket-round-title {
+  text-align: center;
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: oklch(60% 0.2 250 / 0.5);
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+
+.bracket-match {
+  margin: 0.375rem 0;
+  position: relative;
+}
+
+.bracket-player {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.375rem 0.75rem;
+  font-size: 0.8rem;
+  border: 1px solid oklch(60% 0.2 250 / 0.08);
+  background: oklch(14% 0.03 255 / 0.5);
+  min-width: 170px;
+}
+
+.bracket-player:first-child {
+  border-radius: 0.375rem 0.375rem 0 0;
+  border-bottom: none;
+}
+
+.bracket-player:last-child {
+  border-radius: 0 0 0.375rem 0.375rem;
+}
+
+.bracket-player.winner {
+  background: oklch(60% 0.2 250 / 0.08);
+  border-color: oklch(60% 0.2 250 / 0.15);
+}
+
+.bracket-player.winner .bracket-name {
+  font-weight: 600;
+  color: var(--color-base-content);
+}
+
+.bracket-player .bracket-name {
+  color: oklch(80% 0.01 250);
+  opacity: 0.5;
+}
+
+.bracket-player .bracket-score {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.7rem;
+  color: oklch(60% 0.2 250 / 0.7);
+  font-weight: 600;
+}
+
+/* Connector lines */
+.bracket-connector {
+  position: absolute;
+  right: -16px;
+  width: 16px;
+  border-color: oklch(60% 0.2 250 / 0.15);
+  pointer-events: none;
+}
+
+.bracket-connector-top {
+  top: 25%;
+  height: 50%;
+  border-right: 1px solid;
+  border-top: 1px solid;
+  border-color: inherit;
+}
+
+.bracket-connector-bottom {
+  bottom: 25%;
+  height: 50%;
+  border-right: 1px solid;
+  border-bottom: 1px solid;
+  border-color: inherit;
+}
+
+.bracket-connector-line {
+  top: 50%;
+  width: 16px;
+  border-top: 1px solid oklch(60% 0.2 250 / 0.15);
+}
+
+/* Light theme */
+[data-theme=light] .bracket-player {
+  background: oklch(100% 0 0 / 0.6);
+  border-color: oklch(50% 0.18 250 / 0.1);
+}
+
+[data-theme=light] .bracket-player.winner {
+  background: oklch(50% 0.18 250 / 0.06);
+  border-color: oklch(50% 0.18 250 / 0.15);
+}
+
+[data-theme=light] .bracket-player .bracket-name {
+  color: oklch(20% 0.02 255);
+}
+
+[data-theme=light] .bracket-connector-top,
+[data-theme=light] .bracket-connector-bottom,
+[data-theme=light] .bracket-connector-line {
+  border-color: oklch(50% 0.18 250 / 0.15);
+}
