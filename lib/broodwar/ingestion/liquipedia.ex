@@ -384,6 +384,8 @@ defmodule Broodwar.Ingestion.Liquipedia do
     text
     |> String.replace(~r/\[\[.*?\|/, "")
     |> String.replace(~r/[\[\]]/, "")
+    # Strip leftover template fields like |racefirst=t |flagfirst=kr
+    |> String.replace(~r/\|[a-z]+=\S*/i, "")
     |> String.trim()
     |> case do
       "" -> nil

@@ -33,7 +33,7 @@ defmodule Broodwar.Ingestion.TournamentSync do
       seasons: 1..21
     },
     %{
-      prefix: "Brood_War_StarLeague",
+      prefix: "Bombastic_StarLeague",
       short_name: "BSL",
       type: "major",
       seasons: 1..20
