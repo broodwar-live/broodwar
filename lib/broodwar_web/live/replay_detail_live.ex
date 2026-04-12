@@ -63,7 +63,7 @@ defmodule BroodwarWeb.ReplayDetailLive do
 
         <%!-- Timeline Scrubber --%>
         <%= if @max_idx > 0 do %>
-          <div class="bg-base-100 rounded-box border border-base-content/5 p-5 mb-4">
+          <form phx-change="seek" id="timeline-form" class="bg-base-100 rounded-box border border-base-content/5 p-5 mb-4">
             <div class="flex items-center gap-4 mb-3">
               <span class="text-xs text-base-content/40 w-12 font-mono">
                 {format_game_time(snap && snap["real_seconds"])}
@@ -74,7 +74,6 @@ defmodule BroodwarWeb.ReplayDetailLive do
                   min="0"
                   max={@max_idx}
                   value={@timeline_idx}
-                  phx-change="seek"
                   name="position"
                   class="range range-primary range-sm w-full"
                 />
@@ -86,7 +85,7 @@ defmodule BroodwarWeb.ReplayDetailLive do
             <div class="text-xs text-base-content/30 text-center">
               Build action {@timeline_idx} of {@max_idx}
             </div>
-          </div>
+          </form>
 
           <%!-- State at current position --%>
           <%= if snap do %>
