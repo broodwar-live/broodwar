@@ -193,6 +193,54 @@ defmodule BroodwarWeb.ReplayDetailLive do
             </div>
           </div>
 
+          <%!-- Build Order Timeline --%>
+          <% build_order = @parsed["build_order"] || [] %>
+          <% sorted_active = MapSet.to_list(@active_player_ids) |> Enum.sort() |> Enum.take(2) %>
+          <%= if build_order != [] do %>
+            <div class="bg-base-100 rounded-box border border-base-content/5 p-5 mb-4">
+              <div class="flex items-center justify-between mb-4">
+                <h2 class="font-semibold">Build Order</h2>
+                <span class="text-xs text-base-content/40">{length(build_order)} actions</span>
+              </div>
+
+              <div class="overflow-y-auto max-h-[500px] pr-2" style="scrollbar-width: thin;">
+                <%!-- Group build order into 30-second time blocks --%>
+                <%= for {block_time, entries} <- group_by_time(build_order, 30) do %>
+                  <div class="flex gap-0 mb-0.5">
+                    <%!-- Time label --%>
+                    <div class="w-12 shrink-0 pt-1">
+                      <span class="text-[10px] font-mono text-base-content/30">{format_game_time(block_time)}</span>
+                    </div>
+
+                    <%!-- Two-column entries --%>
+                    <div class="flex-1 grid grid-cols-2 gap-x-3 gap-y-0">
+                      <%!-- Player 1 column --%>
+                      <div class="flex flex-col gap-0.5 border-r border-base-content/5 pr-3">
+                        <%= for entry <- Enum.filter(entries, fn e -> e["player_id"] == Enum.at(sorted_active, 0) end) do %>
+                          <.bo_entry
+                            entry={entry}
+                            color={@player_colors[entry["player_id"]] || "#CCC"}
+                            current={entry_is_current?(entry, @timeline_idx, build_order)}
+                          />
+                        <% end %>
+                      </div>
+                      <%!-- Player 2 column --%>
+                      <div class="flex flex-col gap-0.5 pl-1">
+                        <%= for entry <- Enum.filter(entries, fn e -> e["player_id"] == Enum.at(sorted_active, 1) end) do %>
+                          <.bo_entry
+                            entry={entry}
+                            color={@player_colors[entry["player_id"]] || "#CCC"}
+                            current={entry_is_current?(entry, @timeline_idx, build_order)}
+                          />
+                        <% end %>
+                      </div>
+                    </div>
+                  </div>
+                <% end %>
+              </div>
+            </div>
+          <% end %>
+
           <%!-- State at current position --%>
           <%= if snap do %>
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 mb-4">
@@ -284,54 +332,6 @@ defmodule BroodwarWeb.ReplayDetailLive do
           <% end %>
         <% end %>
 
-        <%!-- Build Order Table --%>
-        <% build_order = @parsed["build_order"] || [] %>
-        <%= if build_order != [] do %>
-          <div class="bg-base-100 rounded-box border border-base-content/5 card-accent-top">
-            <div class="p-5">
-              <div class="flex items-center justify-between mb-4">
-                <h2 class="font-semibold">Build Order</h2>
-                <span class="text-xs text-base-content/40">{length(build_order)} entries</span>
-              </div>
-              <div class="overflow-x-auto max-h-96">
-                <table class="table table-sm">
-                  <thead class="sticky top-0 bg-base-100">
-                    <tr class="text-xs text-base-content/40">
-                      <th class="w-16">Time</th>
-                      <th class="w-10">Player</th>
-                      <th>Action</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <%= for {entry, idx} <- Enum.with_index(Enum.take(build_order, 100)) do %>
-                      <tr class={[
-                        "hover:bg-base-200/50",
-                        idx == @timeline_idx - 1 && "bg-primary/10 border-l-2 border-primary"
-                      ]}>
-                        <td class="font-mono text-xs text-base-content/50">
-                          {format_game_time(entry["real_seconds"])}
-                        </td>
-                        <td>
-                          <span class={["text-xs font-bold", player_color(entry["player_id"], players)]}>
-                            {player_race(entry["player_id"], players)}
-                          </span>
-                        </td>
-                        <td class="text-sm">{entry["action"]}</td>
-                      </tr>
-                    <% end %>
-                    <%= if length(build_order) > 100 do %>
-                      <tr>
-                        <td colspan="3" class="text-center text-xs text-base-content/30 py-2">
-                          ... and {length(build_order) - 100} more entries
-                        </td>
-                      </tr>
-                    <% end %>
-                  </tbody>
-                </table>
-              </div>
-            </div>
-          </div>
-        <% end %>
       </div>
     </Layouts.app>
     """
@@ -349,20 +349,6 @@ defmodule BroodwarWeb.ReplayDetailLive do
     maxs = ps["supply_max"] || 1
     if maxs > 0, do: min(round(used / maxs * 100), 100), else: 0
   end
-
-  defp player_race(player_id, players) do
-    case Enum.find(players, fn p -> p["player_id"] == player_id end) do
-      %{"race_code" => code} -> code
-      _ -> "?"
-    end
-  end
-
-  defp player_color(player_id, players), do: race_color(player_race(player_id, players))
-
-  defp race_color("T"), do: "text-race-terran"
-  defp race_color("P"), do: "text-race-protoss"
-  defp race_color("Z"), do: "text-race-zerg"
-  defp race_color(_), do: "text-base-content"
 
   defp format_duration(secs) when is_number(secs) do
     mins = trunc(secs / 60)
@@ -385,6 +371,61 @@ defmodule BroodwarWeb.ReplayDetailLive do
 
   defp format_atom(val) when is_binary(val), do: val
   defp format_atom(_), do: "—"
+
+  # -- Build order timeline helpers --
+
+  attr :entry, :map, required: true
+  attr :color, :string, required: true
+  attr :current, :boolean, default: false
+
+  defp bo_entry(assigns) do
+    ~H"""
+    <div class={[
+      "flex items-center gap-1.5 py-0.5 px-1.5 rounded text-xs",
+      @current && "bg-base-content/5"
+    ]}>
+      <span class="shrink-0 w-4 h-4 rounded flex items-center justify-center" style={"background: #{@color}20; color: #{@color}"}>
+        <.bo_icon action={@entry["action"]} />
+      </span>
+      <span class="truncate" style={if(@current, do: "color: #{@color}", else: "")}>{@entry["name"]}</span>
+    </div>
+    """
+  end
+
+  attr :action, :string, required: true
+
+  defp bo_icon(assigns) do
+    ~H"""
+    <%= cond do %>
+      <% String.starts_with?(@action, "Build") -> %>
+        <.icon name="hero-home-micro" class="size-2.5" />
+      <% String.starts_with?(@action, "Research") -> %>
+        <.icon name="hero-beaker-micro" class="size-2.5" />
+      <% String.starts_with?(@action, "Upgrade") -> %>
+        <.icon name="hero-arrow-trending-up-micro" class="size-2.5" />
+      <% String.starts_with?(@action, "Morph") -> %>
+        <.icon name="hero-arrows-right-left-micro" class="size-2.5" />
+      <% true -> %>
+        <.icon name="hero-cube-micro" class="size-2.5" />
+    <% end %>
+    """
+  end
+
+  defp group_by_time(build_order, interval_secs) do
+    build_order
+    |> Enum.group_by(fn entry ->
+      secs = entry["real_seconds"] || 0
+      Float.floor(secs / interval_secs) * interval_secs
+    end)
+    |> Enum.sort_by(fn {time, _} -> time end)
+  end
+
+  defp entry_is_current?(entry, timeline_idx, build_order) do
+    case Enum.at(build_order, max(timeline_idx - 1, 0)) do
+      nil -> false
+      current -> current["frame"] == entry["frame"] and current["player_id"] == entry["player_id"] and current["action"] == entry["action"]
+    end
+  end
 
   # Build the waveform bars from APM samples.
   # Returns a list of %{p1_height: 0-48, p2_height: 0-48} for SVG rendering.
