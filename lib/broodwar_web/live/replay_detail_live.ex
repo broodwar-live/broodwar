@@ -152,7 +152,7 @@ defmodule BroodwarWeb.ReplayDetailLive do
         </div>
 
         <%!-- Right: Floating state cards overlaid on build order --%>
-        <div class="absolute top-0 right-0 w-56 p-2 flex flex-col gap-1.5 z-10 pointer-events-none">
+        <div class="absolute top-8 right-0 w-56 p-2 flex flex-col gap-1.5 z-10 pointer-events-none">
           <%= if snap do %>
             <%= for ps <- snap["players"] || [], MapSet.member?(@active_player_ids, ps["player_id"]) do %>
               <% player = Enum.find(players, fn p -> p["player_id"] == ps["player_id"] end) %>

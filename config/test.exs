@@ -17,6 +17,9 @@ config :broodwar, BroodwarWeb.Endpoint,
   secret_key_base: "y78gijB+PYU9b7GmqEoOSLM1yuqCBcs2kRmLdcu6YLN42+qEM7Hpi6DRy7VOshoM",
   server: false
 
+# Disable Oban in test
+config :broodwar, Oban, testing: :inline
+
 # Print only warnings and errors during test
 config :logger, level: :warning
 

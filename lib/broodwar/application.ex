@@ -14,8 +14,7 @@ defmodule Broodwar.Application do
        repos: Application.fetch_env!(:broodwar, :ecto_repos), skip: skip_migrations?()},
       {DNSCluster, query: Application.get_env(:broodwar, :dns_cluster_query) || :ignore},
       {Phoenix.PubSub, name: Broodwar.PubSub},
-      # Start a worker by calling: Broodwar.Worker.start_link(arg)
-      # {Broodwar.Worker, arg},
+      {Oban, Application.fetch_env!(:broodwar, Oban)},
       # Start to serve requests, typically the last entry
       BroodwarWeb.Endpoint
     ]
