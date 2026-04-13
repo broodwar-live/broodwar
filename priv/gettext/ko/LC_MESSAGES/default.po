@@ -350,6 +350,46 @@ msgstr "리그"
 msgid "present"
 msgstr "현재"
 
+## Player detail
+msgid "years old"
+msgstr "세"
+
+msgid "Born"
+msgstr "출생"
+
+msgid "Age"
+msgstr "나이"
+
+msgid "Team"
+msgstr "팀"
+
+msgid "Aliases"
+msgstr "별명"
+
+msgid "Country"
+msgstr "국적"
+
+msgid "Race"
+msgstr "종족"
+
+msgid "Match History"
+msgstr "경기 기록"
+
+msgid "No tournament matches recorded."
+msgstr "기록된 토너먼트 경기가 없습니다."
+
+msgid "Wins"
+msgstr "승"
+
+msgid "Losses"
+msgstr "패"
+
+msgid "Head-to-Head"
+msgstr "상대 전적"
+
+msgid "Links"
+msgstr "링크"
+
 ## Connection errors
 msgid "We can't find the internet"
 msgstr "인터넷 연결을 찾을 수 없습니다"
