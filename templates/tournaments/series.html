@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+{% block title %}{{ page.title }}{% endblock %}
+
+{% block content %}
+{% set t = config.extra.i18n[lang] %}
+{% set e = page.extra %}
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+  <nav class="text-xs text-base-content/30 mb-6" aria-label="Breadcrumb">
+    <a href="/tournaments" class="hover:text-base-content/60">{{ t.tournaments }}</a>
+    <span class="mx-1.5">/</span>
+    <span class="text-base-content/50">{{ e.short_name }}</span>
+  </nav>
+
+  <div class="flex items-center gap-4 mb-2">
+    <h1 class="text-2xl font-display">{{ page.title }}</h1>
+    <span class="text-[10px] px-2 py-0.5 rounded
+      {% if e.status == 'active' %}bg-success/10 text-success{% else %}bg-base-content/5 text-base-content/30{% endif %}">
+      {% if e.status == "active" %}{% if lang == "ko" %}활성{% else %}Active{% endif %}{% else %}{% if lang == "ko" %}종료{% else %}Retired{% endif %}{% endif %}
+    </span>
+  </div>
+  <p class="text-xs text-base-content/40 mb-6">{{ e.organizer }} &middot; {{ e.region }} &middot; {{ e.format }}</p>
+
+  <div class="text-sm text-base-content/60 leading-relaxed max-w-3xl mb-10">
+    {{ page.content | safe }}
+  </div>
+
+  {% if e.seasons is defined and e.seasons | length > 0 %}
+  <h2 class="text-lg font-semibold mb-4">{% if lang == "ko" %}시즌 기록{% else %}Season History{% endif %}</h2>
+  <div class="overflow-x-auto">
+    <table class="table table-zebra w-full">
+      <thead>
+        <tr class="text-xs text-base-content/40">
+          <th>{% if lang == "ko" %}시즌{% else %}Season{% endif %}</th>
+          <th>{% if lang == "ko" %}연도{% else %}Year{% endif %}</th>
+          <th>{% if lang == "ko" %}우승자{% else %}Champion{% endif %}</th>
+          <th>{% if lang == "ko" %}준우승{% else %}Runner-up{% endif %}</th>
+          <th>{% if lang == "ko" %}상금{% else %}Prize Pool{% endif %}</th>
+          <th>{% if lang == "ko" %}상태{% else %}Status{% endif %}</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for s in e.seasons %}
+        <tr>
+          <td class="font-stats text-sm">{{ s.season }}</td>
+          <td class="font-stats text-sm">{{ s.year }}</td>
+          <td class="text-sm font-semibold">{{ s.winner | default(value="—") }}</td>
+          <td class="text-sm text-base-content/50">{{ s.runner_up | default(value="—") }}</td>
+          <td class="text-sm text-base-content/40">{{ s.prize_pool }}</td>
+          <td>
+            {% if s.status == "live" %}
+            <span class="text-[10px] px-2 py-0.5 rounded bg-error/10 text-error font-semibold">LIVE</span>
+            {% elif s.status == "completed" %}
+            <span class="text-[10px] text-base-content/30">&#10003;</span>
+            {% endif %}
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+  {% endif %}
+
+  <div class="mt-12 pt-6 border-t border-primary/5">
+    <a href="{{ config.extra.github_content_base }}/{{ page.relative_path }}" target="_blank" rel="noopener" class="text-xs text-base-content/25 hover:text-base-content/50 transition-colors">{{ t.edit_on_github }}</a>
+  </div>
+</div>
+{% endblock %}

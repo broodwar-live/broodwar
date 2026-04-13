@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block title %}{{ section.title }}{% endblock %}
+
+{% block content %}
+{% set t = config.extra.i18n[lang] %}
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+  <h1 class="text-2xl font-display mb-2">{{ section.title }}</h1>
+  <p class="text-sm text-base-content/50 mb-8">{{ section.description }}</p>
+
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+    {% for page in section.pages %}
+    {% set e = page.extra %}
+    <a href="{{ page.path }}" class="glass-card rounded-box p-5 glow-blue">
+      <div class="flex items-center justify-between mb-2">
+        <span class="text-lg font-bold">{{ e.short_name }}</span>
+        <span class="text-[10px] px-2 py-0.5 rounded
+          {% if e.status == 'active' %}bg-success/10 text-success{% else %}bg-base-content/5 text-base-content/30{% endif %}">
+          {% if e.status == "active" %}{% if lang == "ko" %}활성{% else %}Active{% endif %}{% else %}{% if lang == "ko" %}종료{% else %}Retired{% endif %}{% endif %}
+        </span>
+      </div>
+      <h3 class="text-sm font-semibold">{{ page.title }}</h3>
+      <p class="text-xs text-base-content/40 mt-1">{{ e.region }} &middot; {{ e.format }}</p>
+      {% if e.seasons is defined and e.seasons | length > 0 %}
+      <span class="text-[11px] text-base-content/25 mt-3 block">{{ e.seasons | length }} {% if lang == "ko" %}시즌{% else %}seasons{% endif %}</span>
+      {% endif %}
+    </a>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}

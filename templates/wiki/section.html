@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% block title %}{{ section.title }}{% endblock %}
+
+{% block content %}
+{% set t = config.extra.i18n[lang] %}
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+  <header class="mb-8">
+    <h1 class="text-2xl font-display">{{ section.title }}</h1>
+    {% if section.description %}
+    <p class="mt-2 text-sm text-base-content/50">{{ section.description }}</p>
+    {% endif %}
+  </header>
+
+  {% if section.subsections | length > 0 %}
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-10">
+    {% for sub_path in section.subsections %}
+      {% set sub = get_section(path=sub_path) %}
+    <a href="{{ sub.permalink }}" class="glass-card rounded-box p-6 glow-blue">
+      <h3 class="font-semibold">{{ sub.title }}</h3>
+      {% if sub.description %}
+      <p class="text-xs text-base-content/40 mt-2">{{ sub.description }}</p>
+      {% endif %}
+      <span class="text-[11px] text-base-content/20 mt-3 block">{{ sub.pages | length }} entries</span>
+    </a>
+    {% endfor %}
+  </div>
+  {% endif %}
+
+  {% if section.pages | length > 0 %}
+  <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3">
+    {% for page in section.pages %}
+    <a href="{{ page.permalink }}" class="glass-card rounded-box px-4 py-3 glow-blue">
+      <span class="text-sm font-medium">{{ page.title }}</span>
+      {% if page.extra.race is defined %}
+      <span class="text-[10px] font-bold ml-2
+        {% if 'terran' in page.taxonomies.race %}text-race-terran
+        {% elif 'protoss' in page.taxonomies.race %}text-race-protoss
+        {% elif 'zerg' in page.taxonomies.race %}text-race-zerg
+        {% endif %}">
+        {{ page.taxonomies.race | first | upper | truncate(length=1, end="") }}
+      </span>
+      {% endif %}
+    </a>
+    {% endfor %}
+  </div>
+  {% endif %}
+</div>
+{% endblock %}

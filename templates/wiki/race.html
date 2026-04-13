@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+{% block title %}{{ page.title }}{% endblock %}
+
+{% block content %}
+{% set t = config.extra.i18n[lang] %}
+{% set e = page.extra %}
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+  <nav class="text-xs text-base-content/30 mb-6" aria-label="Breadcrumb">
+    <a href="/wiki" class="hover:text-base-content/60">{{ t.wiki }}</a>
+    <span class="mx-1.5">/</span>
+    <span class="text-base-content/50">{{ page.title }}</span>
+  </nav>
+
+  <h1 class="text-3xl font-display">{{ page.title }}</h1>
+  <p class="mt-2 text-sm text-base-content/50">{{ e.tagline }}</p>
+
+  <div class="mt-8 text-sm text-base-content/70 leading-relaxed max-w-3xl">
+    {{ page.content | safe }}
+  </div>
+
+  {% if e.playstyle %}
+  <div class="mt-8">
+    <h2 class="text-lg font-semibold mb-3">{% if lang == "ko" %}플레이 스타일{% else %}Playstyle{% endif %}</h2>
+    <p class="text-sm text-base-content/60 leading-relaxed max-w-3xl">{{ e.playstyle }}</p>
+  </div>
+  {% endif %}
+
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
+    {% if e.strengths | length > 0 %}
+    <div class="glass-card rounded-box p-5">
+      <h3 class="text-xs font-semibold text-success uppercase tracking-wider mb-3">{% if lang == "ko" %}강점{% else %}Strengths{% endif %}</h3>
+      <ul class="space-y-2">
+        {% for s in e.strengths %}
+        <li class="text-sm text-base-content/60 flex items-start gap-2">
+          <span class="text-success mt-0.5">+</span> {{ s }}
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+    {% endif %}
+
+    {% if e.weaknesses | length > 0 %}
+    <div class="glass-card rounded-box p-5">
+      <h3 class="text-xs font-semibold text-error uppercase tracking-wider mb-3">{% if lang == "ko" %}약점{% else %}Weaknesses{% endif %}</h3>
+      <ul class="space-y-2">
+        {% for w in e.weaknesses %}
+        <li class="text-sm text-base-content/60 flex items-start gap-2">
+          <span class="text-error mt-0.5">-</span> {{ w }}
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+    {% endif %}
+  </div>
+
+  <div class="mt-12 pt-6 border-t border-primary/5">
+    <a href="{{ config.extra.github_content_base }}/{{ page.relative_path }}"
+       target="_blank" rel="noopener"
+       class="text-xs text-base-content/25 hover:text-base-content/50 transition-colors">
+      {{ t.edit_on_github }}
+    </a>
+  </div>
+</div>
+{% endblock %}

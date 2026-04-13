@@ -1,0 +1,388 @@
+@import "tailwindcss";
+@source "../templates";
+@source "../content";
+
+@plugin "daisyui" {
+  themes: false;
+}
+
+@plugin "daisyui/theme" {
+  name: "dark";
+  default: true;
+  prefersdark: true;
+  color-scheme: "dark";
+  --color-base-100: oklch(14% 0.03 255);
+  --color-base-200: oklch(11% 0.025 255);
+  --color-base-300: oklch(8% 0.02 255);
+  --color-base-content: oklch(94% 0.006 250);
+  --color-primary: oklch(60% 0.2 250);
+  --color-primary-content: oklch(98% 0.005 250);
+  --color-secondary: oklch(78% 0.14 180);
+  --color-secondary-content: oklch(12% 0.03 180);
+  --color-accent: oklch(55% 0.25 290);
+  --color-accent-content: oklch(98% 0.005 290);
+  --color-neutral: oklch(20% 0.02 255);
+  --color-neutral-content: oklch(88% 0.008 250);
+  --color-success: oklch(72% 0.19 155);
+  --color-success-content: oklch(15% 0.04 155);
+  --color-info: oklch(65% 0.15 240);
+  --color-info-content: oklch(98% 0.005 240);
+  --color-warning: oklch(78% 0.15 80);
+  --color-warning-content: oklch(15% 0.03 80);
+  --color-error: oklch(60% 0.24 28);
+  --color-error-content: oklch(96% 0.01 28);
+  --radius-selector: 0.375rem;
+  --radius-field: 0.375rem;
+  --radius-box: 0.75rem;
+  --size-selector: 0.21875rem;
+  --size-field: 0.21875rem;
+  --border: 1px;
+  --depth: 1;
+  --noise: 0;
+}
+
+@plugin "daisyui/theme" {
+  name: "light";
+  default: false;
+  prefersdark: false;
+  color-scheme: "light";
+  --color-base-100: oklch(100% 0 0);
+  --color-base-200: oklch(98% 0.003 250);
+  --color-base-300: oklch(95% 0.005 250);
+  --color-base-content: oklch(18% 0.02 255);
+  --color-primary: oklch(50% 0.18 250);
+  --color-primary-content: oklch(98% 0.005 250);
+  --color-secondary: oklch(55% 0.12 180);
+  --color-secondary-content: oklch(98% 0.01 180);
+  --color-accent: oklch(45% 0.22 290);
+  --color-accent-content: oklch(98% 0.005 290);
+  --color-neutral: oklch(40% 0.02 255);
+  --color-neutral-content: oklch(98% 0.005 255);
+  --color-success: oklch(55% 0.17 155);
+  --color-success-content: oklch(98% 0.005 155);
+  --color-info: oklch(55% 0.14 240);
+  --color-info-content: oklch(98% 0.005 240);
+  --color-warning: oklch(65% 0.16 75);
+  --color-warning-content: oklch(15% 0.03 75);
+  --color-error: oklch(55% 0.22 28);
+  --color-error-content: oklch(96% 0.01 28);
+  --radius-selector: 0.375rem;
+  --radius-field: 0.375rem;
+  --radius-box: 0.75rem;
+  --size-selector: 0.21875rem;
+  --size-field: 0.21875rem;
+  --border: 1px;
+  --depth: 1;
+  --noise: 0;
+}
+
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+
+/* === StarCraft Race Colors === */
+@theme {
+  --color-race-terran: oklch(62% 0.22 25);
+  --color-race-protoss: oklch(80% 0.16 90);
+  --color-race-zerg: oklch(58% 0.2 310);
+}
+
+/* === Typography === */
+
+html {
+  font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", system-ui, sans-serif;
+}
+
+.brandmark {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3em;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.brandmark-word {
+  font-family: "Orbitron", sans-serif;
+  font-weight: 900;
+  letter-spacing: 0.04em;
+  color: var(--color-base-content);
+}
+
+.brandmark-live-box {
+  display: inline-flex;
+  align-items: center;
+  align-self: stretch;
+  background: white;
+  color: oklch(14% 0.03 255);
+  font-family: "Orbitron", sans-serif;
+  font-weight: 900;
+  letter-spacing: 0.06em;
+  padding: 0 0.35em 0 0.4em;
+  line-height: 1;
+  font-size: 0.55em;
+}
+
+.brandmark-live-box span {
+  display: inline-block;
+  transform: skewX(-8deg);
+  -webkit-text-stroke: 0.03em oklch(14% 0.03 255);
+}
+
+[data-theme=light] .brandmark-live-box span {
+  -webkit-text-stroke: 0.03em white;
+}
+
+[data-theme=light] .brandmark-live-box {
+  background: oklch(14% 0.03 255);
+  color: white;
+}
+
+.brandmark-muted .brandmark-word { opacity: 0.4; }
+.brandmark-muted .brandmark-live-box { opacity: 0.3; }
+
+.font-display {
+  font-family: "Black Han Sans", "Pretendard Variable", sans-serif;
+}
+
+.font-stats {
+  font-family: "JetBrains Mono", "Fira Code", monospace;
+  font-variant-numeric: tabular-nums;
+}
+
+/* === ASL Broadcast Gradients === */
+
+.asl-gradient-bg {
+  background: linear-gradient(160deg, oklch(8% 0.03 255) 0%, oklch(22% 0.08 250) 40%, oklch(14% 0.06 260) 100%);
+}
+[data-theme=light] .asl-gradient-bg {
+  background: linear-gradient(160deg, oklch(95% 0.01 250) 0%, oklch(90% 0.03 245) 40%, oklch(96% 0.008 260) 100%);
+}
+
+.text-gradient-asl {
+  background: linear-gradient(135deg, oklch(60% 0.2 250), oklch(78% 0.14 180));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+[data-theme=light] .text-gradient-asl {
+  background: linear-gradient(135deg, oklch(45% 0.2 250), oklch(50% 0.14 180));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.text-gradient-blue {
+  background: linear-gradient(135deg, oklch(60% 0.2 250), oklch(65% 0.22 240));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+[data-theme=light] .text-gradient-blue {
+  background: linear-gradient(135deg, oklch(45% 0.2 250), oklch(50% 0.22 240));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.text-gradient-teal {
+  background: linear-gradient(135deg, oklch(60% 0.2 250), oklch(78% 0.14 180));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+[data-theme=light] .text-gradient-teal {
+  background: linear-gradient(135deg, oklch(42% 0.2 250), oklch(45% 0.16 180));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.text-gradient-gold {
+  background: linear-gradient(135deg, oklch(72% 0.15 70), oklch(80% 0.16 90));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+[data-theme=light] .text-gradient-gold {
+  background: linear-gradient(135deg, oklch(55% 0.16 70), oklch(60% 0.16 90));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* === Glass Card Effects === */
+
+.glass-card {
+  background: oklch(14% 0.03 255 / 0.6);
+  border: 1px solid oklch(60% 0.2 250 / 0.1);
+  backdrop-filter: blur(12px);
+}
+.glass-card:hover {
+  border-color: oklch(60% 0.2 250 / 0.25);
+  background: oklch(14% 0.03 255 / 0.75);
+}
+[data-theme=light] .glass-card {
+  background: oklch(100% 0 0 / 0.7);
+  border: 1px solid oklch(50% 0.18 250 / 0.1);
+}
+[data-theme=light] .glass-card:hover {
+  border-color: oklch(50% 0.18 250 / 0.2);
+  background: oklch(100% 0 0 / 0.85);
+}
+
+.glass-card-elevated {
+  background: oklch(16% 0.035 255 / 0.7);
+  border: 1px solid oklch(60% 0.2 250 / 0.12);
+  backdrop-filter: blur(16px);
+  box-shadow: 0 4px 24px -4px oklch(60% 0.2 250 / 0.08);
+}
+[data-theme=light] .glass-card-elevated {
+  background: oklch(100% 0 0 / 0.8);
+  border: 1px solid oklch(50% 0.18 250 / 0.1);
+  box-shadow: 0 4px 24px -4px oklch(50% 0.18 250 / 0.06);
+}
+
+/* === Glow Effects === */
+
+.glow-blue {
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+.glow-blue:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 32px -4px oklch(60% 0.2 250 / 0.25), 0 0 0 1px oklch(60% 0.2 250 / 0.1);
+}
+[data-theme=light] .glow-blue:hover {
+  box-shadow: 0 8px 32px -4px oklch(50% 0.18 250 / 0.12), 0 0 0 1px oklch(50% 0.18 250 / 0.08);
+}
+
+.glow-teal:hover {
+  box-shadow: 0 8px 32px -4px oklch(78% 0.14 180 / 0.2);
+}
+[data-theme=light] .glow-teal:hover {
+  box-shadow: 0 8px 32px -4px oklch(50% 0.14 180 / 0.1);
+}
+
+/* === Custom Animations === */
+
+@keyframes live-pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(0.85); }
+}
+.animate-live-pulse { animation: live-pulse 2s ease-in-out infinite; }
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+.animate-shimmer { background-size: 200% 100%; animation: shimmer 8s linear infinite; }
+
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-up { animation: fade-up 0.5s ease-out; }
+
+/* === Match/Content Cards === */
+
+.match-card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+.match-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 32px -4px oklch(60% 0.2 250 / 0.2);
+  border-color: oklch(60% 0.2 250 / 0.2);
+}
+[data-theme=light] .match-card:hover {
+  box-shadow: 0 8px 32px -4px oklch(50% 0.18 250 / 0.1);
+  border-color: oklch(50% 0.18 250 / 0.15);
+}
+
+.card-accent-top { border-top: 2px solid oklch(60% 0.2 250 / 0.4); }
+[data-theme=light] .card-accent-top { border-top: 2px solid oklch(50% 0.18 250 / 0.3); }
+
+.card-accent-left { border-left: 2px solid oklch(60% 0.2 250 / 0.4); }
+[data-theme=light] .card-accent-left { border-left: 2px solid oklch(50% 0.18 250 / 0.3); }
+
+/* === Hero Background Effects === */
+
+.hero-streaks::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(125deg, transparent 30%, oklch(60% 0.2 250 / 0.04) 45%, transparent 55%),
+              linear-gradient(135deg, transparent 50%, oklch(78% 0.14 180 / 0.03) 65%, transparent 75%);
+  pointer-events: none;
+}
+[data-theme=light] .hero-streaks::before {
+  background: linear-gradient(125deg, transparent 30%, oklch(50% 0.18 250 / 0.06) 45%, transparent 55%),
+              linear-gradient(135deg, transparent 50%, oklch(50% 0.14 180 / 0.04) 65%, transparent 75%);
+}
+
+.hero-glow::after {
+  content: '';
+  position: absolute;
+  top: -20%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  height: 60%;
+  background: radial-gradient(ellipse at center, oklch(60% 0.2 250 / 0.08) 0%, transparent 70%);
+  pointer-events: none;
+}
+[data-theme=light] .hero-glow::after {
+  background: radial-gradient(ellipse at center, oklch(50% 0.18 250 / 0.06) 0%, transparent 70%);
+}
+
+/* === Section Dividers === */
+
+.section-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, oklch(60% 0.2 250 / 0.15), transparent);
+}
+[data-theme=light] .section-divider {
+  background: linear-gradient(90deg, transparent, oklch(50% 0.18 250 / 0.12), transparent);
+}
+
+/* === Badge Styles === */
+
+.badge-live {
+  background: oklch(60% 0.24 28 / 0.9);
+  color: white;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+}
+
+.badge-race {
+  font-weight: 700;
+  font-size: 0.65rem;
+  letter-spacing: 0.02em;
+}
+
+/* === Scrollbar Styling === */
+
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: oklch(30% 0.02 255); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: oklch(40% 0.02 255); }
+[data-theme=light] ::-webkit-scrollbar-thumb { background: oklch(80% 0.01 255); }
+[data-theme=light] ::-webkit-scrollbar-thumb:hover { background: oklch(70% 0.01 255); }
+
+/* === Tournament Bracket === */
+
+.bracket { display: flex; gap: 0; overflow-x: auto; padding: 1rem 0; }
+.bracket-round { display: flex; flex-direction: column; justify-content: space-around; min-width: 200px; position: relative; }
+.bracket-round-title { text-align: center; font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.08em; color: oklch(60% 0.2 250 / 0.5); font-weight: 600; margin-bottom: 0.75rem; }
+.bracket-match { margin: 0.375rem 0; position: relative; }
+.bracket-player { display: flex; align-items: center; justify-content: space-between; padding: 0.375rem 0.75rem; font-size: 0.8rem; border: 1px solid oklch(60% 0.2 250 / 0.08); background: oklch(14% 0.03 255 / 0.5); min-width: 170px; }
+.bracket-player:first-child { border-radius: 0.375rem 0.375rem 0 0; border-bottom: none; }
+.bracket-player:last-child { border-radius: 0 0 0.375rem 0.375rem; }
+.bracket-player.winner { background: oklch(60% 0.2 250 / 0.08); border-color: oklch(60% 0.2 250 / 0.15); }
+.bracket-player.winner .bracket-name { font-weight: 600; color: var(--color-base-content); }
+.bracket-player .bracket-name { color: oklch(80% 0.01 250); opacity: 0.5; }
+.bracket-player .bracket-score { font-family: "JetBrains Mono", monospace; font-size: 0.7rem; color: oklch(60% 0.2 250 / 0.7); font-weight: 600; }
+.bracket-connector { position: absolute; right: -16px; width: 16px; border-color: oklch(60% 0.2 250 / 0.15); pointer-events: none; }
+.bracket-connector-top { top: 25%; height: 50%; border-right: 1px solid; border-top: 1px solid; border-color: inherit; }
+.bracket-connector-bottom { bottom: 25%; height: 50%; border-right: 1px solid; border-bottom: 1px solid; border-color: inherit; }
+.bracket-connector-line { top: 50%; width: 16px; border-top: 1px solid oklch(60% 0.2 250 / 0.15); }
+[data-theme=light] .bracket-player { background: oklch(100% 0 0 / 0.6); border-color: oklch(50% 0.18 250 / 0.1); }
+[data-theme=light] .bracket-player.winner { background: oklch(50% 0.18 250 / 0.06); border-color: oklch(50% 0.18 250 / 0.15); }
+[data-theme=light] .bracket-player .bracket-name { color: oklch(20% 0.02 255); }
+[data-theme=light] .bracket-connector-top, [data-theme=light] .bracket-connector-bottom, [data-theme=light] .bracket-connector-line { border-color: oklch(50% 0.18 250 / 0.15); }

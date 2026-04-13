@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% block title %}broodwar.live — StarCraft: Brood War Community Hub{% endblock %}
+
+{% block content %}
+{% set t = config.extra.i18n[lang] %}
+<section class="asl-gradient-bg hero-streaks hero-glow relative overflow-hidden">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-28 relative z-10">
+    <div class="text-center max-w-2xl mx-auto">
+      <span class="brandmark text-2xl lg:text-4xl">
+        <span class="brandmark-word">BROODWAR</span>
+        <span class="brandmark-live-box"><span>LIVE</span></span>
+      </span>
+      <p class="mt-6 text-sm lg:text-base text-base-content/50 leading-relaxed max-w-lg mx-auto">
+        {{ t.the_home }}
+      </p>
+      <div class="mt-8 flex flex-wrap items-center justify-center gap-3">
+        <a href="/replays" class="btn btn-primary">{{ t.replays }}</a>
+        <a href="/players" class="btn btn-primary btn-soft">{{ t.players }}</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+{# Live streams widget — populated by JS #}
+<section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+  <div class="flex items-center justify-between mb-6">
+    <h2 class="text-lg font-semibold">{{ t.live_streams }}</h2>
+    <a href="/streams" class="text-xs text-primary/60 hover:text-primary transition-colors">{{ t.view_all }} &rarr;</a>
+  </div>
+  <div id="live-streams" data-api="{{ config.extra.api_base_url }}">
+    <p class="text-sm text-base-content/30">Loading streams...</p>
+  </div>
+</section>
+
+<div class="section-divider max-w-7xl mx-auto"></div>
+
+{# Recent matches — populated by JS #}
+<section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+  <div class="flex items-center justify-between mb-6">
+    <h2 class="text-lg font-semibold">{{ t.matches }}</h2>
+    <a href="/matches" class="text-xs text-primary/60 hover:text-primary transition-colors">{{ t.view_all }} &rarr;</a>
+  </div>
+  <div id="recent-matches" data-api="{{ config.extra.api_base_url }}">
+    <p class="text-sm text-base-content/30">Loading matches...</p>
+  </div>
+</section>
+{% endblock %}
+
+{% block scripts %}
+<script src="/js/streams.js" defer></script>
+<script src="/js/matches.js" defer></script>
+{% endblock %}

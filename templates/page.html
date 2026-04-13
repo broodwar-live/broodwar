@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block title %}{{ page.title }}{% endblock %}
+
+{% block content %}
+{% set t = config.extra.i18n[lang] %}
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+  <header class="mb-8">
+    <h1 class="text-2xl font-display">{{ page.title }}</h1>
+    {% if page.description %}
+    <p class="mt-2 text-sm text-base-content/50">{{ page.description }}</p>
+    {% endif %}
+  </header>
+
+  <div class="prose prose-invert max-w-none">
+    {{ page.content | safe }}
+  </div>
+
+  {% if page.relative_path %}
+  <div class="mt-12 pt-6 border-t border-primary/5">
+    <a href="{{ config.extra.github_content_base }}/{{ page.relative_path }}"
+       target="_blank" rel="noopener"
+       class="text-xs text-base-content/25 hover:text-base-content/50 transition-colors">
+      {{ t.edit_on_github }}
+    </a>
+  </div>
+  {% endif %}
+</div>
+{% endblock %}

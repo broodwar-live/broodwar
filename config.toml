@@ -1,0 +1,93 @@
+base_url = "https://broodwar.live"
+title = "broodwar.live"
+description = "The community platform for StarCraft: Brood War competitive play."
+default_language = "en"
+compile_sass = false
+build_search_index = true
+generate_feeds = false
+minify_html = true
+
+[languages.ko]
+title = "broodwar.live"
+description = "스타크래프트: 브루드 워 경쟁 커뮤니티 플랫폼."
+build_search_index = true
+generate_feeds = false
+taxonomies = [{name = "race", feed = false}, {name = "matchup", feed = false}, {name = "tags", feed = false}]
+
+[[taxonomies]]
+name = "race"
+feed = false
+
+[[taxonomies]]
+name = "matchup"
+feed = false
+
+[[taxonomies]]
+name = "tags"
+feed = false
+
+[slugify]
+paths = "safe"
+taxonomies = "safe"
+anchors = "safe"
+
+[markdown]
+
+[extra]
+api_base_url = "https://api.broodwar.live"
+github_repo = "https://github.com/broodwar-live/broodwar.live"
+github_content_base = "https://github.com/broodwar-live/broodwar.live/edit/main/content"
+
+[extra.i18n.en]
+skip_to_content = "Skip to content"
+main_navigation = "Main navigation"
+edit_on_github = "Edit on GitHub"
+theme = "Theme"
+system_theme = "System theme"
+light_theme = "Light theme"
+dark_theme = "Dark theme"
+language = "Language"
+players = "Players"
+matches = "Matches"
+tournaments = "Tournaments"
+replays = "Replays"
+builds = "Builds"
+wiki = "Wiki"
+live = "LIVE"
+platform = "Platform"
+community = "Community"
+live_streams = "Live Streams"
+report_a_bug = "Report a Bug"
+rankings = "Rankings"
+balance = "Balance"
+open_source = "Open source community project"
+disclaimer = "Not affiliated with Blizzard Entertainment or Microsoft. StarCraft and Brood War are trademarks of Blizzard Entertainment, Inc."
+the_home = "The Home of Competitive Brood War"
+view_all = "View all"
+
+[extra.i18n.ko]
+skip_to_content = "본문으로 건너뛰기"
+main_navigation = "메인 내비게이션"
+edit_on_github = "GitHub에서 수정"
+theme = "테마"
+system_theme = "시스템 테마"
+light_theme = "라이트 테마"
+dark_theme = "다크 테마"
+language = "언어"
+players = "선수"
+matches = "경기"
+tournaments = "토너먼트"
+replays = "리플레이"
+builds = "빌드"
+wiki = "위키"
+live = "LIVE"
+platform = "플랫폼"
+community = "커뮤니티"
+live_streams = "라이브 스트리밍"
+report_a_bug = "버그 신고"
+rankings = "랭킹"
+balance = "밸런스"
+open_source = "오픈소스 커뮤니티 프로젝트"
+disclaimer = "Blizzard Entertainment 또는 Microsoft와 관련이 없습니다. StarCraft와 Brood War는 Blizzard Entertainment, Inc.의 상표입니다."
+the_home = "경쟁 브루드 워의 중심지"
+view_all = "모두 보기"
