@@ -9,7 +9,7 @@ defmodule BroodwarWeb.TournamentController do
 
     conn
     |> assign(:page_title, "Tournaments")
-    |> assign(:page_description, "Complete history of competitive StarCraft: Brood War leagues — ASL, BSL, and more.")
+    |> assign(:page_description, gettext("Complete history of competitive StarCraft: Brood War leagues — ASL, BSL, and more."))
     |> render(:index,
       series_list: series_list,
       champion_counts: champion_counts
@@ -26,7 +26,7 @@ defmodule BroodwarWeb.TournamentController do
 
       conn
       |> assign(:page_title, short_name)
-      |> assign(:page_description, "#{short_name} — season history, brackets, and results.")
+      |> assign(:page_description, gettext("%{name} — season history, brackets, and results.", name: short_name))
       |> assign(:breadcrumbs, [{"Tournaments", "/tournaments"}, {short_name, "/tournaments/#{slug}"}])
       |> render(:show,
         short_name: short_name,
@@ -48,7 +48,7 @@ defmodule BroodwarWeb.TournamentController do
 
             conn
             |> assign(:page_title, title)
-            |> assign(:page_description, "#{title} — brackets, match results, and champion.")
+            |> assign(:page_description, gettext("%{title} — brackets, match results, and champion.", title: title))
             |> assign(:breadcrumbs, [{"Tournaments", "/tournaments"}, {short_name, "/tournaments/#{slug}"}, {"Season #{season_num}", "/tournaments/#{slug}/#{season_str}"}])
             |> render(:season, tournament: tournament)
         end

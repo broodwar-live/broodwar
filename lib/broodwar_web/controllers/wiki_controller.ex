@@ -6,7 +6,7 @@ defmodule BroodwarWeb.WikiController do
   def index(conn, _params) do
     conn
     |> assign(:page_title, "Wiki")
-    |> assign(:page_description, "Reference guide to StarCraft: Brood War races, units, buildings, abilities, and maps.")
+    |> assign(:page_description, gettext("Reference guide to StarCraft: Brood War races, units, buildings, abilities, and maps."))
     |> render(:index, races: Data.races())
   end
 
@@ -22,7 +22,7 @@ defmodule BroodwarWeb.WikiController do
 
         conn
         |> assign(:page_title, race.name)
-        |> assign(:page_description, "#{race.name} — units, buildings, abilities, and strategy guide on broodwar.live.")
+        |> assign(:page_description, gettext("%{name} — units, buildings, abilities, and strategy guide on broodwar.live.", name: race.name))
         |> assign(:breadcrumbs, [{"Wiki", "/wiki"}, {race.name, "/wiki/races/#{slug}"}])
         |> render(:race, race: race, units: units, buildings: buildings, abilities: abilities)
     end
@@ -40,7 +40,7 @@ defmodule BroodwarWeb.WikiController do
 
         conn
         |> assign(:page_title, unit.name)
-        |> assign(:page_description, "#{unit.name} — #{race.name} unit stats, abilities, and production info.")
+        |> assign(:page_description, gettext("%{unit} — %{race} unit stats, abilities, and production info.", unit: unit.name, race: race.name))
         |> assign(:breadcrumbs, [{"Wiki", "/wiki"}, {race.name, "/wiki/races/#{unit.race}"}, {unit.name, "/wiki/units/#{slug}"}])
         |> render(:unit, unit: unit, race: race, built_from: built_from, abilities: abilities)
     end
@@ -57,7 +57,7 @@ defmodule BroodwarWeb.WikiController do
 
         conn
         |> assign(:page_title, building.name)
-        |> assign(:page_description, "#{building.name} — #{race.name} building stats and produced units.")
+        |> assign(:page_description, gettext("%{building} — %{race} building stats and produced units.", building: building.name, race: race.name))
         |> assign(:breadcrumbs, [{"Wiki", "/wiki"}, {race.name, "/wiki/races/#{building.race}"}, {building.name, "/wiki/buildings/#{slug}"}])
         |> render(:building, building: building, race: race, produced_units: produced_units)
     end
@@ -73,7 +73,7 @@ defmodule BroodwarWeb.WikiController do
 
     conn
     |> assign(:page_title, "Abilities")
-    |> assign(:page_description, "Complete list of StarCraft: Brood War unit abilities by race.")
+    |> assign(:page_description, gettext("Complete list of StarCraft: Brood War unit abilities by race."))
     |> assign(:breadcrumbs, [{"Wiki", "/wiki"}, {"Abilities", "/wiki/abilities"}])
     |> render(:abilities, abilities_by_race: abilities_by_race)
   end
@@ -89,7 +89,7 @@ defmodule BroodwarWeb.WikiController do
 
         conn
         |> assign(:page_title, ability.name)
-        |> assign(:page_description, "#{ability.name} — #{race.name} ability details and caster info.")
+        |> assign(:page_description, gettext("%{ability} — %{race} ability details and caster info.", ability: ability.name, race: race.name))
         |> assign(:breadcrumbs, [{"Wiki", "/wiki"}, {"Abilities", "/wiki/abilities"}, {ability.name, "/wiki/abilities/#{slug}"}])
         |> render(:ability, ability: ability, race: race, caster: caster)
     end
@@ -100,7 +100,7 @@ defmodule BroodwarWeb.WikiController do
 
     conn
     |> assign(:page_title, "Maps")
-    |> assign(:page_description, "Competitive StarCraft: Brood War map pool — layouts, start positions, and tournament history.")
+    |> assign(:page_description, gettext("Competitive StarCraft: Brood War map pool — layouts, start positions, and tournament history."))
     |> assign(:breadcrumbs, [{"Wiki", "/wiki"}, {"Maps", "/wiki/maps"}])
     |> render(:maps, maps: maps)
   end
@@ -113,7 +113,7 @@ defmodule BroodwarWeb.WikiController do
       map ->
         conn
         |> assign(:page_title, map.name)
-        |> assign(:page_description, "#{map.name} — map details, dimensions, and tournament usage history.")
+        |> assign(:page_description, gettext("%{name} — map details, dimensions, and tournament usage history.", name: map.name))
         |> assign(:breadcrumbs, [{"Wiki", "/wiki"}, {"Maps", "/wiki/maps"}, {map.name, "/wiki/maps/#{slug}"}])
         |> render(:map, map: map)
     end
