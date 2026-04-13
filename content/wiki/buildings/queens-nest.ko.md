@@ -5,6 +5,7 @@ template = "wiki/building.html"
 [taxonomies]
 race = ["zerg"]
 [extra]
+image = "/images/wiki/buildings/queens-nest.jpg"
 name_en = "Queen's Nest"
 minerals = 150
 gas = 100

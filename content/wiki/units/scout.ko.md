@@ -5,6 +5,7 @@ template = "wiki/unit.html"
 [taxonomies]
 race = ["protoss"]
 [extra]
+image = "/images/wiki/units/scout.jpg"
 name_en = "Scout"
 type = "air"
 minerals = 275

@@ -5,6 +5,7 @@ template = "wiki/unit.html"
 [taxonomies]
 race = ["terran"]
 [extra]
+image = "/images/wiki/units/vulture.jpg"
 name_en = "Vulture"
 type = "ground"
 minerals = 75

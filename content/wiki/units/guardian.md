@@ -5,6 +5,7 @@ template = "wiki/unit.html"
 [taxonomies]
 race = ["zerg"]
 [extra]
+image = "/images/wiki/units/guardian.jpg"
 name_ko = "가디언"
 type = "air"
 minerals = 150

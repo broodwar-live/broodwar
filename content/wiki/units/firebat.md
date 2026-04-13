@@ -5,6 +5,7 @@ template = "wiki/unit.html"
 [taxonomies]
 race = ["terran"]
 [extra]
+image = "/images/wiki/units/firebat.jpg"
 name_ko = "파이어뱃"
 type = "ground"
 minerals = 50

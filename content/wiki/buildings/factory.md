@@ -5,6 +5,7 @@ template = "wiki/building.html"
 [taxonomies]
 race = ["terran"]
 [extra]
+image = "/images/wiki/buildings/factory.jpg"
 name_ko = "팩토리"
 minerals = 200
 gas = 100

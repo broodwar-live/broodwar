@@ -5,6 +5,7 @@ template = "wiki/unit.html"
 [taxonomies]
 race = ["zerg"]
 [extra]
+image = "/images/wiki/units/infested-terran.jpg"
 name_ko = "감염된 테란"
 type = "ground"
 minerals = 100

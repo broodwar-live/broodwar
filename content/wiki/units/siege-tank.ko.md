@@ -5,6 +5,7 @@ template = "wiki/unit.html"
 [taxonomies]
 race = ["terran"]
 [extra]
+image = "/images/wiki/units/siege-tank.jpg"
 name_en = "Siege Tank"
 type = "ground"
 minerals = 150

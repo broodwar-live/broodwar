@@ -5,6 +5,7 @@ template = "wiki/unit.html"
 [taxonomies]
 race = ["zerg"]
 [extra]
+image = "/images/wiki/units/lurker.jpg"
 name_en = "Lurker"
 type = "ground"
 minerals = 125

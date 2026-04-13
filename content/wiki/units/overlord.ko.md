@@ -5,6 +5,7 @@ template = "wiki/unit.html"
 [taxonomies]
 race = ["zerg"]
 [extra]
+image = "/images/wiki/units/overlord.jpg"
 name_en = "Overlord"
 type = "air"
 minerals = 100

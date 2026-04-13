@@ -5,6 +5,7 @@ template = "wiki/unit.html"
 [taxonomies]
 race = ["zerg"]
 [extra]
+image = "/images/wiki/units/hydralisk.jpg"
 name_en = "Hydralisk"
 type = "ground"
 minerals = 75

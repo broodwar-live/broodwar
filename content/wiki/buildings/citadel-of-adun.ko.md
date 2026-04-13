@@ -5,6 +5,7 @@ template = "wiki/building.html"
 [taxonomies]
 race = ["protoss"]
 [extra]
+image = "/images/wiki/buildings/citadel-of-adun.jpg"
 name_en = "Citadel of Adun"
 minerals = 150
 gas = 100

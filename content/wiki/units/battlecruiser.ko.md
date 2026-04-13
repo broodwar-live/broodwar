@@ -5,6 +5,7 @@ template = "wiki/unit.html"
 [taxonomies]
 race = ["terran"]
 [extra]
+image = "/images/wiki/units/battlecruiser.jpg"
 name_en = "Battlecruiser"
 type = "air"
 minerals = 400

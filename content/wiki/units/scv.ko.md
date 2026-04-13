@@ -5,6 +5,7 @@ template = "wiki/unit.html"
 [taxonomies]
 race = ["terran"]
 [extra]
+image = "/images/wiki/units/scv.jpg"
 name_en = "SCV"
 type = "ground"
 minerals = 50

@@ -5,6 +5,7 @@ template = "wiki/building.html"
 [taxonomies]
 race = ["zerg"]
 [extra]
+image = "/images/wiki/buildings/spawning-pool.jpg"
 name_en = "Spawning Pool"
 minerals = 200
 gas = 0

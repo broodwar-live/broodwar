@@ -5,6 +5,7 @@ template = "wiki/unit.html"
 [taxonomies]
 race = ["terran"]
 [extra]
+image = "/images/wiki/units/dropship.jpg"
 name_en = "Dropship"
 type = "air"
 minerals = 100

@@ -5,6 +5,7 @@ template = "wiki/building.html"
 [taxonomies]
 race = ["protoss"]
 [extra]
+image = "/images/wiki/buildings/robotics-facility.jpg"
 name_ko = "로보틱스 퍼실리티"
 minerals = 200
 gas = 200

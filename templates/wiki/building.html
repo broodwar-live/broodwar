@@ -44,6 +44,9 @@
     </div>
 
     <div class="glass-card rounded-box p-5">
+      {% if e.image %}
+      <img src="{{ e.image }}" alt="{{ page.title }}" class="w-full aspect-video object-contain rounded-lg mb-4 bg-base-300/50" loading="lazy" />
+      {% endif %}
       <h3 class="text-xs font-semibold text-base-content/50 uppercase tracking-wider mb-4">{% if lang == "ko" %}스탯{% else %}Stats{% endif %}</h3>
       <dl class="space-y-3 text-sm">
         <div class="flex justify-between"><dt class="text-base-content/40">{% if lang == "ko" %}미네랄{% else %}Minerals{% endif %}</dt><dd class="font-stats">{{ e.minerals }}</dd></div>

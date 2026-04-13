@@ -5,6 +5,7 @@ template = "wiki/unit.html"
 [taxonomies]
 race = ["protoss"]
 [extra]
+image = "/images/wiki/units/reaver.jpg"
 name_ko = "리버"
 type = "ground"
 minerals = 200

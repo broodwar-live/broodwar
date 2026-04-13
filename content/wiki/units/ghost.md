@@ -5,6 +5,7 @@ template = "wiki/unit.html"
 [taxonomies]
 race = ["terran"]
 [extra]
+image = "/images/wiki/units/ghost.jpg"
 name_ko = "고스트"
 type = "ground"
 minerals = 25

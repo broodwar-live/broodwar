@@ -5,6 +5,7 @@ template = "wiki/unit.html"
 [taxonomies]
 race = ["terran"]
 [extra]
+image = "/images/wiki/units/medic.jpg"
 name_en = "Medic"
 type = "ground"
 minerals = 50

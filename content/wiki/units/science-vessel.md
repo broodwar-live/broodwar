@@ -5,6 +5,7 @@ template = "wiki/unit.html"
 [taxonomies]
 race = ["terran"]
 [extra]
+image = "/images/wiki/units/science-vessel.jpg"
 name_ko = "사이언스 베슬"
 type = "air"
 minerals = 100

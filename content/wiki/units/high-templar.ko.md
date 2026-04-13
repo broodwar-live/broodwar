@@ -5,6 +5,7 @@ template = "wiki/unit.html"
 [taxonomies]
 race = ["protoss"]
 [extra]
+image = "/images/wiki/units/high-templar.jpg"
 name_en = "High Templar"
 type = "ground"
 minerals = 50

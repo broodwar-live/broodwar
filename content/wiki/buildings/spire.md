@@ -5,6 +5,7 @@ template = "wiki/building.html"
 [taxonomies]
 race = ["zerg"]
 [extra]
+image = "/images/wiki/buildings/spire.jpg"
 name_ko = "스파이어"
 minerals = 200
 gas = 150

@@ -5,6 +5,7 @@ template = "wiki/unit.html"
 [taxonomies]
 race = ["protoss"]
 [extra]
+image = "/images/wiki/units/dragoon.jpg"
 name_ko = "드라군"
 type = "ground"
 minerals = 125

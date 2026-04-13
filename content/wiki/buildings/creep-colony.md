@@ -5,6 +5,7 @@ template = "wiki/building.html"
 [taxonomies]
 race = ["zerg"]
 [extra]
+image = "/images/wiki/buildings/creep-colony.jpg"
 name_ko = "크립 콜로니"
 minerals = 75
 gas = 0
