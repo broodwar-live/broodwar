@@ -10,7 +10,7 @@ minify_html = true
 [languages.ko]
 title = "broodwar.live"
 description = "스타크래프트: 브루드 워 경쟁 커뮤니티 플랫폼."
-build_search_index = true
+build_search_index = false
 generate_feeds = false
 taxonomies = [{name = "race", feed = false}, {name = "matchup", feed = false}, {name = "tags", feed = false}]
 
