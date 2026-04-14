@@ -7,9 +7,11 @@
   <h1 class="text-2xl font-display mb-2">{{ section.title }}</h1>
   <p class="text-sm text-base-content/50 mb-8">{{ section.description }}</p>
 
+  {# Series pages (ASL, BSL, etc.) #}
   <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
     {% for page in section.pages %}
     {% set e = page.extra %}
+    {% if e.short_name is defined %}
     <a href="{{ page.path }}" class="glass-card rounded-box p-5 glow-blue">
       <div class="flex items-center justify-between mb-2">
         <span class="text-lg font-bold">{{ e.short_name }}</span>
@@ -24,7 +26,29 @@
       <span class="text-[11px] text-base-content/25 mt-3 block">{{ e.seasons | length }} {% if lang == "ko" %}시즌{% else %}seasons{% endif %}</span>
       {% endif %}
     </a>
+    {% endif %}
     {% endfor %}
   </div>
+
+  {# Season pages (ASL S21, BSL S19, etc.) #}
+  {% set season_pages = section.pages | filter(attribute="extra.series_name") %}
+  {% if season_pages | length > 0 %}
+  <h2 class="text-lg font-semibold mt-10 mb-4">{% if lang == "ko" %}최근 시즌{% else %}Recent Seasons{% endif %}</h2>
+  <div class="space-y-2">
+    {% for page in season_pages %}
+    {% set e = page.extra %}
+    <a href="{{ page.path }}" class="glass-card rounded-box px-4 py-3 flex items-center gap-4 glow-blue">
+      <span class="text-sm font-bold text-primary/70 w-16 shrink-0">{{ e.series_name }}</span>
+      <span class="font-semibold text-sm flex-1">{{ e.season_label }}</span>
+      <span class="text-xs text-base-content/40">{{ e.year }}</span>
+      {% if e.status == "live" %}
+      <span class="text-[10px] px-2 py-0.5 rounded bg-error/10 text-error font-semibold">LIVE</span>
+      {% elif e.champion %}
+      <span class="text-xs text-base-content/50">{{ e.champion }}</span>
+      {% endif %}
+    </a>
+    {% endfor %}
+  </div>
+  {% endif %}
 </div>
 {% endblock %}

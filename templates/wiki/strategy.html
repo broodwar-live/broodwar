@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% block title %}{{ page.title }}{% endblock %}
+
+{% block jsonld_extra %}
+,{
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Wiki", "item": "{{ config.base_url }}/wiki"},
+    {"@type": "ListItem", "position": 2, "name": "Strategies", "item": "{{ config.base_url }}/wiki/strategies"},
+    {"@type": "ListItem", "position": 3, "name": "{{ page.title }}"}
+  ]
+},
+{
+  "@type": "Article",
+  "headline": "{{ page.title }}",
+  "description": "{{ page.description | default(value='') }}",
+  "url": "{{ current_url }}",
+  "publisher": {"@id": "{{ config.base_url }}/#organization"}
+}
+{% endblock %}
+
+{% block content %}
+{% set t = config.extra.i18n[lang] %}
+{% set e = page.extra %}
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+  <nav class="text-xs text-base-content/30 mb-6" aria-label="Breadcrumb">
+    <a href="/wiki" class="hover:text-base-content/60">{{ t.wiki }}</a>
+    <span class="mx-1.5">/</span>
+    <a href="/wiki/strategies" class="hover:text-base-content/60">{% if lang == "ko" %}전략{% else %}Strategies{% endif %}</a>
+    <span class="mx-1.5">/</span>
+    <span class="text-base-content/50">{{ page.title }}</span>
+  </nav>
+
+  <div class="max-w-3xl">
+    <h1 class="text-2xl font-display">{{ page.title }}</h1>
+    {% if e.matchup is defined %}
+    <span class="text-xs text-base-content/40 mt-1 block">{{ e.matchup }}</span>
+    {% endif %}
+
+    <div class="mt-8 prose prose-invert prose-sm max-w-none">
+      {{ page.content | safe }}
+    </div>
+  </div>
+
+  <div class="mt-12 pt-6 border-t border-primary/5">
+    <a href="{{ config.extra.github_content_base }}/{{ page.relative_path }}"
+       target="_blank" rel="noopener"
+       class="text-xs text-base-content/25 hover:text-base-content/50 transition-colors">
+      {{ t.edit_on_github }}
+    </a>
+  </div>
+</div>
+{% endblock %}

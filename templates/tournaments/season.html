@@ -1,0 +1,114 @@
+{% extends "base.html" %}
+{% block title %}{{ page.title }}{% endblock %}
+
+{% block jsonld_extra %}
+,{
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Tournaments", "item": "{{ config.base_url }}/tournaments"},
+    {"@type": "ListItem", "position": 2, "name": "{{ page.extra.series_name }}", "item": "{{ config.base_url }}/tournaments/{{ page.extra.series_slug }}"},
+    {"@type": "ListItem", "position": 3, "name": "{{ page.extra.season_label }}"}
+  ]
+},
+{
+  "@type": "SportsEvent",
+  "name": "{{ page.title }}",
+  "description": "{{ page.description | default(value='') }}",
+  "url": "{{ current_url }}",
+  "sport": "StarCraft: Brood War"
+}
+{% endblock %}
+
+{% block content %}
+{% set t = config.extra.i18n[lang] %}
+{% set e = page.extra %}
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+  <nav class="text-xs text-base-content/30 mb-6" aria-label="Breadcrumb">
+    <a href="/tournaments" class="hover:text-base-content/60">{{ t.tournaments }}</a>
+    <span class="mx-1.5">/</span>
+    <a href="/tournaments/{{ e.series_slug }}" class="hover:text-base-content/60">{{ e.series_name }}</a>
+    <span class="mx-1.5">/</span>
+    <span class="text-base-content/50">{{ e.season_label }}</span>
+  </nav>
+
+  <div class="flex items-center gap-4 mb-2">
+    <h1 class="text-2xl font-display">{{ page.title }}</h1>
+    {% if e.status == "live" %}
+    <span class="text-[10px] px-2 py-0.5 rounded bg-error/10 text-error font-semibold">LIVE</span>
+    {% elif e.status == "completed" %}
+    <span class="text-[10px] px-2 py-0.5 rounded bg-success/10 text-success">{% if lang == "ko" %}완료{% else %}Completed{% endif %}</span>
+    {% endif %}
+  </div>
+  <p class="text-xs text-base-content/40 mb-8">{{ e.year }} · {{ e.prize_pool }}</p>
+
+  <div class="text-sm text-base-content/60 leading-relaxed max-w-3xl mb-10">
+    {{ page.content | safe }}
+  </div>
+
+  {# Results #}
+  {% if e.champion is defined and e.champion %}
+  <div class="glass-card rounded-box p-6 max-w-2xl mb-8">
+    <h2 class="text-sm font-semibold mb-4">{% if lang == "ko" %}결과{% else %}Results{% endif %}</h2>
+    <dl class="space-y-3 text-sm">
+      <div class="flex justify-between"><dt class="text-base-content/40">{% if lang == "ko" %}우승{% else %}Champion{% endif %}</dt><dd class="font-semibold text-primary">{{ e.champion }}</dd></div>
+      {% if e.runner_up %}<div class="flex justify-between"><dt class="text-base-content/40">{% if lang == "ko" %}준우승{% else %}Runner-up{% endif %}</dt><dd>{{ e.runner_up }}</dd></div>{% endif %}
+      {% if e.semifinalists is defined and e.semifinalists | length > 0 %}
+      <div class="flex justify-between"><dt class="text-base-content/40">{% if lang == "ko" %}4강{% else %}Semi-finalists{% endif %}</dt><dd>{{ e.semifinalists | join(sep=", ") }}</dd></div>
+      {% endif %}
+    </dl>
+  </div>
+  {% endif %}
+
+  {# Notable Matches #}
+  {% if e.matches is defined and e.matches | length > 0 %}
+  <h2 class="text-sm font-semibold mb-4">{% if lang == "ko" %}주요 경기{% else %}Notable Matches{% endif %}</h2>
+  <div class="space-y-2 max-w-2xl mb-8">
+    {% for m in e.matches %}
+    <div class="glass-card rounded-box px-4 py-3 flex items-center gap-4">
+      <span class="text-[11px] text-primary/50 font-medium w-24 shrink-0">{{ m.round }}</span>
+      <div class="flex-1 flex items-center justify-center gap-3">
+        <span class="font-semibold text-sm {% if m.score_a > m.score_b %}text-base-content{% else %}text-base-content/40{% endif %}">{{ m.player_a }}</span>
+        <span class="font-stats text-sm"><span class="{% if m.score_a > m.score_b %}text-primary{% else %}text-base-content/30{% endif %}">{{ m.score_a }}</span><span class="text-base-content/15"> : </span><span class="{% if m.score_b > m.score_a %}text-primary{% else %}text-base-content/30{% endif %}">{{ m.score_b }}</span></span>
+        <span class="font-semibold text-sm {% if m.score_b > m.score_a %}text-base-content{% else %}text-base-content/40{% endif %}">{{ m.player_b }}</span>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+  {% endif %}
+
+  {# Bracket Overview #}
+  {% if e.bracket is defined and e.bracket | length > 0 %}
+  <h2 class="text-sm font-semibold mb-4">{% if lang == "ko" %}대진표{% else %}Bracket{% endif %}</h2>
+  <div class="overflow-x-auto mb-8">
+    <table class="table table-zebra text-sm max-w-2xl">
+      <thead>
+        <tr class="text-xs text-base-content/40">
+          <th>{% if lang == "ko" %}라운드{% else %}Round{% endif %}</th>
+          <th>{% if lang == "ko" %}선수 A{% else %}Player A{% endif %}</th>
+          <th>{% if lang == "ko" %}스코어{% else %}Score{% endif %}</th>
+          <th>{% if lang == "ko" %}선수 B{% else %}Player B{% endif %}</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for m in e.bracket %}
+        <tr>
+          <td class="text-base-content/40">{{ m.round }}</td>
+          <td class="{% if m.score_a > m.score_b %}font-semibold{% else %}text-base-content/40{% endif %}">{{ m.player_a }}</td>
+          <td class="font-stats">{{ m.score_a }}-{{ m.score_b }}</td>
+          <td class="{% if m.score_b > m.score_a %}font-semibold{% else %}text-base-content/40{% endif %}">{{ m.player_b }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+  {% endif %}
+
+  <div class="mt-12 pt-6 border-t border-primary/5">
+    <a href="{{ config.extra.github_content_base }}/{{ page.relative_path }}"
+       target="_blank" rel="noopener"
+       class="text-xs text-base-content/25 hover:text-base-content/50 transition-colors">
+      {{ t.edit_on_github }}
+    </a>
+  </div>
+</div>
+{% endblock %}
