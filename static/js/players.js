@@ -27,10 +27,13 @@
     `
   }
 
+  let selectedPlayer = null
+
   function renderPlayer(p) {
     const letter = RACE_LETTER[p.race] || "?"
+    const selected = selectedPlayer && selectedPlayer.id === p.id
     return `
-      <div class="glass-card rounded-box p-4 glow-blue flex items-center gap-4">
+      <div class="glass-card rounded-box p-4 glow-blue flex items-center gap-4 cursor-pointer ${selected ? "ring-1 ring-primary" : ""}" data-player-id="${p.id}">
         <span class="${RACE_BG[p.race] || "bg-base-content"} w-8 h-8 rounded-lg flex items-center justify-center text-xs font-black text-base-100">${letter}</span>
         <div class="flex-1 min-w-0">
           <div class="font-semibold text-sm truncate">${p.name}</div>
@@ -40,6 +43,48 @@
       </div>
     `
   }
+
+  function renderPlayerDetail(p, stats) {
+    if (!stats) return ""
+    const t = stats.tournament || {}
+    const r = stats.replays || {}
+    const skill = r.skill_profile
+
+    const openingsHtml = (r.openings || []).slice(0, 5).map(o =>
+      `<span class="px-2 py-0.5 rounded text-[10px] bg-base-300/60">${o.name} <b>${o.count}</b></span>`
+    ).join("")
+
+    const muHtml = (r.matchup_winrates || []).map(m =>
+      `<span class="text-[11px]">${m.matchup}: <b class="${m.winrate >= 55 ? "text-success" : m.winrate >= 50 ? "" : "text-error"}">${m.winrate}%</b> (${m.total})</span>`
+    ).join(" · ")
+
+    return `
+      <div class="glass-card rounded-box p-6 mt-4 col-span-full">
+        <div class="flex items-center justify-between mb-4">
+          <h3 class="text-lg font-semibold">${p.name}</h3>
+          <button class="btn btn-xs btn-ghost" data-close-detail>✕</button>
+        </div>
+        ${skill ? `
+          <div class="flex gap-4 mb-4 text-sm">
+            <span>Skill: <b class="text-primary">${skill.tier}</b> (${Math.round(skill.skill_score)})</span>
+            <span>EAPM: <b>${Math.round(skill.eapm)}</b></span>
+            <span>Efficiency: <b>${Math.round(skill.efficiency * 100)}%</b></span>
+          </div>
+        ` : ""}
+        ${t.total ? `
+          <div class="text-sm mb-3">
+            Tournament: <b>${t.wins}W-${t.losses}L</b> (${t.winrate}%)
+            ${t.titles && t.titles.length ? ` · Titles: ${t.titles.join(", ")}` : ""}
+          </div>
+        ` : ""}
+        ${r.replay_count ? `<div class="text-[11px] text-base-content/40 mb-2">${r.replay_count} replays analyzed</div>` : ""}
+        ${openingsHtml ? `<div class="flex flex-wrap gap-1 mb-3">${openingsHtml}</div>` : ""}
+        ${muHtml ? `<div class="mb-2">${muHtml}</div>` : ""}
+      </div>
+    `
+  }
+
+  let playerStats = null
 
   function render() {
     let filtered = allPlayers
@@ -52,16 +97,38 @@
       filtered = filtered.filter(p => p.name.toLowerCase().includes(q))
     }
 
-    mount.innerHTML = renderFilters() + (
-      filtered.length > 0
-        ? `<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">${filtered.map(renderPlayer).join("")}</div>`
-        : `<p class="text-sm text-base-content/30">No players found.</p>`
-    )
+    const cardsHtml = filtered.length > 0
+      ? filtered.map(p => {
+          let html = renderPlayer(p)
+          if (selectedPlayer && selectedPlayer.id === p.id) {
+            html += renderPlayerDetail(p, playerStats)
+          }
+          return html
+        }).join("")
+      : `<p class="text-sm text-base-content/30">No players found.</p>`
+
+    mount.innerHTML = renderFilters() +
+      `<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">${cardsHtml}</div>`
 
     // Rebind events
     mount.querySelectorAll("[data-race]").forEach(btn => {
       btn.addEventListener("click", () => {
         raceFilter = btn.dataset.race || null
+        selectedPlayer = null
+        playerStats = null
+        render()
+      })
+    })
+
+    mount.querySelectorAll("[data-player-id]").forEach(el => {
+      el.addEventListener("click", () => selectPlayer(parseInt(el.dataset.playerId)))
+    })
+
+    mount.querySelectorAll("[data-close-detail]").forEach(btn => {
+      btn.addEventListener("click", (e) => {
+        e.stopPropagation()
+        selectedPlayer = null
+        playerStats = null
         render()
       })
     })
@@ -74,6 +141,23 @@
       })
       searchInput.focus()
       searchInput.setSelectionRange(search.length, search.length)
+    }
+  }
+
+  async function selectPlayer(id) {
+    const p = allPlayers.find(p => p.id === id)
+    if (!p) return
+    selectedPlayer = p
+    playerStats = null
+    render()
+
+    try {
+      const res = await fetch(`${api}/api/players/${id}/stats`)
+      const json = await res.json()
+      playerStats = json.data || {}
+      render()
+    } catch (e) {
+      console.warn("Failed to load player stats:", e)
     }
   }
 

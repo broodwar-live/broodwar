@@ -26,6 +26,8 @@
         </div>
       </div>
       <div id="replay-result" class="mt-8"></div>
+      <h2 class="text-xl font-display mt-12 mb-4">Recent Replays</h2>
+      <div id="replay-list"></div>
     `
   }
 
@@ -155,6 +157,47 @@
     }
   }
 
+  function renderReplayListItem(r) {
+    const mu = r.matchup || ""
+    const pA = r.player_a ? r.player_a.name : "?"
+    const pB = r.player_b ? r.player_b.name : "?"
+    const map = r.map ? r.map.name : "Unknown"
+    const dur = r.duration ? `${Math.floor(r.duration / 60)}:${String(r.duration % 60).padStart(2, "0")}` : ""
+
+    return `
+      <div class="glass-card rounded-box p-4 flex items-center gap-4">
+        ${mu ? `<span class="text-xs font-bold text-primary min-w-[2.5rem]">${mu}</span>` : `<span class="min-w-[2.5rem]"></span>`}
+        <div class="flex-1 min-w-0">
+          <div class="text-sm font-semibold truncate">${pA} vs ${pB}</div>
+          <div class="text-[11px] text-base-content/30">${map} · ${dur}</div>
+        </div>
+        <div class="flex gap-1">
+          ${r.race_a ? `<span class="text-[10px] font-bold ${RACE_COLORS[RACE_NAMES[r.race_a]?.toLowerCase()] || ""}">${r.race_a}</span>` : ""}
+          <span class="text-[10px] text-base-content/20">v</span>
+          ${r.race_b ? `<span class="text-[10px] font-bold ${RACE_COLORS[RACE_NAMES[r.race_b]?.toLowerCase()] || ""}">${r.race_b}</span>` : ""}
+        </div>
+      </div>
+    `
+  }
+
+  async function loadRecentReplays() {
+    const listEl = document.getElementById("replay-list")
+    if (!listEl) return
+    try {
+      const res = await fetch(`${api}/api/replays?per_page=20`)
+      const json = await res.json()
+      const replays = json.data || []
+      if (replays.length > 0) {
+        listEl.innerHTML = `<div class="flex flex-col gap-2">${replays.map(renderReplayListItem).join("")}</div>`
+      } else {
+        listEl.innerHTML = `<p class="text-sm text-base-content/30">No replays yet.</p>`
+      }
+    } catch (e) {
+      listEl.innerHTML = `<p class="text-sm text-base-content/20">Could not load replays.</p>`
+    }
+  }
+
   init()
+  loadRecentReplays()
   mount.setAttribute("aria-busy", "false")
 })()
