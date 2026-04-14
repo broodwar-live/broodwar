@@ -11,6 +11,9 @@ minerals = 150
 gas = 100
 hp = 850
 shields = 0
+armor = 1
+build_time = 60
+size = "large"
 produces = []
 +++
 Enables Queen production from the Hatchery. Required to upgrade a Lair to a Hive. Researches Spawn Broodling, Ensnare, and Parasite abilities for Queens.

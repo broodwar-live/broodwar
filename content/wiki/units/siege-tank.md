@@ -14,6 +14,14 @@ supply = 2
 hp = 150
 armor = 1
 damage = 30
+build_time = 50
+attack_speed = 37
+range = 7
+speed = 4.0
+shields = 0
+size = "large"
+ground_attack = true
+air_attack = false
 built_from = "factory"
 abilities = ["siege-mode"]
 +++

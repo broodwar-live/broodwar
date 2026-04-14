@@ -11,5 +11,6 @@ minerals = 200
 gas = 200
 levels = 1
 researched_at = "ultralisk-cavern"
+research_time = 67
 +++
 울트라리스크의 이동 속도를 증가시킵니다.

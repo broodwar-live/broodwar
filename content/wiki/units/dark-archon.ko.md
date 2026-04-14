@@ -14,6 +14,14 @@ supply = 4
 hp = 25
 armor = 1
 damage = 0
+build_time = 20
+attack_speed = 0
+range = 10
+speed = 4.92
+shields = 200
+size = "large"
+ground_attack = false
+air_attack = false
 built_from = "merge"
 abilities = ["mind-control", "maelstrom", "feedback"]
 +++

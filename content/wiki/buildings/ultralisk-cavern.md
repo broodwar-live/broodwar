@@ -11,6 +11,9 @@ minerals = 150
 gas = 200
 hp = 600
 shields = 0
+armor = 1
+build_time = 80
+size = "large"
 produces = []
 +++
 Enables Ultralisk production from the Hatchery. Researches Chitinous Plating (+2 Ultralisk armor) and Anabolic Synthesis (Ultralisk speed). Requires a Hive.

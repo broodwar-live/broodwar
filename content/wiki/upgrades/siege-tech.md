@@ -11,5 +11,6 @@ minerals = 150
 gas = 150
 levels = 1
 researched_at = "machine-shop"
+research_time = 50
 +++
 Allows Siege Tanks to enter Siege Mode for devastating area damage.

@@ -11,5 +11,6 @@ minerals = 150
 gas = 150
 levels = 1
 researched_at = "hydralisk-den"
+research_time = 50
 +++
 Increases Hydralisk attack range.

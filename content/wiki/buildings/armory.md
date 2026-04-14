@@ -11,6 +11,9 @@ minerals = 100
 gas = 50
 hp = 750
 shields = 0
+armor = 1
+build_time = 80
+size = "large"
 produces = []
 +++
 Researches vehicle and ship weapon and armor upgrades. Required for Goliath and Valkyrie production. Enables level 2-3 infantry upgrades at the Engineering Bay.

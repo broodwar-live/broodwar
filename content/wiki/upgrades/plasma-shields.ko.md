@@ -11,5 +11,6 @@ minerals = 200
 gas = 200
 levels = 3
 researched_at = "forge"
+research_time = 80
 +++
 모든 프로토스 유닛의 실드 포인트를 증가시킵니다.

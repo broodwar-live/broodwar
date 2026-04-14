@@ -11,5 +11,6 @@ minerals = 100
 gas = 100
 levels = 1
 researched_at = "academy"
+research_time = 50
 +++
 마린과 파이어뱃이 HP 10을 소모하여 일시적으로 공격 속도와 이동 속도를 증가시킵니다.

@@ -11,5 +11,6 @@ minerals = 100
 gas = 100
 levels = 1
 researched_at = "academy"
+research_time = 50
 +++
 Allows Marines and Firebats to temporarily increase attack and movement speed at the cost of 10 HP. Essential combat upgrade.

@@ -11,5 +11,6 @@ minerals = 100
 gas = 100
 levels = 3
 researched_at = "cybernetics-core"
+research_time = 80
 +++
 Increases Scout, Corsair, and air unit attack damage.

@@ -14,6 +14,14 @@ supply = 2
 hp = 200
 armor = 1
 damage = 0
+build_time = 80
+attack_speed = 0
+range = 10
+speed = 5.0
+shields = 0
+size = "large"
+ground_attack = false
+air_attack = false
 built_from = "starport"
 abilities = ["defensive-matrix", "emp-shockwave", "irradiate"]
 +++

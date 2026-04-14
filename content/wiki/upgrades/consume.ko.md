@@ -11,5 +11,6 @@ minerals = 100
 gas = 100
 levels = 1
 researched_at = "defiler-mound"
+research_time = 67
 +++
 디파일러가 아군 저그 유닛을 희생하여 에너지를 회복하는 능력입니다.

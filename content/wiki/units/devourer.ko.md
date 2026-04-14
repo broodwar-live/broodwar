@@ -14,6 +14,14 @@ supply = 2
 hp = 250
 armor = 2
 damage = 25
+build_time = 40
+attack_speed = 100
+range = 6
+speed = 5.0
+shields = 0
+size = "large"
+ground_attack = false
+air_attack = true
 built_from = "mutalisk"
 abilities = []
 +++

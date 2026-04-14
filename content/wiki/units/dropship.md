@@ -14,6 +14,14 @@ supply = 2
 hp = 150
 armor = 1
 damage = 0
+build_time = 50
+attack_speed = 0
+range = 0
+speed = 5.47
+shields = 0
+size = "large"
+ground_attack = false
+air_attack = false
 built_from = "starport"
 abilities = []
 +++

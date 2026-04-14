@@ -14,6 +14,14 @@ supply = 2
 hp = 80
 armor = 1
 damage = 40
+build_time = 50
+attack_speed = 30
+range = 1
+speed = 4.92
+shields = 40
+size = "small"
+ground_attack = true
+air_attack = false
 built_from = "gateway"
 abilities = []
 +++

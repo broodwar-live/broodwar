@@ -14,6 +14,14 @@ supply = 2
 hp = 40
 armor = 0
 damage = 0
+build_time = 50
+attack_speed = 0
+range = 9
+speed = 3.2
+shields = 40
+size = "small"
+ground_attack = false
+air_attack = false
 built_from = "gateway"
 abilities = ["psionic-storm", "hallucination"]
 +++

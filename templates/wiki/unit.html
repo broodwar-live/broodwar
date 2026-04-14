@@ -62,9 +62,32 @@
         <div class="flex justify-between"><dt class="text-base-content/40">{% if lang == "ko" %}가스{% else %}Gas{% endif %}</dt><dd class="font-stats">{{ e.gas }}</dd></div>
         <div class="flex justify-between"><dt class="text-base-content/40">{% if lang == "ko" %}서플라이{% else %}Supply{% endif %}</dt><dd class="font-stats">{{ e.supply }}</dd></div>
         <div class="flex justify-between"><dt class="text-base-content/40">{% if lang == "ko" %}체력{% else %}HP{% endif %}</dt><dd class="font-stats">{{ e.hp }}</dd></div>
+        {% if e.shields is defined and e.shields > 0 %}
+        <div class="flex justify-between"><dt class="text-base-content/40">{% if lang == "ko" %}쉴드{% else %}Shields{% endif %}</dt><dd class="font-stats">{{ e.shields }}</dd></div>
+        {% endif %}
         <div class="flex justify-between"><dt class="text-base-content/40">{% if lang == "ko" %}방어력{% else %}Armor{% endif %}</dt><dd class="font-stats">{{ e.armor }}</dd></div>
+        {% if e.damage is defined and e.damage > 0 %}
         <div class="flex justify-between"><dt class="text-base-content/40">{% if lang == "ko" %}공격력{% else %}Damage{% endif %}</dt><dd class="font-stats">{{ e.damage }}</dd></div>
+        {% endif %}
+        {% if e.range is defined and e.range > 0 %}
+        <div class="flex justify-between"><dt class="text-base-content/40">{% if lang == "ko" %}사거리{% else %}Range{% endif %}</dt><dd class="font-stats">{{ e.range }}</dd></div>
+        {% endif %}
+        {% if e.speed is defined and e.speed > 0 %}
+        <div class="flex justify-between"><dt class="text-base-content/40">{% if lang == "ko" %}이동속도{% else %}Speed{% endif %}</dt><dd class="font-stats">{{ e.speed }}</dd></div>
+        {% endif %}
+        {% if e.build_time is defined and e.build_time > 0 %}
+        <div class="flex justify-between"><dt class="text-base-content/40">{% if lang == "ko" %}생산시간{% else %}Build Time{% endif %}</dt><dd class="font-stats">{{ e.build_time }}s</dd></div>
+        {% endif %}
+        {% if e.size is defined %}
+        <div class="flex justify-between"><dt class="text-base-content/40">{% if lang == "ko" %}크기{% else %}Size{% endif %}</dt><dd class="font-stats">{{ e.size | title }}</dd></div>
+        {% endif %}
       </dl>
+      {% if e.ground_attack is defined or e.air_attack is defined %}
+      <div class="mt-3 flex gap-2">
+        {% if e.ground_attack %}<span class="text-[10px] px-2 py-0.5 rounded bg-base-content/5 text-base-content/40">{% if lang == "ko" %}지상공격{% else %}Ground{% endif %}</span>{% endif %}
+        {% if e.air_attack %}<span class="text-[10px] px-2 py-0.5 rounded bg-base-content/5 text-base-content/40">{% if lang == "ko" %}공중공격{% else %}Air{% endif %}</span>{% endif %}
+      </div>
+      {% endif %}
 
       {% if e.built_from %}
       <div class="mt-5 pt-4 border-t border-primary/5">

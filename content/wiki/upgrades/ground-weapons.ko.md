@@ -11,5 +11,6 @@ minerals = 100
 gas = 100
 levels = 3
 researched_at = "forge"
+research_time = 80
 +++
 질럿, 드라군 등 지상 유닛의 공격력을 증가시킵니다.

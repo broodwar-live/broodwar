@@ -14,6 +14,14 @@ supply = 2
 hp = 100
 armor = 1
 damage = 5
+build_time = 40
+attack_speed = 8
+range = 5
+speed = 6.67
+shields = 80
+size = "medium"
+ground_attack = false
+air_attack = true
 built_from = "stargate"
 abilities = ["disruption-web"]
 +++

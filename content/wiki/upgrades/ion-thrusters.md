@@ -11,5 +11,6 @@ minerals = 100
 gas = 100
 levels = 1
 researched_at = "machine-shop"
+research_time = 50
 +++
 Increases Vulture movement speed.

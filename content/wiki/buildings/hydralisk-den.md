@@ -11,6 +11,9 @@ minerals = 100
 gas = 50
 hp = 850
 shields = 0
+armor = 1
+build_time = 40
+size = "large"
 produces = []
 +++
 Enables Hydralisk production from the Hatchery. Researches Muscular Augments (Hydralisk speed) and Grooved Spines (Hydralisk range). Also researches Lurker Aspect, allowing Hydralisks to morph into Lurkers.

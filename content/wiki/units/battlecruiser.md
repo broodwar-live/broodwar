@@ -14,6 +14,14 @@ supply = 6
 hp = 500
 armor = 3
 damage = 25
+build_time = 133
+attack_speed = 30
+range = 6
+speed = 4.0
+shields = 0
+size = "large"
+ground_attack = true
+air_attack = true
 built_from = "starport"
 abilities = ["yamato-cannon"]
 +++

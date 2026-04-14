@@ -52,8 +52,14 @@
         <div class="flex justify-between"><dt class="text-base-content/40">{% if lang == "ko" %}미네랄{% else %}Minerals{% endif %}</dt><dd class="font-stats">{{ e.minerals }}</dd></div>
         <div class="flex justify-between"><dt class="text-base-content/40">{% if lang == "ko" %}가스{% else %}Gas{% endif %}</dt><dd class="font-stats">{{ e.gas }}</dd></div>
         <div class="flex justify-between"><dt class="text-base-content/40">{% if lang == "ko" %}체력{% else %}HP{% endif %}</dt><dd class="font-stats">{{ e.hp }}</dd></div>
-        {% if e.shields > 0 %}
+        {% if e.shields is defined and e.shields > 0 %}
         <div class="flex justify-between"><dt class="text-base-content/40">{% if lang == "ko" %}쉴드{% else %}Shields{% endif %}</dt><dd class="font-stats">{{ e.shields }}</dd></div>
+        {% endif %}
+        {% if e.armor is defined %}
+        <div class="flex justify-between"><dt class="text-base-content/40">{% if lang == "ko" %}방어력{% else %}Armor{% endif %}</dt><dd class="font-stats">{{ e.armor }}</dd></div>
+        {% endif %}
+        {% if e.build_time is defined %}
+        <div class="flex justify-between"><dt class="text-base-content/40">{% if lang == "ko" %}건설시간{% else %}Build Time{% endif %}</dt><dd class="font-stats">{{ e.build_time }}s</dd></div>
         {% endif %}
       </dl>
 

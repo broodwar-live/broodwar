@@ -11,5 +11,6 @@ minerals = 200
 gas = 200
 levels = 3
 researched_at = "forge"
+research_time = 80
 +++
 Increases shield points for all Protoss units.

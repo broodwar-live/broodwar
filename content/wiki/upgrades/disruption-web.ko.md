@@ -11,5 +11,6 @@ minerals = 200
 gas = 200
 levels = 1
 researched_at = "fleet-beacon"
+research_time = 50
 +++
 커세어가 범위 내 지상 유닛의 공격을 방지하는 능력입니다.

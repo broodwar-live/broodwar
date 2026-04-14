@@ -14,6 +14,14 @@ supply = 1
 hp = 35
 armor = 0
 damage = 5
+build_time = 28
+attack_speed = 8
+range = 1
+speed = 5.49
+shields = 0
+size = "small"
+ground_attack = true
+air_attack = false
 built_from = "hatchery"
 abilities = ["burrow"]
 +++

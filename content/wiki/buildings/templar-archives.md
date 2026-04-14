@@ -11,6 +11,9 @@ minerals = 150
 gas = 200
 hp = 500
 shields = 500
+armor = 1
+build_time = 60
+size = "large"
 produces = []
 +++
 Enables High Templar and Dark Templar production at the Gateway. Researches Psionic Storm, Hallucination, Mind Control, Maelstrom, and other Templar abilities.

@@ -11,5 +11,6 @@ minerals = 200
 gas = 200
 levels = 1
 researched_at = "spawning-pool"
+research_time = 50
 +++
 저글링의 공격 속도를 증가시킵니다.

@@ -11,6 +11,9 @@ minerals = 75
 gas = 0
 hp = 400
 shields = 0
+armor = 0
+build_time = 20
+size = "large"
 produces = []
 +++
 Base defensive structure that morphs into either a Sunken Colony (ground defense, 40 damage) or Spore Colony (anti-air defense and detection, 15 damage). Must be built on creep. Sunken Colonies require a Spawning Pool; Spore Colonies require an Evolution Chamber.

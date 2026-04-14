@@ -14,6 +14,14 @@ supply = 1
 hp = 40
 armor = 0
 damage = 0
+build_time = 40
+attack_speed = 0
+range = 0
+speed = 5.0
+shields = 20
+size = "small"
+ground_attack = false
+air_attack = false
 built_from = "robotics-facility"
 abilities = []
 +++

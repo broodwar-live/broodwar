@@ -11,5 +11,6 @@ minerals = 200
 gas = 200
 levels = 1
 researched_at = "fleet-beacon"
+research_time = 50
 +++
 Corsair ability that prevents ground units from attacking in an area.

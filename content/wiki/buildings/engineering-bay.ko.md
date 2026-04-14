@@ -11,6 +11,9 @@ minerals = 125
 gas = 0
 hp = 850
 shields = 0
+armor = 1
+build_time = 60
+size = "large"
 produces = []
 +++
 보병 무기 및 방어구 업그레이드를 연구한다. 대공 방어와 탐지를 위한 미사일 터렛 건설에도 필요하다. 띄울 수 있다.

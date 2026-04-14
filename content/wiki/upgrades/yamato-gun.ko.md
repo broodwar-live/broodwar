@@ -11,5 +11,6 @@ minerals = 100
 gas = 100
 levels = 1
 researched_at = "physics-lab"
+research_time = 67
 +++
 배틀크루저가 단일 대상에게 260의 피해를 주는 능력입니다.

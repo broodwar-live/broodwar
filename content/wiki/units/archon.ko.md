@@ -14,6 +14,14 @@ supply = 4
 hp = 10
 armor = 0
 damage = 30
+build_time = 20
+attack_speed = 20
+range = 2
+speed = 4.92
+shields = 350
+size = "large"
+ground_attack = true
+air_attack = true
 built_from = "merge"
 abilities = []
 +++

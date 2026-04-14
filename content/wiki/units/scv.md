@@ -14,6 +14,14 @@ supply = 1
 hp = 60
 armor = 0
 damage = 5
+build_time = 20
+attack_speed = 15
+range = 1
+speed = 4.92
+shields = 0
+size = "small"
+ground_attack = true
+air_attack = false
 built_from = "command-center"
 abilities = []
 +++

@@ -14,6 +14,14 @@ supply = 2
 hp = 80
 armor = 1
 damage = 0
+build_time = 50
+attack_speed = 0
+range = 10
+speed = 4.0
+shields = 0
+size = "medium"
+ground_attack = false
+air_attack = false
 built_from = "hatchery"
 abilities = ["dark-swarm", "plague", "consume"]
 +++

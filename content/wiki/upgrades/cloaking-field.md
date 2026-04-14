@@ -11,5 +11,6 @@ minerals = 150
 gas = 150
 levels = 1
 researched_at = "control-tower"
+research_time = 67
 +++
 Allows Wraiths to cloak.

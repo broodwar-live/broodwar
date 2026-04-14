@@ -11,5 +11,6 @@ minerals = 200
 gas = 200
 levels = 1
 researched_at = "spawning-pool"
+research_time = 50
 +++
 Increases Zergling attack speed.

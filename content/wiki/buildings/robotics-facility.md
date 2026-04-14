@@ -11,6 +11,9 @@ minerals = 200
 gas = 200
 hp = 500
 shields = 500
+armor = 1
+build_time = 80
+size = "large"
 produces = ["shuttle", "reaver", "observer"]
 +++
 Produces Shuttles, Reavers, and Observers. The Robotics Facility enables the Reaver drop strategy and provides access to detection via Observers. Can be upgraded with a Robotics Support Bay for Reaver capacity and Shuttle speed.

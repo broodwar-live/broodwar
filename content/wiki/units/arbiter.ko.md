@@ -14,6 +14,14 @@ supply = 4
 hp = 200
 armor = 1
 damage = 10
+build_time = 100
+attack_speed = 45
+range = 5
+speed = 5.47
+shields = 150
+size = "large"
+ground_attack = true
+air_attack = true
 built_from = "stargate"
 abilities = ["recall", "stasis-field"]
 +++

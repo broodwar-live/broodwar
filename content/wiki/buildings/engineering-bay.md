@@ -11,6 +11,9 @@ minerals = 125
 gas = 0
 hp = 850
 shields = 0
+armor = 1
+build_time = 60
+size = "large"
 produces = []
 +++
 Researches infantry weapon and armor upgrades. Also required to build Missile Turrets for anti-air defense and detection. Can lift off.

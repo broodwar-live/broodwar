@@ -14,6 +14,14 @@ supply = 2
 hp = 120
 armor = 0
 damage = 9
+build_time = 40
+attack_speed = 30
+range = 3
+speed = 6.67
+shields = 0
+size = "small"
+ground_attack = true
+air_attack = true
 built_from = "hatchery"
 abilities = []
 +++

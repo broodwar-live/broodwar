@@ -14,6 +14,14 @@ supply = 1
 hp = 60
 armor = 1
 damage = 0
+build_time = 30
+attack_speed = 0
+range = 2
+speed = 4.0
+shields = 0
+size = "small"
+ground_attack = false
+air_attack = false
 built_from = "barracks"
 abilities = ["restoration", "optical-flare"]
 +++

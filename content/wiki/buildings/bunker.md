@@ -11,6 +11,9 @@ minerals = 100
 gas = 0
 hp = 350
 shields = 0
+armor = 1
+build_time = 30
+size = "large"
 produces = []
 +++
 Defensive structure that garrisons up to 4 infantry units, increasing their range and providing protection. Garrisoned marines gain +1 range. Bunkers can be salvaged for a 75% mineral refund.

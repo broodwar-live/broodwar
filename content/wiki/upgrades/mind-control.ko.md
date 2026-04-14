@@ -11,5 +11,6 @@ minerals = 200
 gas = 200
 levels = 1
 researched_at = "templar-archives"
+research_time = 75
 +++
 다크 아콘이 적 유닛을 영구적으로 지배하는 능력입니다.

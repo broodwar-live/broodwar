@@ -14,6 +14,14 @@ supply = 2
 hp = 80
 armor = 0
 damage = 20
+build_time = 30
+attack_speed = 30
+range = 5
+speed = 6.4
+shields = 0
+size = "medium"
+ground_attack = true
+air_attack = false
 built_from = "factory"
 abilities = ["spider-mines"]
 +++

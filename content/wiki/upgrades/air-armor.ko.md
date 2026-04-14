@@ -11,5 +11,6 @@ minerals = 100
 gas = 100
 levels = 3
 researched_at = "cybernetics-core"
+research_time = 80
 +++
 공중 유닛의 방어력을 증가시킵니다.

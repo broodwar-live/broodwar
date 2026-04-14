@@ -11,6 +11,9 @@ minerals = 75
 gas = 0
 hp = 200
 shields = 0
+armor = 0
+build_time = 30
+size = "large"
 produces = []
 +++
 대공 방어 건물이자 탐지기이다. 미사일 터렛은 공중 유닛에 20 폭발형 피해를 입히며 반경 내 은폐/버로우 유닛을 드러낸다. 엔지니어링 베이가 필요하다.

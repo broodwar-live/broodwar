@@ -14,6 +14,14 @@ supply = 3
 hp = 150
 armor = 0
 damage = 8
+build_time = 80
+attack_speed = 30
+range = 4
+speed = 6.67
+shields = 100
+size = "large"
+ground_attack = true
+air_attack = true
 built_from = "stargate"
 abilities = []
 +++

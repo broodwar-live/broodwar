@@ -14,6 +14,14 @@ supply = 2
 hp = 125
 armor = 1
 damage = 20
+build_time = 40
+attack_speed = 37
+range = 6
+speed = 5.82
+shields = 0
+size = "medium"
+ground_attack = true
+air_attack = false
 built_from = "hydralisk"
 abilities = []
 +++

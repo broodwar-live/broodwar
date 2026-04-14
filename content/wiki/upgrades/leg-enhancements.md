@@ -11,5 +11,6 @@ minerals = 150
 gas = 150
 levels = 1
 researched_at = "citadel-of-adun"
+research_time = 67
 +++
 Increases Zealot movement speed. Essential upgrade.

@@ -11,6 +11,9 @@ minerals = 150
 gas = 150
 hp = 600
 shields = 600
+armor = 1
+build_time = 70
+size = "large"
 produces = ["corsair", "scout", "carrier", "arbiter"]
 +++
 Produces Protoss air units: Corsairs, Scouts, Carriers, and Arbiters. Requires a Cybernetics Core. Fleet Beacon add-on enables Carriers and advanced air upgrades. Arbiter Tribunal enables Arbiter production.

@@ -11,6 +11,9 @@ minerals = 75
 gas = 0
 hp = 200
 shields = 0
+armor = 0
+build_time = 30
+size = "large"
 produces = []
 +++
 Anti-air defense structure and detector. Missile Turrets attack air units with 20 explosive damage and reveal cloaked/burrowed units in their radius. Requires an Engineering Bay.

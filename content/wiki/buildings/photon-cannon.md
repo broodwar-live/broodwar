@@ -11,6 +11,9 @@ minerals = 150
 gas = 0
 hp = 100
 shields = 100
+armor = 0
+build_time = 50
+size = "large"
 produces = []
 +++
 Defensive structure that attacks ground and air units with 20 damage. Also serves as a detector, revealing cloaked and burrowed units. Requires a Forge and Pylon power. Often used for base defense and cannon rush strategies.

@@ -11,5 +11,6 @@ minerals = 100
 gas = 100
 levels = 3
 researched_at = "engineering-bay"
+research_time = 80
 +++
 마린, 파이어뱃, 고스트의 공격력을 증가시킵니다.

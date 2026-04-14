@@ -48,6 +48,9 @@
         {% if e.levels is defined and e.levels > 1 %}
         <div class="flex justify-between"><dt class="text-base-content/40">{% if lang == "ko" %}레벨{% else %}Levels{% endif %}</dt><dd class="font-stats">{{ e.levels }}</dd></div>
         {% endif %}
+        {% if e.research_time is defined %}
+        <div class="flex justify-between"><dt class="text-base-content/40">{% if lang == "ko" %}연구시간{% else %}Research Time{% endif %}</dt><dd class="font-stats">{{ e.research_time }}s</dd></div>
+        {% endif %}
       </dl>
     </div>
   </div>

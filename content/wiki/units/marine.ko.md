@@ -14,6 +14,14 @@ supply = 1
 hp = 40
 armor = 0
 damage = 6
+build_time = 24
+attack_speed = 15
+range = 4
+speed = 4.0
+shields = 0
+size = "small"
+ground_attack = true
+air_attack = true
 built_from = "barracks"
 abilities = ["stim-pack"]
 +++
