@@ -30,32 +30,60 @@
   }
 
   function renderResult(data) {
-    const header = data.parsed_data?.header || {}
+    const pd = data.parsed_data || {}
+    const header = pd.header || {}
     const players = header.players || []
-    const buildOrder = data.parsed_data?.build_order || []
-    const mapName = header.map_name || "Unknown Map"
+    const buildOrder = pd.build_order || []
+    const metadata = pd.metadata || {}
+    const classifications = pd.classifications || []
+    const skillProfiles = pd.skill_profiles || []
+    const phases = pd.phases?.phases || []
+    const mapName = metadata.map_name || header.map_name || "Unknown Map"
+    const matchup = metadata.matchup?.code || ""
+    const winner = metadata.result?.player_name
     const duration = header.duration_secs ? `${Math.floor(header.duration_secs / 60)}:${String(Math.floor(header.duration_secs % 60)).padStart(2, "0")}` : "?"
 
-    const playerRows = players.map(p => `
-      <div class="flex items-center gap-3">
-        <span class="text-[10px] font-bold badge-race ${RACE_COLORS[RACE_NAMES[p.race]?.toLowerCase()] || ""}">${p.race || "?"}</span>
-        <span class="font-semibold text-sm">${p.name}</span>
-      </div>
+    const playerRows = players.map((p, i) => {
+      const cls = classifications[i]
+      const skill = skillProfiles[i]
+      const isWinner = winner && p.name === winner
+      return `
+        <div class="flex items-center gap-3">
+          <span class="text-[10px] font-bold badge-race ${RACE_COLORS[RACE_NAMES[p.race_code]?.toLowerCase()] || ""}">${p.race_code || "?"}</span>
+          <div>
+            <span class="font-semibold text-sm">${p.name}</span>
+            ${isWinner ? '<span class="ml-1 text-[10px] text-success font-bold">W</span>' : ""}
+            ${cls ? `<span class="ml-2 text-[10px] text-primary/60">${cls.name}</span>` : ""}
+            ${skill ? `<span class="ml-2 text-[10px] text-base-content/30">${skill.tier} (${Math.round(skill.skill_score)})</span>` : ""}
+          </div>
+        </div>
+      `
+    }).join("")
+
+    const phaseRows = phases.map(p => `
+      <span class="px-2 py-0.5 rounded text-[10px] bg-base-300/60">${p.phase} ${Math.floor(p.start_seconds)}s</span>
     `).join("")
 
     const boRows = buildOrder.slice(0, 20).map(entry => `
       <tr>
-        <td class="font-stats text-xs text-base-content/40">${Math.floor((entry.frame || 0) / 15.17)}s</td>
+        <td class="font-stats text-xs text-base-content/40">${Math.floor((entry.frame || 0) / 23.81)}s</td>
         <td class="text-xs">P${entry.player_id}</td>
-        <td class="text-xs">${entry.action || entry.name || "—"}</td>
+        <td class="text-xs">${entry.name || entry.action || "—"}</td>
       </tr>
     `).join("")
 
     return `
       <div class="glass-card rounded-box p-6">
-        <h3 class="text-lg font-semibold mb-1">${mapName}</h3>
+        <div class="flex items-center gap-3 mb-1">
+          ${matchup ? `<span class="text-sm font-bold text-primary">${matchup}</span>` : ""}
+          <h3 class="text-lg font-semibold">${mapName}</h3>
+        </div>
         <p class="text-xs text-base-content/40 mb-4">Duration: ${duration}</p>
-        <div class="flex gap-6 mb-6">${playerRows}</div>
+        <div class="flex flex-col gap-2 mb-6">${playerRows}</div>
+
+        ${phases.length > 0 ? `
+          <div class="flex flex-wrap gap-1 mb-4">${phaseRows}</div>
+        ` : ""}
 
         ${buildOrder.length > 0 ? `
           <h4 class="text-sm font-semibold mb-2">Build Order</h4>
