@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+{% block title %}{{ page.title }}{% endblock %}
+
+{% block jsonld_extra %}
+,{
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Wiki", "item": "{{ config.base_url }}/wiki"},
+    {"@type": "ListItem", "position": 2, "name": "Upgrades", "item": "{{ config.base_url }}/wiki/upgrades"},
+    {"@type": "ListItem", "position": 3, "name": "{{ page.title }}"}
+  ]
+}
+{% endblock %}
+
+{% block content %}
+{% set t = config.extra.i18n[lang] %}
+{% set e = page.extra %}
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+  <nav class="text-xs text-base-content/30 mb-6" aria-label="Breadcrumb">
+    <a href="/wiki" class="hover:text-base-content/60">{{ t.wiki }}</a>
+    <span class="mx-1.5">/</span>
+    <a href="/wiki/upgrades" class="hover:text-base-content/60">{% if lang == "ko" %}업그레이드{% else %}Upgrades{% endif %}</a>
+    <span class="mx-1.5">/</span>
+    <span class="text-base-content/50">{{ page.title }}</span>
+  </nav>
+
+  <div class="max-w-2xl">
+    <h1 class="text-2xl font-display">{{ page.title }}</h1>
+    <div class="flex items-center gap-3 mt-2">
+      <span class="text-[10px] font-bold badge-race
+        {% if e.race == 'terran' %}text-race-terran
+        {% elif e.race == 'protoss' %}text-race-protoss
+        {% elif e.race == 'zerg' %}text-race-zerg{% endif %}">
+        {{ e.race | title }}
+      </span>
+      <span class="text-xs text-base-content/40">{{ e.researched_at | replace(from="-", to=" ") | title }}</span>
+    </div>
+
+    <div class="mt-6 text-sm text-base-content/70 leading-relaxed">
+      {{ page.content | safe }}
+    </div>
+
+    <div class="glass-card rounded-box p-5 mt-6">
+      <h3 class="text-xs font-semibold text-base-content/50 uppercase tracking-wider mb-4">{% if lang == "ko" %}비용{% else %}Cost{% endif %}</h3>
+      <dl class="space-y-3 text-sm">
+        <div class="flex justify-between"><dt class="text-base-content/40">{% if lang == "ko" %}미네랄{% else %}Minerals{% endif %}</dt><dd class="font-stats">{{ e.minerals }}</dd></div>
+        <div class="flex justify-between"><dt class="text-base-content/40">{% if lang == "ko" %}가스{% else %}Gas{% endif %}</dt><dd class="font-stats">{{ e.gas }}</dd></div>
+        {% if e.levels is defined and e.levels > 1 %}
+        <div class="flex justify-between"><dt class="text-base-content/40">{% if lang == "ko" %}레벨{% else %}Levels{% endif %}</dt><dd class="font-stats">{{ e.levels }}</dd></div>
+        {% endif %}
+      </dl>
+    </div>
+  </div>
+
+  <div class="mt-12 pt-6 border-t border-primary/5">
+    <a href="{{ config.extra.github_content_base }}/{{ page.relative_path }}"
+       target="_blank" rel="noopener"
+       class="text-xs text-base-content/25 hover:text-base-content/50 transition-colors">
+      {{ t.edit_on_github }}
+    </a>
+  </div>
+</div>
+{% endblock %}
