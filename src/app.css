@@ -142,8 +142,18 @@
 
 /* Table of contents */
 .toc {
-  border-left: 2px solid oklch(60% 0.2 250 / 0.1);
+  border-left: 2px solid oklch(60% 0.2 250 / 0.15);
   padding-left: 1rem;
+  list-style: none;
+  counter-reset: toc-counter;
+}
+.toc li {
+  counter-increment: toc-counter;
+}
+.toc li::before {
+  content: counter(toc-counter) ". ";
+  color: oklch(60% 0.2 250 / 0.3);
+  font-variant-numeric: tabular-nums;
 }
 .toc a {
   color: oklch(70% 0.01 250);
@@ -155,6 +165,9 @@
 }
 [data-theme=light] .toc {
   border-left-color: oklch(50% 0.18 250 / 0.15);
+}
+[data-theme=light] .toc li::before {
+  color: oklch(50% 0.18 250 / 0.3);
 }
 [data-theme=light] .toc a {
   color: oklch(40% 0.01 250);
