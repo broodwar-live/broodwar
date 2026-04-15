@@ -40,7 +40,7 @@
         {% elif 'zerg' in page.taxonomies.race %}text-race-zerg{% endif %}">
         {{ page.taxonomies.race[0] | title }}
       </span>
-      <div class="mt-6 prose prose-invert prose-sm max-w-none text-base-content/70 leading-relaxed">{{ page.content | safe }}</div>
+      <div class="mt-6 prose prose-invert max-w-none">{{ page.content | safe }}</div>
     </div>
 
     <div class="glass-card rounded-box p-5">

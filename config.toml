@@ -32,6 +32,7 @@ taxonomies = "safe"
 anchors = "safe"
 
 [markdown]
+insert_anchor_links = "heading"
 
 [extra]
 api_base_url = "https://api.broodwar.live"

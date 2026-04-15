@@ -87,6 +87,82 @@
   --color-race-zerg: oklch(58% 0.2 310);
 }
 
+/* === Prose / Content Styling === */
+
+.prose {
+  --tw-prose-body: oklch(80% 0.008 250);
+  --tw-prose-headings: var(--color-base-content);
+  --tw-prose-links: oklch(60% 0.2 250);
+  --tw-prose-bold: var(--color-base-content);
+  --tw-prose-bullets: oklch(50% 0.05 250);
+  --tw-prose-counters: oklch(50% 0.05 250);
+  --tw-prose-hr: oklch(30% 0.02 250);
+}
+
+[data-theme=light] .prose {
+  --tw-prose-body: oklch(30% 0.01 250);
+  --tw-prose-headings: oklch(15% 0.02 255);
+  --tw-prose-links: oklch(45% 0.2 250);
+  --tw-prose-bold: oklch(15% 0.02 255);
+  --tw-prose-bullets: oklch(40% 0.03 250);
+  --tw-prose-counters: oklch(40% 0.03 250);
+  --tw-prose-hr: oklch(85% 0.005 250);
+}
+
+.prose :where(h2):not(:where([class~=not-prose],[class~=not-prose] *)) {
+  border-bottom: 1px solid oklch(60% 0.2 250 / 0.1);
+  padding-bottom: 0.5em;
+}
+[data-theme=light] .prose :where(h2):not(:where([class~=not-prose],[class~=not-prose] *)) {
+  border-bottom: 1px solid oklch(50% 0.18 250 / 0.1);
+}
+
+.prose :where(strong):not(:where([class~=not-prose],[class~=not-prose] *)) {
+  color: var(--tw-prose-bold);
+}
+
+/* Anchor links on headings */
+.zola-anchor {
+  text-decoration: none;
+  color: inherit;
+  position: relative;
+}
+.zola-anchor::before {
+  content: "#";
+  position: absolute;
+  left: -1.5em;
+  color: oklch(60% 0.2 250 / 0);
+  font-weight: 400;
+  transition: color 0.15s;
+}
+*:hover > .zola-anchor::before,
+.zola-anchor:hover::before {
+  color: oklch(60% 0.2 250 / 0.4);
+}
+
+/* Table of contents */
+.toc {
+  border-left: 2px solid oklch(60% 0.2 250 / 0.1);
+  padding-left: 1rem;
+}
+.toc a {
+  color: oklch(70% 0.01 250);
+  text-decoration: none;
+  transition: color 0.15s;
+}
+.toc a:hover {
+  color: oklch(60% 0.2 250);
+}
+[data-theme=light] .toc {
+  border-left-color: oklch(50% 0.18 250 / 0.15);
+}
+[data-theme=light] .toc a {
+  color: oklch(40% 0.01 250);
+}
+[data-theme=light] .toc a:hover {
+  color: oklch(45% 0.2 250);
+}
+
 /* === Typography === */
 
 html {

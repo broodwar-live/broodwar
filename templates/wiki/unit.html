@@ -46,7 +46,15 @@
         <span class="text-xs text-base-content/40">{{ e.type | title }} unit</span>
       </div>
 
-      <div class="mt-6 prose prose-invert prose-sm max-w-none text-base-content/70 leading-relaxed">
+      {% if page.toc | length > 0 %}
+      <nav class="toc mt-6 mb-8 text-xs space-y-1.5" aria-label="Table of contents">
+        {% for h in page.toc %}
+        <div><a href="#{{ h.id }}">{{ h.title }}</a></div>
+        {% endfor %}
+      </nav>
+      {% endif %}
+
+      <div class="mt-6 prose prose-invert max-w-none">
         {{ page.content | safe }}
       </div>
     </div>
