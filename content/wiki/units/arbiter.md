@@ -22,15 +22,26 @@ shields = 150
 size = "large"
 ground_attack = true
 air_attack = true
+damage_type = "explosive"
+dps = 5.06
+sight = 9
 built_from = "stargate"
 abilities = ["recall", "stasis-field"]
 upgrades = ["air-weapons", "air-armor", "plasma-shields"]
 +++
 A support capital ship whose passive cloaking field hides all friendly units nearby, the Arbiter is one of the most strategically powerful units in Brood War. Arbiters carry two game-changing abilities: Recall teleports a group of units to the Arbiter's location, and Stasis Field freezes all units in an area, making them invulnerable but unable to act. In the late game, Arbiters transform Protoss army dynamics entirely.
 
-## Competitive Usage
+## Versus Zerg
 
-Arbiters are most critical in PvT late-game. The Recall ability lets Protoss teleport their entire army past Terran siege lines directly into the Terran base — one of the most dramatic and decisive plays in the game. In PvT, the threat of Recall forces Terran to split their army defensively. Stasis Field is used to freeze portions of the Terran army, allowing Protoss to engage the remainder at favorable odds. In PvZ, Arbiters occasionally appear in ultra-late scenarios.
+Arbiters occasionally appear in ultra-late PvZ scenarios. Recall can teleport the Protoss army past Zerg defensive positions, and Stasis Field freezes biological Zerg units. However, the investment is rarely justified in PvZ, where Corsair-Templar or Corsair-Reaver compositions are more standard.
+
+## Versus Terran
+
+Arbiters are the most critical late-game unit in PvT. Recall teleports the entire Protoss army past Terran siege lines directly into the Terran base, creating one of the most dramatic plays in the game. Stasis Field freezes portions of the Terran army, allowing Protoss to engage the remainder at favorable odds. The threat of Recall alone forces Terran to split their army defensively.
+
+## Versus Protoss
+
+Arbiters are rarely used in PvP. The mirror matchup revolves around gateway units, Reavers, and Dragoon micro rather than capital ship tech. The passive cloaking field has limited value when both players have Observers, and the Recall investment is rarely worthwhile in the mirror.
 
 ## Key Mechanics
 

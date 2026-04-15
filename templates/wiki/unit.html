@@ -67,16 +67,22 @@
         {% endif %}
         <div class="flex justify-between"><dt class="text-base-content/40">{% if lang == "ko" %}방어력{% else %}Armor{% endif %}</dt><dd class="font-stats">{{ e.armor }}</dd></div>
         {% if e.damage is defined and e.damage > 0 %}
-        <div class="flex justify-between"><dt class="text-base-content/40">{% if lang == "ko" %}공격력{% else %}Damage{% endif %}</dt><dd class="font-stats">{{ e.damage }}</dd></div>
+        <div class="flex justify-between"><dt class="text-base-content/40">{% if lang == "ko" %}공격력{% else %}Damage{% endif %}</dt><dd class="font-stats">{{ e.damage }}{% if e.damage_type is defined %} <span class="text-[10px] text-base-content/25">({{ e.damage_type }})</span>{% endif %}</dd></div>
+        {% endif %}
+        {% if e.dps is defined and e.dps > 0 %}
+        <div class="flex justify-between"><dt class="text-base-content/40">DPS</dt><dd class="font-stats">{{ e.dps }}{% if e.dps_upgraded is defined %} <span class="text-[10px] text-success/50">({{ e.dps_upgraded }})</span>{% endif %}</dd></div>
         {% endif %}
         {% if e.range is defined and e.range > 0 %}
-        <div class="flex justify-between"><dt class="text-base-content/40">{% if lang == "ko" %}사거리{% else %}Range{% endif %}</dt><dd class="font-stats">{{ e.range }}</dd></div>
+        <div class="flex justify-between"><dt class="text-base-content/40">{% if lang == "ko" %}사거리{% else %}Range{% endif %}</dt><dd class="font-stats">{{ e.range }}{% if e.range_upgraded is defined %} <span class="text-[10px] text-success/50">({{ e.range_upgraded }})</span>{% endif %}</dd></div>
         {% endif %}
         {% if e.speed is defined and e.speed > 0 %}
-        <div class="flex justify-between"><dt class="text-base-content/40">{% if lang == "ko" %}이동속도{% else %}Speed{% endif %}</dt><dd class="font-stats">{{ e.speed }}</dd></div>
+        <div class="flex justify-between"><dt class="text-base-content/40">{% if lang == "ko" %}이동속도{% else %}Speed{% endif %}</dt><dd class="font-stats">{{ e.speed }}{% if e.speed_upgraded is defined %} <span class="text-[10px] text-success/50">({{ e.speed_upgraded }})</span>{% endif %}</dd></div>
         {% endif %}
         {% if e.build_time is defined and e.build_time > 0 %}
         <div class="flex justify-between"><dt class="text-base-content/40">{% if lang == "ko" %}생산시간{% else %}Build Time{% endif %}</dt><dd class="font-stats">{{ e.build_time }}s</dd></div>
+        {% endif %}
+        {% if e.sight is defined %}
+        <div class="flex justify-between"><dt class="text-base-content/40">{% if lang == "ko" %}시야{% else %}Sight{% endif %}</dt><dd class="font-stats">{{ e.sight }}</dd></div>
         {% endif %}
         {% if e.size is defined %}
         <div class="flex justify-between"><dt class="text-base-content/40">{% if lang == "ko" %}크기{% else %}Size{% endif %}</dt><dd class="font-stats">{{ e.size | title }}</dd></div>

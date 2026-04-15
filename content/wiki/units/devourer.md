@@ -22,15 +22,26 @@ shields = 0
 size = "large"
 ground_attack = false
 air_attack = true
+damage_type = "explosive"
+dps = 2.28
+sight = 10
 built_from = "mutalisk"
 abilities = []
 upgrades = ["flyer-attacks", "flyer-carapace"]
 +++
 A heavy air-to-air unit evolved from the Mutalisk at a Greater Spire, the Devourer attacks with acid projectiles that apply stacking Acid Spore debuffs to targets. Each spore reduces the target's armor by 1 and increases the delay before it can attack, stacking up to 9 times. The Devourer's role is to soften enemy air units for other Zerg flyers — particularly supporting Guardians against enemy air escorts. Rarely seen in competitive play, but uniquely powerful in specific situations.
 
-## Competitive Usage
+## Versus Terran
 
-Devourers are extremely niche in competitive play. Their primary role is supporting Guardians by debuffing enemy air units that would otherwise destroy the helpless Guardians. In ZvP, Devourers counter Corsairs by reducing their armor and attack speed, making Corsairs less effective against Mutalisk flocks. In ZvT, they occasionally appear to weaken Wraiths or Valkyries. The high cost (250/150 from a Mutalisk) and slow attack speed limit their appeal.
+Devourers occasionally appear in ZvT to weaken Wraiths or Valkyries with Acid Spore stacking. They can support Guardian pushes by debuffing Terran air escorts, making them more vulnerable to Scourge and Mutalisks. However, the high cost and slow attack speed limit their appeal compared to simply producing more Scourge.
+
+## Versus Protoss
+
+Devourers counter Corsairs in ZvP by reducing their armor and attack speed, making Corsairs less effective against Mutalisk flocks. Their primary role is supporting Guardians by debuffing enemy air units that would otherwise destroy the helpless Guardians. The Acid Spore stacking creates interesting armor reduction dynamics against Protoss air.
+
+## Versus Zerg
+
+Devourers are almost never used in ZvZ. Morphing a Mutalisk into a Devourer sacrifices harassment potential for slow anti-air, which is a poor trade in a matchup dominated by fast Mutalisk-on-Mutalisk engagements. The opportunity cost is too high when Mutalisk numbers determine air superiority.
 
 ## Key Mechanics
 

@@ -22,15 +22,26 @@ shields = 0
 size = "small"
 ground_attack = true
 air_attack = true
+damage_type = "concussive"
+dps = 6.90
+sight = 9
 built_from = "barracks"
 abilities = ["lockdown", "nuclear-strike", "cloaking-field"]
 upgrades = ["infantry-weapons", "infantry-armor", "cloaking-field"]
 +++
 Elite covert operative with personal cloaking and some of the most game-changing abilities in Brood War. Ghosts are expensive and fragile but can single-handedly swing engagements through Lockdown and Nuclear Strike. At 25 minerals and 75 gas, they are one of the most gas-intensive infantry units, reflecting their specialist role.
 
-## Competitive Usage
+## Versus Zerg
 
-Ghosts see the most play in TvP, where Lockdown shuts down Arbiters, Carriers, and Shuttles — neutralizing Protoss late-game threats. A single well-placed Lockdown on an Arbiter before a Recall can prevent a devastating attack. In TvT, Lockdown disables enemy Siege Tanks and Science Vessels. Nuclear strikes are occasionally used for area denial, forcing opponents to evacuate positions.
+Ghosts are rarely seen in TvZ. Nuclear strikes can be used for area denial against Zerg expansions or Hive tech clusters, but this is an uncommon and risky strategy. The gas investment is generally better spent on Science Vessels and mech upgrades.
+
+## Versus Terran
+
+Lockdown on enemy Siege Tanks can swing tank line wars in TvT, disabling a key tank at a critical moment. Ghosts can also Lockdown Science Vessels to deny Defensive Matrix and detection. While niche, a well-timed Lockdown on even one tank can break a stalemate position.
+
+## Versus Protoss
+
+Lockdown shuts down Arbiters, Carriers, and Shuttles, neutralizing Protoss late-game threats. A single well-placed Lockdown on an Arbiter before a Recall can prevent a devastating attack. EMP from Science Vessels is usually preferred for stripping shields, but Lockdown provides targeted hard removal of key mechanical units.
 
 ## Key Mechanics
 

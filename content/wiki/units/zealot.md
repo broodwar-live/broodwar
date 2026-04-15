@@ -22,15 +22,27 @@ shields = 60
 size = "small"
 ground_attack = true
 air_attack = false
+damage_type = "normal"
+dps = 10.97
+speed_upgraded = 6.0
+sight = 7
 built_from = "gateway"
 abilities = []
 upgrades = ["leg-enhancements", "ground-weapons", "ground-armor", "plasma-shields"]
 +++
 The iconic Protoss melee warrior, striking twice per attack for a devastating 16 total damage. Zealots are the frontline of nearly every Protoss ground army, combining high HP (100), strong shields (60), and base armor to absorb punishment while gateway units deal damage behind them. With the Leg Enhancements upgrade from the Citadel of Adun, Zealots transform from slow blockers into fast, aggressive threats.
 
-## Competitive Usage
+## Versus Zerg
 
-Zealots are essential in every Protoss matchup. In PvT, speed Zealots run past Vultures and Marines to engage Siege Tank lines, exploiting the tank's minimum range. In PvZ, Zealots form the frontline against Zerglings and Hydralisks, tanking damage for Dragoons and High Templar. In PvP, early Zealot counts often determine who controls the early game. They remain cost-efficient throughout — 100 minerals and 0 gas means Zealots let Protoss spend gas on tech units.
+Zealots form the frontline against Zerglings and Hydralisks in PvZ, tanking damage for Dragoons and High Templar behind them. With Leg Enhancements, speed Zealot flanks and run-bys into Zerg bases force constant defensive attention. Zealots are cost-efficient throughout the game since 100 minerals and 0 gas lets Protoss spend gas on tech units.
+
+## Versus Terran
+
+Speed Zealots run past Vultures and Marines to engage Siege Tank lines, exploiting the tank's minimum range dead zone. Zealot bombs from Shuttles into Terran mineral lines devastate SCV economies. Their Small classification reduces incoming Explosive damage from tanks by 50%, making them surprisingly resilient against siege fire.
+
+## Versus Protoss
+
+Early Zealot counts often determine who controls the early game in PvP. Zealot positioning and surrounds are critical in early gateway battles before Dragoon tech arrives. They remain relevant throughout the matchup as meat shields for Dragoons and Reavers, absorbing damage while ranged units deal the killing blows.
 
 ## Key Mechanics
 

@@ -22,15 +22,28 @@ shields = 0
 size = "small"
 ground_attack = true
 air_attack = true
+damage_type = "normal"
+dps = 6.07
+dps_upgraded = 12.12
+range_upgraded = 5
+sight = 7
 built_from = "barracks"
 abilities = ["stim-pack"]
 upgrades = ["stim-pack", "u-238-shells", "infantry-weapons", "infantry-armor"]
 +++
 The backbone of Terran infantry and one of the most important units in competitive Brood War. Marines are the cheapest combat unit in the game at just 50 minerals, yet they scale remarkably well in large numbers. Their ability to attack both ground and air makes them uniquely versatile.
 
-## Competitive Usage
+## Versus Zerg
 
-Marines are central to bio (Marine/Medic) play in TvZ and TvP. In TvZ, stimmed Marines with Medic support form powerful timing attacks at the 7-8 minute mark, before Zerg can establish defiler tech. In TvP, Marines counter Corsairs and provide anti-air support for mech armies. Even in mech-heavy compositions, a small Marine contingent handles air threats.
+Marines are the core of bio play in TvZ. Stim timing attacks at the 7-8 minute mark with Medic support are devastating before Zerg can establish Defiler tech. Marine/Medic pushes must break through before Dark Swarm arrives, as it completely negates Marine fire. Without scan, Marines are helpless against burrowed Lurkers.
+
+## Versus Terran
+
+Marines play a limited role in TvT. Typically 3-4 Marines are produced for early defense and anti-air duty against Wraith harass. They are rarely massed in the mirror matchup, as Siege Tanks and Vultures dominate TvT ground warfare.
+
+## Versus Protoss
+
+Marines serve primarily as anti-air support against Corsairs in TvP. They are useful for bunker defense in the early game but become vulnerable to Psionic Storm and Reaver Scarabs as the game progresses. In mech armies, a small Marine contingent handles air threats while the mechanical core does the heavy lifting.
 
 ## Key Mechanics
 

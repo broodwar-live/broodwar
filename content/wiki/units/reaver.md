@@ -22,15 +22,26 @@ shields = 80
 size = "large"
 ground_attack = true
 air_attack = false
+damage_type = "normal"
+dps = 2.53
+sight = 10
 built_from = "robotics-facility"
 abilities = []
 upgrades = ["ground-weapons", "plasma-shields"]
 +++
 One of the most iconic and mechanically demanding units in Brood War, the Reaver is a slow-moving siege unit that launches Scarabs — autonomous drones dealing 100 splash damage on impact. Reavers are practically useless on their own due to their glacial speed (1.83), but when paired with a Shuttle for rapid deployment, they become one of the most devastating harassment and combat tools in the Protoss arsenal.
 
-## Competitive Usage
+## Versus Zerg
 
-Shuttle-Reaver micro is the hallmark of skilled Protoss play, especially in PvT and PvP. In PvT, Reavers dropped into Terran mineral lines obliterate SCVs — a single well-aimed Scarab can kill 4-5 workers instantly. In PvP, Reaver drops are the primary form of harassment, and Reaver control often decides the matchup. In PvZ (the "Bisu Build"), Corsair-Reaver became a revolutionary composition that changed the matchup entirely.
+In PvZ, the Corsair-Reaver composition (the "Bisu Build") revolutionized the matchup. Shuttle-Reaver drops devastate Drone lines at Zerg expansions, and Scarab splash damage is devastating against clumped Hydralisks and Zerglings. Corsair air control protects the Shuttle from Scourge and Mutalisks while Reavers do their work.
+
+## Versus Terran
+
+Reavers dropped into Terran mineral lines obliterate SCVs — a single well-aimed Scarab can kill 4-5 workers instantly. Shuttle-Reaver micro is one of the most mechanically demanding techniques in PvT. Reavers also provide frontline splash damage against Marine groups and can devastate Siege Tank positions from unexpected angles.
+
+## Versus Protoss
+
+Reaver drops are the primary form of harassment in PvP, and Reaver control often decides the matchup. The Shuttle-Reaver dance — rapidly loading and unloading — is the signature micro technique of the mirror. Scarab splash devastates Dragoon clumps, making Reavers the most impactful unit in PvP combat.
 
 ## Key Mechanics
 

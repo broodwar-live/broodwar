@@ -22,15 +22,26 @@ shields = 40
 size = "small"
 ground_attack = true
 air_attack = false
+damage_type = "normal"
+dps = 20.23
+sight = 7
 built_from = "gateway"
 abilities = []
 upgrades = ["ground-weapons", "ground-armor", "plasma-shields"]
 +++
 A permanently cloaked melee assassin dealing an extraordinary 40 Normal damage per hit. Dark Templar are invisible to all units except detectors, making them one of the most dangerous units in the game when the opponent lacks detection. A single undetected Dark Templar can destroy an entire mineral line of workers or slice through an army. Two Dark Templar can merge into a Dark Archon.
 
-## Competitive Usage
+## Versus Zerg
 
-Dark Templar are most impactful in PvT and PvP. In PvT, the Dark Templar rush (often called "DT rush") is a powerful timing attack that wins outright if the Terran lacks a Comsat Station or Engineering Bay for detection. Even if detected, DTs force the opponent to invest in detection infrastructure. In PvP, early DTs can end games instantly. In PvZ, DTs are less common because Overlords provide innate detection, but they can still catch greedy Zerg players off guard.
+Dark Templar are less common in PvZ because Overlords provide innate detection. However, DTs can still catch greedy Zerg players off guard who have pulled Overlords away from their bases for scouting. The threat of DTs forces Zerg to keep Overlord coverage over every expansion, limiting their scouting mobility.
+
+## Versus Terran
+
+The Dark Templar rush is a powerful timing attack in PvT that wins outright if the Terran lacks a Comsat Station or Engineering Bay for detection. Even if detected, DTs force significant investment in detection infrastructure. Multi-prong DT attacks can overwhelm the limited scan energy from a single Comsat.
+
+## Versus Protoss
+
+Early DTs can end PvP games instantly if the opponent lacks an Observer. The DT rush is one of the most feared all-in strategies in the mirror matchup. Even when scouted, the defender must have Robotics Facility tech ready in time, creating a tense timing window that defines many PvP games.
 
 ## Key Mechanics
 

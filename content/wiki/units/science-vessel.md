@@ -22,15 +22,26 @@ shields = 0
 size = "large"
 ground_attack = false
 air_attack = false
+damage_type = "normal"
+dps = 0
+sight = 10
 built_from = "starport"
 abilities = ["defensive-matrix", "emp-shockwave", "irradiate"]
 upgrades = ["irradiate"]
 +++
 One of the most versatile and critical support units in Brood War. The Science Vessel is a flying detector and spellcaster that provides detection, damage, and protection through three powerful abilities. With no attack of its own, the Science Vessel's value lies entirely in its spells — Irradiate, EMP Shockwave, and Defensive Matrix — each of which can be game-deciding in the right context.
 
-## Competitive Usage
+## Versus Zerg
 
-Science Vessels are essential in TvZ and TvP. In TvZ, Irradiate is the primary tool for killing Mutalisks — a single Irradiate on a stacked Mutalisk group can destroy multiple units as the radiation spreads to nearby biological targets. Detection is also mandatory against Lurkers. In TvP, EMP Shockwave strips Protoss shields and drains High Templar energy, crippling storm potential. Defensive Matrix on key units (Siege Tanks, Dropships) extends their survivability.
+Irradiate is game-defining in TvZ. A single Irradiate on a stacked Mutalisk group can destroy multiple units as the radiation spreads to nearby biological targets. Detection is mandatory against burrowed Lurkers, making Science Vessels essential from the mid-game onward. They are among the highest-priority targets for Zerg Scourge.
+
+## Versus Terran
+
+Science Vessels provide Defensive Matrix to protect lead Siege Tanks during tank line wars, often deciding which player breaks through first. EMP is rarely relevant in the mirror matchup. Detection can reveal cloaked Wraiths, but the primary value is keeping key mechanical units alive through Matrix.
+
+## Versus Protoss
+
+EMP Shockwave drains Protoss shields and High Templar energy, crippling storm potential before engagements. It also removes Arbiter energy, neutralizing the Recall threat that defines late-game PvT. Defensive Matrix on key Siege Tanks or Dropships extends their survivability during critical pushes.
 
 ## Key Mechanics
 

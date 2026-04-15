@@ -22,15 +22,27 @@ shields = 80
 size = "large"
 ground_attack = true
 air_attack = true
+damage_type = "explosive"
+dps = 10.11
+range_upgraded = 6
+sight = 8
 built_from = "gateway"
 abilities = []
 upgrades = ["ground-weapons", "ground-armor", "plasma-shields"]
 +++
 The ranged backbone of Protoss armies, piloted by mortally wounded warriors given new life inside a mechanical exoskeleton. Dragoons deal 20 Explosive damage and can attack both ground and air, making them Protoss's most versatile combat unit. With the Singularity Charge upgrade from the Cybernetics Core extending range from 4 to 6, Dragoons become formidable at range. Their notoriously poor pathfinding is both a meme and a genuine competitive consideration.
 
-## Competitive Usage
+## Versus Zerg
 
-Dragoons are central to every Protoss matchup. In PvT, they form the core of gateway armies alongside Zealots, providing ranged damage against Marines and anti-air against Wraiths and Dropships. In PvZ, Dragoon-heavy compositions with High Templar support are the standard mid-game army. In PvP, Dragoon micro wars define the matchup — the player who manages Dragoon positioning and focus fire better typically wins early engagements.
+Dragoon-heavy compositions with High Templar support are the standard mid-game army in PvZ. Their ranged damage and ability to hit air covers against Mutalisks and Overlords. However, their Explosive damage type makes them less effective per shot against Zerglings, and Dark Swarm completely blocks their fire.
+
+## Versus Terran
+
+Dragoons form the core of gateway armies alongside Zealots in PvT, providing ranged damage against Marines and critical anti-air against Wraiths and Dropships. Singularity Charge is essential for outranging Marines. Dragoons struggle against entrenched Siege Tank positions but excel at defending against drops and mobile engagements.
+
+## Versus Protoss
+
+Dragoon micro wars define PvP. The player who manages Dragoon positioning and focus fire better typically wins early engagements. Dragoon dancing — moving individual units in and out of range — is the signature skill expression of the mirror matchup. Shuttle micro helps bypass their notoriously poor pathfinding through choke points.
 
 ## Key Mechanics
 

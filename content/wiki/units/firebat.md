@@ -22,15 +22,27 @@ shields = 0
 size = "small"
 ground_attack = true
 air_attack = false
+damage_type = "concussive"
+dps = 4.14
+dps_upgraded = 8.28
+sight = 7
 built_from = "barracks"
 abilities = []
 upgrades = ["stim-pack", "infantry-weapons", "infantry-armor"]
 +++
 Heavy infantry equipped with dual flame throwers, dealing Concussive splash damage in a line. Firebats are specialized anti-light units that excel at burning through masses of small units like Zerglings and Zealots. With 50 HP and 1 base armor, they are sturdier than Marines and can use Stim Pack to boost their attack speed.
 
-## Competitive Usage
+## Versus Zerg
 
-Firebats are situational but impactful. In TvZ, one or two Firebats inside bunkers at the natural dramatically improve defense against early Zergling pressure. The 2-Rax Firebat build is a classic aggressive opener. In TvP, Firebats inside bunkers shred Zealots that try to break the wall. They rarely see mass production outside of specific timing attacks.
+Firebats are strong against Zerglings in bunkers, where their Concussive splash damage clears ling floods efficiently. One or two Firebats inside bunkers at the natural dramatically improve early defense. The 2-Rax Firebat build is a classic aggressive opener that punishes greedy Zerg openings.
+
+## Versus Terran
+
+Firebats are rarely used in TvT. They are outclassed by Siege Tanks and Vultures in every meaningful engagement, and the gas cost is better spent on Factory tech. They have no practical role in the mirror matchup.
+
+## Versus Protoss
+
+Firebats have niche use against Zealot rushes when placed inside bunkers at the wall. Their Concussive splash shreds Zealots attempting to break through. However, they are not a standard part of TvP compositions and see almost no play beyond early-game defensive situations.
 
 ## Key Mechanics
 

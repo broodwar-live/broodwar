@@ -22,15 +22,27 @@ shields = 0
 size = "large"
 ground_attack = true
 air_attack = false
+damage_type = "normal"
+dps = 20.23
+speed_upgraded = 7.68
+sight = 7
 built_from = "hatchery"
 abilities = []
 upgrades = ["chitinous-plating", "anabolic-synthesis", "melee-attacks", "carapace"]
 +++
 The Zerg's ultimate ground unit — a massive armored beast with 400 HP that serves as the frontline tank of late-game Zerg armies. Ultralisks are incredibly durable, especially with the Chitinous Plating upgrade that adds +2 base armor (total 4 with full upgrades reaching 7). They deal splash damage in melee, making them effective against clumped ground units. Under Dark Swarm, where ranged attacks cannot touch them, Ultralisks become nearly unstoppable.
 
-## Competitive Usage
+## Versus Terran
 
-Ultralisks are central to ZvT late-game, where they combine with Defilers to form the Zerg endgame composition. Under Dark Swarm, Ultralisks absorb Siege Tank fire while dealing splash damage to nearby units. In ZvP, Ultralisks are less common but can appear in ultra-late scenarios against ground-heavy compositions. In ZvZ, they rarely appear due to the matchup's focus on Mutalisk and Lurker play. The Ultralisk-Zergling-Defiler combination is the standard Zerg late-game army in ZvT.
+Ultralisks are central to ZvT late-game, combining with Defilers to form the Zerg endgame composition. Under Dark Swarm, Ultralisks absorb Siege Tank fire while dealing splash damage to nearby units — ranged attacks simply cannot touch them. The Ultralisk-Zergling-Defiler combination is the standard way Zerg fights late-game Terran mech.
+
+## Versus Protoss
+
+Ultralisks are less common in ZvP but can appear in ultra-late scenarios against ground-heavy compositions. Without Dark Swarm protection, Dragoons can kite Ultralisks indefinitely. Psionic Storm deals significant damage, and Mind Control from Dark Archons can steal these expensive units. They work best when Protoss commits to ground-based play without heavy Dragoon counts.
+
+## Versus Zerg
+
+Ultralisks rarely appear in ZvZ due to the matchup's focus on Mutalisk and Lurker play. The investment in Hive tech and Ultralisk Cavern is difficult to justify when the matchup is typically decided by mid-game air control and Lurker positioning. They are occasionally seen in very long ZvZ games.
 
 ## Key Mechanics
 

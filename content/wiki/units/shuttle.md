@@ -22,15 +22,27 @@ shields = 60
 size = "large"
 ground_attack = false
 air_attack = false
+damage_type = "normal"
+dps = 0
+speed_upgraded = 6.65
+sight = 8
 built_from = "robotics-facility"
 abilities = []
 upgrades = ["plasma-shields"]
 +++
 The Protoss transport, carrying up to 8 supply of ground units and enabling some of the most exciting micro-intensive strategies in Brood War. Shuttles are essential for Reaver drops, storm drops, and Zealot bombs — delivering Protoss units where they are needed most. With the speed upgrade from the Robotics Support Bay, Shuttles become fast enough to outrun most anti-air threats, making drop play a viable sustained strategy.
 
-## Competitive Usage
+## Versus Zerg
 
-Shuttles are critical in PvT and PvP. In PvT, Shuttle-Reaver drops harass Terran mineral lines and bypass Siege Tank defenses. Storm drops — loading High Templar into Shuttles to storm workers — are equally devastating. In PvP, Reaver drops define the matchup, and the player with better Shuttle micro often wins. In PvZ, the speed upgrade lets Shuttles deliver Reavers or Zealots into Zerg bases faster than Mutalisks can intercept.
+The speed upgrade lets Shuttles deliver Reavers or Zealots into Zerg bases faster than Mutalisks can intercept in PvZ. Shuttle-Reaver drops are the foundation of the Bisu Build that revolutionized the matchup. Storm drops with High Templar devastate Drone lines at Zerg expansions.
+
+## Versus Terran
+
+Shuttle-Reaver drops harass Terran mineral lines and bypass Siege Tank defenses in PvT. Storm drops — loading High Templar into Shuttles to storm workers — are equally devastating. Shuttles also enable Zealot bombs behind tank lines, exploiting the Siege Tank's minimum range dead zone.
+
+## Versus Protoss
+
+Reaver drops define PvP, and the player with better Shuttle micro often wins. The Shuttle-Reaver dance — unloading to fire a Scarab then immediately reloading and repositioning — is the signature micro technique of the mirror matchup. Shuttle speed is critical for executing drops safely and retreating before the opponent can respond.
 
 ## Key Mechanics
 

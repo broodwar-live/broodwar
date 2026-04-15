@@ -22,15 +22,26 @@ shields = 0
 size = "small"
 ground_attack = true
 air_attack = false
+damage_type = "normal"
+dps = 5.06
+sight = 7
 built_from = "command-center"
 abilities = []
 upgrades = []
 +++
 The Space Construction Vehicle is the Terran worker unit, responsible for harvesting minerals and vespene gas, constructing buildings, and uniquely among workers, repairing mechanical units and structures. Unlike Probes, SCVs must remain present throughout the entire construction process, tying up a worker. This repair ability is a critical competitive mechanic that gives Terran armies sustain no other race can match.
 
-## Competitive Usage
+## Versus Zerg
 
-SCV repair micro is a defining Terran skill. In TvT, repairing Siege Tanks during engagements extends their life dramatically, often deciding tank wars. In TvZ, SCV pulls — bringing workers from the mineral line to fight alongside the army — are a desperate but effective all-in tactic during critical pushes. Combat SCVs can tank hits for Marines while repairing Bunkers, turning early-game defenses into nearly impenetrable walls.
+SCV pulls — bringing workers from the mineral line to fight alongside the army — are a desperate but effective all-in tactic during critical pushes against Zerg. Combat SCVs can tank hits for Marines while repairing Bunkers during early Zergling pressure, turning bunker defense into a nearly impenetrable wall. SCV repair on Siege Tanks during mid-game pushes extends their survivability.
+
+## Versus Terran
+
+Repairing Siege Tanks during engagements is the defining SCV skill in TvT, often deciding tank line wars. Multiple SCVs repairing a lead tank can keep it alive through sustained fire, forcing the opponent to commit more resources. SCV repair on Bunkers and buildings during drops is also critical for defense.
+
+## Versus Protoss
+
+SCV repair micro is less prominent in TvP but still important. Repairing Bunkers during early Zealot pressure and maintaining mech units between engagements keeps the army healthy. SCV pulls are occasionally used as an all-in tactic during critical timing attacks against Protoss.
 
 ## Key Mechanics
 

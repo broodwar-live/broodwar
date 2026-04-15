@@ -22,15 +22,26 @@ shields = 0
 size = "large"
 ground_attack = true
 air_attack = false
+damage_type = "normal"
+dps = 7.59
+sight = 11
 built_from = "mutalisk"
 abilities = []
 upgrades = ["flyer-attacks", "flyer-carapace"]
 +++
 A heavy air siege unit evolved from the Mutalisk at a Greater Spire, the Guardian trades speed and air attack for devastating long-range ground bombardment. With 8 range — outranging Missile Turrets, Photon Cannons, and Sunken Colonies — Guardians can dismantle defensive positions from a safe distance. They are slow, completely helpless against air attacks, and require escort, but their siege capability is unmatched in the Zerg arsenal.
 
-## Competitive Usage
+## Versus Terran
 
-Guardians are most commonly seen in ZvT, where they break entrenched Terran positions that Zerglings and Ultralisks cannot reach. Guardian-supported pushes — with Scourge or Mutalisks for air cover and Defilers for Dark Swarm — represent Zerg's answer to heavily turtled Terran bases. In ZvP, Guardians can outrange Photon Cannons and Dragoons, slowly dismantling Protoss defenses. They are rarely seen in ZvZ.
+Guardians break entrenched Terran positions that Zerglings and Ultralisks cannot reach in ZvT. Guardian-supported pushes — with Scourge or Mutalisks for air cover and Defilers for Dark Swarm — represent Zerg's answer to heavily turtled Terran bases. Their 8 range outranges Missile Turrets, allowing methodical destruction of defensive positions.
+
+## Versus Protoss
+
+Guardians can outrange Photon Cannons and Dragoons in ZvP, slowly dismantling Protoss defenses from a safe distance. They are most effective against static defense-heavy Protoss positions. However, Corsairs easily destroy unescorted Guardians, so air cover from Scourge or Mutalisks is essential.
+
+## Versus Zerg
+
+Guardians are rarely seen in ZvZ. The matchup revolves around Mutalisk air control, and morphing Mutalisks into slow, ground-only Guardians sacrifices the mobility and versatility that defines the ZvZ meta. Any opposing Mutalisks can freely destroy helpless Guardians.
 
 ## Key Mechanics
 

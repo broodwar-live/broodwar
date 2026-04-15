@@ -22,15 +22,26 @@ shields = 0
 size = "small"
 ground_attack = true
 air_attack = false
+damage_type = "normal"
+dps = 3.45
+sight = 7
 built_from = "hatchery"
 abilities = []
 upgrades = []
 +++
 The Zerg worker unit, uniquely among all three races, is consumed when it morphs into a building. Every Zerg structure costs not only minerals and gas but also a Drone — making each building decision a direct trade between economy and infrastructure. This mechanic defines Zerg's fundamental strategic tension: building too many structures guts the economy, while building too few leaves the Zerg technologically behind.
 
-## Competitive Usage
+## Versus Terran
 
-Drone management is the core skill of Zerg play. The decision of when to build Drones versus when to build units — called "droning up" — is the single most important macro decision in competitive Zerg. Producing Drones from larvae competes directly with producing combat units, creating a constant tension. The optimal Drone count varies by matchup and timing: too few means falling behind economically, too many means dying to an attack.
+Drone management defines the ZvT macro game. The decision of when to drone versus when to build units against Terran timing attacks is the core strategic tension. SCV-less expansions and the threat of Vulture harassment make Drone preservation critical. Pulling Drones to fight off early Marine pressure or bunker rushes is a common defensive tactic.
+
+## Versus Protoss
+
+Droning behind Zergling defense defines ZvP macro — building economy while maintaining enough units to survive Protoss gateway pressure. Cannon rushes at the natural force early Drone pulls. The timing of when to stop droning and start building army is the most important macro decision in the matchup.
+
+## Versus Zerg
+
+Early Drone count decisions shape the entire ZvZ. Building too many Drones leaves you vulnerable to Zergling aggression, while building too few puts you behind economically. The "drone or army" tension is at its most acute in the mirror, where a single wrong macro decision can be immediately punished by a Zergling all-in.
 
 ## Key Mechanics
 

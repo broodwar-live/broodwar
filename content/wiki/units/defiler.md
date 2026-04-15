@@ -22,15 +22,26 @@ shields = 0
 size = "medium"
 ground_attack = false
 air_attack = false
+damage_type = "normal"
+dps = 0
+sight = 10
 built_from = "hatchery"
 abilities = ["dark-swarm", "plague", "consume"]
 upgrades = ["consume", "plague"]
 +++
 The defining late-game unit of the Zerg race — a ground spellcaster whose Dark Swarm and Plague abilities are among the most powerful and game-changing spells in Brood War. The Defiler has no attack but fundamentally alters the dynamics of every engagement. Dark Swarm renders ranged attacks useless against ground units beneath it, while Plague reduces all units in an area to near-death. Consume lets Defilers eat their own Zerglings to regain energy, creating a self-sustaining spellcasting engine.
 
-## Competitive Usage
+## Versus Terran
 
-Defilers are the cornerstone of ZvT late-game. Dark Swarm completely negates Marine, Siege Tank, and Goliath fire against ground units, allowing Zerglings and Ultralisks to engage with impunity underneath the cloud. Without Dark Swarm, Zerg cannot fight mech armies head-on in the late game — with it, the matchup becomes winnable. In ZvP, Plague softens Protoss armies before engagement, and Dark Swarm blocks Dragoon fire. Defiler tech timing is one of the most critical decisions in Zerg play.
+Defilers are the cornerstone of ZvT late-game. Dark Swarm completely negates Marine, Siege Tank, and Goliath fire against ground units, allowing Zerglings and Ultralisks to engage with impunity underneath the cloud. Without Dark Swarm, Zerg cannot fight mech armies head-on in the late game. Consume on Zerglings provides self-sustaining energy for continuous spellcasting.
+
+## Versus Protoss
+
+Plague softens Protoss armies before engagement in ZvP, reducing all units to near-death and making them easy to finish off. Dark Swarm blocks Dragoon fire, protecting Zerglings and Ultralisks during advances. Defiler tech timing is critical in ZvP, as reaching Plague before a major Protoss push can turn a losing engagement into a winning one.
+
+## Versus Zerg
+
+Defilers are rarely seen in ZvZ. The matchup revolves around Mutalisks and Lurkers rather than the Hive tech that enables Defilers. Dark Swarm has limited value when both players rely on melee Zerglings and burrowed Lurkers. The investment in reaching Defiler tech is rarely worthwhile in the mirror.
 
 ## Key Mechanics
 

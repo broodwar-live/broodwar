@@ -22,15 +22,26 @@ shields = 0
 size = "large"
 ground_attack = false
 air_attack = false
+damage_type = "normal"
+dps = 0
+sight = 8
 built_from = "starport"
 abilities = []
 upgrades = []
 +++
 The Terran transport unit, carrying up to 8 supply of ground units across the map by air. Dropships have no attack but are one of the most strategically important units in the Terran arsenal. They enable drop play — loading Siege Tanks, Marines, or Medics and deploying them behind enemy lines, on cliffs, or into undefended bases. Drop play is a core Terran strategy that keeps opponents on the defensive.
 
-## Competitive Usage
+## Versus Zerg
 
-Dropships are essential across all matchups. In TvZ, Marine/Medic drops harass expansions while the main army pressures the front. In TvP, tank drops on high ground or behind Protoss positions create devastating crossfires. In TvT, cliff drops of Siege Tanks behind enemy tank lines can instantly break a defensive position. Multi-drop play — attacking two or more locations simultaneously — is one of Terran's most powerful late-game tools.
+Marine/Medic drops harass Zerg expansions while the main army pressures the front, forcing Zerg to split their attention. Multi-drop play is particularly effective against Zerg, as their spread-out expansion style makes it difficult to defend everywhere simultaneously. Dropships also enable critical Siege Tank placements on cliffs overlooking Zerg bases.
+
+## Versus Terran
+
+Cliff drops of Siege Tanks behind enemy tank lines can instantly break a defensive position in TvT. Tank drops on high ground provide vision and firepower advantages that are nearly impossible to dislodge without counter-drops. Drop play is one of the primary ways to break TvT stalemates.
+
+## Versus Protoss
+
+Tank drops on high ground or behind Protoss positions create devastating crossfires in TvP. Multi-drop play — attacking two or more locations simultaneously — overwhelms Protoss defensive positioning. Dropping Marines behind Protoss armies during engagements can catch High Templar and Reavers off guard.
 
 ## Key Mechanics
 

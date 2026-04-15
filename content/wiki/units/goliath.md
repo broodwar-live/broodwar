@@ -22,15 +22,26 @@ shields = 0
 size = "large"
 ground_attack = true
 air_attack = true
+damage_type = "explosive"
+dps = 10.34
+sight = 8
 built_from = "factory"
 abilities = []
 upgrades = ["vehicle-weapons", "vehicle-plating", "ship-weapons"]
 +++
 A bipedal mech walker serving as Terran's primary anti-air ground unit. Goliaths provide the critical air defense that mech armies need, with their missile launchers dealing 20 Explosive damage to air targets. With the essential Charon Boosters upgrade extending air attack range to 8, Goliaths become one of the longest-range anti-air units in the game, capable of shredding air fleets.
 
-## Competitive Usage
+## Versus Zerg
 
-Goliaths are indispensable in TvP against Carrier-based compositions — massed Goliaths with Charon Boosters tear through Interceptors and Carriers alike. In TvZ, Goliaths supplement mech armies by handling Mutalisks and Guardians that would otherwise threaten Siege Tank lines. In TvT, they counter Wraith and Battlecruiser play while providing solid supplementary ground damage alongside tanks.
+Goliaths handle anti-Mutalisk and anti-Guardian duty in TvZ mech armies. Charon Boosters are essential for reaching stacked Mutalisks before they can retreat. They are often mixed into mech compositions to provide the anti-air cover that Siege Tanks and Vultures lack.
+
+## Versus Terran
+
+Goliaths serve as anti-Wraith units with Charon Boosters in TvT, particularly against 2-port Wraith openings. They supplement tank armies with solid ground damage and provide anti-air against late-game Battlecruiser transitions. Their versatility makes them a reliable addition to mech compositions in the mirror.
+
+## Versus Protoss
+
+Goliaths are the key anti-Carrier unit in TvP. Charon Boosters extend air attack range to 8, allowing them to fight Interceptors and Carriers at distance. Massed Goliaths are the core of late-game TvP mech against Carrier-Arbiter compositions, creating dramatic air-versus-ground battles that define the matchup.
 
 ## Key Mechanics
 

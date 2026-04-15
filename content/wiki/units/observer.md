@@ -22,15 +22,27 @@ shields = 20
 size = "small"
 ground_attack = false
 air_attack = false
+damage_type = "normal"
+dps = 0
+speed_upgraded = 7.50
+sight = 9
 built_from = "robotics-facility"
 abilities = []
 upgrades = ["plasma-shields"]
 +++
 A permanently cloaked flying detector that serves as Protoss's eyes across the battlefield. With no attack and minimal HP, the Observer exists purely for information — scouting enemy bases, tracking army movements, and detecting cloaked or burrowed units. Despite being one of the cheapest and most fragile units in the game, Observers are arguably the most strategically valuable Protoss unit, because information wins games.
 
-## Competitive Usage
+## Versus Zerg
 
-Observers are essential in every Protoss matchup. In PvT, they detect Vulture Spider Mines, cloaked Wraiths, and scout Terran build orders. In PvZ, they reveal burrowed Lurkers, which is absolutely critical — without detection, Lurkers are invincible. In PvP, Observers detect Dark Templar, turning what could be an instant loss into a manageable situation. Good Observer placement across the map provides continuous intelligence on enemy movements and expansions.
+Observers reveal burrowed Lurkers in PvZ, which is absolutely critical — without detection, Lurkers are invincible against ground armies. Losing an Observer right before a Lurker engagement can instantly lose the game. Speed-upgraded Observers also scout Zerg tech choices and expansion timing.
+
+## Versus Terran
+
+Observers detect Vulture Spider Mines and cloaked Wraiths in PvT. They also provide crucial scouting of Terran build orders, revealing whether the opponent is going bio, mech, or a timing attack. Good Observer placement at the Terran natural and third provides continuous intelligence on army movements.
+
+## Versus Protoss
+
+Observers detect Dark Templar in PvP, turning what could be an instant loss into a manageable situation. The DT rush is so common that having an Observer ready is a fundamental defensive requirement. Observers also scout enemy tech choices and army composition, providing the information advantage that decides mirror matchup games.
 
 ## Key Mechanics
 

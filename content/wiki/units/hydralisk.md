@@ -22,15 +22,28 @@ shields = 0
 size = "medium"
 ground_attack = true
 air_attack = true
+damage_type = "explosive"
+dps = 10.11
+speed_upgraded = 5.49
+range_upgraded = 5
+sight = 6
 built_from = "hatchery"
 abilities = []
 upgrades = ["muscular-augments", "grooved-spines", "lurker-aspect", "missile-attacks", "carapace"]
 +++
 The Zerg's primary ranged combat unit, firing needle spines that hit both ground and air targets. Hydralisks are versatile and gas-efficient at just 75/25, forming the backbone of Zerg mid-game armies, particularly in ZvP. They are also the precursor to the Lurker, morphing into one of the game's most powerful defensive units. Both the Muscular Augments (speed) and Grooved Spines (range) upgrades are considered essential.
 
-## Competitive Usage
+## Versus Terran
 
-Hydralisks are most central to ZvP, where Hydralisk-Lurker-Defiler compositions form the standard Zerg army. Against gateway armies, massed Hydralisks with range and speed upgrades trade efficiently, and their ability to hit air covers against Corsairs and Shuttles. In ZvT, Hydralisks are less common as a combat unit but are morphed into Lurkers to defend against bio pushes. In ZvZ, Hydralisk-Lurker play is a standard mid-game option.
+Hydralisks are less common as a combat unit in ZvT but are morphed into Lurkers to defend against bio pushes. Their anti-air capability provides defense against Dropship-based harassment. Pure Hydralisk compositions are vulnerable to Siege Tank splash, making the transition to Lurkers a critical timing decision.
+
+## Versus Protoss
+
+Hydralisks are most central to ZvP, where Hydralisk-Lurker-Defiler compositions form the standard Zerg army. Massed Hydralisks with range and speed upgrades trade efficiently against gateway armies. Their ability to hit air handles Corsairs and Shuttles, providing crucial anti-air coverage for the Zerg ground force.
+
+## Versus Zerg
+
+Hydralisk-Lurker play is a standard mid-game option in ZvZ. Hydralisks provide the ranged damage that Zerglings lack, and the transition to Lurkers creates area denial that shapes the positional play of the matchup. Focus fire on enemy Mutalisks is important when contesting air control.
 
 ## Key Mechanics
 

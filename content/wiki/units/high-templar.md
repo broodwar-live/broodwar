@@ -22,15 +22,26 @@ shields = 40
 size = "small"
 ground_attack = false
 air_attack = false
+damage_type = "normal"
+dps = 0
+sight = 7
 built_from = "gateway"
 abilities = ["psionic-storm", "hallucination"]
 upgrades = ["psionic-storm", "hallucination", "plasma-shields"]
 +++
 The premier spellcaster of the Protoss arsenal and carrier of the most feared ability in Brood War: Psionic Storm. High Templar are fragile units with no attack, but a well-placed storm dealing 112 damage over roughly 3 seconds can obliterate entire armies. They are the single most impactful spellcaster in competitive play, and mastering storm placement is essential for any serious Protoss player.
 
-## Competitive Usage
+## Versus Zerg
 
-High Templar are indispensable in PvT and PvZ. In PvT, Psionic Storm annihilates Marine/Medic groups — a single storm on a clumped bio ball can kill a dozen Marines. In PvZ, storms clear Hydralisk and Zergling masses that would otherwise overwhelm gateway units. Storm drops from Shuttles — flying a Templar over the enemy base and storming workers — are one of the most devastating harassment techniques in the game. In PvP, Templar tech signals a commitment to ground play.
+Psionic Storm clears Hydralisk and Zergling masses that would otherwise overwhelm gateway units in PvZ. Storm drops from Shuttles — flying a Templar over the enemy base and storming workers — are one of the most devastating harassment techniques in the game. The Corsair-Templar style revolutionized PvZ by combining air control with devastating ground spellcasting.
+
+## Versus Terran
+
+Psionic Storm annihilates Marine/Medic groups in PvT — a single storm on a clumped bio ball can kill a dozen Marines. Storm placement versus Marine splitting is the defining skill battle of the matchup. EMP from Science Vessels is the primary counter, draining Templar energy before they can cast.
+
+## Versus Protoss
+
+Templar tech in PvP signals a commitment to ground play over Stargate-based strategies. Storms are effective against Dragoon clumps and can zone enemies away from key positions. Depleted Templar merge into Archons for immediate combat value, creating an efficient transition from spellcasting to frontline damage.
 
 ## Key Mechanics
 

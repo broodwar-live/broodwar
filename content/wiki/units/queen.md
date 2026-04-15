@@ -22,15 +22,26 @@ shields = 0
 size = "medium"
 ground_attack = false
 air_attack = false
+damage_type = "normal"
+dps = 0
+sight = 10
 built_from = "hatchery"
 abilities = ["spawn-broodling", "ensnare", "parasite"]
 upgrades = []
 +++
 A flying spellcaster with three unique abilities that offer powerful but situational utility. The Queen is one of the rarest units in competitive Brood War, yet her abilities — Spawn Broodling (instant-kill), Ensnare (area slow), and Parasite (permanent vision) — can be devastating in the right circumstances. At 100/100, the Queen is expensive for a support unit with no attack, and her abilities require significant micro investment to use effectively.
 
-## Competitive Usage
+## Versus Terran
 
-Queens are extremely niche in competitive play but see occasional use. In ZvT, Spawn Broodling can instant-kill Siege Tanks — removing a 150/100 unit for just the Queen's energy cost. This is most valuable against small tank counts in the mid-game. Ensnare reveals cloaked Wraiths and slows stimmed Marines. In ZvP, Spawn Broodling kills Reavers and Archons, and Ensnare slows Zealot charges. Parasite on an opponent's unit provides permanent vision, useful for tracking army movements.
+Spawn Broodling can instant-kill Siege Tanks in ZvT — removing a 150/100 unit for just the Queen's energy cost. This is most valuable against small tank counts in the mid-game. Ensnare reveals cloaked Wraiths and slows stimmed Marines, providing both detection and crowd control in a single spell.
+
+## Versus Protoss
+
+Spawn Broodling kills Reavers and non-robotic ground units, and Ensnare slows Zealot charges in ZvP. However, Spawn Broodling cannot target robotic units like Dragoons and Shuttles, limiting its effectiveness. Queens are an expensive luxury that most Zerg players cannot afford in the matchup.
+
+## Versus Zerg
+
+Queens are virtually never used in ZvZ. The matchup's focus on Mutalisks and Lurkers makes the Queen's abilities largely irrelevant. Spawn Broodling cannot target Lurkers while burrowed, and Ensnare has limited value against Zergling-based armies. The investment is better spent on additional Mutalisks or Lurkers.
 
 ## Key Mechanics
 

@@ -22,15 +22,26 @@ shields = 0
 size = "small"
 ground_attack = false
 air_attack = true
+damage_type = "normal"
+dps = 0
+sight = 5
 built_from = "hatchery"
 abilities = []
 upgrades = ["flyer-carapace"]
 +++
 A kamikaze flying unit produced two at a time from a single larva, the Scourge is Zerg's cheapest and most efficient answer to expensive enemy air units. At just 25/75 for a pair, Scourge deal 110 damage each on impact — enough for two Scourge to one-shot Corsairs (180 HP+shields), Science Vessels (200 HP), and Dropships (150 HP). Their extreme fragility (25 HP) means they often die before reaching their target, creating a constant risk-reward calculation.
 
-## Competitive Usage
+## Versus Terran
 
-Scourge are critical in ZvP and ZvT. In ZvP, Scourge are the primary counter to Corsairs — forcing Corsairs to stay grouped and cautious rather than freely hunting Overlords. Just the threat of Scourge changes Protoss air behavior. In ZvT, Scourge target Science Vessels (instant-killing them with 2 Scourge) and Dropships carrying Marine/Medic groups. In ZvZ, Scourge can snipe enemy Overlords to cause supply blocks.
+Scourge target Science Vessels in ZvT, instant-killing them with 2 Scourge to deny detection against Lurkers and Irradiate against Mutalisks. They also destroy Dropships carrying Marine/Medic groups, preventing drop harassment. Just the threat of Scourge forces Terran to keep Science Vessels behind the army line.
+
+## Versus Protoss
+
+Scourge are the primary counter to Corsairs in ZvP, forcing Corsairs to stay grouped and cautious rather than freely hunting Overlords. Just the threat of Scourge changes Protoss air behavior and limits Corsair aggression. Scourge can also snipe Shuttles carrying Reavers or High Templar, denying critical drop harassment.
+
+## Versus Zerg
+
+Scourge can snipe enemy Overlords in ZvZ to cause supply blocks, stalling the opponent's unit production at critical moments. They can also target enemy Mutalisks, though this is less common since both players typically focus on Mutalisk-on-Mutalisk micro. Scourge are gas-heavy, limiting their use in the gas-intensive ZvZ matchup.
 
 ## Key Mechanics
 

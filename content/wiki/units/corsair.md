@@ -22,15 +22,26 @@ shields = 80
 size = "medium"
 ground_attack = false
 air_attack = true
+damage_type = "explosive"
+dps = 7.59
+sight = 9
 built_from = "stargate"
 abilities = ["disruption-web"]
 upgrades = ["disruption-web", "air-weapons", "air-armor", "plasma-shields"]
 +++
 A fast air-to-air interceptor with splash damage that revolutionized Protoss play, particularly in PvZ. Corsairs fire Neutron Flares that deal splash damage to air units, making them devastatingly effective against clumped flyers like Mutalisks, Overlords, and Scourge. Their Disruption Web ability prevents ground units and buildings beneath it from attacking, providing a unique form of area denial.
 
-## Competitive Usage
+## Versus Zerg
 
-Corsairs are most defining in PvZ, where the Corsair-Reaver and Corsair-Templar strategies transformed the matchup. Opening with Corsairs gives Protoss air superiority, clearing Overlords for scouting denial and countering Mutalisk harassment. In PvT, Corsairs see occasional use against Wraith openings. In PvP, they are rarely used but can appear in air-focused strategies. Disruption Web is particularly powerful over Siege Tank lines in PvT, neutralizing their fire.
+Corsairs are most defining in PvZ, where the Corsair-Reaver and Corsair-Templar strategies transformed the matchup. Opening with Corsairs gives Protoss air superiority, clearing Overlords for scouting denial and supply blocks, and countering Mutalisk harassment. Disruption Web over Sunken Colonies neutralizes Zerg static defense.
+
+## Versus Terran
+
+Corsairs see occasional use in PvT against Wraith openings, providing efficient anti-air with splash damage. Disruption Web is particularly powerful over Siege Tank lines, preventing them from firing and allowing Protoss ground units to advance freely. However, Corsairs are not a standard part of most PvT strategies.
+
+## Versus Protoss
+
+Corsairs are rarely used in PvP but can appear in air-focused strategies. They have limited utility in the mirror matchup because Protoss armies are primarily ground-based. Disruption Web can neutralize Dragoon fire in specific situations, but the investment is difficult to justify in most PvP game states.
 
 ## Key Mechanics
 

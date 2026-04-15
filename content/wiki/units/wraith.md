@@ -22,15 +22,26 @@ shields = 0
 size = "large"
 ground_attack = true
 air_attack = true
+damage_type = "normal"
+dps = 5.06
+sight = 7
 built_from = "starport"
 abilities = []
 upgrades = ["cloaking-field", "ship-weapons", "ship-plating"]
 +++
 A versatile air superiority fighter that serves as Terran's primary combat air unit. Wraiths are fast, can attack both ground and air, and gain access to personal cloaking through the Apollo Reactor upgrade. While their ground attack is modest at 8 Normal damage, their air-to-air capability of 20 Explosive damage makes them effective dogfighters and harassment units.
 
-## Competitive Usage
+## Versus Zerg
 
-Wraiths see play primarily in TvT and occasionally in TvZ. In TvT, Wraith openings provide early air control and cloaked harassment against SCVs and exposed Siege Tanks. In TvZ, cloaked Wraiths can harass Drones at expansions, forcing Zerg to invest in Overlord positioning or Spore Colonies. They are rarely used in TvP because Corsairs and Dragoons counter them efficiently.
+Cloaked Wraith harass picks off Overlords to remove Zerg supply and detection coverage. This forces Zerg to invest in Spore Colonies and careful Overlord positioning. Wraith harassment is most effective in the mid-game before Zerg has established widespread detection across their expansions.
+
+## Versus Terran
+
+Wraiths are the air superiority fighter in TvT. The 2-port Wraith build is a dedicated strategy that provides early air control and cloaked harassment against SCVs and exposed Siege Tanks. Wraith openings create dynamic cat-and-mouse games with cloaked harassment that can snowball into decisive advantages.
+
+## Versus Protoss
+
+Wraiths are rarely used in TvP. Corsairs counter them efficiently with splash damage, and Dragoons provide strong anti-air from the ground. The resources invested in Wraiths are almost always better spent on Goliaths for anti-air duty in the matchup.
 
 ## Key Mechanics
 

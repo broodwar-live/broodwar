@@ -22,15 +22,26 @@ shields = 0
 size = "small"
 ground_attack = false
 air_attack = false
+damage_type = "normal"
+dps = 0
+sight = 9
 built_from = "barracks"
 abilities = ["restoration", "optical-flare"]
 upgrades = []
 +++
 The indispensable support unit for Terran bio play. Medics have no attack but heal nearby biological units automatically, dramatically extending the lifespan of Marine-based armies. Introduced in the Brood War expansion, Medics transformed Terran infantry from disposable fodder into a sustained fighting force that can trade efficiently across long engagements.
 
-## Competitive Usage
+## Versus Zerg
 
-Medics are mandatory in any bio composition. In TvZ, a typical Marine/Medic army runs a ratio of roughly 3-4 Marines per Medic. This combination allows bio armies to survive Lurker spines and Zergling engagements that would otherwise shred pure Marine groups. In TvP, Medics keep Marines alive through Zealot engagements and enable sustained pushes against gateway armies.
+Medics are essential for Marine/Medic bio play in TvZ, typically running a 3-4 Marine per Medic ratio. They heal stim damage and keep Marines alive through Lurker spines and Zergling engagements that would otherwise shred pure Marine groups. Restoration removes Plague from Defilers, a crucial ability in the late game.
+
+## Versus Terran
+
+Medics are rarely used in TvT. Bio play is uncommon in the mirror matchup, as Siege Tanks and Vultures dominate. The gas spent on Medics is almost always better invested in Factory and Starport tech.
+
+## Versus Protoss
+
+Medics support the Marine contingent in TvP mech armies, healing stim damage for anti-air Marines that handle Corsairs and Shuttle-based drops. They enable sustained Marine fire against Zealot engagements during early and mid-game pushes. However, Psionic Storm hits Medics and Marines alike, limiting their late-game effectiveness.
 
 ## Key Mechanics
 

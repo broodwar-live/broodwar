@@ -22,15 +22,27 @@ shields = 0
 size = "medium"
 ground_attack = true
 air_attack = false
+damage_type = "concussive"
+dps = 5.06
+speed_upgraded = 8.53
+sight = 8
 built_from = "factory"
 abilities = ["spider-mines"]
 upgrades = ["spider-mines", "ion-thrusters", "vehicle-weapons", "vehicle-plating"]
 +++
 The fastest ground unit in the game, the Vulture is the cornerstone of Terran mech play and map control. Armed with a fragmentation grenade launcher dealing Concussive damage and equipped with Spider Mines for area denial, the Vulture excels at harassment, scouting, and controlling the battlefield's tempo. With the Ion Thrusters upgrade, no ground unit can outrun it.
 
-## Competitive Usage
+## Versus Zerg
 
-Vultures are central to mech play in all Terran matchups. In TvZ, early Vulture harassment targets Drones while Spider Mines protect expansions and choke points. In TvT, Vulture speed allows players to establish map control and deny enemy expansions. Even in TvP, Vultures are the primary harassment tool, running past the Protoss army to snipe Probes at undefended bases.
+Vultures are the core mech unit in TvZ. Spider Mines deny Zerg expansions and control key choke points. Their speed enables devastating Drone harassment, picking off workers at undefended bases. Map control through Vulture patrolling is essential for Terran to dictate the tempo of the mid-game.
+
+## Versus Terran
+
+Vultures are not standard in TvT, as Siege Tanks dominate the matchup's ground warfare. Spider Mines see some use for area denial at contested expansion locations, but Vultures are generally outclassed by tanks in direct combat. Occasional Vulture speed harass can pick off exposed SCVs.
+
+## Versus Protoss
+
+Vultures are Flash's signature unit in TvP mech play. Spider Mine fields protect Terran expansions from Zealot run-bys and create no-go zones for Protoss ground armies. Vulture speed harass targets Probes at undefended bases, forcing Protoss to invest in static defense or keep units at home.
 
 ## Key Mechanics
 

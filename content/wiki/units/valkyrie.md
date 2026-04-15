@@ -22,15 +22,26 @@ shields = 0
 size = "large"
 ground_attack = false
 air_attack = true
+damage_type = "explosive"
+dps = 4.74
+sight = 8
 built_from = "starport"
 abilities = []
 upgrades = ["ship-weapons", "ship-plating"]
 +++
 A heavy anti-air frigate that fires volleys of Halo Rockets, excelling at destroying clumped air units. Each attack launches 8 missiles that deal splash damage, making the Valkyrie uniquely suited for shredding Mutalisk flocks, Scourge groups, and Overlord formations. With no ground attack, the Valkyrie is a pure air-superiority platform.
 
-## Competitive Usage
+## Versus Zerg
 
-Valkyries see the most play in TvZ, where they counter Mutalisk harassment and clear Overlords to deny Zerg scouting and supply. A pair of Valkyries patrolling a Terran base can single-handedly shut down Mutalisk raids. They are also used to clear Overlords positioned over the map, blinding Zerg to Terran movements. In TvP, they occasionally appear against Corsair-heavy compositions.
+Valkyries excel in TvZ against Mutalisk harassment and Overlord formations. A pair of Valkyries patrolling a Terran base can single-handedly shut down Mutalisk raids with their splash damage. They are also used to systematically clear Overlords positioned across the map, denying Zerg scouting information and causing supply blocks.
+
+## Versus Terran
+
+Valkyries are rarely used in TvT. Wraith play is uncommon enough that dedicated anti-air from Valkyries is unnecessary. Goliaths provide better all-around utility in the mirror matchup, handling both air and ground threats.
+
+## Versus Protoss
+
+Valkyries occasionally appear against Corsair-heavy compositions in TvP, where their splash damage can trade efficiently against grouped Corsairs. However, this is a niche scenario, and Marines or Goliaths are usually preferred for anti-air duty against Protoss air units.
 
 ## Key Mechanics
 

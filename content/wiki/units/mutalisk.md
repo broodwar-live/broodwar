@@ -22,15 +22,26 @@ shields = 0
 size = "small"
 ground_attack = true
 air_attack = true
+damage_type = "normal"
+dps = 5.06
+sight = 7
 built_from = "hatchery"
 abilities = []
 upgrades = ["flyer-attacks", "flyer-carapace"]
 +++
 The Zerg's signature air unit — a fast, agile flyer whose Glave Wurm attack bounces to hit up to 3 targets (9, 3, 1 damage). Mutalisks are the premier harassment unit in Brood War, fast enough to strike workers, pick off isolated units, and retreat before the opponent can mount a defense. Their versatility as both a harassment tool and a combat unit makes them central to Zerg mid-game strategy in every matchup.
 
-## Competitive Usage
+## Versus Terran
 
-Mutalisks are transformative in ZvT and ZvP. In ZvT, a mid-game Mutalisk flock forces Terran to turtle up and defend multiple bases, buying time for Zerg to expand and tech. In ZvP, the Mutalisk-Zergling composition is a classic mid-game army that harasses Protoss bases while Zerglings defend on the ground. In ZvZ, Mutalisk wars are common — the player who builds more or micros better gains decisive air control.
+A mid-game Mutalisk flock forces Terran to turtle up and defend multiple bases in ZvT, buying time for Zerg to expand and tech to Hive. Mutalisks target undefended SCVs, pick off Marines, and snipe Science Vessels. The threat of Mutalisk harassment alone changes Terran's entire defensive posture.
+
+## Versus Protoss
+
+The Mutalisk-Zergling composition is a classic mid-game army in ZvP. Mutalisks harass Protoss bases and Probe lines while Zerglings defend on the ground. Magic boxing against Corsairs is essential to minimize splash damage. Focus-firing Shuttles and High Templar with Mutalisks can swing battles decisively.
+
+## Versus Zerg
+
+Mutalisk wars are common in ZvZ — the player who builds more or micros better gains decisive air control. The ZvZ Mutalisk war is one of the most micro-intensive sequences in the game, where split-second decisions about stacking, magic boxing, and target priority determine who controls the skies.
 
 ## Key Mechanics
 

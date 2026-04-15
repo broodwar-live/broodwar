@@ -22,15 +22,26 @@ shields = 350
 size = "large"
 ground_attack = true
 air_attack = true
+damage_type = "normal"
+dps = 15.17
+sight = 8
 built_from = "merge"
 abilities = []
 upgrades = ["plasma-shields"]
 +++
 A being of pure psionic energy formed by merging two High Templar, the Archon is a devastating short-range splash damage dealer wrapped in 350 points of regenerating shields. With only 10 HP but massive shield capacity, Archons are uniquely dependent on shield upgrades and vulnerable to EMP. They deal 30 splash damage that tears through clustered light units, making them one of the most feared combat units in the game.
 
-## Competitive Usage
+## Versus Zerg
 
-Archons shine brightest in PvZ, where their splash damage devastates Zergling and Mutalisk groups. In PvZ, merging spent High Templar into Archons after they exhaust their storm energy creates an efficient second phase of combat power. In PvT, Archons tank for Dragoons and threaten Marine groups with splash, though EMP makes them risky. In PvP, Archons provide strong close-range firepower and are often merged from depleted Templar.
+Archons shine brightest in PvZ, where their splash damage devastates Zergling and Mutalisk groups. Merging spent High Templar into Archons after they exhaust their storm energy creates an efficient second phase of combat power. Archon pushes after storms clear initial Hydralisk waves have been a staple of professional play for decades.
+
+## Versus Terran
+
+Archons tank for Dragoons and threaten Marine groups with splash damage in PvT. However, EMP Shockwave from Science Vessels strips all 350 shields in one shot, leaving Archons at a fatal 10 HP. This vulnerability makes Archons a risky investment in the matchup, requiring careful positioning to avoid EMP.
+
+## Versus Protoss
+
+Archons provide strong close-range firepower in PvP and are often merged from depleted Templar after storm energy is exhausted. Their splash damage is effective against Dragoon clumps. In extended ground engagements, Archon shields regenerate passively, giving them impressive sustain between fights.
 
 ## Key Mechanics
 

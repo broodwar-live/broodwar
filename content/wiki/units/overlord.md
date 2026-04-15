@@ -22,15 +22,27 @@ shields = 0
 size = "large"
 ground_attack = false
 air_attack = false
+damage_type = "normal"
+dps = 0
+speed_upgraded = 1.25
+sight = 9
 built_from = "hatchery"
 abilities = []
 upgrades = []
 +++
 The Zerg supply provider, detector, and transport rolled into one — the Overlord is the multi-purpose backbone of Zerg infrastructure. Each Overlord provides 8 supply, and with the Antennae upgrade, they serve as mobile detectors. With Ventral Sacs, they gain transport capability. Despite having no attack, Overlords are among the most strategically important units in the game — their positioning determines scouting, detection coverage, and supply stability.
 
-## Competitive Usage
+## Versus Terran
 
-Overlord management is a fundamental Zerg skill across all matchups. In ZvT, Overlord positioning provides scouting information about Terran build orders and expansion timing. Overlords must be carefully positioned to avoid Wraith and Marine fire while maintaining detection range over Lurkers. In ZvP, Overlords provide innate detection against Dark Templar, and their positioning is crucial against Corsair openers that try to snipe them. In ZvZ, Overlord scouting reveals enemy tech choices.
+Overlord positioning provides scouting information about Terran build orders and expansion timing in ZvT. Overlords must be carefully positioned to avoid Wraith and Marine fire while maintaining detection range over the army for Lurker support. Cloaked Wraiths specifically hunt Overlords, making their preservation a constant concern.
+
+## Versus Protoss
+
+Overlords provide innate detection against Dark Templar in ZvP, and their positioning is crucial against Corsair openers that try to snipe them for supply blocks and scouting denial. Keeping Overlords safe from Corsair packs while maintaining detection coverage over expansions is a fundamental ZvP skill.
+
+## Versus Zerg
+
+Overlord scouting reveals enemy tech choices in ZvZ — whether the opponent is going Mutalisks, Lurkers, or a Zergling all-in. Early Overlord sacrifice scouting into the enemy base provides critical build order information. Managing Overlord positioning to maintain supply without losing them to enemy Mutalisks is essential.
 
 ## Key Mechanics
 

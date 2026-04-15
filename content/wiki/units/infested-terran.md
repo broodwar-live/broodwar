@@ -14,14 +14,25 @@ supply = 1
 hp = 60
 armor = 0
 damage = 500
+damage_type = "explosive"
+dps = 0
+sight = 5
 built_from = "infested-command-center"
 abilities = []
 +++
 A suicide ground unit produced from an Infested Command Center, dealing a massive 500 Explosive splash damage on detonation. The Infested Terran is one of the rarest units in competitive Brood War because obtaining one requires an extraordinarily specific sequence: a Queen must infest a Terran Command Center that has been reduced to critical HP (below roughly 750). This practically never happens in competitive play, making the Infested Terran more of a curiosity than a practical unit.
 
-## Competitive Usage
+## Versus Terran
 
-Infested Terrans are virtually never seen in professional play. The prerequisite — getting a Queen close enough to a heavily damaged but not destroyed Command Center — is nearly impossible against a competent Terran player. On the extremely rare occasions when an Infested Command Center is obtained, the resulting Infested Terrans can be devastating: 500 Explosive damage in a large radius can wipe out entire unit groups. They are more common in custom games and UMS maps.
+Infested Terrans are virtually never seen in ZvT competitive play. The prerequisite — getting a Queen close enough to a heavily damaged but not destroyed Command Center — is nearly impossible against a competent Terran. On the extremely rare occasions they are obtained, 500 Explosive damage can devastate Terran mech groups.
+
+## Versus Protoss
+
+Infested Terrans have no practical application in ZvP. The unit requires infesting a Terran Command Center, which does not exist in the Protoss matchup. They are entirely irrelevant to the ZvP metagame.
+
+## Versus Zerg
+
+Infested Terrans have no practical application in ZvZ. Like the Protoss matchup, there is no Terran Command Center to infest in the mirror. They exist only as a curiosity in the context of Zerg-versus-Zerg games.
 
 ## Key Mechanics
 

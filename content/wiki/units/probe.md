@@ -22,15 +22,26 @@ shields = 20
 size = "small"
 ground_attack = true
 air_attack = false
+damage_type = "normal"
+dps = 3.45
+sight = 8
 built_from = "nexus"
 abilities = []
 upgrades = ["plasma-shields"]
 +++
 The Protoss worker unit, a small robotic drone that harvests resources and warps in buildings through dimensional recall. Unlike SCVs and Drones, Probes do not stay at the construction site — once the warp-in is initiated, the Probe is free to return to mining while the building constructs itself. This unique mechanic gives Protoss an economic edge during building placement but means buildings cannot be repaired during construction.
 
-## Competitive Usage
+## Versus Zerg
 
-Probes play surprising tactical roles beyond their economic function. The cannon rush (Forge-first into Photon Cannons at the enemy base) is one of the most iconic cheese strategies, using a Probe to warp in Pylons and Cannons in the enemy's base or natural. Mineral walk micro — using the return cargo command to move through blocking units — makes Probes effective scouts in the early game, as they can slip past enemy workers and buildings.
+The cannon rush is one of the most iconic cheese strategies against Zerg, using a Probe to warp in Pylons and Photon Cannons at the Zerg natural or main. Probe scouting is essential in PvZ to identify whether Zerg is going for a fast expansion, Zergling rush, or tech build. Mineral walk micro lets the scouting Probe slip past defensive Zerglings.
+
+## Versus Terran
+
+Probe scouting reveals whether Terran is opening with bio, mech, or a specific timing attack. Cannon rushes are possible but riskier against Terran's wall-off capability. In PvT, Probes have minimal combat role beyond early-game scouting and the occasional cannon rush at the Terran natural.
+
+## Versus Protoss
+
+Probe harassment in PvP — early Probe attacks on the enemy Probe line — can slow the opponent's economy and is a common opening tactic. Cannon rushes in PvP are a significant threat since Protoss lacks an easy early-game wall-off. The warp-in mechanic means Probes return to mining immediately, minimizing the economic cost of building placement.
 
 ## Key Mechanics
 

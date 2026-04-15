@@ -22,15 +22,27 @@ shields = 0
 size = "large"
 ground_attack = true
 air_attack = false
+damage_type = "explosive"
+dps = 6.12
+dps_upgraded = 28.72
+sight = 10
 built_from = "factory"
 abilities = ["siege-mode"]
 upgrades = ["siege-tech", "vehicle-weapons", "vehicle-plating"]
 +++
 The defining unit of Terran positional play. The Siege Tank operates in two modes: a mobile Tank Mode dealing 30 Normal damage, and a devastating Siege Mode that unleashes 70 Explosive splash damage at 12 range. No other unit in Brood War shapes the battlefield as fundamentally — where tanks are sieged, the fight happens on Terran's terms.
 
-## Competitive Usage
+## Versus Zerg
 
-Siege Tanks are central to every Terran matchup. In TvZ, tank pushes and tank lines define the mid-game, creating kill zones that Zerg must break through with Lurkers, Defilers, or Ultralisk-based compositions. In TvT, the matchup revolves almost entirely around tank positioning — the player with better tank placement wins. In TvP, tanks defend against Zealot aggression and provide area denial that forces Protoss into specific tech paths.
+Siege Tanks define positional play in TvZ. Tank pushes and tank lines create kill zones that devastate Zergling and Hydralisk armies. Splash damage in siege mode is devastating against clumped ground units. However, tanks are weak to Defiler Dark Swarm, which negates their ranged fire entirely and forces Terran to rely on Irradiate to remove Defilers.
+
+## Versus Terran
+
+The Siege Tank is THE TvT unit. Tank line wars define the entire matchup, with high ground advantage being critical for vision and positioning. Drop play with tanks loaded in Dropships enables devastating cliff sieges behind enemy lines. The player with better tank placement and positioning almost always wins.
+
+## Versus Protoss
+
+Siege Tanks contain Protoss expansion by creating kill zones that Dragoon-heavy armies cannot easily push through. Splash damage devastates clumped Dragoon groups. However, tanks require Vulture support to handle speed Zealot flanks that exploit the minimum range dead zone.
 
 ## Key Mechanics
 

@@ -22,15 +22,26 @@ shields = 150
 size = "large"
 ground_attack = true
 air_attack = true
+damage_type = "normal"
+dps = 0
+sight = 11
 built_from = "stargate"
 abilities = []
 upgrades = ["air-weapons", "air-armor", "plasma-shields"]
 +++
 The Protoss capital ship, a mobile aircraft carrier that launches up to 8 Interceptors to devastate both ground and air targets. Each Interceptor deals 6 damage per hit, and with 8 Interceptors firing rapidly, a fully loaded Carrier unleashes extraordinary sustained DPS. Carriers are expensive (350/250 plus 200 minerals for Interceptors) and slow to build, but when massed, they become one of the most powerful forces in Brood War.
 
-## Competitive Usage
+## Versus Zerg
 
-Carriers are most prominent in PvT late-game, where Carrier-Arbiter compositions threaten to overwhelm Terran ground forces. In PvZ, Carriers were the traditional late-game Protoss answer before the Corsair-Reaver revolution, and they still appear in ultra-late-game scenarios. In PvP, Carriers are rare but can appear in drawn-out games. The critical threshold is reaching 4-6 Carriers — below that, they are vulnerable, but above it, they become extremely difficult to stop.
+Carriers were the traditional late-game Protoss answer in PvZ before the Corsair-Reaver revolution, and they still appear in ultra-late-game scenarios. Scourge are the primary Zerg counter, but reaching a critical mass of 4-6 Carriers makes them extremely difficult for Zerg to stop. Carrier play requires Arbiter support for cloaking and Recall.
+
+## Versus Terran
+
+Carrier-Arbiter compositions are the premier Protoss late-game threat in PvT, capable of overwhelming Terran ground forces. The critical threshold is reaching enough Carriers to survive focused Goliath fire. Interceptor leashing keeps Carriers safe while dealing sustained damage. Terran must mass Goliaths with Charon Boosters to counter.
+
+## Versus Protoss
+
+Carriers are rare in PvP but can appear in drawn-out games. The mirror matchup's focus on gateway units and Reavers makes the Stargate investment difficult to justify. When they do appear, Carriers can be decisive, but reaching the critical mass required takes too long against aggressive PvP builds.
 
 ## Key Mechanics
 

@@ -65,12 +65,27 @@
 
       {% if e.produces is defined and e.produces | length > 0 %}
       <div class="mt-5 pt-4 border-t border-primary/5">
-        <span class="text-xs text-base-content/30">{% if lang == "ko" %}생산 유닛{% else %}Produces{% endif %}</span>
-        <ul class="mt-1 space-y-1">
-          {% for unit in e.produces %}
-          <li><a href="/wiki/units/{{ unit }}" class="text-sm text-primary/70 hover:text-primary transition-colors">{{ unit | replace(from="-", to=" ") | title }}</a></li>
-          {% endfor %}
-        </ul>
+        <span class="text-xs text-base-content/30 block mb-2">{% if lang == "ko" %}생산 유닛{% else %}Produces{% endif %}</span>
+        <table class="w-full text-xs">
+          <thead>
+            <tr class="text-base-content/25">
+              <th class="text-left font-normal pb-1">{% if lang == "ko" %}유닛{% else %}Unit{% endif %}</th>
+              <th class="text-right font-normal pb-1">{% if lang == "ko" %}미네랄{% else %}Min{% endif %}</th>
+              <th class="text-right font-normal pb-1">{% if lang == "ko" %}가스{% else %}Gas{% endif %}</th>
+              <th class="text-right font-normal pb-1">{% if lang == "ko" %}서플{% else %}Sup{% endif %}</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for unit_slug in e.produces %}
+            {% set unit_path = "wiki/units/" ~ unit_slug ~ ".md" %}
+            {% set u = get_page(path=unit_path, lang=lang) | default(value=false) %}
+            <tr class="border-t border-primary/5">
+              <td class="py-1"><a href="/wiki/units/{{ unit_slug }}" class="text-primary/70 hover:text-primary transition-colors">{{ unit_slug | replace(from="-", to=" ") | title }}</a></td>
+              {% if u %}<td class="text-right font-stats">{{ u.extra.minerals }}</td><td class="text-right font-stats">{{ u.extra.gas }}</td><td class="text-right font-stats">{{ u.extra.supply }}</td>{% else %}<td></td><td></td><td></td>{% endif %}
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
       </div>
       {% endif %}
 

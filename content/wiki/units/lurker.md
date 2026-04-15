@@ -22,15 +22,26 @@ shields = 0
 size = "medium"
 ground_attack = true
 air_attack = false
+damage_type = "normal"
+dps = 6.16
+sight = 8
 built_from = "hydralisk"
 abilities = []
 upgrades = ["missile-attacks", "carapace"]
 +++
 One of the most feared defensive units in Brood War, the Lurker is a Hydralisk evolution that burrows underground and attacks with subterranean spines dealing 20 splash damage in a line. Lurkers can only attack while burrowed and are invisible without detection, creating a devastating combination of area denial and invisibility. They are the Zerg's answer to Marine/Medic pushes and a cornerstone of Zerg defensive play.
 
-## Competitive Usage
+## Versus Terran
 
-Lurkers are most impactful in ZvT, where they form the primary defensive line against Marine/Medic bio pushes. A well-placed Lurker contain at a choke point can hold off vastly larger bio armies. In ZvP, Lurkers behind the Zerg army dissuade Zealot charges and force Protoss to invest in Observers. In ZvZ, Lurkers create area denial that shapes positional play. The transition from Hydralisk to Lurker mid-game is one of the most critical timing decisions for Zerg players.
+Lurkers are most impactful in ZvT, forming the primary defensive line against Marine/Medic bio pushes. A well-placed Lurker contain at a choke point can hold off vastly larger bio armies. The transition from Hydralisk to Lurker mid-game is one of the most critical timing decisions, as Lurkers without detection coverage are nearly invincible against bio.
+
+## Versus Protoss
+
+Lurkers behind the Zerg army dissuade Zealot charges and force Protoss to invest in Observers in ZvP. Without detection, Lurkers are devastating against Dragoon-Zealot compositions. The threat of Lurkers shapes Protoss tech choices, making Robotics Facility a near-mandatory investment for Observer production.
+
+## Versus Zerg
+
+Lurkers create area denial that shapes positional play in ZvZ. They are particularly effective at defending choke points and ramps. The ZvZ Lurker war — fighting over detection and positioning — adds a strategic layer to the matchup beyond pure Mutalisk control.
 
 ## Key Mechanics
 

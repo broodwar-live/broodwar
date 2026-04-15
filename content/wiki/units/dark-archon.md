@@ -22,15 +22,26 @@ shields = 200
 size = "large"
 ground_attack = false
 air_attack = false
+damage_type = "normal"
+dps = 0
+sight = 10
 built_from = "merge"
 abilities = ["mind-control", "maelstrom", "feedback"]
 upgrades = ["maelstrom", "mind-control", "plasma-shields"]
 +++
 An exotic spellcaster formed by merging two Dark Templar, the Dark Archon possesses some of the most unique and powerful abilities in Brood War. Mind Control permanently converts an enemy unit to your side, Maelstrom freezes all biological units in an area, and Feedback deals damage equal to a target's remaining energy. With no attack of its own, the Dark Archon is a pure spellcasting unit — rarely seen but capable of game-changing plays.
 
-## Competitive Usage
+## Versus Zerg
 
-Dark Archons are extremely niche but devastating when they appear. In PvZ, Maelstrom is incredibly powerful against biological armies — freezing Zerglings, Hydralisks, and Mutalisks in place for other Protoss units to destroy. Mind Control can steal expensive Zerg units or, in rare cases, a Drone to establish a Zerg tech tree. In PvT, Feedback can instantly kill full-energy Science Vessels or Medics. The high cost of merging two DTs (250/200 total) limits their use to specific strategic situations.
+Maelstrom is incredibly powerful against Zerg's entirely biological army, freezing Zerglings, Hydralisks, and Mutalisks in place for other Protoss units to destroy. Mind Control can steal expensive Zerg units or, in rare cases, a Drone to establish a Zerg tech tree. The Maelstrom-storm combo against Zerg armies is devastating when executed properly.
+
+## Versus Terran
+
+Feedback can instantly kill full-energy Science Vessels or Medics in PvT, removing critical support units. Mind Control on a Siege Tank turns the enemy's strongest unit against them. However, the high cost of merging two Dark Templar and EMP vulnerability limit Dark Archon usage to specific strategic situations.
+
+## Versus Protoss
+
+Dark Archons are extremely rare in PvP. Feedback can eliminate enemy High Templar, and Mind Control can steal expensive units, but the investment of two Dark Templar is difficult to justify in the mirror. Maelstrom has no effect on the robotic units that dominate PvP armies.
 
 ## Key Mechanics
 

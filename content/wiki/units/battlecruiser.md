@@ -22,15 +22,26 @@ shields = 0
 size = "large"
 ground_attack = true
 air_attack = true
+damage_type = "normal"
+dps = 7.59
+sight = 11
 built_from = "starport"
 abilities = ["yamato-cannon"]
 upgrades = ["yamato-gun", "ship-weapons", "ship-plating"]
 +++
 The ultimate Terran capital ship — a massive flying fortress with 500 HP, 3 base armor, and attacks that hit both ground and air. Battlecruisers are the most expensive Terran unit at 400/300, and their Yamato Cannon deals a devastating 260 damage to a single target, capable of one-shotting most units in the game. Slow to build and slow to move, they represent an enormous late-game investment.
 
-## Competitive Usage
+## Versus Zerg
 
-Battlecruisers are rarely seen in modern competitive play due to their extreme cost and vulnerability to focused anti-air. When they do appear, it is typically in TvT or TvP ultra-late-game scenarios where resources are abundant. In TvT, a surprise Battlecruiser transition can catch opponents off guard if they lack sufficient anti-air. The Yamato Cannon's ability to instantly delete key targets like Science Vessels or Siege Tanks makes even one or two Battlecruisers threatening.
+Battlecruisers are rarely used in TvZ. Scourge pairs destroy them cost-efficiently, and the investment is better spent on mech ground units. In extremely long games where Zerg has exhausted Scourge production, Battlecruisers can provide sustained firepower, but this scenario is uncommon.
+
+## Versus Terran
+
+A surprise Battlecruiser transition in TvT can catch opponents off guard if they lack sufficient anti-air. Yamato Cannon instantly deletes key targets like Science Vessels or Siege Tanks, making even one or two Battlecruisers threatening. They appear most often in ultra-late TvT games where both players have abundant resources.
+
+## Versus Protoss
+
+Battlecruisers occasionally appear in ultra-late TvP scenarios against Carrier-Arbiter compositions. Their 3 base armor shrugs off Interceptor damage, and Yamato Cannon one-shots Arbiters. However, the extreme cost and vulnerability to Feedback and EMP make them a risky investment that rarely sees play.
 
 ## Key Mechanics
 
