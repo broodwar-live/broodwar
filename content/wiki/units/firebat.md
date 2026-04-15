@@ -26,4 +26,26 @@ built_from = "barracks"
 abilities = []
 upgrades = ["stim-pack", "infantry-weapons", "infantry-armor"]
 +++
-Heavy infantry equipped with flame throwers. Firebats deal concussive splash damage, making them effective against small units like Zerglings. They can use Stim Pack and benefit from bunker placement. Requires an Academy.
+Heavy infantry equipped with dual flame throwers, dealing Concussive splash damage in a line. Firebats are specialized anti-light units that excel at burning through masses of small units like Zerglings and Zealots. With 50 HP and 1 base armor, they are sturdier than Marines and can use Stim Pack to boost their attack speed.
+
+## Competitive Usage
+
+Firebats are situational but impactful. In TvZ, one or two Firebats inside bunkers at the natural dramatically improve defense against early Zergling pressure. The 2-Rax Firebat build is a classic aggressive opener. In TvP, Firebats inside bunkers shred Zealots that try to break the wall. They rarely see mass production outside of specific timing attacks.
+
+## Key Mechanics
+
+Firebats deal Concussive damage, meaning full damage to Small units, 50% to Medium, and 25% to Large. Their attack hits in a line splash pattern, damaging all units in front of them. Each attack deals 8x2 (16 total with both flamers), and this splash makes them devastating against tightly packed small units. They require an Academy to produce.
+
+## Micro Techniques
+
+- **Bunker positioning**: Firebats in bunkers provide excellent area denial against melee rushes
+- **Stim micro**: Stimming Firebats to chase down fleeing Zerglings or to burst through a Zealot push
+- **Tanking**: Using Firebats in front of Marines to absorb hits with their higher HP and armor
+
+## Counters
+
+Firebats are hard-countered by ranged units, especially Dragoons and Hydralisks, which can kite them indefinitely. Their melee range makes them vulnerable to anything that can attack from distance. Lurkers are particularly problematic since Firebats must walk through the spine line to engage.
+
+## Historical Notes
+
+While rarely the star of a strategy, Firebats have defined early-game TvZ for decades. The 2-Rax Firebat bunker rush on maps like Fighting Spirit became a standard aggressive opener. Their role has remained consistent — a niche defensive and early aggression tool rather than a mainline combat unit.

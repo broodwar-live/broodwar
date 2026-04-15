@@ -26,4 +26,27 @@ built_from = "stargate"
 abilities = ["disruption-web"]
 upgrades = ["disruption-web", "air-weapons", "air-armor", "plasma-shields"]
 +++
-Fast air-to-air interceptor with splash damage. Corsairs excel at destroying groups of Mutalisks and Overlords. They can also cast Disruption Web, which prevents ground units and buildings beneath it from attacking — powerful for neutering static defenses.
+A fast air-to-air interceptor with splash damage that revolutionized Protoss play, particularly in PvZ. Corsairs fire Neutron Flares that deal splash damage to air units, making them devastatingly effective against clumped flyers like Mutalisks, Overlords, and Scourge. Their Disruption Web ability prevents ground units and buildings beneath it from attacking, providing a unique form of area denial.
+
+## Competitive Usage
+
+Corsairs are most defining in PvZ, where the Corsair-Reaver and Corsair-Templar strategies transformed the matchup. Opening with Corsairs gives Protoss air superiority, clearing Overlords for scouting denial and countering Mutalisk harassment. In PvT, Corsairs see occasional use against Wraith openings. In PvP, they are rarely used but can appear in air-focused strategies. Disruption Web is particularly powerful over Siege Tank lines in PvT, neutralizing their fire.
+
+## Key Mechanics
+
+Each Corsair attack deals 5 Explosive damage with splash, meaning nearby air units take damage too. The fast attack speed (8 frames) compensates for the low per-hit damage, delivering excellent sustained DPS against air targets. Explosive damage means full effect against Large, 75% against Medium, and 50% against Small air units. Disruption Web costs 125 energy and lasts 21.3 seconds, preventing all ground attacks under its area.
+
+## Micro Techniques
+
+- **Overlord hunting**: Using Corsair packs to systematically destroy Overlords across the map, denying Zerg supply and detection
+- **Mutalisk interception**: Positioning Corsairs defensively to intercept Mutalisk raids, using splash to devastate stacked groups
+- **Disruption Web placement**: Webbing Siege Tank lines, Sunken Colonies, or Bunkers to neutralize ground defenses
+- **Patrol positioning**: Setting Corsairs on patrol over bases to automatically engage incoming air threats
+
+## Counters
+
+Corsairs cannot attack ground units, making them helpless against ground-based anti-air. Hydralisks, Marines, and Goliaths can shoot them down freely. Scourge, while vulnerable to Corsair splash, can overwhelm them in sufficient numbers. Devourers with acid spore stacking reduce Corsair armor and attack speed. Without ground support, Corsairs cannot win games alone.
+
+## Historical Notes
+
+The Corsair is perhaps the single most transformative unit addition in Brood War. Bisu's pioneering Corsair-Reaver style in PvZ broke sAviOr's dominance and proved that Protoss could compete aggressively against Zerg without relying on Carriers. The "Bisu Build" became synonymous with Corsair-based PvZ and fundamentally changed the metagame. Corsairs remain central to PvZ strategy to this day.

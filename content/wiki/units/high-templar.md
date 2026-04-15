@@ -26,4 +26,27 @@ built_from = "gateway"
 abilities = ["psionic-storm", "hallucination"]
 upgrades = ["psionic-storm", "hallucination", "plasma-shields"]
 +++
-Powerful psionic caster. High Templar are fragile but carry one of the most devastating abilities in the game: Psionic Storm, which deals 112 damage over 3 seconds in an area. They can also cast Hallucination to create decoy units. Two High Templar can merge into an Archon.
+The premier spellcaster of the Protoss arsenal and carrier of the most feared ability in Brood War: Psionic Storm. High Templar are fragile units with no attack, but a well-placed storm dealing 112 damage over roughly 3 seconds can obliterate entire armies. They are the single most impactful spellcaster in competitive play, and mastering storm placement is essential for any serious Protoss player.
+
+## Competitive Usage
+
+High Templar are indispensable in PvT and PvZ. In PvT, Psionic Storm annihilates Marine/Medic groups — a single storm on a clumped bio ball can kill a dozen Marines. In PvZ, storms clear Hydralisk and Zergling masses that would otherwise overwhelm gateway units. Storm drops from Shuttles — flying a Templar over the enemy base and storming workers — are one of the most devastating harassment techniques in the game. In PvP, Templar tech signals a commitment to ground play.
+
+## Key Mechanics
+
+Psionic Storm deals 112 damage over approximately 3 seconds to all units in the area of effect, ignoring armor. Storms do not stack — casting two storms on the same area does not double the damage. High Templar start with 50 energy and need 75 for storm, meaning freshly produced Templar cannot storm immediately without the Khaydarin Amulet upgrade (+12.5 starting energy, removed in Remastered balance). Two High Templar can merge into an Archon, useful when out of energy.
+
+## Micro Techniques
+
+- **Storm placement**: Predicting enemy movement to place storms where units will be, not where they are
+- **Storm drops**: Loading High Templar into Shuttles and flying them over enemy bases to storm workers
+- **Pre-spreading**: Positioning multiple Templar across the battlefield before engagement for wider storm coverage
+- **Archon merge**: Merging low-energy Templar into Archons for immediate combat value
+
+## Counters
+
+EMP Shockwave from Science Vessels drains Templar energy, completely neutralizing their storm potential. Ghosts' Lockdown does not work on biological units, but EMP does. Feedback from enemy Dark Archons kills Templar by dealing damage equal to their energy. Fast stimmed Marines can snipe Templar before they cast. Spreading units reduces storm effectiveness dramatically.
+
+## Historical Notes
+
+The battle between Terran Marine splitting and Protoss storm placement has defined PvT for over two decades. Bisu's devastating storm drops in his legendary PvZ games against sAviOr helped establish the Corsair-Templar style that revolutionized the matchup. Storm usage is widely considered the single highest-impact skill in competitive Protoss play.
