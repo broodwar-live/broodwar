@@ -58,6 +58,15 @@ Scourge deal 110 Explosive damage on impact, meaning full damage against Large a
 
 Any anti-air that can kill Scourge before they reach their target counters them. Corsairs with splash damage can clear Scourge groups before impact. Marines in sufficient numbers can shoot them down. Valkyries devastate Scourge packs. The 25 HP means even minimal anti-air fire destroys them.
 
+## Combat Data
+
+- 110 Normal damage on impact (suicide unit) — produced 2 per egg
+- One-shots Corsairs (100 HP + 80 shields = 180; 2 Scourge = 220 damage)
+- One-shots Science Vessels (200 HP; 2 Scourge = 220 damage)
+- One-shots Dropships/Shuttles (150 HP / 60+60 shields; 2 Scourge = 220 damage)
+- Most cost-efficient anti-air in the game: 25/75 per pair vs targets costing 100-350 resources
+- **AI Note**: Scourge auto-target nearest air unit; manual targeting on high-value units (Science Vessels, loaded Dropships) is essential
+
 ## Historical Notes
 
 Scourge have produced some of the most dramatic moments in competitive BW — the tension of whether Scourge will connect with a critical target or be shot down just short is a recurring spectacle. The gas cost of Scourge creates interesting economic dynamics, as heavy Scourge production drains gas from other tech units. Savior was known for his Scourge timing, sniping Science Vessels at critical moments to deny detection against Lurkers.

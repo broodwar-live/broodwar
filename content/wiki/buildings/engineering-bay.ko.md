@@ -13,9 +13,12 @@ hp = 850
 shields = 0
 armor = 1
 build_time = 60
+hotkey = "B→E"
 size = "large"
 produces = []
 researches = ["infantry-weapons", "infantry-armor"]
+unlocks = ["missile-turret"]
+required_by = ["command-center"]
 +++
 엔지니어링 베이는 테란의 보병 업그레이드 건물로, 보병 무기와 보병 방어구 업그레이드를 연구한다(각각 최대 3단계, 2-3단계는 아머리 필요). 또한 미사일 터렛 건설의 선행 건물로, 테란에게 정적 대공 방어와 탐지 능력을 제공한다.
 

@@ -13,9 +13,11 @@ hp = 850
 shields = 0
 armor = 1
 build_time = 40
+hotkey = "B→H"
 size = "large"
 produces = []
 researches = ["muscular-augments", "grooved-spines", "lurker-aspect"]
+required_by = ["spawning-pool"]
 +++
 히드라리스크 덴은 해처리에서 히드라리스크 생산을 가능하게 하는 핵심 저그 테크 건물이다. 세 가지 중요한 업그레이드를 연구한다: 근육 강화(히드라리스크 이동 속도), 홈이 파인 가시(히드라리스크 공격 사거리 +1), 러커 애스펙트(히드라리스크가 러커로 변태 가능, 레어 필요). 히드라리스크 덴은 저그의 군대 구성을 가벼운 저글링 떼에서 지상과 공중 모두를 공격할 수 있는 더 다재다능한 전력으로 변환한다.
 

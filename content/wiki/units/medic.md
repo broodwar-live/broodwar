@@ -57,6 +57,14 @@ Medics heal 200 HP total before running out of energy (base 50 energy, 200 max).
 
 Medics are a priority target for opponents — killing Medics guts a bio army's sustain. Psionic Storm hits Medics and Marines alike, and smart Protoss players target storms on the Medic cluster. Lurker spines damage both Marines and Medics simultaneously. Since Medics cannot attack, excess Medics reduce army DPS.
 
+## Combat Data
+
+- **Heal rate**: 5.86 HP/second (200 energy heals ~150 HP total)
+- Restoration removes: Plague, Ensnare, Irradiate, Lockdown, Parasite, Optical Flare
+- Optical Flare permanently reduces target sight to 1 — blinding Overlords removes detection
+- **AI Note**: Medics auto-heal the nearest damaged biological unit; positioning medics behind marines is critical
+- 1 Medic per ~4 Marines is the standard ratio for bio play
+
 ## Historical Notes
 
 Before Brood War added Medics, Terran infantry was considered the weakest composition in the game. The Medic's introduction single-handedly created the bio playstyle that has defined competitive TvZ and TvP for over two decades. The Marine/Medic combination remains one of the most elegant design additions in RTS history.

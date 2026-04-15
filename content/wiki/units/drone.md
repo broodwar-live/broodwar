@@ -58,6 +58,15 @@ Drones deal 5 Normal damage in melee and have 40 HP, making them the second-weak
 
 Any combat unit kills Drones quickly. Worker harassment from Vultures, Zealots, or Marines targets the Zerg economy directly. Reaver drops into the mineral line are devastating. Since each Drone lost also impacts future building options, Drone losses cascade — losing workers means slower recovery than for other races.
 
+## Combat Data
+
+- **Cooldown**: 1.45s (22 frames)
+- 5 Normal damage — second-weakest worker in combat (Probe is weaker)
+- 40 HP — stronger than Probes (40 total with shields) but no shields
+- Morphs INTO buildings (consumed) — each building costs the Drone itself
+- Mineral walk micro allows scouting through enemy units and buildings ("drone drilling")
+- **AI Note**: Drones auto-attack nearest enemy; mineral walk (Return Cargo) must be manually triggered to pass through units
+
 ## Historical Notes
 
 The Drone's sacrifice mechanic is one of the most distinctive design choices in StarCraft. It creates Zerg's unique macro rhythm — the "drone or army" decision — that has no parallel in the other races. Professional Zerg players spend as much mental energy on Drone timing as on unit micro. The concept of "droning behind an attack" — building economy while launching aggression — is a hallmark of advanced Zerg play that has been refined over two decades of competitive evolution.

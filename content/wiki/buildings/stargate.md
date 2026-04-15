@@ -13,8 +13,10 @@ hp = 600
 shields = 600
 armor = 1
 build_time = 70
+hotkey = "B→S"
 size = "large"
 produces = ["corsair", "scout", "carrier", "arbiter"]
+required_by = ["cybernetics-core"]
 +++
 The Stargate is the Protoss air unit production building, producing Corsairs, Scouts, Carriers (requiring a Fleet Beacon), and Arbiters (requiring an Arbiter Tribunal). It requires a Cybernetics Core and represents one of the two main Protoss tech path choices alongside the Robotics Facility. The Fleet Beacon add-on building unlocks Carrier production and advanced air upgrades, while the Arbiter Tribunal enables Arbiter production with Recall and Stasis Field.
 

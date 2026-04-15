@@ -59,6 +59,14 @@ Observers have permanent cloak that requires no energy — they are always invis
 
 Any unit that can attack air can kill an Observer if it is detected. Scan from Comsat Station reveals Observers temporarily. Overlords with Antennae upgrade detect them. Science Vessels and other Observers detect them. EMP can strip shields, making them die even faster. Despite being invisible, careful opponents position detection to hunt Observers.
 
+## Combat Data
+
+- Permanently cloaked detector — no energy cost, always invisible
+- 20 shields + 40 HP = 60 total — extremely fragile
+- Speed: 5.0 base → 7.5 with Gravitic Boosters upgrade
+- No attack — purely a scouting and detection unit
+- **AI Note**: Observers will follow the selected group; losing one before a Lurker engagement can lose the game instantly
+
 ## Historical Notes
 
 The Observer is often called the "invisible MVP" of Protoss play. Losing an Observer at a critical moment — such as right before a Lurker engagement — can instantly lose a game. Professional players invest significant attention in Observer management, and casting commentators frequently highlight Observer positioning as a key factor in match outcomes.

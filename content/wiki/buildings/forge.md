@@ -13,9 +13,12 @@ hp = 550
 shields = 550
 armor = 1
 build_time = 40
+hotkey = "B→F"
 size = "large"
 produces = []
 researches = ["ground-weapons", "ground-armor", "plasma-shields"]
+unlocks = ["photon-cannon"]
+required_by = ["nexus"]
 +++
 The Forge is Protoss's ground upgrade building, researching Ground Weapons, Ground Armor, and Plasma Shields (each up to level 3). It is also the prerequisite for Photon Cannon construction, linking it to both offensive cannon rushes and defensive base protection. The Forge does not produce units and has no add-ons.
 

@@ -58,6 +58,15 @@ Guardians deal 20 Normal damage at range 8 — the longest ground attack range o
 
 Any air-to-air unit counters Guardians since they cannot fight back. Wraiths, Corsairs, and Mutalisks destroy unescorted Guardians easily. Goliaths with Charon Boosters outrange Guardians (8 air range vs 8 ground range) and deal heavy damage. Valkyries shred Guardian groups with splash. Science Vessel Irradiate can kill Guardians over time.
 
+## Combat Data
+
+- **Cooldown**: 1.98s (30 frames)
+- 20 Normal damage at range 8 — outranges Missile Turrets (7), Photon Cannons (7), and Sunken Colonies (7)
+- Cannot attack air units at all — completely helpless against air-to-air
+- Speed: 2.5 — extremely slow; morphed from Mutalisk at Greater Spire
+- **AI Note**: Guardians auto-attack nearest ground target; manual targeting on key structures (Siege Tanks, Bunkers) maximizes siege value
+- Requires air escort (Scourge, Mutalisks, or Devourers) to survive against any air response
+
 ## Historical Notes
 
 Guardian play represents the Zerg's commitment to a long, grinding late-game strategy. The transition from Mutalisks to Guardians is a pivotal strategic decision — sacrificing map control and harassment for siege capability. In professional play, Guardian pushes backed by full Hive tech have broken some of the most fortified positions in BW history, creating tense, methodical games where every inch of ground is contested.

@@ -58,6 +58,15 @@ SCVs deal 5 Normal damage in melee, making them weak but not useless in combat. 
 
 SCVs are fragile workers — any focused combat unit kills them quickly. Pulling too many SCVs for combat guts the economy. Reavers and Lurkers devastate SCV lines at mineral patches. Worker harassment from Mutalisks or Zealots targets the economic foundation that SCVs represent.
 
+## Combat Data
+
+- **Cooldown**: 0.99s (15 frames)
+- Repair rate: 1.2 HP per frame on mechanical units/buildings
+- 4 SCVs repairing a Bunker can sustain it through most early aggression
+- SCV can mineral walk through units (holding minerals provides collision bypass)
+- **AI Note**: SCVs auto-repair if set to, but this can pull them into dangerous positions
+- Combat SCVs: pulling 4-5 SCVs to fight alongside Marines doubles early game combat power
+
 ## Historical Notes
 
 The SCV repair mechanic has been central to some of the most dramatic moments in BW. SCV pulls at critical timings have decided championship matches, where the Terran player gambles their economy for a decisive push. The strategic depth of knowing when to pull SCVs — and how many — represents one of Terran's highest-skill decisions.

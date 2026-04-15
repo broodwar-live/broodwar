@@ -59,6 +59,16 @@ Dragoons deal 20 Explosive damage, meaning full damage to Large units, 75% to Me
 
 Dragoons are vulnerable to Dark Swarm (blocks their ranged fire entirely), Psionic Storm, and Lurkers. Their Explosive damage type makes them weak against Marine swarms and Zerglings. In PvP, Reavers devastate clumped Dragoons. Speed Zealots can close the distance and force melee engagements where Dragoons struggle.
 
+## Combat Data
+
+- **Cooldown**: 1.98s (30 frames)
+- 20 Explosive damage: 100% vs Large, 75% vs Medium, 50% vs Small
+- Stimmed Marine (30 HP) dies in 3 shots (10 effective per shot vs Small)
+- 3 Dragoons kill a Siege Tank (150 HP) in 3 volleys
+- Range: 4 base → 6 with Singularity Charge
+- **AI Note**: Dragoons have notoriously poor pathfinding — they frequently get stuck at choke points and require manual control
+- **Notable**: "Tempest vs Light" single dragoon achieving 33 kills became a legendary moment in competitive play
+
 ## Historical Notes
 
 The Dragoon's infamous pathfinding has been both curse and opportunity. Skilled players who master Dragoon micro — threading groups through choke points, focus-firing, and retreating damaged units — gain enormous advantages. The "Dragoon dance" is one of the most recognizable skill expressions in Brood War, and PvP Dragoon micro wars remain some of the most mechanically demanding sequences in competitive play.

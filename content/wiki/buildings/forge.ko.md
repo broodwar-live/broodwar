@@ -13,9 +13,12 @@ hp = 550
 shields = 550
 armor = 1
 build_time = 40
+hotkey = "B→F"
 size = "large"
 produces = []
 researches = ["ground-weapons", "ground-armor", "plasma-shields"]
+unlocks = ["photon-cannon"]
+required_by = ["nexus"]
 +++
 포지는 프로토스의 지상 업그레이드 건물로, 지상 무기, 지상 방어구, 플라즈마 실드를 연구한다(각각 최대 3단계). 포톤 캐논 건설의 선행 건물이기도 하여, 공격적인 캐논 러시와 방어적인 기지 보호 모두에 연결된다. 포지는 유닛을 생산하지 않으며 애드온이 없다.
 

@@ -13,9 +13,12 @@ hp = 500
 shields = 500
 armor = 1
 build_time = 60
+hotkey = "B→Y"
 size = "large"
 produces = []
 researches = ["air-weapons", "air-armor"]
+unlocks = ["robotics-facility", "stargate"]
+required_by = ["gateway"]
 +++
 사이버네틱스 코어는 게이트웨이에서 드라군 생산을 해제하고 모든 프로토스 고급 기술의 관문 역할을 하는 핵심 테크 건물이다. 드라군 공격 사거리를 늘리는 싱귤래리티 차지를 연구하며, 이는 모든 프로토스 빌드에서 가장 먼저 해야 하는 필수 업그레이드 중 하나이다. 사이버네틱스 코어는 또한 커세어, 스카웃, 캐리어 등 공중 유닛을 위한 공중 무기와 공중 방어구 업그레이드를 연구한다.
 

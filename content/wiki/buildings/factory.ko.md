@@ -13,8 +13,11 @@ hp = 1250
 shields = 0
 armor = 1
 build_time = 80
+hotkey = "B→F"
 size = "large"
 produces = ["vulture", "siege-tank", "goliath"]
+unlocks = ["starport", "armory"]
+required_by = ["barracks"]
 +++
 팩토리는 테란의 주요 기계화 유닛 생산 건물로, 벌처, 시즈 탱크, 골리앗(아머리 건설 후)을 생산한다. 테란 메카닉 플레이의 핵심이자 스타포트의 선행 건물로, 테란 테크 트리에서 중요한 분기점이다. 팩토리는 머신 샵 애드온을 지원하며, 시즈 테크(탱크의 시즈 모드 활성화), 벌처용 스파이더 마인, 벌처 속도를 위한 이온 스러스터를 연구한다.
 

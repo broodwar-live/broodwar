@@ -13,8 +13,10 @@ hp = 300
 shields = 300
 armor = 0
 build_time = 30
+hotkey = "B→P"
 size = "large"
 produces = []
+required_by = ["nexus"]
 +++
 The Pylon is the fundamental Protoss support structure, providing 8 supply and generating a psionic matrix power field. Nearly all Protoss buildings (except the Nexus and Assimilator) must be placed within a Pylon's power field to function. If a Pylon is destroyed and nearby buildings lose power coverage, those buildings are immediately disabled — they cannot produce units, research upgrades, or perform any functions until power is restored by another Pylon.
 

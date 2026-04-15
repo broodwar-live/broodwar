@@ -58,6 +58,15 @@ Lurkers deal 20 Normal damage in a line splash — all units along the spine lin
 
 Detection is the primary counter — without it, Lurkers are invincible. Science Vessels with Irradiate can kill burrowed Lurkers. Siege Tanks outrange Lurkers from outside their attack range. Psionic Storm damages burrowed Lurkers. Air units are completely immune to Lurker attacks. Observers must be kept alive to maintain vision for the Protoss army.
 
+## Combat Data
+
+- **Cooldown**: 2.44s (37 frames)
+- 20 Normal splash damage in a line — passes through all units in the path
+- Range: 6; must be burrowed to attack; invisible without detection
+- Line splash damages both enemies and allies — careful positioning is required
+- **AI Note**: Lurkers auto-target the nearest enemy when burrowed; the line splash direction depends on target position, which can hit unintended units
+- **Notable**: Lurker placement at choke points creates near-impenetrable defenses against bio armies without detection
+
 ## Historical Notes
 
 The Lurker was added in Brood War and immediately became one of the most defining units in competitive play. The ZvT matchup fundamentally revolves around the Terran's ability to break Lurker defenses with detection and Siege Tanks versus the Zerg's ability to hold positions with Lurker-Zergling combinations. Savior's innovative Lurker holds against Terran pushes helped establish the modern ZvT meta.

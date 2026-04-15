@@ -58,6 +58,15 @@ Archons deal 30 Normal splash damage, hitting all nearby units around the target
 
 EMP Shockwave is the hardest counter — a single EMP strips all 350 shields, leaving the Archon at 10 HP. Yamato Cannon one-shots Archons. Long-range units like Siege Tanks can focus fire them from outside splash range. Dark Swarm blocks their attack. Despite splash damage, Archons struggle against heavily armored units like Ultralisks.
 
+## Combat Data
+
+- **Cooldown**: 1.32s (20 frames)
+- 30 Normal splash damage to ground and air
+- 350 shields + 10 HP = 360 total, but EMP removes 350 shields leaving only 10 HP
+- Shields regenerate at 2 per second — impressive sustain between fights
+- **AI Note**: Archons auto-attack nearest target; manual targeting on clumped units maximizes splash value
+- Formed by merging two High Templar — best done after storm energy is depleted
+
 ## Historical Notes
 
 The Archon merge from depleted High Templar is one of the most elegant design mechanics in Brood War. It creates a natural gameplay flow where Templar storm first, then merge into Archons for sustained combat — ensuring no unit is ever truly "wasted." Archon pushes in PvZ after storms clear initial Hydralisk waves have been a staple of professional play for decades.

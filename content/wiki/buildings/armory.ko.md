@@ -13,9 +13,11 @@ hp = 750
 shields = 0
 armor = 1
 build_time = 80
+hotkey = "B→A"
 size = "large"
 produces = []
 researches = ["vehicle-weapons", "vehicle-plating", "ship-weapons", "ship-plating"]
+required_by = ["factory"]
 +++
 아머리는 테란의 차량 및 함선 업그레이드 건물로, 차량 무기, 차량 장갑, 함선 무기, 함선 장갑을 연구한다(각각 최대 3단계). 팩토리에서 골리앗 생산과 스타포트에서 발키리 생산을 해제하는 데도 필요하다. 추가로 엔지니어링 베이에서 2-3단계 보병 업그레이드를 가능하게 하여, 바이오 중심 전략에서도 중요하다.
 

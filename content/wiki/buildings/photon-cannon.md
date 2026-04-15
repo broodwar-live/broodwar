@@ -13,8 +13,10 @@ hp = 100
 shields = 100
 armor = 0
 build_time = 50
+hotkey = "B→C"
 size = "large"
 produces = []
+required_by = ["forge"]
 +++
 The Photon Cannon is Protoss's static defense structure, attacking both ground and air units with 20 normal damage. It also functions as a detector, revealing cloaked and burrowed units within its detection range. The Photon Cannon requires a Forge before it can be built and must be placed within a Pylon's power field. Losing the Pylon powering a Photon Cannon disables it entirely.
 

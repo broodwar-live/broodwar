@@ -58,6 +58,16 @@ Irradiate deals 250 damage over roughly 30 seconds to a biological unit and dama
 
 Science Vessels are prime targets for Scourge, which can one-shot them. Feedback from Dark Archons deals damage equal to remaining energy, potentially killing a full-energy Vessel. Corsairs can chase and destroy them. Losing a Science Vessel with full energy is one of the most costly mistakes in competitive play.
 
+## Combat Data
+
+- **Irradiate**: 250 damage over 30s to target + nearby biological units, 75 energy
+- Irradiate splashes to adjacent bio units — one cast on a stacked Mutalisk flock kills multiple
+- **EMP Shockwave**: Drains all shields and energy in area, 100 energy
+- EMP on Archon removes 350 shields instantly, leaving only 10 HP
+- **Defensive Matrix**: 250 HP shield lasting ~90s, 100 energy
+- **AI Note**: Science Vessels are detectors — losing them means losing detection
+- **Notable**: Science Vessel irradiate timing defines TvZ mid-game (arriving before Mutalisk count peaks)
+
 ## Historical Notes
 
 The Science Vessel is often considered the most skill-intensive unit to use correctly. The timing of EMP against Protoss storms, or Irradiate against Mutalisk stacks, separates good Terran players from great ones. Flash's precise Science Vessel management is frequently cited as one of the key factors in his dominance across multiple matchups.

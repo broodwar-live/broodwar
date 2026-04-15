@@ -58,6 +58,15 @@ Each Devourer attack deals 25 Explosive damage and applies one Acid Spore to the
 
 Ground-based anti-air (Marines, Hydralisks, Goliaths) can attack Devourers while they cannot retaliate. Their slow attack speed means they deal low sustained DPS despite high per-hit damage. Massed Corsairs still overwhelm Devourers through sheer numbers. The opportunity cost of morphing a Mutalisk into a Devourer is significant — that Mutalisk can no longer harass.
 
+## Combat Data
+
+- **Cooldown**: 6.59s (100 frames) — extremely slow attack speed
+- 25 Explosive damage per hit; each hit applies Acid Spore debuff
+- Acid Spores reduce target armor by 1 per stack (max 9 stacks = -9 armor) and slow enemy air attack speed
+- Cannot attack ground units at all
+- 250 HP + 2 base armor — one of the most durable Zerg air units
+- **AI Note**: Devourers auto-attack nearest air target; spreading attacks across multiple enemies or focusing one target are both valid manual strategies
+
 ## Historical Notes
 
 The Devourer is one of the least-used units in competitive Brood War, sharing this distinction with the Scout. Its Acid Spore mechanic is theoretically interesting — stacking armor reduction creates unique interactions — but the slow attack speed and inability to hit ground make it impractical in most game states. When Devourers do appear in professional matches, they generate excitement precisely because of their rarity, and the armor debuff can create surprisingly decisive air battles.

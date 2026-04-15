@@ -60,6 +60,16 @@ Hydralisks deal 10 Explosive damage, meaning full damage to Large units, 75% to 
 
 Psionic Storm devastates Hydralisk groups — their Medium size and tendency to clump make them prime storm targets. Siege Tanks in siege mode deal massive Explosive damage. Reavers annihilate clumped Hydralisks with Scarabs. Dark Swarm blocks their ranged fire entirely. Speed Zealots can close the gap and overwhelm them in melee.
 
+## Combat Data
+
+- **Cooldown**: 0.99s (15 frames)
+- 10 Explosive damage: 100% vs Large, 75% vs Medium, 50% vs Small
+- Kills Marine (40 HP, Small) in 2 shots (10 × 0.50 = 5 per shot vs Small... wait, Normal type hits full, but Hydra is Explosive)
+- Actually: kills Marine in 8 shots (10 × 0.50 = 5 effective per shot vs Small)
+- Speed: 3.66 base → 5.49 with Muscular Augments; Range: 4 → 5 with Grooved Spines
+- **AI Note**: Hydralisks auto-attack nearest target; concave positioning must be manually set up to maximize simultaneous fire
+- Morphs into Lurker with Lurker Aspect upgrade — one of the most critical mid-game transitions
+
 ## Historical Notes
 
 Hydralisks were once the dominant unit in ZvP before the rise of Lurker-Defiler play. The evolution from pure Hydralisk compositions to Hydralisk-Lurker-Defiler reflected the increasing sophistication of Zerg strategy over the years. Jaedong's Hydralisk control, particularly his ability to maintain perfect concave formations while engaging Protoss deathballs, showcased the unit's potential at the highest level.

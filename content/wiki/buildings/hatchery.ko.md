@@ -13,8 +13,10 @@ hp = 1250
 shields = 0
 armor = 1
 build_time = 120
+hotkey = "B→H"
 size = "large"
 produces = ["drone", "zergling", "hydralisk", "mutalisk", "scourge", "queen", "ultralisk", "defiler", "overlord"]
+unlocks = ["spawning-pool", "evolution-chamber", "extractor"]
 +++
 해처리는 저그의 주요 기지 건물로, 메인 기지, 생산 시설, 보급 제공자의 역할을 동시에 수행한다. 수동적으로 라바를 생성하며(한 번에 최대 3개), 라바는 드론, 저글링, 히드라리스크, 뮤탈리스크 등 모든 저그 지상 및 공중 유닛으로 변태한다. 각 해처리는 1 보급을 제공한다(레어 또는 하이브로 2). 해처리는 레어(스포닝 풀 필요)로, 그리고 하이브(퀸즈 네스트 필요)로 변태하여 점진적으로 높은 단계의 저그 기술을 해제한다.
 

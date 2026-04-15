@@ -13,8 +13,11 @@ hp = 1300
 shields = 0
 armor = 1
 build_time = 70
+hotkey = "B→S"
 size = "large"
 produces = ["wraith", "dropship", "valkyrie", "science-vessel", "battlecruiser"]
+unlocks = ["science-facility"]
+required_by = ["factory"]
 +++
 스타포트는 테란의 공중 유닛 생산 시설로, 레이스, 드랍십, 발키리(아머리 필요), 사이언스 베슬(사이언스 퍼실리티 필요), 배틀크루저(사이언스 퍼실리티 + 피직스 랩 필요)를 생산한다. 컨트롤 타워 애드온은 레이스의 클로킹 필드 연구를 가능하게 하며 특정 고급 유닛 생산에 필요하다. 스타포트는 사이언스 퍼실리티의 선행 건물이다.
 

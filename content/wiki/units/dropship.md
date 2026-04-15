@@ -58,6 +58,14 @@ Dropships hold 8 supply of cargo, with unit sizes varying: Marines take 1 slot, 
 
 Dropships are fragile against focused anti-air. Scourge pairs one-shot them (110x2 = 220 vs 150 HP). Corsairs can chase them down easily. Hydralisks and Marines on patrol at bases prevent uncontested drops. Losing a loaded Dropship is catastrophic — the units inside are destroyed too.
 
+## Combat Data
+
+- **Capacity**: 8 slots (Marines=1, Tanks=4, Goliaths=2)
+- Can carry 2 Siege Tanks or 8 Marines or 4 Goliaths
+- Speed: 5.47 — faster than most ground units
+- **AI Note**: Dropships have no auto-micro — must be manually controlled for every drop
+- **Notable**: Tank drops on high ground are a defining TvT and TvP strategy
+
 ## Historical Notes
 
 Drop play is synonymous with Terran aggression. NaDa earned the nickname "Genius Terran" partly through his innovative drop strategies that kept opponents constantly reacting. The multi-pronged drop style that defines modern Terran play evolved throughout the 2000s, becoming one of the most micro-demanding and spectacular aspects of competitive Brood War.

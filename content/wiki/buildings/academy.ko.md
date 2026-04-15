@@ -13,9 +13,11 @@ hp = 600
 shields = 0
 armor = 1
 build_time = 80
+hotkey = "B→A"
 size = "large"
 produces = []
 researches = ["stim-pack", "u-238-shells"]
+required_by = ["barracks"]
 +++
 아카데미는 배럭에서 파이어뱃, 메딕, 고스트 생산을 해제하는 핵심 테란 테크 건물이다. 게임에서 가장 중요한 바이오 업그레이드 두 가지를 연구한다: 마린과 파이어뱃이 HP를 소모하여 공격 및 이동 속도를 높이는 스팀팩, 그리고 마린의 공격 사거리를 1 늘리는 U-238 탄환이다. 아카데미는 또한 레스토레이션과 옵티컬 플레어를 포함한 메딕 능력을 연구한다.
 

@@ -59,6 +59,16 @@ Each Zealot attack hits twice for 8 damage each (16 total), and both hits apply 
 
 Zealots without Leg Enhancements are easily kited by any ranged unit. Lurkers devastate Zealot groups with burrowed spine attacks. Vultures with Spider Mines can shred Zealot packs. Air units are completely safe from Zealots. Firebats in bunkers handle Zealots cost-effectively in the early game.
 
+## Combat Data
+
+- **Cooldown**: 1.45s (22 frames)
+- Attacks twice per swing for 8×2 = 16 Normal damage total
+- Kills Marine (40 HP) in 3 attacks (48 damage)
+- Speed: 4.0 base → 6.0 with Leg Enhancements
+- 2 Zealots beat 3 Marines without Stim
+- **AI Note**: Zealots auto-attack the nearest enemy; manual targeting to surround key units improves efficiency
+- Small-sized: takes only 50% damage from Explosive attacks (Siege Tanks)
+
 ## Historical Notes
 
 The Zealot has been central to Protoss identity since StarCraft's launch. Bisu's revolutionary PvZ strategy placed heavy emphasis on speed Zealot flanks combined with Corsair air control, fundamentally changing how Protoss approached the matchup. The sound of Zealot legs engaging remains one of the most recognizable audio cues in competitive Brood War.

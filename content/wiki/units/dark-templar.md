@@ -58,6 +58,15 @@ Dark Templar deal 40 Normal damage — one of the highest per-hit damages in the
 
 Any detector completely counters Dark Templar: Comsat scan, Observers, Overlords, Photon Cannons, Spore Colonies, and Science Vessels. Once revealed, their melee range makes them vulnerable to focus fire. Spider Mines detect and kill DTs. Scanner Sweep reveals them temporarily, allowing Marines or Vultures to clean up.
 
+## Combat Data
+
+- **Cooldown**: 1.98s (30 frames)
+- 40 Normal damage per hit — one of the highest per-hit damages in the game
+- One-shots all workers (Probes, SCVs, Drones) in a single hit
+- Kills Marines (40 HP) in 2 hits
+- Permanently cloaked — no energy cost, always invisible
+- **AI Note**: Dark Templar will auto-attack the nearest enemy, potentially revealing their presence prematurely; manual control preserves stealth
+
 ## Historical Notes
 
 The DT rush has been one of the most exciting all-in strategies throughout BW history. The tension of watching whether a Terran will get their Comsat Station up in time to detect incoming DTs has created countless memorable moments in professional play. Bisu famously used DTs as part of his broader PvZ strategy, sending them into Zerg bases to force Overlord repositioning.

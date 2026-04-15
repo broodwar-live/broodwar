@@ -59,6 +59,15 @@ Vultures deal 20 Concussive damage — full against Small units, 50% against Med
 
 Vultures are fragile at 80 HP with 0 armor and are destroyed quickly by focused fire. Corsairs and Mutalisks can chase them down from the air. Dragoons, despite taking reduced Concussive damage, can kill Vultures with their superior range. Dark Swarm negates Vulture attacks entirely.
 
+## Combat Data
+
+- **Cooldown**: 1.98s (30 frames)
+- 20 Concussive: kills Zergling (Small) in 2 shots, but only 10 vs Medium, 5 vs Large
+- Spider Mine: 125 splash damage, 3 mines per Vulture
+- Fastest ground unit at 6.4 speed (8.53 with Ion Thrusters)
+- **AI Note**: Vultures will chase targets into enemy armies — always manually retreat
+- Spider Mines can be triggered and dodged by fast units; placement at chokes is optimal
+
 ## Historical Notes
 
 Flash's legendary Vulture micro in TvZ helped define an era of mech dominance. His ability to keep Vultures alive while harassing across multiple bases simultaneously showcased the unit's potential at the highest level. The Spider Mine's area denial has been a defining mechanic of TvT positional warfare since the game's earliest days.

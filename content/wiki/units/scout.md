@@ -57,6 +57,16 @@ The air attack deals 28 Explosive damage, meaning full damage against Large air 
 
 Almost everything counters the Scout from a cost-efficiency perspective. Corsairs with splash damage outperform Scouts against clumped air units for less cost. Hydralisks and Marines provide cheaper anti-air from the ground. Devourers with acid spore stacking can neutralize Scouts. Goliaths with Charon Boosters outrange and outdamage them.
 
+## Combat Data
+
+- **Ground**: 8 Normal damage, 1.98s cooldown (30 frames)
+- **Air**: 28 Explosive damage, 1.98s cooldown (30 frames)
+- Overpriced at 275/125 — Corsair is better for anti-air in nearly every scenario
+- 28 Explosive vs Small air (Mutalisks): only 14 effective damage per shot
+- Speed: 6.67 — fast but not enough to justify the cost
+- **AI Note**: Scouts will auto-attack the nearest air target; their weak ground attack makes them nearly useless against ground armies
+- Rarely used in competitive play — widely considered the least cost-efficient unit in Brood War
+
 ## Historical Notes
 
 The Scout is widely considered the most poorly balanced unit in Brood War — not because it is weak in absolute terms, but because its cost makes it strictly inferior to alternatives in every realistic scenario. Despite periodic discussions in the community about Scout buffs, Blizzard never adjusted its cost, leaving it as a fascinating design artifact. The Scout serves as a reminder that raw stats alone do not determine a unit's competitive viability.

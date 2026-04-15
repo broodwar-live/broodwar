@@ -13,8 +13,10 @@ hp = 750
 shields = 750
 armor = 1
 build_time = 120
+hotkey = "B→N"
 size = "large"
 produces = ["probe"]
+unlocks = ["gateway", "forge", "pylon", "assimilator"]
 +++
 넥서스는 프로토스의 주요 기지 건물로, 프로브를 생산하고 모든 프로토스 기지의 경제적 기반 역할을 한다. 각 넥서스는 주변 건물에 에너지를 공급하는 작은 사이오닉 매트릭스를 생성하지만, 대부분의 건물 배치에는 여전히 파일런이 필요하다. 넥서스에는 특수 능력이나 업그레이드가 없어, 세 종족의 메인 기지 건물 중 가장 단순하다.
 

@@ -58,6 +58,15 @@ Spawn Broodling costs 150 energy and instantly kills any non-robotic, non-Archon
 
 Queens have no attack, making them useless in direct combat. Their spells require positioning the fragile Queen near enemies, risking her life. Anti-air fire kills Queens quickly. Restoration from Medics removes Parasite. The high energy cost of Spawn Broodling means Queens need time to accumulate energy between casts. Their niche role makes them a luxury most Zerg players cannot afford to invest in.
 
+## Combat Data
+
+- **Spawn Broodling**: Instant-kills one non-robotic ground unit, 150 energy — spawns 2 timed Broodlings
+- **Ensnare**: Slows all units in area + reveals cloaked units, 75 energy
+- **Parasite**: Permanent vision on target unit, 75 energy — only removed by killing the unit or Restoration
+- No attack — purely a spellcaster
+- **AI Note**: Queens have no auto-attack and must be manually controlled for every spell; they will idle if not given orders
+- Spawn Broodling cannot target robotic units (Dragoons, Reavers, Shuttles), buildings, or air units
+
 ## Historical Notes
 
 While rarely seen in modern competitive play, Queen usage has produced memorable moments when players pull them out unexpectedly. Spawn Broodling on a key Siege Tank during a critical push can swing an entire game. The Queen represents one of those units that, while almost never optimal, offers creative options for players willing to experiment with unconventional strategies.

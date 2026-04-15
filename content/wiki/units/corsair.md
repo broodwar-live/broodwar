@@ -58,6 +58,15 @@ Each Corsair attack deals 5 Explosive damage with splash, meaning nearby air uni
 
 Corsairs cannot attack ground units, making them helpless against ground-based anti-air. Hydralisks, Marines, and Goliaths can shoot them down freely. Scourge, while vulnerable to Corsair splash, can overwhelm them in sufficient numbers. Devourers with acid spore stacking reduce Corsair armor and attack speed. Without ground support, Corsairs cannot win games alone.
 
+## Combat Data
+
+- **Cooldown**: 0.53s (8 frames) — extremely fast attack speed
+- 5 Explosive splash damage per hit to air units
+- Kills Overlords fast due to splash hitting nearby Overlords
+- Disruption Web: 20s duration, prevents all ground attacks under its area, 125 energy
+- **AI Note**: Corsairs auto-attack the nearest air unit; patrol micro over bases auto-intercepts incoming Mutalisks
+- Cannot attack ground — entirely helpless against ground-based anti-air
+
 ## Historical Notes
 
 The Corsair is perhaps the single most transformative unit addition in Brood War. Bisu's pioneering Corsair-Reaver style in PvZ broke sAviOr's dominance and proved that Protoss could compete aggressively against Zerg without relying on Carriers. The "Bisu Build" became synonymous with Corsair-based PvZ and fundamentally changed the metagame. Corsairs remain central to PvZ strategy to this day.

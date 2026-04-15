@@ -13,8 +13,10 @@ hp = 1250
 shields = 0
 armor = 1
 build_time = 120
+hotkey = "B→H"
 size = "large"
 produces = ["drone", "zergling", "hydralisk", "mutalisk", "scourge", "queen", "ultralisk", "defiler", "overlord"]
+unlocks = ["spawning-pool", "evolution-chamber", "extractor"]
 +++
 The Hatchery is the primary Zerg base structure, serving simultaneously as the main base, production facility, and supply provider. It passively generates larvae (up to 3 at a time), which morph into all Zerg ground and air units including Drones, Zerglings, Hydralisks, Mutalisks, and more. Each Hatchery provides 1 supply (2 as Lair or Hive). The Hatchery morphs into a Lair (requiring a Spawning Pool) and then into a Hive (requiring a Queen's Nest), unlocking progressively higher tiers of Zerg technology.
 

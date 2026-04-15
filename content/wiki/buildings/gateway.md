@@ -13,8 +13,11 @@ hp = 500
 shields = 500
 armor = 1
 build_time = 60
+hotkey = "B→G"
 size = "large"
 produces = ["zealot", "dragoon", "high-templar", "dark-templar"]
+unlocks = ["cybernetics-core", "citadel-of-adun"]
+required_by = ["nexus"]
 +++
 The Gateway is the primary Protoss military production building, producing Zealots by default, Dragoons once a Cybernetics Core is built, and High Templar and Dark Templar once Templar Archives are completed. It is the first military structure available to Protoss and the most important production building throughout the game. Unlike Terran's Barracks, the Gateway has no add-ons.
 

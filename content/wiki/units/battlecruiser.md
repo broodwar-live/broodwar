@@ -57,6 +57,15 @@ Battlecruisers deal 25 Normal damage with each attack, hitting both ground and a
 
 Massed Goliaths with Charon Boosters are the most cost-efficient counter. Scourge pairs (2 Scourge = 220 damage) can rapidly destroy Battlecruisers. EMP drains the energy needed for Yamato Cannon. Mind Control from Dark Archons can steal this expensive unit. Feedback from Dark Archons deals massive damage if the Battlecruiser has full energy.
 
+## Combat Data
+
+- **Cooldown**: 1.98s (30 frames)
+- 25 Normal damage to both ground and air
+- Yamato Gun: 260 damage to single target, 150 energy, ~2.6s cast time
+- Yamato one-shots: Science Vessel (200 HP), Shuttle (80+60 shields), most Protoss units below Archon
+- **AI Note**: Battlecruisers are very slow — they cannot disengage from fights easily
+- Extremely rare in competitive play due to high cost (400/300) and slow production
+
 ## Historical Notes
 
 While rare in modern play, Battlecruisers have produced legendary moments. The occasional Battlecruiser transition in a long TvT game creates some of the most exciting climaxes in Brood War. Their presence in the game represents the ultimate expression of Terran air power, even if competitive meta rarely allows the investment to reach that point.

@@ -13,8 +13,10 @@ hp = 1500
 shields = 0
 armor = 1
 build_time = 120
+hotkey = "B→C"
 size = "large"
 produces = ["scv"]
+unlocks = ["barracks", "supply-depot", "engineering-bay", "refinery"]
 +++
 커맨드 센터는 테란의 메인 기지 건물로, 건설로봇(SCV)을 생산하고 모든 기지의 경제적 중심 역할을 한다. 테란 플레이어가 처음 시작할 때 가지고 있는 건물이며, 모든 테란 테크의 기반이 된다. 커맨드 센터는 상호 배타적인 두 가지 애드온을 지원한다: 맵 어디서든 즉각적인 탐지와 정찰이 가능한 스캐너 스윕을 제공하는 컴샛 스테이션, 그리고 고스트의 핵 공격을 위한 핵 미사일을 제조하는 뉴클리어 사일로이다.
 

@@ -49,6 +49,16 @@ Each Infested Terran costs 100/50 and deals 500 Explosive splash damage upon det
 
 Any ranged unit can kill Infested Terrans before they reach their target — 60 HP makes them very fragile. Detection reveals burrowed Infested Terrans. Their moderate speed means they can be kited. The real counter is simply preventing the Queen from infesting the Command Center in the first place, which normal gameplay naturally ensures.
 
+## Combat Data
+
+- 500 Explosive damage on impact (suicide unit) — highest single-instance damage in the game
+- 500 Explosive vs Large = 500 damage; vs Medium = 375; vs Small = 250
+- Must be produced from an Infested Command Center (requires Queen to infest a damaged CC)
+- 60 HP, 0 armor — extremely fragile; dies to minimal ranged fire before reaching target
+- Can burrow with Burrow upgrade for ambush detonations
+- **AI Note**: Infested Terrans auto-attack (auto-detonate on) nearest enemy; manual targeting on building clusters or worker lines maximizes splash value
+- Extremely rare in competitive play — obtaining an Infested Command Center is nearly impossible against competent opponents
+
 ## Historical Notes
 
 The Infested Terran is arguably the most thematically interesting unit in Brood War — a horrifying fusion of Terran and Zerg biology — but its near-total absence from competitive play makes it a design curiosity. When Infested Terrans do appear in showmatches or unusual game situations, they always generate massive excitement from spectators. The 500-damage explosion is one of the most visually and mechanically satisfying moments in the game, made all the more special by its extreme rarity.

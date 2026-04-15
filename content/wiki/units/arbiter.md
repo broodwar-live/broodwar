@@ -58,6 +58,15 @@ The passive cloaking field hides all friendly non-Arbiter units near the Arbiter
 
 Lockdown from Ghosts freezes the Arbiter, removing the cloaking field and preventing spellcasting. EMP drains energy, preventing Recall and Stasis. Yamato Cannon one-shots Arbiters. Science Vessels reveal cloaked units under the Arbiter's field. Focus fire on the Arbiter itself removes all benefits it provides.
 
+## Combat Data
+
+- Passive cloaking field hides all nearby friendly units (except other Arbiters)
+- **Recall**: 150 energy — teleports units in an area to the Arbiter's location
+- **Stasis Field**: 100 energy — freezes all units (friend and foe) for ~40 seconds
+- 10 Explosive damage attack to ground and air — minimal combat value
+- **AI Note**: Arbiters auto-attack nearby enemies, which can reveal their position prematurely; manual control is essential
+- Lockdown from Ghosts freezes the Arbiter, disabling its cloaking field and preventing spellcasting
+
 ## Historical Notes
 
 Arbiter Recalls are among the most iconic plays in Brood War history. The tension of watching an Arbiter approach a Terran base — will the Recall succeed or will Lockdown stop it? — has defined countless championship moments. Jangbi was famous for his aggressive Arbiter play, using Recalls to break entrenched Terran positions in spectacular fashion. The Arbiter represents the pinnacle of Protoss strategic play.

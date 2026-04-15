@@ -13,9 +13,11 @@ hp = 850
 shields = 0
 armor = 1
 build_time = 60
+hotkey = "B→I"
 size = "large"
 produces = []
 researches = ["irradiate"]
+required_by = ["starport"]
 +++
 The Science Facility is Terran's advanced technology building, enabling Science Vessel production at the Starport and researching Irradiate and EMP Shockwave. It supports two mutually exclusive add-ons: the Physics Lab, which unlocks Battlecruiser production and Yamato Cannon research, and Covert Ops, which unlocks Ghost production (along with Academy), Lockdown, and Personnel Cloaking research.
 

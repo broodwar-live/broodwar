@@ -13,9 +13,11 @@ hp = 600
 shields = 0
 armor = 1
 build_time = 80
+hotkey = "B→A"
 size = "large"
 produces = []
 researches = ["stim-pack", "u-238-shells"]
+required_by = ["barracks"]
 +++
 The Academy is a key Terran tech building that unlocks Firebat, Medic, and Ghost production at the Barracks. It researches two of the most important bio upgrades in the game: Stim Pack, which allows Marines and Firebats to sacrifice HP for increased attack and movement speed, and U-238 Shells, which extends Marine attack range by 1. The Academy also researches Medic abilities including Restoration and Optical Flare.
 

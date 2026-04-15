@@ -59,6 +59,17 @@ In Siege Mode, tanks deal 70 Explosive splash damage, meaning 100% to Large, 75%
 
 Tanks are vulnerable to air units (they cannot shoot air in Siege Mode), Guardians that outrange them, and Dark Swarm which blocks their ranged fire. In TvT, drops behind tank lines bypass their defensive advantage. Speed Zealots can close the gap to exploit the minimum range dead zone.
 
+## Combat Data
+
+- **Tank Mode**: 30 Normal damage, 2.44s cooldown, range 7
+- **Siege Mode**: 70 Explosive splash, 2.44s cooldown, range 12 (min range 2)
+- Siege Mode kills Zealot (160 total) in 3 shots with splash
+- Siege Mode kills Hydralisk in 2 shots (70 × 0.75 = 52.5 per shot vs Medium)
+- **Friendly fire**: Siege Tanks damage own units in splash radius — spacing is critical
+- Siege-up time: 79 frames (~5.2s), Unsiege: 75 frames (~4.9s)
+- **AI Note**: Tanks in siege mode prioritize closest target, not highest value — manual targeting needed
+- **Notable**: Flash's tank positioning on Fighting Spirit defined modern TvZ mech play
+
 ## Historical Notes
 
 The Siege Tank has been the centerpiece of some of the most tactical games in BW history. Flash vs. Jaedong TvZ games often hinged on tank positioning versus Defiler Dark Swarm timing. The "tank push" — slowly advancing a siege line with Vulture and Goliath support — is one of the most iconic strategies in all of competitive StarCraft.

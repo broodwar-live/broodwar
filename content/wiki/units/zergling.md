@@ -60,6 +60,15 @@ Zerglings deal 5 Normal damage per hit with an extremely fast attack cooldown of
 
 Zerglings are hard-countered by Firebats (Concussive splash), Siege Tanks (area splash), and Lurkers (line splash). Wall-offs at ramps prevent early Zergling rushes. High Templar storms devastate clumped Zerglings. Any air unit is immune to Zerglings. Vulture Spider Mines can destroy entire Zergling groups.
 
+## Combat Data
+
+- **Cooldown**: 0.53s (8 frames) — fastest attack in the game · 0.40s with Adrenal Glands (6 frames)
+- 5 Normal damage per hit; produced 2 per egg for 50 minerals (25 minerals each)
+- Speed: 5.49 base → 8.24 with Metabolic Boost
+- 6 Zerglings surround and kill a Marine before it can deal lethal return damage
+- **AI Note**: Zerglings auto-attack nearest target; surrounding requires manual positioning to maximize the number attacking simultaneously
+- **Notable**: Jaedong's Zergling surrounds and run-bys set the standard for aggressive Zerg play
+
 ## Historical Notes
 
 The "6-pool" (earliest possible Zergling rush) has been a feared cheese strategy since StarCraft's launch. In the modern era, Jaedong's masterful Zergling control — surrounding entire armies, executing perfect run-bys, and maintaining map presence — set the standard for Zerg play. The Zergling remains the most-produced unit in competitive Brood War across all three races.

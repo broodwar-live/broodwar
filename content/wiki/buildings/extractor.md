@@ -13,8 +13,10 @@ hp = 750
 shields = 0
 armor = 1
 build_time = 40
+hotkey = "B→E"
 size = "large"
 produces = []
+required_by = ["hatchery"]
 +++
 The Extractor is the Zerg gas harvesting structure, built on a Vespene Geyser to enable gas collection. Like all Zerg buildings, constructing an Extractor consumes the Drone that builds it, meaning the Zerg player temporarily loses a worker and 50 minerals in the process. Three Drones assigned to an Extractor is the optimal number for maximum gas income.
 

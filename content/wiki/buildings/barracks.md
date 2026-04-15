@@ -13,8 +13,11 @@ hp = 1000
 shields = 0
 armor = 1
 build_time = 80
+hotkey = "B→B"
 size = "large"
 produces = ["marine", "firebat", "medic", "ghost"]
+unlocks = ["factory", "bunker", "academy"]
+required_by = ["command-center"]
 +++
 The Barracks is the first military production building available to Terran and the gateway to all infantry units. It produces Marines by default, with Firebats and Medics unlocked once an Academy is built, and Ghosts available after an Academy and Covert Ops are completed. The Barracks is a prerequisite for the Factory, making it essential for every Terran build order regardless of strategy.
 

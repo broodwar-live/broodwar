@@ -13,9 +13,12 @@ hp = 850
 shields = 0
 armor = 1
 build_time = 60
+hotkey = "B→E"
 size = "large"
 produces = []
 researches = ["infantry-weapons", "infantry-armor"]
+unlocks = ["missile-turret"]
+required_by = ["command-center"]
 +++
 The Engineering Bay is Terran's infantry upgrade building, researching Infantry Weapons and Infantry Armor upgrades (up to level 3 each, with an Armory required for levels 2 and 3). It is also the prerequisite for constructing Missile Turrets, providing Terran with static anti-air defense and detection capability.
 

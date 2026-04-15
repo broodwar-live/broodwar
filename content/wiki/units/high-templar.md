@@ -58,6 +58,15 @@ Psionic Storm deals 112 damage over approximately 3 seconds to all units in the 
 
 EMP Shockwave from Science Vessels drains Templar energy, completely neutralizing their storm potential. Ghosts' Lockdown does not work on biological units, but EMP does. Feedback from enemy Dark Archons kills Templar by dealing damage equal to their energy. Fast stimmed Marines can snipe Templar before they cast. Spreading units reduces storm effectiveness dramatically.
 
+## Combat Data
+
+- **Psionic Storm**: 112 damage over ~3 seconds in area of effect, ignores armor
+- Storm interval: 1.26s between damage ticks
+- Storms do not stack — casting two on the same area does not double damage (Patch 1.08)
+- Storm cost: 75 energy (starts with 50, needs 75 — cannot storm immediately on production)
+- Two High Templar merge into an Archon when energy is depleted
+- **AI Note**: High Templar have no auto-attack; they must be manually controlled for every storm cast
+
 ## Historical Notes
 
 The battle between Terran Marine splitting and Protoss storm placement has defined PvT for over two decades. Bisu's devastating storm drops in his legendary PvZ games against sAviOr helped establish the Corsair-Templar style that revolutionized the matchup. Storm usage is widely considered the single highest-impact skill in competitive Protoss play.

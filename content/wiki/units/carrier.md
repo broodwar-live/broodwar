@@ -58,6 +58,15 @@ Interceptors deal 6 Normal damage each and are launched sequentially from the Ca
 
 Massed Goliaths with Charon Boosters are the primary counter, outranging Carriers and dealing heavy Explosive damage. Scourge can rapidly destroy Interceptors or target the Carrier itself. EMP strips shields (150) from Carriers. Corsairs counter Interceptors efficiently with splash. Without Arbiter support, Carriers are vulnerable to focused anti-air.
 
+## Combat Data
+
+- Interceptors attack independently: 6 Normal damage each, max 8 Interceptors
+- Full Carrier = 48 damage per volley across 8 simultaneous damage sources
+- Each Interceptor costs 25 minerals to build; destroyed Interceptors must be replaced
+- 4 base armor shrugs off low-damage attacks (e.g., individual Marine shots)
+- **AI Note**: Interceptors auto-launch and auto-return; Carrier leashing (moving Carrier back while Interceptors engage) keeps the hull safe
+- Carrier play requires reaching a critical mass of 4-6 to be effective
+
 ## Historical Notes
 
 The Carrier was the backbone of PvZ before Bisu's Corsair revolution. Players like Stork and Jangbi built their PvZ styles around Carrier-based late games. While less dominant today, the Carrier remains one of the most visually spectacular and thematically satisfying units in Brood War. Seeing a Carrier fleet in action — Interceptors swarming out in waves — is one of the game's iconic sights.

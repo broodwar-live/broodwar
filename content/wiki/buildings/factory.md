@@ -13,8 +13,11 @@ hp = 1250
 shields = 0
 armor = 1
 build_time = 80
+hotkey = "B→F"
 size = "large"
 produces = ["vulture", "siege-tank", "goliath"]
+unlocks = ["starport", "armory"]
+required_by = ["barracks"]
 +++
 The Factory is Terran's primary mechanized unit production building, producing Vultures, Siege Tanks, and Goliaths (once an Armory is constructed). It is the core of Terran mech play and a prerequisite for the Starport, making it a critical junction in the Terran tech tree. The Factory supports the Machine Shop add-on, which researches Siege Tech (enabling Siege Mode for Tanks), Spider Mines for Vultures, and Ion Thrusters for Vulture speed.
 

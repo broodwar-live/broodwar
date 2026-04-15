@@ -58,6 +58,16 @@ Firebats deal Concussive damage, meaning full damage to Small units, 50% to Medi
 
 Firebats are hard-countered by ranged units, especially Dragoons and Hydralisks, which can kite them indefinitely. Their melee range makes them vulnerable to anything that can attack from distance. Lurkers are particularly problematic since Firebats must walk through the spine line to engage.
 
+## Combat Data
+
+- **Cooldown**: 1.45s (22 frames) · 0.73s with Stim
+- Deals 16 Concussive damage per attack (8×2 hits) in a line splash
+- Full damage vs Small (Zerglings, Marines): kills Zergling in 3 attacks
+- 50% vs Medium (Hydralisk, Vulture): 8 effective damage per attack
+- 25% vs Large (Ultralisk, Dragoon): 4 effective damage per attack
+- **AI Note**: Firebats must be manually positioned for optimal splash angle; auto-attack positioning is often suboptimal
+- Splash damage passes through Dark Swarm, making Firebats one of few ranged-adjacent counters to it
+
 ## Historical Notes
 
 While rarely the star of a strategy, Firebats have defined early-game TvZ for decades. The 2-Rax Firebat bunker rush on maps like Fighting Spirit became a standard aggressive opener. Their role has remained consistent — a niche defensive and early aggression tool rather than a mainline combat unit.

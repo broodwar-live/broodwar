@@ -13,9 +13,11 @@ hp = 600
 shields = 0
 armor = 1
 build_time = 80
+hotkey = "B→U"
 size = "large"
 produces = []
 researches = ["chitinous-plating", "anabolic-synthesis"]
+required_by = ["hatchery"]
 +++
 The Ultralisk Cavern is a late-game Zerg tech building that enables Ultralisk production from the Hatchery. It researches two upgrades specific to Ultralisks: Chitinous Plating (+2 base armor, stacking with Carapace upgrades for extremely high damage reduction) and Anabolic Synthesis (increased Ultralisk movement speed). The Ultralisk Cavern requires a Hive, placing it at the highest tier of the Zerg tech tree.
 

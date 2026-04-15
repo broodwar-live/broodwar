@@ -13,8 +13,11 @@ hp = 1300
 shields = 0
 armor = 1
 build_time = 70
+hotkey = "B→S"
 size = "large"
 produces = ["wraith", "dropship", "valkyrie", "science-vessel", "battlecruiser"]
+unlocks = ["science-facility"]
+required_by = ["factory"]
 +++
 The Starport is Terran's air unit production facility, producing Wraiths, Dropships, Valkyries (requiring an Armory), Science Vessels (requiring a Science Facility), and Battlecruisers (requiring a Science Facility with Physics Lab). The Control Tower add-on enables Cloaking Field research for Wraiths and is required for producing certain advanced units. The Starport is a prerequisite for the Science Facility.
 

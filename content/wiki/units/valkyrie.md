@@ -57,6 +57,14 @@ Each Valkyrie attack fires 8 Halo Rockets, each dealing 6 Explosive damage for a
 
 Valkyries cannot attack ground, making them helpless against ground-based anti-air like Marines, Hydralisks, and Goliaths. Scourge in sufficient numbers can overwhelm them before splash damage clears them. Devourers with acid spore stacking can weaken Valkyries over time. Their high cost (250/125) means losing them is a significant economic setback.
 
+## Combat Data
+
+- **Cooldown**: 4.22s (64 frames) — very slow attack speed
+- Fires 2 missiles dealing 6 damage each, with splash hitting multiple air units
+- Devastating vs stacked air units (Mutalisk flocks, Overlord clusters)
+- Cannot attack ground units at all
+- **AI Note**: Valkyries' slow attack speed means they're inefficient vs single targets — they excel only vs groups
+
 ## Historical Notes
 
 The Valkyrie was added in Brood War and initially underutilized. As the TvZ meta evolved, players discovered the Valkyrie's effectiveness at shutting down Mutalisk play and Overlord scouting, carving out a defined role in the matchup. The "Valkyrie first" build in TvZ became a recognizable response to fast Mutalisk openings.

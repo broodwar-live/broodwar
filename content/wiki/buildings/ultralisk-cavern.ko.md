@@ -13,9 +13,11 @@ hp = 600
 shields = 0
 armor = 1
 build_time = 80
+hotkey = "B→U"
 size = "large"
 produces = []
 researches = ["chitinous-plating", "anabolic-synthesis"]
+required_by = ["hatchery"]
 +++
 울트라리스크 캐번은 해처리에서 울트라리스크 생산을 가능하게 하는 후반 저그 테크 건물이다. 울트라리스크 전용 두 가지 업그레이드를 연구한다: 키틴질 도금(기본 방어력 +2, 갑피 업그레이드와 중첩되어 매우 높은 피해 감소)과 아나볼릭 신테시스(울트라리스크 이동 속도 증가). 울트라리스크 캐번은 하이브가 필요하여, 저그 테크 트리의 최상위 단계에 위치한다.
 

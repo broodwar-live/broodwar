@@ -13,9 +13,12 @@ hp = 750
 shields = 0
 armor = 1
 build_time = 80
+hotkey = "B→S"
 size = "large"
 produces = []
 researches = ["metabolic-boost", "adrenal-glands"]
+unlocks = ["hydralisk-den"]
+required_by = ["hatchery"]
 +++
 스포닝 풀은 저그의 첫 번째이자 가장 기본적인 테크 건물로, 해처리에서 저글링 생산을 가능하게 하고 다른 모든 저그 테크 건물의 선행 건물 역할을 한다. 대사 촉진(저글링 속도 업그레이드, 흔히 "스피드" 또는 "링 스피드"로 불림)과 아드레날 글랜드(저글링 공격 속도, 하이브 필요)를 연구한다. 스포닝 풀은 또한 크립 콜로니에서 선큰 콜로니로 변태하기 전에, 그리고 해처리가 레어로 변태하기 전에 필요하다.
 

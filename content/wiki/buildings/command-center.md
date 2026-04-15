@@ -13,8 +13,10 @@ hp = 1500
 shields = 0
 armor = 1
 build_time = 120
+hotkey = "B→C"
 size = "large"
 produces = ["scv"]
+unlocks = ["barracks", "supply-depot", "engineering-bay", "refinery"]
 +++
 The Command Center is Terran's main base structure, responsible for producing SCVs and serving as the economic heart of every base. It is the first building a Terran player starts with and the foundation upon which all Terran tech is built. The Command Center supports two mutually exclusive add-ons: the Comsat Station, which provides Scanner Sweep for instant detection and scouting anywhere on the map, and the Nuclear Silo, which manufactures nuclear missiles for Ghost strikes.
 

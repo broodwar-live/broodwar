@@ -13,9 +13,11 @@ hp = 850
 shields = 0
 armor = 1
 build_time = 60
+hotkey = "B→D"
 size = "large"
 produces = []
 researches = ["consume", "plague"]
+required_by = ["hatchery"]
 +++
 The Defiler Mound is a late-game Zerg tech building that enables Defiler production from the Hatchery. It researches two critical abilities: Consume (sacrifice a friendly Zerg unit to restore 50 Defiler energy) and Plague (deals 300 damage over time to all units in an area, reducing them to a minimum of 1 HP). Defilers also have the innate Dark Swarm ability, which creates a cloud that makes units inside immune to ranged attacks. The Defiler Mound requires a Hive.
 

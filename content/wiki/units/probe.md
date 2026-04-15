@@ -58,6 +58,15 @@ Probes deal 5 Normal damage in melee, the weakest of all worker units. They have
 
 Probes are the weakest workers in combat, losing fights to SCVs and Drones one-on-one. Any military unit kills Probes quickly. Worker pulls against Protoss are less effective because Probes have shields that need to be burned through. Probe cannon rushes are countered by pulling workers to destroy the Pylon or Cannon before it finishes warping in.
 
+## Combat Data
+
+- **Cooldown**: 1.45s (22 frames)
+- 5 Normal damage — weakest worker in combat (loses 1v1 to SCV and Drone)
+- 20 HP + 20 shields = 40 total effective HP
+- Warps in buildings then returns to mining (does not stay to construct)
+- Mineral walk micro allows scouting through enemy units and wall-offs
+- **AI Note**: Probes auto-attack nearest enemy; mineral walk (Return Cargo) must be manually triggered to pass through units
+
 ## Historical Notes
 
 The cannon rush has been a constant in competitive Brood War, from the earliest days through the modern era. The Probe's ability to warp in buildings and immediately return to work creates the unique "cannon rush" dynamic where a single Probe can build an entire offensive forward base. Probe mineral walking is one of the subtler micro techniques in the game, occasionally appearing in professional matches at decisive moments.

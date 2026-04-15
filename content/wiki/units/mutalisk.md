@@ -58,6 +58,15 @@ The Glave Wurm deals 9 Normal damage to the primary target, then bounces to deal
 
 Corsairs with splash damage are the hardest counter — a few Corsairs can devastate a stacked Mutalisk flock. Valkyries with Halo Rockets shred Mutalisk groups. Irradiate from Science Vessels kills Mutalisks and damages nearby ones. Marines in sufficient numbers with Stim can overwhelm Mutalisks. Archons with splash damage are dangerous in close combat.
 
+## Combat Data
+
+- **Cooldown**: 1.98s (30 frames)
+- 9 Normal bounce attack: 9 → 3 → 1 damage across 3 targets
+- Speed: 6.67 — one of the fastest units in the game
+- "Magic boxing" (patrol micro) spreads Mutalisks to prevent stacking damage from splash
+- **AI Note**: Mutalisks auto-attack nearest target and will stack on a single point if not manually spread — this makes them vulnerable to splash damage from Corsairs and Valkyries
+- Morphs into Guardian or Devourer at Greater Spire
+
 ## Historical Notes
 
 Mutalisk micro is one of the most celebrated skills in Brood War. Jaedong's Mutalisk control — magic boxing against Corsairs, sniping High Templar, and simultaneously harassing multiple bases — was considered almost supernatural. The ZvZ Mutalisk war is one of the most micro-intensive sequences in the game, where split-second decisions determine who achieves air superiority. The Mutalisk remains the defining unit of aggressive Zerg play.

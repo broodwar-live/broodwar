@@ -13,8 +13,10 @@ hp = 350
 shields = 0
 armor = 1
 build_time = 30
+hotkey = "B→U"
 size = "large"
 produces = []
+required_by = ["barracks"]
 +++
 The Bunker is a Terran defensive structure that garrisons up to 4 infantry units, extending their attack range and providing 350 HP of additional protection. Garrisoned Marines gain +1 range, making them effective against early rushes and harassment. Firebats inside Bunkers also benefit from the range extension, dealing devastating damage to clustered melee units. Bunkers can be salvaged for a 75% mineral refund, making them cost-efficient for temporary defense.
 

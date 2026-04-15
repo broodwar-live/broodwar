@@ -58,6 +58,15 @@ Scarabs deal 100 Normal splash damage and must be built individually at 15 miner
 
 Killing the Shuttle removes the Reaver's mobility, leaving it almost useless. Anti-air at bases (Turrets, Spore Colonies, patrolling units) prevents uncontested drops. Vultures can trigger and destroy Scarabs before they reach their target. Dragoons can focus fire the Shuttle quickly. Scarab pathfinding failures are their own counter — sometimes Scarabs simply miss.
 
+## Combat Data
+
+- **Cooldown**: 3.95s (60 frames)
+- Scarab: 100 Normal splash damage (125 with upgrade)
+- Scarabs can miss, get stuck on terrain, or be killed before reaching their target
+- Max 5 Scarabs stored (10 with Increased Reaver Capacity upgrade), 15 minerals each
+- **AI Note**: Scarabs are autonomous once launched — they path toward the nearest enemy and can fail due to pathfinding
+- Shuttle-Reaver micro (load-fire-reload cycle) is the most APM-intensive Protoss technique
+
 ## Historical Notes
 
 Bisu's Corsair-Reaver build against sAviOr in the 2007 MSL is one of the most transformative moments in BW history, proving that PvZ could be played aggressively with Reaver harassment rather than passive Carrier builds. Shuttle-Reaver micro remains one of the most skill-expressive techniques in the game, and watching top Protoss players execute it flawlessly is a spectator highlight of professional Brood War.

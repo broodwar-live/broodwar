@@ -13,8 +13,10 @@ hp = 750
 shields = 750
 armor = 1
 build_time = 120
+hotkey = "B→N"
 size = "large"
 produces = ["probe"]
+unlocks = ["gateway", "forge", "pylon", "assimilator"]
 +++
 The Nexus is the primary Protoss base structure, responsible for producing Probes and serving as the economic foundation of every Protoss base. Each Nexus generates a small psionic matrix that powers nearby buildings, though Pylons are still needed for most building placement. The Nexus has no special abilities or upgrades, making it the most straightforward main base building among the three races.
 

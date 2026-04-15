@@ -57,6 +57,15 @@ The ground attack deals 8 Normal damage at range 5, while the air attack deals 2
 
 Wraiths are hard-countered by detection plus anti-air. Science Vessels reveal cloaked Wraiths, and Marines or Goliaths can then destroy them. Corsairs with splash damage efficiently clear Wraith groups. Valkyries devastate clumped Wraiths. Without cloaking, Wraiths are fragile for their cost.
 
+## Combat Data
+
+- **Ground**: 8 Normal damage, range 5
+- **Air**: 20 Normal damage, range 5
+- Kills Overlord (200 HP) in 10 air shots
+- Cloaking costs 25 energy to activate + 0.49 energy/frame to maintain
+- **AI Note**: Cloaked Wraiths will decloak to attack — be aware of detection positioning
+- **Notable**: 2-port Wraith builds in TvT can dominate if opponent goes pure ground mech
+
 ## Historical Notes
 
 Wraith play in TvT was popularized in the early competitive scene, where Wraith openings created dynamic games of cat-and-mouse with cloaked harassment. While the meta has shifted more toward ground-based play in modern TvT, Wraith openings remain a viable and exciting strategic choice.

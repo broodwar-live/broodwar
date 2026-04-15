@@ -57,6 +57,15 @@ The ground attack deals 12 Normal damage at range 5, making Goliaths decent but 
 
 Goliaths are vulnerable to Psionic Storm, which can devastate clumped groups. Zealots with Leg Enhancements overpower them in melee. Dark Swarm blocks their ranged fire. Despite their anti-air role, Corsairs in sufficient numbers can overwhelm them with splash damage.
 
+## Combat Data
+
+- **Ground**: 12 Normal damage, 1.45s cooldown, range 5
+- **Air**: 20 Explosive damage ×2 missiles, range 5 (8 with Charon Boosters)
+- Air DPS with Charon Boosters makes Goliaths the best anti-Carrier unit
+- Kills Mutalisk (120 HP, Small) in 12 air shots (10 effective per shot vs Small)
+- **AI Note**: Goliaths prioritize air targets when both ground and air enemies are present
+- Charon Boosters (+3 air range) is mandatory — without it, Goliaths are outranged by Carriers
+
 ## Historical Notes
 
 The Goliath became famous as the answer to Protoss Carrier play. The evolution of TvP late-game saw Goliath counts balloon as Protoss players leaned into Carrier-Arbiter compositions, creating dramatic air-versus-ground battles that defined the matchup's late game for years.

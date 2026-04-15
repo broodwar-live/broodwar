@@ -13,9 +13,11 @@ hp = 850
 shields = 0
 armor = 1
 build_time = 60
+hotkey = "B→I"
 size = "large"
 produces = []
 researches = ["irradiate"]
+required_by = ["starport"]
 +++
 사이언스 퍼실리티는 테란의 고급 기술 건물로, 스타포트에서 사이언스 베슬 생산을 가능하게 하며 이래디에이트와 EMP 충격파를 연구한다. 상호 배타적인 두 가지 애드온을 지원한다: 배틀크루저 생산과 야마토 캐논 연구를 해제하는 피직스 랩, 그리고 고스트 생산(아카데미와 함께), 락다운, 퍼스널 클로킹 연구를 해제하는 커버트 옵스이다.
 

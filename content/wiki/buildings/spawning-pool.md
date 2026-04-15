@@ -13,9 +13,12 @@ hp = 750
 shields = 0
 armor = 1
 build_time = 80
+hotkey = "B→S"
 size = "large"
 produces = []
 researches = ["metabolic-boost", "adrenal-glands"]
+unlocks = ["hydralisk-den"]
+required_by = ["hatchery"]
 +++
 The Spawning Pool is the first and most fundamental Zerg tech building, enabling Zergling production from the Hatchery and serving as the prerequisite for all other Zerg tech structures. It researches Metabolic Boost (Zergling speed upgrade, commonly called "speed" or "ling speed") and Adrenal Glands (Zergling attack speed, requiring a Hive). The Spawning Pool is also required before Sunken Colonies can be morphed from Creep Colonies, and before a Hatchery can morph into a Lair.
 

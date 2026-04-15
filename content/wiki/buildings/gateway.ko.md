@@ -13,8 +13,11 @@ hp = 500
 shields = 500
 armor = 1
 build_time = 60
+hotkey = "B→G"
 size = "large"
 produces = ["zealot", "dragoon", "high-templar", "dark-templar"]
+unlocks = ["cybernetics-core", "citadel-of-adun"]
+required_by = ["nexus"]
 +++
 게이트웨이는 프로토스의 주요 군사 생산 건물로, 기본적으로 질럿을, 사이버네틱스 코어가 건설되면 드라군을, 템플러 아카이브가 완성되면 하이 템플러와 다크 템플러를 생산한다. 프로토스가 이용할 수 있는 첫 번째 군사 건물이자 게임 전반에 걸쳐 가장 중요한 생산 건물이다. 테란의 배럭과 달리 게이트웨이에는 애드온이 없다.
 

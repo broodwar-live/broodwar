@@ -58,6 +58,15 @@ Dark Swarm costs 100 energy and creates a cloud lasting roughly 60 seconds. All 
 
 Irradiate from Science Vessels kills Defilers and damages nearby biological units. EMP drains Defiler energy before they can cast. Psionic Storm can kill fragile Defilers. Sniping Defilers before they cast is the primary Terran counter — their death removes the threat of Dark Swarm. Air units can attack through Dark Swarm, as it only protects ground units from ranged ground fire.
 
+## Combat Data
+
+- **Dark Swarm**: Blocks all ranged attacks against ground units under the cloud, 100 energy, ~60s duration
+- **Plague**: 295 damage over time to all units in area (cannot kill — leaves at 1 HP), 150 energy
+- **Consume**: Sacrifices a friendly Zerg unit to restore 50 energy, 0 energy cost
+- No attack — purely a spellcaster
+- **AI Note**: Defilers have no auto-attack; they must be manually positioned and will stand idle if not given orders — keeping them alive behind the army is critical
+- Dark Swarm does NOT block melee attacks, spells, or splash damage — only direct ranged fire
+
 ## Historical Notes
 
 The Defiler is often called "the great equalizer" — it transforms Zerg's late-game from hopeless against mech into competitive. The race between Terran trying to kill Defilers and Zerg trying to land Dark Swarms defines the climax of most ZvT games. Jaedong's precise Defiler usage against Flash's mech armies produced some of the most strategically rich games in BW history. Learning when and where to cast Dark Swarm separates Zerg players at every level of play.

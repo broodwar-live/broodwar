@@ -59,6 +59,15 @@ Overlords provide 8 supply each with no supply cost of their own. Base speed is 
 
 Everything that can attack air counters Overlords — Marines, Corsairs, Wraiths, Hydralisks, and anti-air buildings all destroy them. Corsairs are the most dangerous Overlord killer, specifically hunting them in packs. Irradiate from Science Vessels kills Overlords and damages nearby biological units. Losing Overlords causes supply blocks, potentially stalling unit production at critical moments.
 
+## Combat Data
+
+- No attack — detector, supply provider (8 supply each), and transport (with Ventral Sacs)
+- 200 HP, 0 armor — Large-sized; dies quickly to any anti-air
+- Speed: 0.83 base → 1.25 with Pneumatized Carapace — still slow even upgraded
+- Losing Overlords = supply blocked, potentially stalling unit production at critical moments
+- **AI Note**: Overlords will hold position where sent; they must be manually repositioned to maintain detection coverage as the army moves
+- Classified as biological — vulnerable to Irradiate splash
+
 ## Historical Notes
 
 Overlord management is one of those unsexy but crucial skills that separates good Zerg players from great ones. The early-game Overlord scout — sending an Overlord to the enemy base at the start of the match — is one of the most fundamental scouting tools in Brood War. Corsair-first openings in PvZ specifically target Overlords to deny Zerg scouting and cause supply blocks, creating a fascinating strategic layer around what is ostensibly just a supply unit.

@@ -59,6 +59,16 @@ Marines deal Normal damage, making them equally effective against all armor size
 
 Marines are vulnerable to splash damage: Psionic Storm, Siege Tanks in siege mode, and Lurkers all devastate clumped Marines. Dark Swarm completely negates Marine fire. Zealots with Leg Enhancements can close the gap before Marines deal enough damage.
 
+## Combat Data
+
+- **Cooldown**: 0.99s (15 frames) · 0.50s with Stim (7.5 frames)
+- Kills Zergling (35 HP) in 6 shots · 4 with +1 attack
+- Kills Zealot (100 HP + 60 shields) in 27 shots · 23 with Stim+1
+- Kills Dragoon (100 HP + 80 shields) in 30 shots
+- 3 Marines kill a Zergling before it can attack twice
+- **AI Note**: Marines will auto-target the nearest enemy; manual focus fire on High Templar or Defilers is critical in competitive play
+- **Notable**: Flash's Marine splits vs Bisu's storms (ASL S2, 2017) set the standard for TvP bio micro
+
 ## Historical Notes
 
 The Marine has been at the center of countless iconic moments. Flash's Marine splits against Bisu's storms helped define the TvP meta for years. The rise of bio play in TvZ during the early 2010s, pioneered by players like Fantasy, proved that Marines could hold their own against the Zerg late-game with sufficient mechanical skill.

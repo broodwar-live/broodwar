@@ -13,9 +13,11 @@ hp = 750
 shields = 0
 armor = 1
 build_time = 80
+hotkey = "B→A"
 size = "large"
 produces = []
 researches = ["vehicle-weapons", "vehicle-plating", "ship-weapons", "ship-plating"]
+required_by = ["factory"]
 +++
 The Armory is Terran's vehicle and ship upgrade building, researching Vehicle Weapons, Vehicle Plating, Ship Weapons, and Ship Plating (each up to level 3). It is also required to unlock Goliath production at the Factory and Valkyrie production at the Starport. Additionally, the Armory enables level 2 and 3 infantry upgrades at the Engineering Bay, making it important even in bio-focused strategies.
 

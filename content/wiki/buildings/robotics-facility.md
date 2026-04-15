@@ -13,8 +13,10 @@ hp = 500
 shields = 500
 armor = 1
 build_time = 80
+hotkey = "B→R"
 size = "large"
 produces = ["shuttle", "reaver", "observer"]
+required_by = ["cybernetics-core"]
 +++
 The Robotics Facility is the Protoss production building for mechanical units: Shuttles, Reavers, and Observers. It opens up one of the most powerful and skill-intensive strategies in Brood War — the Reaver drop — by providing both the Reaver (devastating splash damage) and the Shuttle (transport) from a single building. Observers produced here are Protoss's only mobile detection unit, essential for spotting cloaked and burrowed threats.
 

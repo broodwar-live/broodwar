@@ -58,6 +58,15 @@ Mind Control costs 150 energy and permanently converts one enemy unit, but the D
 
 Dark Archons are slow and have no attack, making them vulnerable to focus fire once detected. EMP strips their shields and energy simultaneously, completely neutralizing them. Any non-biological unit is immune to Maelstrom. Mind Control's shield loss makes the Dark Archon extremely fragile afterward. Their high cost means losing one is a significant investment lost.
 
+## Combat Data
+
+- **Mind Control**: Permanently converts one enemy unit, costs all energy (minimum 150)
+- **Maelstrom**: Freezes all biological units in area for ~5 seconds, 100 energy
+- **Feedback**: Deals damage equal to target's current energy, 50 energy — one-shots full-energy casters
+- Mind Control causes the Dark Archon to lose all shields
+- Maelstrom passes through Dark Swarm and cannot be dispelled
+- **AI Note**: Dark Archons have no auto-attack; all value comes from manual spellcasting
+
 ## Historical Notes
 
 While rare in professional play, Dark Archons have produced some of the most memorable moments in BW showmatches and occasional tournament games. Mind Controlling an enemy worker to build that race's structures has created wild multi-race compositions that delight spectators. The Maelstrom-storm combo against Zerg armies, while difficult to set up, remains one of the most satisfying ability combinations in the game.

@@ -13,8 +13,11 @@ hp = 1000
 shields = 0
 armor = 1
 build_time = 80
+hotkey = "B→B"
 size = "large"
 produces = ["marine", "firebat", "medic", "ghost"]
+unlocks = ["factory", "bunker", "academy"]
+required_by = ["command-center"]
 +++
 배럭은 테란이 이용할 수 있는 첫 번째 군사 생산 건물이자 모든 보병 유닛의 관문이다. 기본적으로 마린을 생산하며, 아카데미가 건설되면 파이어뱃과 메딕이 해제되고, 아카데미와 커버트 옵스가 완성되면 고스트를 생산할 수 있다. 배럭은 팩토리의 선행 건물이므로 전략에 관계없이 모든 테란 빌드 오더에서 필수적이다.
 

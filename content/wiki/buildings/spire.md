@@ -13,9 +13,11 @@ hp = 600
 shields = 0
 armor = 1
 build_time = 120
+hotkey = "B→S"
 size = "large"
 produces = []
 researches = ["flyer-attacks", "flyer-carapace"]
+required_by = ["hatchery"]
 +++
 The Spire is the Zerg air tech building, enabling Mutalisk and Scourge production from the Hatchery. It researches Flyer Attacks and Flyer Carapace upgrades (each up to level 3) for all Zerg air units. The Spire requires a Lair and can morph into the Greater Spire (requiring a Hive), which unlocks Guardian and Devourer morphing from Mutalisks. The Spire is one of the most gas-expensive Zerg tech buildings at 200 minerals and 150 gas.
 

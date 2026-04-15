@@ -57,6 +57,15 @@ Ghosts deal Normal damage with 10 base attack and 7 range, giving them decent ha
 
 Ghosts are countered by detection (Observers, Overlords, Science Vessels). Storm from High Templar can kill a Ghost instantly. Feedback from Dark Archons deals damage equal to remaining energy. Their low HP (45) makes them fragile against any focused fire.
 
+## Combat Data
+
+- **Cooldown**: 1.45s (22 frames)
+- Full damage only vs Small units; 50% vs Medium, 25% vs Large
+- Lockdown duration: ~8.6 seconds (131 frames) — disables mechanical units
+- Nuclear Strike: 500 damage or 2/3 max HP (whichever higher), 12-second launch
+- **AI Note**: Ghosts will auto-attack the nearest enemy, wasting their stealth — always manually control
+- Lockdown on a Carrier removes all Interceptors from combat for the duration
+
 ## Historical Notes
 
 While niche, Ghosts have produced some of the most memorable moments in BW history. Nuclear launches in professional matches always generate excitement, even though successful detonations are rare. The rise of Lockdown usage in TvP late-game fundamentally changed how Protoss approached Arbiter play, forcing more careful positioning.

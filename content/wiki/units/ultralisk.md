@@ -59,6 +59,16 @@ Ultralisks deal 20 Normal splash damage in melee, hitting all adjacent enemy gro
 
 Air units are completely safe from Ultralisks, making air-based compositions a hard counter. Without Dark Swarm, Siege Tanks can focus fire Ultralisks before they close the distance. Psionic Storm deals significant damage to Ultralisks. Mind Control from Dark Archons can steal these expensive units. Speed Dragoons can kite Ultralisks indefinitely without Dark Swarm protection.
 
+## Combat Data
+
+- **Cooldown**: 0.99s (15 frames)
+- 20 Normal melee splash damage — hits all adjacent ground units
+- With Chitinous Plating: 4 base armor; full upgrades = 7 armor total
+- Marines deal 0 damage vs 7 armor Ultralisk (6 attack - 7 armor = 0, minimum 0.5 rounded)
+- 400 HP — the most durable non-building unit in the game
+- **AI Note**: Ultralisks have large collision size and struggle with pathfinding in tight spaces — manual guidance through narrow passages is essential
+- Under Dark Swarm, Ultralisks are nearly unstoppable as ranged attacks cannot touch them
+
 ## Historical Notes
 
 The Ultralisk represents the culmination of Zerg's late-game tech tree and the payoff for surviving to Hive tech. The image of Ultralisks charging through Dark Swarm clouds into Siege Tank lines is one of the most iconic visual moments in Brood War. The Ultralisk-Defiler combination gave Zerg a fighting chance in late-game ZvT, transforming what was once a nearly impossible scenario into the epic endgame battles that define the matchup.
